@@ -8,3 +8,7 @@
 - Definir ahorro
 - Indicador de ahorro restante
 - Gráfica de ahorro/gastos/ingresos por mes
+
+## Preguntas
+- El resultado tiene que ser algo similar al obligatorio de P1?
+- 
