@@ -11,4 +11,5 @@
 
 ## Preguntas
 - El resultado tiene que ser algo similar al obligatorio de P1?
+- Como se tiene que ejecutar? 
 - 
