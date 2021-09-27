@@ -81,6 +81,7 @@ Acepta el argumento `-b <nueva rama>`, que permite crear una nueva rama y cambia
 ## Versionado
 ### Aplicar buenas prácticas de versionado
 ### Uso de ramas separadas de 'main'
+
 ### Resumen de commits y evolución del proyecto
 ## Elicitación
 Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas. Esta técnica permite liberar la creatividad de los equipos, generando un número extenso de ideas. Se obtuvo la siguiente lista de posibles funciones.
@@ -90,15 +91,17 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Registrar gastos personales.
 - Ingresar lista de amigos.
 - Registrar un nuevo amigo.
-- Crear grupos.
+- Crear grupos entre distintos usuarios.
 - Registrar gastos grupales.
 - Consultar preferencias de un amigo.
 - Consultar deudas en grupos.
 - Consultar historial de gastos personales.
 - Consultar historial de gastos grupales.
 
-- encuestas
-- ingenieria inversa
+
+- entrevista a amigos entre 18 y 25 años.
+- encuestas a personas entre 18 y 25 años.
+- ingenieria inversa 
 ### Evidencia de actividades de investigación
 ### Referencias a fuentes de información
 ### Caracterización de usuarios: User Personas
