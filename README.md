@@ -80,7 +80,17 @@ Acepta el argumento `-b <nueva rama>`, que permite crear una nueva rama y cambia
 
 ## Versionado
 ### Aplicar buenas prácticas de versionado
+A partir del décimo commit empezamos a implementar el siguiente sistema de versionado, donde el mensaje del commit tiene la siguiente estructura:
+1. **fix:** un commit del tipo `fix` arregla un bug del código.
+2. **feat:** un commit del tipo `feat` introduce una nueva feature al código.
+3. *types* other than `fix` and `feat` are allowed, for example, `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, and others.
+
+Este sistema de versionado está basado en [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/ "Conventional Commits").
 ### Uso de ramas separadas de 'main'
+Utilizamos dos ramas principales, **Develop** y **Main**.
+Main: push final, cuando funciona la app.
+Develop: para ir desarrollando la app.
+Utilizamos la rama **Hotfix** para solucionar problemas y errores.
 
 ### Resumen de commits y evolución del proyecto
 ## Elicitación
@@ -98,6 +108,7 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos personales.
 - Consultar historial de gastos grupales.
 
+Otras actividades
 
 - entrevista a amigos entre 18 y 25 años.
 - encuestas a personas entre 18 y 25 años.
@@ -120,6 +131,9 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 
 ## Bibliografía
 [¿Qué es Git?](https://www.atlassian.com/es/git/tutorials/what-is-git "¿Qué es Git? Atlassian Git Tutorial")
+
 [¿Qué es Github?](https://conociendogithub.readthedocs.io/en/latest/data/introduccion/ "Conociendo GitHub")
+
 [Tutoriales de Git y comandos](https://www.atlassian.com/es/git/tutorials "Tutoriales de Git")
+
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet")
