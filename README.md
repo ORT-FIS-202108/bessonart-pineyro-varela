@@ -92,6 +92,16 @@ Acepta el argumento `-b <nueva rama>`, que permite crear una nueva rama y cambia
 ### Modelo conceptual del problema
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
+Como forma de estandarizar los requerimientos se definió una forma de identidicación que consiste en el tipo de reuerimiento seguido de un número. Para cada requerimiento se especidica una breve descripción y una prioridad (Alta, Media o Baja).
+####  Requerimientos No  Funcionales 
+| Identificación | Descripción                                                      | Prioridad |
+| -------------- |:---------------------------------------------------------------- | --------- |
+| RNF1           | Primary Color: Deep Purple 700.                                  | Alta      |
+| RNF2           | Secondary Color: Teal 700.                                       | Alta      |
+| RNF3           | Font: Roboto.                                                    | Alta      |
+| RNF4           | Icons: filled.                                                   | Alta      |
+| RNF5           | El sistema deberá funcionar en Android 12.                       | Alta      |
+| RNF6           | Implementar el uso de "Chips" para la descripción de los gastos. | Baja      |
 ### User Stories / Use Cases detallados
 ### Bocetos de IU
 ## Validación y verificación
