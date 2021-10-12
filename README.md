@@ -119,6 +119,44 @@ Otras actividades
 ### Modelo conceptual del problema
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
+Como forma de estandarizar los requerimientos se definió una forma de identidicación que consiste en el tipo de reuerimiento seguido de un número. Para cada requerimiento se especidica una breve descripción y una prioridad (Alta, Media o Baja).
+### Requerimientos Funcionales
+RF1
+-Registrar gastos especificando monto y descripcion (individual/personal)
+Prioridad Alta
+RF2
+-Borrar un gasto 
+Prioridad Alta
+RF3
+-Registrar gastos en conjunto especificando monto por persona y personas que participan (ademas de monto y descripcion)
+Prioridad Alta
+RF4
+-Borrar un gasto (individual o conjunto)
+Prioridad Alta
+RF5
+-Crear un grupo
+Prioridad Alta
+RF6
+-Registrar amigos
+Prioridad Alta
+RF7
+-Borrar amigos de grupos (si no deben plata)
+Prioridad Alta
+RF8
+-Borrar amigos
+Prioridad Alta
+RF9
+-Personalizar amigos 
+Prioridad Baja
+RF10
+-Balancear(elimina dedudas dentro de un grupo indicando quien le paga a quien)
+Prioridad Alta
+RF11
+-Solicitar estado actual (deudas personales)
+Prioridad Alta
+RF12
+-Personalizar Perfil (estilo netflix)
+Prioridad Baja
 ### User Stories / Use Cases detallados
 ### Bocetos de IU
 ## Validación y verificación
