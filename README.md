@@ -119,44 +119,69 @@ Otras actividades
 ### Modelo conceptual del problema
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
-Como forma de estandarizar los requerimientos se definió una forma de identidicación que consiste en el tipo de reuerimiento seguido de un número. Para cada requerimiento se especidica una breve descripción y una prioridad (Alta, Media o Baja).
+Como forma de estandarizar los requerimientos se definió una forma de identificación que consiste en el tipo de requerimiento seguido de un número. Para cada requerimiento se especifica una breve descripción y una prioridad (Alta, Media o Baja).
 ### Requerimientos Funcionales
-RF1
--Registrar gastos especificando monto y descripcion (individual/personal)
-Prioridad Alta
-RF2
--Borrar un gasto 
-Prioridad Alta
-RF3
--Registrar gastos en conjunto especificando monto por persona y personas que participan (ademas de monto y descripcion)
-Prioridad Alta
-RF4
--Borrar un gasto (individual o conjunto)
-Prioridad Alta
-RF5
--Crear un grupo
-Prioridad Alta
-RF6
--Registrar amigos
-Prioridad Alta
-RF7
--Borrar amigos de grupos (si no deben plata)
-Prioridad Alta
-RF8
--Borrar amigos
-Prioridad Alta
-RF9
--Personalizar amigos 
-Prioridad Baja
-RF10
--Balancear(elimina dedudas dentro de un grupo indicando quien le paga a quien)
-Prioridad Alta
-RF11
--Solicitar estado actual (deudas personales)
-Prioridad Alta
-RF12
--Personalizar Perfil (estilo netflix)
-Prioridad Baja
+**RF1:** Prioridad Alta
+
+Registrar gasto personal, especificando monto y descripción.
+
+**RF2:** Prioridad Alta
+
+Borrar un gasto (individual o conjunto)
+
+**RF3:** Prioridad Alta
+
+Registrar gasto de grupo, especificando monto total, descripción, quiénes participan y el monto por persona.
+
+**RF4:** Prioridad Alta
+
+Crear un grupo entre distintos usuarios.
+
+**RF5:** Prioridad Alta
+
+Registrar un nuevo amigo o una lista de amigos.
+
+**RF6:** Prioridad Media
+
+Eliminar a una persona de un grupo. Esto es posible solo en el caso en el que las deudas con dicha persona ya hayan sido balanceadas.
+
+**RF7:** Prioridad Alta
+
+Borrar amigos
+
+**RF8:** Prioridad Baja
+
+Personalizar amigos 
+
+**RF9:** Prioridad Alta
+
+Balancear, esto es, indicar qué deudas hay en un grupo y dar la posibilidad de eliminar una deuda.
+
+**RF10:** Prioridad Alta
+
+Solicitar estado actual, esto es, mostrar las deudas personales.
+
+**RF11:** Prioridad Baja
+
+Personalizar perfil. Esto implica cambiar la foto de perfil y el nombre de usuario seleccionado.
+
+**RF12:** Prioridad Media
+
+Ingresar preferencias del usuario, como medio de pago favorito, descripciones de gastos predefinidas y tipo de moneda favorita.
+
+**RF13:** Prioridad Baja
+
+Consultar preferencias de un amigo.
+
+**RF14:** Prioridad Baja
+
+Consultar historial de gastos personales.
+
+**RF15:** Prioridad Baja
+
+Consultar historial de gastos grupales.
+
+
 ### User Stories / Use Cases detallados
 
 #### Caso de uso 1) 
