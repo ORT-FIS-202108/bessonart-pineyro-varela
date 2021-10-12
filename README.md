@@ -234,6 +234,33 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
+#### Caso de uso 3)
+**Título:** Crear un grupo de amigos
+
+**Actor:** Usuario
+
+**Referencia:** Requerimiento Funcional: RF4
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Selecciona "Nuevo grupo de amigos" | **2.** Muestra una lista con los amigos ya registrados |
+| **3.** Selecciona uno o más amigos | **4.** Pide que se ingrese un nombre para el grupo  |
+| **5.** Ingresa el nombre del grupo, que es un string de letras únicamente | **6.** Muestra los datos ingresados y pide confirmación |
+| **7.** Confirma los datos | **8.** Crea el grupo |
+
+**Cursos alternativos:**
+
+**2.1** Si no hay amigos ingresados: Muestra un mensaje "Debes ingresar a tus amigos primero para crear un grupo".
+
+**3.1** Si no se selecciona ningún amigo: se muestra un mensaje "Debes seleccionar al menos un amigo".
+
+**5.1** Si no se ingresa un nombre: se muestra un mensaje "Por favor, ingrese un nombre".
+
+**5.2** Si el nombre seleccionado es incorrecto: se muestra un mensaje "El nombre debe contener letras únicamente. Por favor, reingrese".
+
+**7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
+
 ### Bocetos de IU
 ## Validación y verificación
 ### Verificar la especificación
