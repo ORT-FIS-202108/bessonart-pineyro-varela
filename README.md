@@ -161,7 +161,7 @@ Balancear, esto es, indicar qué deudas hay en un grupo y dar la posibilidad de 
 
 Solicitar estado actual, esto es, mostrar las deudas personales.
 
-**RF11:** Prioridad Baja
+**RF11:** Prioridad Media
 
 Personalizar perfil. Esto implica cambiar la foto de perfil y el nombre de usuario seleccionado.
 
@@ -181,6 +181,10 @@ Consultar historial de gastos personales.
 
 Consultar historial de gastos grupales.
 
+**RF16:** Prioridad Alta
+
+Registrar nombre de usuario al inciar por primera vez la app.
+
 
 ### User Stories / Use Cases detallados
 
@@ -188,6 +192,8 @@ Consultar historial de gastos grupales.
 **Título:** Ingresar nombre de usuario 
 
 **Actor:** Usuario
+
+**Referencia:** Requerimiento Funcional: RF16
 
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
@@ -203,6 +209,8 @@ Consultar historial de gastos grupales.
 **Título:** Registrar gasto personal
 
 **Actor:** Usuario
+
+**Referencia:** Requerimiento Funcional RF1
 
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
