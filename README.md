@@ -120,6 +120,49 @@ Otras actividades
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
 ### User Stories / Use Cases detallados
+
+#### Caso de uso 1) 
+**Título:** Ingresar nombre de usuario 
+
+**Actor:** Usuario
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Ingresa a la aplicación por primera vez | **2.** Pide que ingrese el nombre |
+| **3.** Ingresa el nombre, que debe ser un string de letras únicamente | **4.** Muestra mensaje "Hola " + nombre + "!" |
+
+**Cursos alternativos:**
+
+**3.1** Si el nombre es incorrecto, o sea no es un string de letras únicamente: se muestra un mensaje "El nombre debe contener letras únicamente. Por favor, reingrese.".
+
+#### Caso de uso 2) Asociado a RF1
+**Título:** Registrar gasto personal
+
+**Actor:** Usuario
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Selecciona "Nuevo gasto personal" | **2.** Muestra un input type number y una lista de tipos de moneda (pesos, dólares, reales, euros, otro). |
+| **3.** Ingresa el monto (número mayor a 0) y selecciona el tipo de moneda | **4.** Muestra una caja de texto y sugerencias |
+| **5.** Ingresa la descripción, que debe ser menor a 40 caracteres | **6.** Muestra todos los datos ingresados en pantalla y pide una confirmación|
+| **7.** Confirma los datos | **8.** Se registra el nuevo gasto|
+
+**Cursos alternativos:**
+
+**3.1** Si el monto es menor a 0: se muestra un mensaje "El monto debe ser mayor a 0".
+
+**3.2** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
+
+**3.3** Si no se selecciona el tipo de moneda: se muestra un mensaje "Por favor, seleccione el tipo de moneda".
+
+**5.1** Si la descripción es mayor a 40 caracteres: se muestra un mensaje "La descripción debe ser menor a 40 caracteres".
+
+**5.2** Si no se ingresa una descripción: se muestra un mensaje "Por favor, ingrese una descripción".
+
+**7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
+
 ### Bocetos de IU
 ## Validación y verificación
 ### Verificar la especificación
