@@ -116,7 +116,10 @@ Otras actividades
 ### Evidencia de actividades de investigación
 ### Referencias a fuentes de información
 ### Caracterización de usuarios: User Personas
-![User Persona 1](userPersona1.png)
+#### User Persona 1)
+![User Persona 1](user_persona_1.png)
+#### User Persona 2)
+![User Persona 2](user_persona_2.png)
 ### Modelo conceptual del problema
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
