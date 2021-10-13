@@ -3,8 +3,9 @@
 - Luca Bessonart - 231764
 - Sofía Piñeyro - 243498
 - Florencia Varela - 254005
-
+---
 ## Repositorio Git
+
 ### Creación y uso de repositorios locales y remotos
 Un repositorio es una estructura de directorios en disco, donde se almacenan los elementos de software producidos a lo largo de todo un proyecto.
 Git es el sistema de control de versiones distribuido más utilizado del mundo. Es un proyecto de código abierto maduro y con un mantenimiento activo que desarrolló originalmente Linus Torvalds en el año 2005.
@@ -78,6 +79,7 @@ Existen otras opciones que permiten crear y eliminar ramas, así como cambiar su
 Este comando permite cambiar a una rama específica ya existente. 
 Acepta el argumento `-b <nueva rama>`, que permite crear una nueva rama y cambiar a ella al instante.
 
+---
 ## Versionado
 ### Aplicar buenas prácticas de versionado
 A partir del décimo commit empezamos a implementar el siguiente sistema de versionado, donde el mensaje del commit tiene la siguiente estructura:
@@ -93,7 +95,11 @@ Develop: para ir desarrollando la app.
 Utilizamos la rama **Hotfix** para solucionar problemas y errores.
 
 ### Resumen de commits y evolución del proyecto
+
+---
 ## Elicitación
+
+### Lluvia de Ideas
 Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas. Esta técnica permite liberar la creatividad de los equipos, generando un número extenso de ideas. Se obtuvo la siguiente lista de posibles funciones.
 - Ingresar nombre de usuario, para personalizar los mensajes a mostrar.
 - Elegir foto de perfil, de una lista predefinida.
@@ -108,19 +114,25 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos personales.
 - Consultar historial de gastos grupales.
 
-Otras actividades
+### Entrevistas
+  Agregar resumen entrevistas
+### Encuestas
+  Agregar resumen encuestas
+### Ingeniería Inversa
+#### Settle Up
+#### Splitwise
 
-- entrevista a amigos entre 18 y 25 años.
-- encuestas a personas entre 18 y 25 años.
-- ingenieria inversa 
+
 ### Evidencia de actividades de investigación
 ### Referencias a fuentes de información
+---
 ### Caracterización de usuarios: User Personas
 #### User Persona 1.
 ![User Persona 1](https://i.imgur.com/d6lXpHr.jpg)
 #### User Persona 2.
 ![User Persona 2](https://i.imgur.com/AFIuS4w.jpg)
 ### Modelo conceptual del problema
+---
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
 Como forma de estandarizar los requerimientos se definió una forma de identificación que consiste en el tipo de requerimiento seguido de un número. Para cada requerimiento se especifica una breve descripción y una prioridad (Alta, Media o Baja).
@@ -189,6 +201,7 @@ Consultar historial de gastos grupales.
 
 Registrar nombre de usuario al inciar por primera vez la app.
 
+---
 
 ### User Stories / Use Cases detallados
 
@@ -309,6 +322,7 @@ Prototipo: [Link al prototipo](https://www.figma.com/proto/lgVU9pjV62HU5Ybg9OlCT
 Menú:
 ![Menú](https://i.imgur.com/UZaGLWI.png)
 
+---
 ## Validación y verificación
 ### Verificar la especificación
 | El requerimiento | RF1 | RF2 | RF3 | RF4 | RF5 | RF6 | RF7 | RF8 | 
@@ -329,11 +343,12 @@ Menú:
 | ¿esta priorizado?    | 
 | ¿se identifica claramente el origen?    | 
 ### Validar la solución con personas no involucradas en el proyecto
+---
 ## Reflexión
 ### Detalle del trabajo individual
 ### Técnicas aplicadas y aprendizajes
 
-
+---
 ## Bibliografía
 [¿Qué es Git?](https://www.atlassian.com/es/git/tutorials/what-is-git "¿Qué es Git? Atlassian Git Tutorial")
 
