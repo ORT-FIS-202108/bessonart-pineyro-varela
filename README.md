@@ -311,6 +311,23 @@ Menú:
 
 ## Validación y verificación
 ### Verificar la especificación
+| El requerimiento | RF1 | RF2 | RF3 | RF4 | RF5 | RF6 | RF7 | RF8 | 
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| ¿es viable?   | 
+| ¿es consistente?    |
+| ¿es preciso y no ambiguo?    | 
+| ¿es verificable?    |
+| ¿esta priorizado?    | 
+| ¿se identifica claramente el origen?    | 
+
+| El requerimiento | RF9 | RF10 | RF11 | RF12 | RF13 | RF14 | RF15 | RF16 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| ¿es viable?   | 
+| ¿es consistente?    |
+| ¿es preciso y no ambiguo?    | 
+| ¿es verificable?    |
+| ¿esta priorizado?    | 
+| ¿se identifica claramente el origen?    | 
 ### Validar la solución con personas no involucradas en el proyecto
 ## Reflexión
 ### Detalle del trabajo individual
