@@ -209,6 +209,9 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 **3.1** Si el nombre es incorrecto, o sea no es un string de letras únicamente: se muestra un mensaje "El nombre debe contener letras únicamente. Por favor, reingrese.".
 
+![Caso de Uso 1](https://i.imgur.com/419jJIb.png)
+
+
 #### Caso de uso 2) 
 **Título:** Registrar gasto personal
 
@@ -238,6 +241,8 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
+![Caso de Uso 2](https://i.imgur.com/Ir1iiQ6.png)
+
 #### Caso de uso 3)
 **Título:** Crear un grupo de amigos
 
@@ -264,6 +269,8 @@ Registrar nombre de usuario al inciar por primera vez la app.
 **5.2** Si el nombre ingresado es incorrecto: se muestra un mensaje "El nombre debe contener letras únicamente. Por favor, reingrese".
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
+
+![Caso de Uso 3](https://i.imgur.com/Jb6Xam6.png)
 
 #### Caso de uso 4)
 **Título:** Balancear
@@ -295,7 +302,13 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 **10.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
+![Caso de Uso 4](https://i.imgur.com/rrlRvgL.png)
+
 ### Bocetos de IU
+Prototipo: [Link al prototipo](https://www.figma.com/proto/lgVU9pjV62HU5Ybg9OlCT4/FIS?page-id=0%3A1&node-id=17%3A880&viewport=241%2C48%2C0.35&scaling=scale-down)
+Menú:
+![Menú](https://i.imgur.com/UZaGLWI.png)
+
 ## Validación y verificación
 ### Verificar la especificación
 ### Validar la solución con personas no involucradas en el proyecto
