@@ -116,10 +116,10 @@ Otras actividades
 ### Evidencia de actividades de investigación
 ### Referencias a fuentes de información
 ### Caracterización de usuarios: User Personas
-#### User Persona 1)
-![User Persona 1](user_persona_1.png)
-#### User Persona 2)
-![User Persona 2](user_persona_2.png)
+#### User Persona 1.
+![User Persona 1](https://i.imgur.com/d6lXpHr.jpg)
+#### User Persona 2.
+![User Persona 2](https://i.imgur.com/AFIuS4w.jpg)
 ### Modelo conceptual del problema
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
@@ -192,7 +192,7 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 ### User Stories / Use Cases detallados
 
-#### Caso de uso 1) 
+#### Caso de uso 1.
 **Título:** Ingresar nombre de usuario 
 
 **Actor:** Usuario
@@ -212,7 +212,7 @@ Registrar nombre de usuario al inciar por primera vez la app.
 ![Caso de Uso 1](https://i.imgur.com/419jJIb.png)
 
 
-#### Caso de uso 2) 
+#### Caso de uso 2.
 **Título:** Registrar gasto personal
 
 **Actor:** Usuario
@@ -243,7 +243,7 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 ![Caso de Uso 2](https://i.imgur.com/Ir1iiQ6.png)
 
-#### Caso de uso 3)
+#### Caso de uso 3.
 **Título:** Crear un grupo de amigos
 
 **Actor:** Usuario
@@ -272,7 +272,7 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 ![Caso de Uso 3](https://i.imgur.com/Jb6Xam6.png)
 
-#### Caso de uso 4)
+#### Caso de uso 4.
 **Título:** Balancear
 
 **Actor:** Usuario
