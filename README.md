@@ -83,7 +83,7 @@ Acepta el argumento `-b <nueva rama>`, que permite crear una nueva rama y cambia
 A partir del décimo commit empezamos a implementar el siguiente sistema de versionado, donde el mensaje del commit tiene la siguiente estructura:
 1. **fix:** un commit del tipo `fix` arregla un bug del código.
 2. **feat:** un commit del tipo `feat` introduce una nueva feature al código.
-3. *types* other than `fix` and `feat` are allowed, for example, `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, and others.
+3. *types* además de `fix` y `feat` se pueden usar, por ejemplo, `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, y otros.
 
 Este sistema de versionado está basado en [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/ "Conventional Commits").
 ### Uso de ramas separadas de 'main'
@@ -91,7 +91,6 @@ Utilizamos dos ramas principales, **Develop** y **Main**.
 Main: push final, cuando funciona la app.
 Develop: para ir desarrollando la app.
 Utilizamos la rama **Hotfix** para solucionar problemas y errores.
-
 ### Resumen de commits y evolución del proyecto
 ## Elicitación
 Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas. Esta técnica permite liberar la creatividad de los equipos, generando un número extenso de ideas. Se obtuvo la siguiente lista de posibles funciones.
@@ -108,11 +107,11 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos personales.
 - Consultar historial de gastos grupales.
 
-Otras actividades
-
+Otras técnicas:
 - entrevista a amigos entre 18 y 25 años.
 - encuestas a personas entre 18 y 25 años.
-- ingenieria inversa 
+(Falta escribir lo que se obtuvo como resultado)
+
 ### Evidencia de actividades de investigación
 ### Referencias a fuentes de información
 ### Caracterización de usuarios: User Personas
@@ -121,6 +120,7 @@ Otras actividades
 #### User Persona 2)
 ![User Persona 2](user_persona_2.png)
 ### Modelo conceptual del problema
+
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
 Como forma de estandarizar los requerimientos se definió una forma de identificación que consiste en el tipo de requerimiento seguido de un número. Para cada requerimiento se especifica una breve descripción y una prioridad (Alta, Media o Baja).
@@ -188,7 +188,6 @@ Consultar historial de gastos grupales.
 **RF16:** Prioridad Alta
 
 Registrar nombre de usuario al inciar por primera vez la app.
-
 
 ### User Stories / Use Cases detallados
 
