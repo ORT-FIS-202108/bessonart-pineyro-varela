@@ -118,8 +118,10 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos grupales.
 
 ### Entrevistas
+Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, y 23 años.
   Agregar resumen entrevistas
 ### Encuestas
+Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. 
   Agregar resumen encuestas
 ### Ingeniería Inversa
 #### Settle Up
