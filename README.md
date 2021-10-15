@@ -4,6 +4,9 @@
 - Sofía Piñeyro - 243498
 - Florencia Varela - 254005
 ---
+## Glosario
+- Usuario: dentro de este proyecto se considera usario al publico que usara la aplicación, no como un usuario que requiere un login.
+- 
 ## Repositorio Git
 
 ### Creación y uso de repositorios locales y remotos
@@ -137,57 +140,115 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 ### Definición de requerimientos funcionales y no funcionales
 Como forma de estandarizar los requerimientos se definió una forma de identificación que consiste en el tipo de requerimiento seguido de un número. Para cada requerimiento se especifica una breve descripción y una prioridad (Alta, Media o Baja).
 ### Requerimientos Funcionales
-**RF1:** Prioridad Alta
+Llamamos requerimientos funcionales a ....CONTINUAR
+Dentro de los requerimientos funcionales el actor siempre será el usuario (ver glosario).
 
-Registrar gasto personal, especificando monto y descripción.
+#### RF1: Registro de gasto personal
 
-**RF2:** Prioridad Alta
+**Origen:** Tormenta de ideas
 
-Borrar un gasto (individual o conjunto)
+**Descripción:**  El sistema debe contar con una funcionalidad que permita a los usuarios registrar un gasto personal. Se le debe de pedir al usuario el monto, la moneda y la descripción del gasto. Se le debe dar al usuario la opción de cancelar en cualquier instancia del registro.
 
-**RF3:** Prioridad Alta
+**Prioridad:** Alta
 
-Registrar gasto de grupo, especificando monto total, descripción, quiénes participan y el monto por persona.
+#### RF2 Borrar gasto personal
 
-**RF4:** Prioridad Alta
+**Origen:** Tormenta de ideas
 
-Crear un grupo entre distintos usuarios.
+**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario borrar un gasto personal. El usuario debe elegir el gasto a borrar. Se le debe pedir al usuario confirmar la acción.
 
-**RF5:** Prioridad Alta
+**Prioridad:** Alta
 
-Registrar un nuevo amigo o una lista de amigos.
+#### RF3: Registro de gasto grupal
 
-**RF6:** Prioridad Media
+**Origen:** Ingeniería Inversa
 
-Eliminar a una persona de un grupo. Esto es posible solo en el caso en el que las deudas con dicha persona ya hayan sido balanceadas.
+**Descripción:**  El sistema debe contar con una funcionalidad que permita al usuario registrar un gasto grupal. El usuario debe de poder elegir los amigos que participaron de la compra y al encargado (persona que realizó la compra), estos deben obligatoriamente pertenecer al grupo en el cual se quiere ingresar el gasto. Se le debe pedir al usuario el monto, la moneda y una descripción; se le debe dar la opción al usuario de cambiar la proporción de distribuición de la compra (predeterminadamente equitativa). Se le debe dar al usuario la opción de cancelar en cualquier instancia del registro.
 
-**RF7:** Prioridad Alta
+**Prioridad:** Alta
 
-Borrar amigos
+#### RF4 Borrar gasto grupal
 
-**RF8:** Prioridad Baja
+**Origen:** Tormenta de ideas
 
-Personalizar amigos 
+**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario borrar un gasto grupal. El usuario deverá elegir el gasto a borrar. Se le debe pedir al usuario confirmar la acción.
 
-**RF9:** Prioridad Alta
+**Prioridad:** Alta
 
-Balancear, esto es, indicar qué deudas hay en un grupo y dar la posibilidad de eliminar una deuda.
+#### RF5 Editar gasto grupal
 
-**RF10:** Prioridad Alta
+**Origen:** Tormenta de ideas
 
-Solicitar estado actual, esto es, mostrar las deudas personales.
+**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario borrar un gasto grupal. El usuario debe elegir el gasto a editar. Se le debe permitir al usuario modificar el monto y la descripción. No se le debe permitir al usuario modificar la moneda.
 
-**RF11:** Prioridad Media
+**Prioridad:** Media
 
-Personalizar perfil. Esto implica cambiar la foto de perfil y el nombre de usuario seleccionado.
+#### RF6 Crear grupo
 
-**RF12:** Prioridad Media
+**Origen:** Tormenta de ideas
 
-Ingresar preferencias del usuario, como medio de pago favorito, descripciones de gastos predefinidas y tipo de moneda favorita.
+**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario crear un grupo. El usuario deberá seleccionar los amigos (deben ser previamente registrados) de una lista y asignarle un nombre al grupo.
 
-**RF13:** Prioridad Baja
+**Prioridad:** Alta
 
-Consultar preferencias de un amigo.
+#### RF7 El usuario NO debe ser tratado con prioridad
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema no debe ser tratado con prioridad. No se le debe solicitar ningún dato personal. Y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
+
+**Prioridad:** Alta
+
+#### RF8 Registrar amigo
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe contar con la funcionalidad de agregar un amigo. Se le debe pedir al usuario el nombre y la preferencia de pago.
+
+**Prioridad:** Alta
+
+
+#### RF8 Eliminar amigo de un grupo
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe contar con la funcionalidad de eliminar a un amigo de un grupo. Solo debe de permitirsele al usuario eliminar a un amigo si su deuda con cualquier integrante del grupo es cero. Se le debe pedir al usuario confirmar la acción.
+
+**Prioridad:** Media
+
+#### RF9 Eliminar amigo
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe contar con la funcionalidad de eliminar a un amigo. Se le debe pedir al usuario confirmar la acción.
+
+**Prioridad:** Alta 
+
+
+
+#### RF9 Balancear
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe contar con la funcionalidad de balancear las deudas de un grupo. El sistema debe desplegar una lista de las deudas del grupo. Se le debe permitir al usuario pagar una deuda pudiendo seleccionarla. Una vez seleccionada se le debe mostrar al usuario el monto total y se le debe pedir ingresar el monto a pagar. Se le debe pedir al usuario confirmar la acción. Luego de realizado el balanceo el sistema deble mostrar la información actualizada.
+
+**Prioridad:** Alta 
+
+#### RF10 Consultar historial de gastos personales
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe contar con la funcionalidad de consultar el historial de gastos personales. El usuario debe poder filtrar por antiguedad.
+
+**Prioridad:** Baja
+
+#### RF11 Consultar historial de gastos grupales
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe contar con la funcionalidad de consultar el historial de gastos grupales. El usuario debe poder filtrar por antiguedad, amigo a cago de la compra o por monto.
+
+**Prioridad:** Baja
 
 **RF14:** Prioridad Baja
 
@@ -206,26 +267,7 @@ Registrar nombre de usuario al inciar por primera vez la app.
 ### User Stories / Use Cases detallados
 
 #### Caso de uso 1.
-**Título:** Ingresar nombre de usuario 
 
-**Actor:** Usuario
-
-**Referencia:** Requerimiento Funcional: RF16
-
-**Curso normal:**
-| Acción de los actores | Respuesta del sistema |
-| --------------------- | --------------------- |
-| **1.** Ingresa a la aplicación por primera vez | **2.** Pide que ingrese el nombre |
-| **3.** Ingresa el nombre, que debe ser un string de letras únicamente | **4.** Muestra mensaje "Hola " + nombre + "!" |
-
-**Cursos alternativos:**
-
-**3.1** Si el nombre es incorrecto, o sea no es un string de letras únicamente: se muestra un mensaje "El nombre debe contener letras únicamente. Por favor, reingrese.".
-
-![Caso de Uso 1](https://i.imgur.com/419jJIb.png)
-
-
-#### Caso de uso 2.
 **Título:** Registrar gasto personal
 
 **Actor:** Usuario
@@ -254,14 +296,14 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 2](https://i.imgur.com/Ir1iiQ6.png)
+![Caso de Uso 1](https://i.imgur.com/Ir1iiQ6.png)
 
-#### Caso de uso 3.
+#### Caso de uso 2.
 **Título:** Crear un grupo de amigos
 
 **Actor:** Usuario
 
-**Referencia:** Requerimiento Funcional: RF4
+**Referencia:** Requerimiento Funcional: RF6
 
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
@@ -283,9 +325,9 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 3](https://i.imgur.com/Jb6Xam6.png)
+![Caso de Uso 2](https://i.imgur.com/Jb6Xam6.png)
 
-#### Caso de uso 4.
+#### Caso de uso 3.
 **Título:** Balancear
 
 **Actor:** Usuario
@@ -315,7 +357,7 @@ Registrar nombre de usuario al inciar por primera vez la app.
 
 **10.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
-![Caso de Uso 4](https://i.imgur.com/rrlRvgL.png)
+![Caso de Uso 3](https://i.imgur.com/rrlRvgL.png)
 
 ### Bocetos de IU
 Prototipo: [Link al prototipo](https://www.figma.com/proto/lgVU9pjV62HU5Ybg9OlCT4/FIS?page-id=0%3A1&node-id=17%3A880&viewport=241%2C48%2C0.35&scaling=scale-down)
@@ -334,8 +376,8 @@ Menú:
 | ¿esta priorizado?    | 
 | ¿se identifica claramente el origen?    | 
 
-| El requerimiento | RF9 | RF10 | RF11 | RF12 | RF13 | RF14 | RF15 | RF16 |
-| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| El requerimiento | RF9 | RF10 | RF11 |
+| -------- | -------- | -------- | -------- | 
 | ¿es viable?   | 
 | ¿es consistente?    |
 | ¿es preciso y no ambiguo?    | 
