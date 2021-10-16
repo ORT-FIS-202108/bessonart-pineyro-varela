@@ -101,7 +101,7 @@ Utilizamos la rama **Hotfix** para solucionar problemas y errores.
 ---
 ## Elicitación
 
-### Lluvia de Ideas
+### Tormenta de Ideas
 Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas. Esta técnica permite liberar la creatividad de los equipos, generando un número extenso de ideas. Se obtuvo la siguiente lista de posibles funciones.
 - Ingresar nombre de usuario, para personalizar los mensajes a mostrar.
 - Elegir foto de perfil, de una lista predefinida.
@@ -118,18 +118,33 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos grupales.
 
 ### Entrevistas
-Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, y 23 años.
-  Agregar resumen entrevistas
+Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se vem interesados en el concepto de esta. 
+  **Agregar resumen entrevistas**
 ### Encuestas
-Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. 
-  Agregar resumen encuestas
+Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. No tiene tanto alcance como las entrevistas a la hora de obtener opiniones bien fundamentadas, pero da una perspectiva de la que un gran grupo de peronas (posibles usuario) buscaría en una aplicación de gestión de gastos grupales.
+  **Agregar resumen encuestas**
 ### Ingeniería Inversa
-#### Settle Up
-#### Splitwise
-
+Investigamos varias apps que se enfocanen la gestion de gastos personales. En particular realizamos
+Ingeniería inversa sobre dos aplicaciones Settle Up y Splitwise
+#### Conclusiones de ingeniería inversa de Settle Up
+- Se puede crear un grupo.
+- Dentro de cada grupo se muestran las compras realizadas y las deudas a saldar.
+- Se puede saldar una deuda.
+- Se puede ver un historial de las compras del grupo.
+- Al ingresar una deuda dentro de un grupo se puede seleccionar los participante, por lo tanto no todos los integrantes de un grupo deben obligatoriamente participar de todas las compras.
+- Al ingresar una compra, se le pide al usuario el encargado de la compra, el monto, la fecha de la compra, una descripción, quienes participaron de la compra y en que proporción.
+- Permite enviarle un mail a los miembros del grupo con las deudas pendiente del grupo.
+#### Conclusiones de ingeniería inversa de Splitwise
+- Los grupos pueden tener conceptos predeterminados, por ejemlo: viaje, pareja, roomates, etc..
+- Se permite poner una foto de perfil al grupo.
+- Se le permite al usuario hacer un grupo consigo mismo.
+- Dentro de cada grupo se muestran graficos con información sobre la deudas y las compras.
+- Pemite escanear recibos.
 
 ### Evidencia de actividades de investigación
 ### Referencias a fuentes de información
+- [Link a Splitwise](https://https://play.google.com/store/apps/details?id=com.Splitwise.SplitwiseMobile&hl=en&gl=US)
+- [Link a Settle Up](https://play.google.com/store/apps/details?id=cz.destil.settleup&hl=en&gl=US)
 ---
 ### Caracterización de usuarios: User Personas
 #### User Persona 1.
@@ -137,6 +152,7 @@ Las encuestas son una forma de "entrevistar" a grandes grupos para comprender su
 #### User Persona 2.
 ![User Persona 2](https://i.imgur.com/AFIuS4w.jpg)
 ### Modelo conceptual del problema
+![Modelo Conceptual](https://i.imgur.com/GwETzdP.png)
 ---
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
@@ -187,7 +203,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 #### RF6 Crear grupo
 
-**Origen:** Tormenta de ideas
+**Origen:** Tormenta de ideas - Ingeniería Inversa
 
 **Descripción:** El sistema debe contar con una funcionalidad que permita al usuario crear un grupo. El usuario deberá seleccionar los amigos (deben ser previamente registrados) de una lista y asignarle un nombre al grupo.
 
@@ -197,7 +213,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema no debe ser tratado con prioridad. No se le debe solicitar ningún dato personal. Y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
+**Descripción:** El usuario no debe ser tratado con prioridad. No se le debe solicitar ningún dato personal. Y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
 
 **Prioridad:** Alta
 
@@ -212,7 +228,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 #### RF9: Eliminar amigo de un grupo
 
-**Origen:** Tormenta de ideas
+**Origen:** Ingeniería inversa
 
 **Descripción:** El sistema debe contar con la funcionalidad de eliminar a un amigo de un grupo. Solo debe de permitírsele al usuario eliminar a un amigo si su deuda con cualquier integrante del grupo es 0(cero). Se le debe pedir al usuario confirmar la acción.
 
@@ -244,17 +260,11 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 #### RF13: Consultar historial de gastos grupales
 
-**Origen:** Tormenta de ideas
+**Origen:** Ingeniería inversa
 
 **Descripción:** El sistema debe contar con la funcionalidad de consultar el historial de gastos grupales. El usuario debe poder filtrar por antigüedad, amigo a cargo del gasto, o por monto.
 
 **Prioridad:** Baja
-
-#### RF14: Registrar nombre del usuario
-
-**Origen:** Tormenta de ideas
-
-**Descripción:** Al inciar por primera vez la app, se debe pedir un nombre para referirse al usuario.
 
 ---
 
