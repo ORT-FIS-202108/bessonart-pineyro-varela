@@ -100,7 +100,7 @@ Utilizamos la rama **Hotfix** para solucionar problemas y errores.
 
 ---
 ## Elicitación
-
+Como forma de investigar lo que usuario busca en una aplicación de gastos grupales, utilizamos las siguientes técnicas de elicitación:
 ### Tormenta de Ideas
 Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas. Esta técnica permite liberar la creatividad de los equipos, generando un número extenso de ideas. Se obtuvo la siguiente lista de posibles funciones.
 - Ingresar nombre de usuario, para personalizar los mensajes a mostrar.
@@ -371,23 +371,7 @@ Menú:
 ---
 ## Validación y verificación
 ### Verificar la especificación
-| El requerimiento | RF1 | RF2 | RF3 | RF4 | RF5 | RF6 | RF7 | RF8 | 
-| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-| ¿es viable?   | 
-| ¿es consistente?    |
-| ¿es preciso y no ambiguo?    | 
-| ¿es verificable?    |
-| ¿esta priorizado?    | 
-| ¿se identifica claramente el origen?    | 
-
-| El requerimiento | RF9 | RF10 | RF11 |
-| -------- | -------- | -------- | -------- | 
-| ¿es viable?   | 
-| ¿es consistente?    |
-| ¿es preciso y no ambiguo?    | 
-| ¿es verificable?    |
-| ¿esta priorizado?    | 
-| ¿se identifica claramente el origen?    | 
+**AGREGAR TABLA**
 ### Validar la solución con personas no involucradas en el proyecto
 ---
 ## Reflexión
