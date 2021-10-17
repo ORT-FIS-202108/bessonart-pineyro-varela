@@ -459,9 +459,9 @@ Como forma de verificar internamente que vamos por el camino correcto para const
 ![Tabla de verificación de los requerimientos](https://i.imgur.com/6e8BA0q.png)
 
 ### Validar la solución con personas no involucradas en el proyecto
-Hicimos la validación con dos posibles usuarios. Isabella (misma con la que realizamos una de las entrevistas iniciales), de 20 años, estudiante de medicina con varios grupos de amigos distintos y un grupo con el cual viaja todos los veranos. Y ...
+La validación se realizó con dos posibles usuarios. En primer lugar, Isabella (misma persona con la que realizamos una de las entrevistas iniciales), de 20 años, estudiante de medicina con varios grupos de amigos distintos y un grupo con el cual viaja todos los veranos. Y ...
 
-La validación con la primer usuaria fue positiva, quedó conforme en términos generales, pero nos hizo alguna recomendaciones a tener en cuenta. Nos comentó que para ella la sección de gastos personales estaba demás. Opinó que si nuestro objetivo eran los gastos dentro de un grupo de amigos, la parte de gastos personales no correspondia. También nos comento la posibilidad de agregar dos funcionalidades: el poder asignarle a cada amigo un número de teléfono o un mail para así poder recordarles de sus deudas y poder definir gastos constantes (mensuales, semanales) que no tengan la necesidad de ingresarlo todos los meses o semanas.
+La validación con Isabella fue positiva, quedó conforme en términos generales, pero hizo alguna recomendaciones a tener en cuenta. Opinó que si el objetivo es gestionar gastos dentro de grupos de amigos, la parte de gastos personales, si bien es útil, no corresponde. También comentó la posibilidad de agregar dos funcionalidades. La primera es asignarle a cada amigo un número de teléfono o mail, con el fin de poder recordarles sus deudas. La segunda es definir gastos constantes (mensuales, semanales), para que no sea necesario ingresarlo todos los meses o semanas.
 
 ---
 ## Reflexión
