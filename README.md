@@ -5,7 +5,7 @@
 - Florencia Varela - 254005
 ---
 ## Glosario
-- Usuario: dentro de este proyecto se considera usario al publico que usara la aplicación, no como un usuario que requiere un login.
+- Usuario: dentro de este proyecto se considera usario al público que usará la aplicación, no como un usuario que requiere un login.
 - 
 ## Repositorio Git
 
@@ -181,7 +181,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario borrar un gasto grupal. El usuario debe elegir el gasto a editar. Se le debe permitir al usuario modificar el monto y la descripción. No se le debe permitir al usuario modificar la moneda.
+**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario editar un gasto grupal. El usuario debe elegir el gasto a editar. Se le debe permitir al usuario modificar el monto y la descripción. No se le debe permitir al usuario modificar la moneda.
 
 **Prioridad:** Media
 
@@ -258,8 +258,68 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 ---
 
-### User Stories / Use Cases detallados
+### User Stories
+Las user stories describen una funcionalidad simple del sistema. Se trata de una explicación general para discutir el valor que provee el sistema a distintos interesados.
 
+#### ID: #1
+**Título:** Registrar gasto personal
+
+**Narrativa:** 
+  
+**Como** usuario 
+    
+**Quiero poder** registrar un nuevo gasto personal
+   
+**Para** guardarlo en el sistema
+
+**Criterios de aceptación:** 
+ * se registra en el sistema un nuevo gasto con su monto, moneda y descripción.
+
+#### ID: #2
+**Título:** Registrar amigo
+
+**Narrativa:** 
+  
+**Como** usuario 
+    
+**Quiero poder** ingresar el nombre y la preferencia de pago de un nuevo amigo
+   
+**Para** registrarlo en el sistema y luego unirlo a grupos.
+
+**Criterios de aceptación:** 
+ * se registra en el sistema un nuevo amigo con su nombre y preferencia de pago.
+
+#### ID: #3
+**Título:** Eliminar amigo de un grupo
+
+**Narrativa:** 
+  
+**Como** usuario 
+    
+**Quiero poder** seleccionar un amigo dentro de un grupo
+   
+**Para** eliminarlo de dicho grupo.
+
+**Criterios de aceptación:** 
+ * el amigo eliminado ya no pertenece al grupo.
+
+#### ID: #4
+**Título:** Eliminar amigo
+
+**Narrativa:** 
+  
+**Como** usuario 
+    
+**Quiero poder** seleccionar un amigo de una lista con todos mis amigos
+   
+**Para** eliminar al amigo seleccionado de mis amigos.
+
+**Criterios de aceptación:** 
+ * el amigo eliminado ya no pertenece a mis amigos, y toda referencia a él es eliminada, (excepto de los historiales).
+
+
+
+### Use Cases
 #### Caso de uso 1.
 
 **Título:** Registrar gasto personal
@@ -326,7 +386,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Actor:** Usuario
 
-**Referencia:** Requerimiento Funcional: RF9
+**Referencia:** Requerimiento Funcional: RF11
 
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
