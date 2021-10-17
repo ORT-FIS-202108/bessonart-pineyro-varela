@@ -124,7 +124,7 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 ### Entrevistas
 Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, 20, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de esta. 
 
-Una de las entrevistdas fue Isabella, estudiante de medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Una siendo la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas. Otra funcinalidad que nos comentó fue el poder fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un equipo hay subdivisiones de, por ejemplo, comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifique al usuario. 
+Una de las entrevistadas fue Isabella, estudiante de medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Una siendo la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas. Otra funcinalidad que nos comentó fue el poder fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un equipo hay subdivisiones de, por ejemplo, comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifique al usuario. 
 
 
 
@@ -132,11 +132,25 @@ Una de las entrevistdas fue Isabella, estudiante de medicina de 20 años. Tiene 
 **Agregar resumen entrevistas**
 
 ### Encuestas
-Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. No tiene tanto alcance como las entrevistas a la hora de obtener opiniones bien fundamentadas, pero da una perspectiva de la que un gran grupo de peronas (posibles usuario) buscaría en una aplicación de gestión de gastos grupales.
-  **Agregar resumen encuestas**
+Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. No tiene tanto alcance como las entrevistas a la hora de obtener opiniones bien fundamentadas, pero da una perspectiva de que buscaría un gran grupo de posibles usuarios en una aplicación de gestión de gastos grupales.
+
+Esta encuesta en particular fue realizada a personas en su mayoría (91.2%) de edades entre 18 y 25 años. Se pudo observar que solo un 21% de los encuestados utilizan una app para gestionar sus gastos personales, y tan solo un 12% utiliza una app para gestionar gastos grupales. Sin embargo, un 65% de los encuestados opinan que usarían una app para registrar gastos grupales en conjunto con sus grupos de amigos.
+
+Los encuestados que sí utilizan alguna app para gestionar sus gastos, encuentran que las funcionalidades más utiles son:
+* Poder consultar cuánto se gasto y en qué, para una buena gestión del dinero.
+* Dentro de cada grupo, cada persona puede agregar cuánto gastó y en qué, sin tener un "encargado" del grupo.
+* Relizar un cálculo automático de las deudas entre las distintas personas del grupo, y que se muestre de forma clara quién le debe cuánto a quién.
+
+Por último, se observó que las categorías de gastos grupales más comunes son:
+1. Salidas (Bares, Restaurantes, Cervecerías, Bailes, etc.)
+2. Comida
+3. Entretenimiento (entradas, aplicaciones como Netflix, etc.)
+4. Viajes (pasajes, entradas a atracciones turísticas, etc.)
+5. Consumos Básicos (agua, luz, teléfono, etc.)
+6. Alquileres (Casa, auto, etc.)
+
 ### Ingeniería Inversa
-Investigamos varias apps que se enfocanen la gestion de gastos personales. En particular realizamos
-Ingeniería inversa sobre dos aplicaciones Settle Up y Splitwise
+Investigamos varias apps que se enfocan en la gestión de gastos personales. En particular realizamos ingeniería inversa sobre dos aplicaciones Settle Up y Splitwise.
 #### Conclusiones de ingeniería inversa de Settle Up
 - Se puede crear un grupo.
 - Dentro de cada grupo se muestran las compras realizadas y las deudas a saldar.
@@ -146,11 +160,11 @@ Ingeniería inversa sobre dos aplicaciones Settle Up y Splitwise
 - Al ingresar una compra, se le pide al usuario el encargado de la compra, el monto, la fecha de la compra, una descripción, quienes participaron de la compra y en que proporción.
 - Permite enviarle un mail a los miembros del grupo con las deudas pendiente del grupo.
 #### Conclusiones de ingeniería inversa de Splitwise
-- Los grupos pueden tener conceptos predeterminados, por ejemlo: viaje, pareja, roomates, etc..
+- Los grupos pueden tener conceptos predeterminados, por ejemplo: viaje, pareja, roomates, etc..
 - Se permite poner una foto de perfil al grupo.
 - Se le permite al usuario hacer un grupo consigo mismo.
-- Dentro de cada grupo se muestran graficos con información sobre la deudas y las compras.
-- Pemite escanear recibos.
+- Dentro de cada grupo se muestran gráficos con información sobre la deudas y las compras.
+- Permite escanear recibos.
 
 ### Evidencia de actividades de investigación
 ### Referencias a fuentes de información
