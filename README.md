@@ -100,8 +100,8 @@ Utilizamos la rama **Hotfix** para solucionar problemas y errores.
 
 ---
 ## Elicitación
-
-### Lluvia de Ideas
+Como forma de investigar lo que usuario busca en una aplicación de gastos grupales, utilizamos las siguientes técnicas de elicitación:
+### Tormenta de Ideas
 Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas. Esta técnica permite liberar la creatividad de los equipos, generando un número extenso de ideas. Se obtuvo la siguiente lista de posibles funciones.
 - Ingresar nombre de usuario, para personalizar los mensajes a mostrar.
 - Elegir foto de perfil, de una lista predefinida.
@@ -118,18 +118,40 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos grupales.
 
 ### Entrevistas
-Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, y 23 años.
-  Agregar resumen entrevistas
-### Encuestas
-Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. 
-  Agregar resumen encuestas
-### Ingeniería Inversa
-#### Settle Up
-#### Splitwise
+Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, 20, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de esta. 
 
+Una de las entrevistdas fue Isabella, estudiante de medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Una siendo la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas. Otra funcinalidad que nos comentó fue el poder fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un equipo hay subdivisiones de, por ejemplo, comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifique al usuario. 
+
+
+
+
+**Agregar resumen entrevistas**
+
+### Encuestas
+Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. No tiene tanto alcance como las entrevistas a la hora de obtener opiniones bien fundamentadas, pero da una perspectiva de la que un gran grupo de peronas (posibles usuario) buscaría en una aplicación de gestión de gastos grupales.
+  **Agregar resumen encuestas**
+### Ingeniería Inversa
+Investigamos varias apps que se enfocanen la gestion de gastos personales. En particular realizamos
+Ingeniería inversa sobre dos aplicaciones Settle Up y Splitwise
+#### Conclusiones de ingeniería inversa de Settle Up
+- Se puede crear un grupo.
+- Dentro de cada grupo se muestran las compras realizadas y las deudas a saldar.
+- Se puede saldar una deuda.
+- Se puede ver un historial de las compras del grupo.
+- Al ingresar una deuda dentro de un grupo se puede seleccionar los participante, por lo tanto no todos los integrantes de un grupo deben obligatoriamente participar de todas las compras.
+- Al ingresar una compra, se le pide al usuario el encargado de la compra, el monto, la fecha de la compra, una descripción, quienes participaron de la compra y en que proporción.
+- Permite enviarle un mail a los miembros del grupo con las deudas pendiente del grupo.
+#### Conclusiones de ingeniería inversa de Splitwise
+- Los grupos pueden tener conceptos predeterminados, por ejemlo: viaje, pareja, roomates, etc..
+- Se permite poner una foto de perfil al grupo.
+- Se le permite al usuario hacer un grupo consigo mismo.
+- Dentro de cada grupo se muestran graficos con información sobre la deudas y las compras.
+- Pemite escanear recibos.
 
 ### Evidencia de actividades de investigación
 ### Referencias a fuentes de información
+- [Link a Splitwise](https://https://play.google.com/store/apps/details?id=com.Splitwise.SplitwiseMobile&hl=en&gl=US)
+- [Link a Settle Up](https://play.google.com/store/apps/details?id=cz.destil.settleup&hl=en&gl=US)
 ---
 ### Caracterización de usuarios: User Personas
 #### User Persona 1.
@@ -137,6 +159,7 @@ Las encuestas son una forma de "entrevistar" a grandes grupos para comprender su
 #### User Persona 2.
 ![User Persona 2](https://i.imgur.com/AFIuS4w.jpg)
 ### Modelo conceptual del problema
+![Modelo Conceptual](https://i.imgur.com/GwETzdP.png)
 ---
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
@@ -185,19 +208,19 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Prioridad:** Media
 
-#### RF6 Crear grupo
+#### RF6: Crear grupo
 
-**Origen:** Tormenta de ideas
+**Origen:** Tormenta de ideas - Ingeniería Inversa
 
 **Descripción:** El sistema debe contar con una funcionalidad que permita al usuario crear un grupo. El usuario deberá seleccionar los amigos (deben ser previamente registrados) de una lista y asignarle un nombre al grupo.
 
 **Prioridad:** Alta
 
-#### RF7: El usuario NO debe ser tratado con prioridad
+#### RF7: No deber haber login
 
-**Origen:** Tormenta de ideas
+**Origen:** Tormenta de ideas - Letra
 
-**Descripción:** El sistema no debe ser tratado con prioridad. No se le debe solicitar ningún dato personal. Y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
+**Descripción:** El sistema NO debe pedirle al usurio ningun tipo de login. No se le debe solicitar ningún dato personal. Y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
 
 **Prioridad:** Alta
 
@@ -212,7 +235,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 #### RF9: Eliminar amigo de un grupo
 
-**Origen:** Tormenta de ideas
+**Origen:** Ingeniería inversa
 
 **Descripción:** El sistema debe contar con la funcionalidad de eliminar a un amigo de un grupo. Solo debe de permitírsele al usuario eliminar a un amigo si su deuda con cualquier integrante del grupo es 0(cero). Se le debe pedir al usuario confirmar la acción.
 
@@ -244,17 +267,11 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 #### RF13: Consultar historial de gastos grupales
 
-**Origen:** Tormenta de ideas
+**Origen:** Entrevista - Ingeniería inversa
 
 **Descripción:** El sistema debe contar con la funcionalidad de consultar el historial de gastos grupales. El usuario debe poder filtrar por antigüedad, amigo a cargo del gasto, o por monto.
 
 **Prioridad:** Baja
-
-#### RF14: Registrar nombre del usuario
-
-**Origen:** Tormenta de ideas
-
-**Descripción:** Al inciar por primera vez la app, se debe pedir un nombre para referirse al usuario.
 
 ---
 
@@ -421,24 +438,13 @@ Menú:
 ---
 ## Validación y verificación
 ### Verificar la especificación
-| El requerimiento | RF1 | RF2 | RF3 | RF4 | RF5 | RF6 | RF7 | RF8 | 
-| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-| ¿es viable?   | 
-| ¿es consistente?    |
-| ¿es preciso y no ambiguo?    | 
-| ¿es verificable?    |
-| ¿esta priorizado?    | 
-| ¿se identifica claramente el origen?    | 
-
-| El requerimiento | RF9 | RF10 | RF11 |
-| -------- | -------- | -------- | -------- | 
-| ¿es viable?   | 
-| ¿es consistente?    |
-| ¿es preciso y no ambiguo?    | 
-| ¿es verificable?    |
-| ¿esta priorizado?    | 
-| ¿se identifica claramente el origen?    | 
+Como forma de verificar internamente que vamos por el camino correcto y si estamos construyendo el producto adecuado realizamos una evaluación de los requisitos funcionales mediante una checklist. Nos preguntamos si cada requisito era viable (factible de ser hecho), consistente (no se contradice con otro), preciso y no ambiguo, verificable, si estaba priorizado correctamente y si se identificaba claramanete su origen.
+![Tabla de verificación de los requerimientos](https://i.imgur.com/6e8BA0q.png)
 ### Validar la solución con personas no involucradas en el proyecto
+Hicimos la validación con dos posibles usuarios. Isabella (misma con la que realizamos una de las entrevistas iniciales), de 20 años, estudiante de medicina con varios grupos de amigos distintos y un grupo con el cual viaja todos los veranos. Y ...
+
+La validación con la primer usuaria fue positiva, quedó conforme en términos generales, pero nos hizo alguna recomendaciones a tener en cuenta. Nos comentó que para ella la sección de gastos personales estaba demás. Opinó que si nuestro objetivo eran los gastos dentro de un grupo de amigos, la parte de gastos personales no correspondia. También nos comento la posibilidad de agregar dos funcionalidades: el poder asignarle a cada amigo un número de teléfono o un mail para así poder recordarles de sus deudas y poder definir gastos contantes (mensuales, semanales) que no tengan la necesidad de ingresarlo todos los meses o semanas.
+
 ---
 ## Reflexión
 ### Detalle del trabajo individual
