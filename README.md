@@ -118,8 +118,15 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos grupales.
 
 ### Entrevistas
-Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se vem interesados en el concepto de esta. 
-  **Agregar resumen entrevistas**
+Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, 20, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de esta. 
+
+Una de las entrevistdas fue Isabella, estudiante de medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Una siendo la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas. Otra funcinalidad que nos comentó fue el poder fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un equipo hay subdivisiones de, por ejemplo, comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifique al usuario. 
+
+
+
+
+**Agregar resumen entrevistas**
+
 ### Encuestas
 Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. No tiene tanto alcance como las entrevistas a la hora de obtener opiniones bien fundamentadas, pero da una perspectiva de la que un gran grupo de peronas (posibles usuario) buscaría en una aplicación de gestión de gastos grupales.
   **Agregar resumen encuestas**
@@ -197,11 +204,11 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario borrar un gasto grupal. El usuario debe elegir el gasto a editar. Se le debe permitir al usuario modificar el monto y la descripción. No se le debe permitir al usuario modificar la moneda.
+**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario editar un gasto grupal. El usuario debe elegir el gasto a editar. Se le debe permitir al usuario modificar el monto y la descripción. No se le debe permitir al usuario modificar la moneda.
 
 **Prioridad:** Media
 
-#### RF6 Crear grupo
+#### RF6: Crear grupo
 
 **Origen:** Tormenta de ideas - Ingeniería Inversa
 
@@ -209,11 +216,11 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Prioridad:** Alta
 
-#### RF7: El usuario NO debe ser tratado con prioridad
+#### RF7: No deber haber login
 
-**Origen:** Tormenta de ideas
+**Origen:** Tormenta de ideas - Letra
 
-**Descripción:** El usuario no debe ser tratado con prioridad. No se le debe solicitar ningún dato personal. Y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
+**Descripción:** El sistema NO debe pedirle al usurio ningun tipo de login. No se le debe solicitar ningún dato personal. Y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
 
 **Prioridad:** Alta
 
@@ -371,8 +378,13 @@ Menú:
 ---
 ## Validación y verificación
 ### Verificar la especificación
-**AGREGAR TABLA**
+Como forma de verificar internamente que vamos por el camino correcto y si estamos construyendo el producto adecuado realizamos una evaluación de los requisitos funcionales mediante una checklist. Nos preguntamos si cada requisito era viable (factible de ser hecho), consistente (no se contradice con otro), preciso y no ambiguo, verificable, si estaba priorizado correctamente y si se identificaba claramanete su origen.
+![Tabla de verificación de los requerimientos](https://i.imgur.com/6e8BA0q.png)
 ### Validar la solución con personas no involucradas en el proyecto
+Hicimos la validación con dos posibles usuarios. Isabella (misma con la que realizamos una de las entrevistas iniciales), de 20 años, estudiante de medicina con varios grupos de amigos distintos y un grupo con el cual viaja todos los veranos. Y ...
+
+La validación con la primer usuaria fue positiva, quedó conforme en términos generales, pero nos hizo alguna recomendaciones a tener en cuenta. Nos comentó que para ella la sección de gastos personales estaba demás. Opinó que si nuestro objetivo eran los gastos dentro de un grupo de amigos, la parte de gastos personales no correspondia. También nos comento la posibilidad de agregar dos funcionalidades: el poder asignarle a cada amigo un número de teléfono o un mail para así poder recordarles de sus deudas y poder definir gastos contantes (mensuales, semanales) que no tengan la necesidad de ingresarlo todos los meses o semanas.
+
 ---
 ## Reflexión
 ### Detalle del trabajo individual
