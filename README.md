@@ -7,6 +7,9 @@
 ## Glosario
 - Usuario: dentro de este proyecto se considera usario al público que usará la aplicación, no como un usuario que requiere un login.
 - Merge: fusionar dos ramas.
+- Balancear: eliminar todas las deudas
+- Acreedor: persona a la que le deben dinero
+- Deudor: persona que debe dinero
 
 ## Repositorio Git
 
@@ -123,6 +126,13 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 
 ### Entrevistas
 Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, 20, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de esta. 
+Se utilizaron en todas las entrevistas las siguientes preguntas:
+1) ¿Qué gastos crees que son más importantes registrar?
+2) ¿Te interesa usar una app con tus amigos que mantenga un registro de deudas? ¿La usarías?
+3) ¿Te gustaría que tuviera alguna función en particular?
+4) ¿Crees que sería interesante tener una función dentro de la app que ayude al ahorro, personal o grupal?
+5) ¿Preferís que los grupos sean generales o tengan objetivos? Por ejemplo, que un grupo de viaje tenga distintas features que un grupo de amigos de facultad, etc.
+6) ¿Crees que es mejor(o cuál usas más) "uno paga y se divide" o "cada uno paga una cosa distinta"?
 
 Una de las entrevistadas fue Isabella, estudiante de Medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Una siendo la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas. Otra funcionalidad que nos comentó fue el poder fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un grupo hay subdivisiones de comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifique al usuario. 
 
@@ -270,8 +280,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema debe contar con la funcionalidad de balancear las deudas de un grupo. Para esto, se debe desplegar una lista de las deudas del grupo, y permitir al usuario seleccionar una deuda para pagarla. Una vez seleccionada, se le debe mostrar al usuario el monto total y pedir que se ingrese el monto a pagar. Se le debe pedir al usuario confirmar la acción. Luego de realizado el balanceo el sistema debe mostrar la información actualizada.
-
+**Descripción:** El sistema debe contar con la funcionalidad de balancear las deudas de un grupo. Para esto, el sistema indica cuanto debe pagar cada uno y a quien para elminar todas las deudas con el menor numero de pagos posibles 
 **Prioridad:** Alta 
 
 #### RF12: Consultar historial de gastos personales
@@ -289,6 +298,22 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 **Descripción:** El sistema debe contar con la funcionalidad de consultar el historial de gastos grupales. El usuario debe poder filtrar por antigüedad, amigo a cargo del gasto, o por monto.
 
 **Prioridad:** Baja
+
+#### RF14 Pagar deuda
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe contar con la funcionalidad de pagar las deudas de un grupo. Para esto, se debe desplegar una lista de los deudores del grupo junto con sus deudas, y permitir al usuario seleccionar un deudor. Una vez seleccionado, se le debe mostrar al usuario los acreedores junto con sus deudas. Se le debe pedir al usuario confirmar la acción e ingeresar el monto a pagar. Ese monto no puede ser mayor que la deuda del deudor o del acreedor. Luego de realizado el balanceo el sistema debe mostrar la información actualizada.
+
+**Prioridad:** Alta
+
+#### RF15 Consultar Deudas
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe contar con la funcionalidad de visualizar las deudas dentro un grupo
+
+**Prioridad:** Alta
 
 ---
 
@@ -426,26 +451,49 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
 | **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
-| **3.** Selecciona opción "Pagar" | **4.** Muestra un modal con una lista con las deudas |
-| **5.** Selecciona una de las deudas de la lista | **6.** Muestra el monto total y pide que se ingrese el monto a pagar |
-| **7.** Ingresa monto a pagar (número entre 1 y el monto total)| **8.** Muestra los datos de la deuda a cancelar (monto ingresado, monto restante, personas involucradas) y pide confirmación |
-| **9.** Confirma los datos | **10.** Actualiza la deuda con el monto restante |
+| **3.** Selecciona opción "Balancear" | **4.** Muestra la cantidades que debe pagar cada persona y a quien. Permite confirmar o cancelar el balance|
+| **5.** Confirma los datos | **6.** Elimina todas las deudas|
 
 **Cursos alternativos:**
 
 **2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
 
-**5.1** Si no se selecciona ninguna deuda: se muestra un mensaje "Debes seleccionar una deuda".
+**5.1** Si el usario presiona cancelar no se efectuan cambios
 
-**7.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
 
-**7.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto total. Por favor, reingrese".
-
-**9.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
-
-**10.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
 ![Caso de Uso 3](https://i.imgur.com/rrlRvgL.png)
+
+#### Caso de uso 4
+**Título:** Pagar deuda
+
+**Actor**Usario 
+
+**Referencia:**
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
+| **3.** Selecciona opción "Pagar" | **4.** Muestra una lista de los deudores con el monto asociado|
+| **5.** Selecciona uno de los deudores de la lista |**6.** Ofrece lista acreedores dentro del grupo con el monto asociado |
+| **7.** Seleciona un acreedor |**8.** Muestra el monto maximo(el menor entre los montos del deudor y acreedor) y pide que se ingrese el monto a pagar|
+| **9.** Ingresa monto a pagar (número entre 1 y el monto maximo)|  **10.** Muestra todos los datos del pago y solicita confirmacion|
+| **11.** Confirma los datos | **12.** Se actualizan el deudor y el acreedor|
+
+**Cursos alternativos:**
+
+**2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
+
+**5.1** Si no se selecciona ninguna persona: se muestra un mensaje "Debes seleccionar una persona".
+
+**9.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
+
+**9.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto maximo. Por favor, reingrese".
+
+**11.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
+
+
 
 ### Bocetos de IU
 Prototipo: [Link al prototipo](https://www.figma.com/proto/lgVU9pjV62HU5Ybg9OlCT4/FIS?page-id=0%3A1&node-id=17%3A880&viewport=241%2C48%2C0.35&scaling=scale-down)
