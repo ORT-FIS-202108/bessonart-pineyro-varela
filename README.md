@@ -124,12 +124,10 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 ### Entrevistas
 Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, 20, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de esta. 
 
-Una de las entrevistadas fue Isabella, estudiante de medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Una siendo la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas. Otra funcinalidad que nos comentó fue el poder fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un equipo hay subdivisiones de, por ejemplo, comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifique al usuario. 
+Una de las entrevistadas fue Isabella, estudiante de Medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Una siendo la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas. Otra funcionalidad que nos comentó fue el poder fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un grupo hay subdivisiones de comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifique al usuario. 
 
+La segunda entrevista realizada fue a Lucía, una estudiante avanzada de Licenciatura en Comunicación de 23 años. La mayoría de sus gastos son personales, sin embargo, suele juntarse con sus grupos de amigos todas las semanas. Se mostró entusiasmada con la idea porque con sus amigas, con quienes comparte gastos usualmente, tenían la necesidad de una aplicación que volviera la tarea más fácil. Comentó que sus gastos suelen pertenecer a las categorías de entretenimiento, salud y bienestar, comida, transporte e indumentaria. Sugirió que se agregué una funcionalidad dentro de los grupos donde se pueda especificar si un gasto corresponde a una parte del grupo solamente. Por ejemplo, Lucía comentaba que cuando se junta con sus amigas a merendar, suelen comprar la merienda todas juntas pero paga una sola persona. Si cada una compra algo para tomar distinto, si bien la comida se divide entre todas, las deudas serán distintas, dependiendo del gasto de la bebida de cada una.
 
-
-
-**Agregar resumen entrevistas**
 
 ### Encuestas
 Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. No tiene tanto alcance como las entrevistas a la hora de obtener opiniones bien fundamentadas, pero da una perspectiva de que buscaría un gran grupo de posibles usuarios en una aplicación de gestión de gastos grupales.
@@ -239,7 +237,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas - Letra
 
-**Descripción:** El sistema NO debe pedirle al usurio ningun tipo de login. No se le debe solicitar ningún dato personal. Y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
+**Descripción:** El sistema no debe pedirle al usuario ningún tipo de login. No se le debe solicitar ningún dato personal y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
 
 **Prioridad:** Alta
 
@@ -457,12 +455,13 @@ Menú:
 ---
 ## Validación y verificación
 ### Verificar la especificación
-Como forma de verificar internamente que vamos por el camino correcto y si estamos construyendo el producto adecuado realizamos una evaluación de los requisitos funcionales mediante una checklist. Nos preguntamos si cada requisito era viable (factible de ser hecho), consistente (no se contradice con otro), preciso y no ambiguo, verificable, si estaba priorizado correctamente y si se identificaba claramanete su origen.
+Como forma de verificar internamente que vamos por el camino correcto para construir el producto adecuado, realizamos una evaluación de los requisitos funcionales mediante una checklist. Nos preguntamos si cada requisito era viable (factible de ser hecho), consistente (no se contradice con otro), preciso y no ambiguo, verificable, si estaba priorizado correctamente y si se identificaba claramente su origen.
 ![Tabla de verificación de los requerimientos](https://i.imgur.com/6e8BA0q.png)
+
 ### Validar la solución con personas no involucradas en el proyecto
 Hicimos la validación con dos posibles usuarios. Isabella (misma con la que realizamos una de las entrevistas iniciales), de 20 años, estudiante de medicina con varios grupos de amigos distintos y un grupo con el cual viaja todos los veranos. Y ...
 
-La validación con la primer usuaria fue positiva, quedó conforme en términos generales, pero nos hizo alguna recomendaciones a tener en cuenta. Nos comentó que para ella la sección de gastos personales estaba demás. Opinó que si nuestro objetivo eran los gastos dentro de un grupo de amigos, la parte de gastos personales no correspondia. También nos comento la posibilidad de agregar dos funcionalidades: el poder asignarle a cada amigo un número de teléfono o un mail para así poder recordarles de sus deudas y poder definir gastos contantes (mensuales, semanales) que no tengan la necesidad de ingresarlo todos los meses o semanas.
+La validación con la primer usuaria fue positiva, quedó conforme en términos generales, pero nos hizo alguna recomendaciones a tener en cuenta. Nos comentó que para ella la sección de gastos personales estaba demás. Opinó que si nuestro objetivo eran los gastos dentro de un grupo de amigos, la parte de gastos personales no correspondia. También nos comento la posibilidad de agregar dos funcionalidades: el poder asignarle a cada amigo un número de teléfono o un mail para así poder recordarles de sus deudas y poder definir gastos constantes (mensuales, semanales) que no tengan la necesidad de ingresarlo todos los meses o semanas.
 
 ---
 ## Reflexión
