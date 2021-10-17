@@ -267,7 +267,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 #### RF13: Consultar historial de gastos grupales
 
-**Origen:** Ingeniería inversa
+**Origen:** Entrevista - Ingeniería inversa
 
 **Descripción:** El sistema debe contar con la funcionalidad de consultar el historial de gastos grupales. El usuario debe poder filtrar por antigüedad, amigo a cargo del gasto, o por monto.
 
