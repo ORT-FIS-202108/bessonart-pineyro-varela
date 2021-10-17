@@ -6,7 +6,8 @@
 ---
 ## Glosario
 - Usuario: dentro de este proyecto se considera usario al público que usará la aplicación, no como un usuario que requiere un login.
-- 
+- Merge: fusionar dos ramas.
+
 ## Repositorio Git
 
 ### Creación y uso de repositorios locales y remotos
@@ -93,9 +94,12 @@ A partir del décimo commit empezamos a implementar el siguiente sistema de vers
 Este sistema de versionado está basado en [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/ "Conventional Commits").
 ### Uso de ramas separadas de 'main'
 Utilizamos dos ramas principales, **Develop** y **Main**.
-Main: push final, cuando funciona la app.
-Develop: para ir desarrollando la app.
-Utilizamos la rama **Hotfix** para solucionar problemas y errores.
+
+**Main:** Es la rama principal, en ella se mantiene una versión estable del código. 
+
+**Develop:** Se utiliza para ir desarrollando la app. Permite que la rama main funcione correctamente aunque se estén realizando cambios en el código. Cuando el cambio (una mejora, una nueva funcionalidad, etc.) se haya implementado correctamente, se hará un merge de la rama develop a main.
+
+Además, utilizamos la rama **Hotfix** para solucionar problemas y errores que surgen en la rama main.
 ### Resumen de commits y evolución del proyecto
 
 ---
