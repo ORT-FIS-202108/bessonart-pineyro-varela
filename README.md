@@ -150,7 +150,8 @@ Por último, se observó que las categorías de gastos grupales más comunes son
 6. Alquileres (Casa, auto, etc.)
 
 ### Ingeniería Inversa
-Investigamos varias apps que se enfocan en la gestión de gastos personales. En particular realizamos ingeniería inversa sobre dos aplicaciones Settle Up y Splitwise.
+La ingeniería inversa es una técnica de elicitación independiente que implica examinar otras aplicaciones de gestión de gastos. Al realizar esto, se puede observar qué funcionalidades se repiten y son útiles.
+Investigamos varias apps que se enfocan en la gestión de gastos personales. En particular, realizamos ingeniería inversa sobre dos aplicaciones Settle Up y Splitwise.
 #### Conclusiones de ingeniería inversa de Settle Up
 - Se puede crear un grupo.
 - Dentro de cada grupo se muestran las compras realizadas y las deudas a saldar.
