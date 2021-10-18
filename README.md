@@ -207,7 +207,6 @@ Investigamos varias apps que se enfocan en la gestión de gastos personales. En 
 - Permite escanear recibos.
 
 ### Evidencia de actividades de investigación
-<<<<<<< HEAD
 Como evidencia de las actividades de investigación, adjuntamos algunos gráficos de las respuestas de la encuesta.
 
 ![Gráfico Encuesta 1](img/Encuesta_1.jpg)
@@ -218,9 +217,10 @@ Como evidencia de las actividades de investigación, adjuntamos algunos gráfico
 
 ![Gráfico Encuesta 4](img/Encuesta_4.jpg)
 
-=======
-No se grabaron las entrevistas por inconvenientes con programas de grabacion y porque algunos de los entrevistados solicitaron no ser grabados. Solo quedaron registrados los apuntes presentes en la seccion de entrevistas.
->>>>>>> 66e85ae44dd131290319698dfaa2d6126b4f3fb8
+Las entrevistas no se grabaron porque surgieron algunos inconvenientes con los programas de grabación y porque algunos de los entrevistados solicitaron no ser grabados. Solo quedaron registrados las notas, que luego fueron resumidas en la sección de entrevistas.
+
+En la siguiente sección se encuentran los links a las aplicaciones que se utilizaron para la técnica de ingeniería inversa.
+
 ### Referencias a fuentes de información
 - [Link a Splitwise](https://https://play.google.com/store/apps/details?id=com.Splitwise.SplitwiseMobile&hl=en&gl=US)
 - [Link a Settle Up](https://play.google.com/store/apps/details?id=cz.destil.settleup&hl=en&gl=US)
@@ -538,13 +538,14 @@ Menú:
 ### Verificar la especificación
 Como forma de verificar internamente que vamos por el camino correcto para construir el producto adecuado, realizamos una evaluación de los requisitos funcionales mediante una checklist. Nos preguntamos si cada requisito era viable (factible de ser hecho), consistente (no se contradice con otro), preciso y no ambiguo, verificable, si estaba priorizado correctamente y si se identificaba claramente su origen.
 
-
 ![Tabla de verificación de los requerimientos](https://i.imgur.com/sgHeDQz.png)
 
 ### Validar la solución con personas no involucradas en el proyecto
 La validación se realizó con dos posibles usuarios, Isabella, de 20 años, (misma persona con la que realizamos una de las entrevistas iniciales), y Andrés, también de 20 años, estudiante de Psicología y emprendedor.
 
 La validación con Isabella fue positiva, quedó conforme en términos generales, pero hizo alguna recomendaciones a tener en cuenta. Opinó que si el objetivo es gestionar gastos dentro de grupos de amigos, la parte de gastos personales, si bien es útil, no corresponde. También comentó la posibilidad de agregar dos funcionalidades. La primera es asignarle a cada amigo un número de teléfono o mail, con el fin de poder recordarles sus deudas. La segunda es definir gastos constantes (mensuales, semanales), para que no sea necesario ingresarlo todos los meses o semanas.
+
+La validación con Andrés también fue positiva. Le entusiasmó la idea y comentó que utilizaría la aplicación con sus grupos de amigos. Sugirió además agregar algunas funcionalidades que, en su opinión, mejorarían la aplicación y ampliarían su utilidad. En primer lugar, agregar una opción que ayude al ahorro, personal o grupal, dentro de la cual se pueda definir un ingreso y un máximo de gastos, mensuales. Planteó que, además, sería interesante que la aplicación te recuerde cuando estés por alcanzar tu máximo de gastos, y que al final del mes, se agregue automáticamente lo que se ahorró durante dicho mes a una alcancía digital, que te permita ver tu ahorro total. Por otro lado, también sugirió que se agregué una funcionalidad que te permita agregar varios gastos grupales, correspondientes a distintas personas, a la vez. Por ejemplo, si para un almuerzo A compró carne (para A, B y C) y bebidas (solo para A y B), que en una sola vez se pueda ingresar carne, su costo, correspondiente a A, B y C, y bebidas, su costo, correspondientes a A y B. Por último, comentó que también le interesaría la posibilidad de que la aplicación permita usuarios, para así cada persona del grupo tiene acceso a la gestión del mismo. 
 
 ---
 ## Reflexión
@@ -568,8 +569,6 @@ La temática me resultó un poco aburrida, y la letra un poco confusa. Esta no e
 El proyecto lo realizamos en buenos tiempo y en general el avance fue bastante constante. Hubo algunos problemas de comunicación entre nosotros, que se hubieran resulto más rápido y mejor si nos hubiésemos sentado a plantear concretamente nuestras ideas del proyecto. Y si todos hubiésemos avanzado al mismo ritmo y simultáneamente, pero por situaciones de evaluaciones de otras materias fue difícil. 
 
 Al comienzo nos habíamos dividido las tareas a medida que avanzábamos, pero rápidamente nos dimos cuenta de que no era efectivo, por lo que todos aportamos en todas las áreas en distintas medidas. La única tarea en la que participé solo yo fue el armado de los bocetos de UI en la herramienta Figma, esto se debió a que tengo una amiga que estudia diseño gráfico y me dio algunos consejos para el uso de la herramienta. Igualmente antes de agregarlos al proyecto fueron aprobados por el resto de los integrantes.
-
-
 
 ### Técnicas aplicadas y aprendizajes
 En general para el proyecto nos desempeñamos como un buen equipo. Nos dividimos las tareas y pudimos avanzar de forma constante y en conjunto. Ya avanzado el proyecto, surgieron algunos inconvenientes que nos llevaron a no cumplir con los tiempos que nos habíamos establecido en un comienzo.
