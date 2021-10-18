@@ -357,7 +357,9 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 **Prioridad:** Alta
 
 ---
-### Requerimientos Funcionales
+### Requerimientos No Funcionales
+Los requerimientos no funcionales refieren a restricciones a los servicios provistos por el sistema, como aspectos técnicos. También refieren a atributos de calidad externa e interna del sistema.
+
 | Identificación | Descripción                                                      | Prioridad |
 | -------------- |:---------------------------------------------------------------- | --------- |
 | RNF1           | Primary Color: Deep Purple 700.                                  | Alta      |
@@ -367,6 +369,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 | RNF5           | El sistema deberá funcionar en Android 12.                       | Alta      |
 | RNF6           | Implementar el uso de "Chips" para la descripción de los gastos. | Baja      |
 | RNF7			 | La aplicación debe de llevar el nombre de MisGastos.				| Alta		|
+|RNF8            | Los lenguajes a utilizar son HTML, JavaScript y CSS.             | Alta      |
 ---
 ### User Stories
 Las user stories describen una funcionalidad simple del sistema. Se trata de una explicación general para discutir el valor que provee el sistema a distintos interesados.
