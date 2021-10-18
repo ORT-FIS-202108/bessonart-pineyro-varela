@@ -529,6 +529,12 @@ La validación con Isabella fue positiva, quedó conforme en términos generales
 #### Luca:
 #### Sofía:
 #### Florencia:
+En aspectos generales, el proyecto fue interesante por las herramientas utilizadas y los conceptos aplicados. Me resultó interesante aprender sobre las técnicas y herramientas que se utilizan actualmente y poder ponerlas en práctica. Pero hubiera estado bueno que nos dieran un poco más de base para el trabajo en equipo en el área profesional. 
+La temática me resultó un poco aburrida, y la letra un poco confusa. Esta no especificaba bien que se pedía en la entrega, solo daba unos títulos un tanto abstractos sobre las secciones del documento a entregar. La temática de “MisGastos” me resulto un poco limitante, por lo que con el grupo decidimos darle una perspectiva más grupal, en el sentido de “mis gastos dentro de un grupo y la gestión de estos”. 
+El proyecto lo realizamos en buenos tiempo y en general el avance fue bastante constante. Hubo algunos problemas de comunicación entre nosotros, que se hubieran resulto más rápido y mejor si nos hubiésemos sentado a plantear concretamente nuestras ideas del proyecto. Y si todos hubiésemos avanzado al mismo ritmo y simultáneamente, pero por situaciones de evaluaciones de otras materias fue difícil. 
+Al comienzo nos habíamos dividido las tareas a medida que avanzábamos, pero rápidamente nos dimos cuenta de que no era efectivo, por lo que todos aportamos en todas las áreas en distintas medidas. La única tarea en la que participé solo yo fue el armado de los bocetos de UI en la herramienta Figma, esto se debió a que tengo una amiga que estudia diseño gráfico y me dio algunos consejos para el uso de la herramienta. Igualmente antes de agregarlos al proyecto fueron aprobados por el resto de los integrantes.
+
+
 
 ### Técnicas aplicadas y aprendizajes
 En general para el proyecto nos desempeñamos como un buen equipo. Nos dividimos las tareas y pudimos avanzar de forma constante y en conjunto. Ya avanzado el proyecto, surgieron algunos inconvenientes que nos llevaron a no cumplir con los tiempos que nos habíamos establecido en un comienzo.
