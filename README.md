@@ -104,6 +104,17 @@ Utilizamos dos ramas principales, **Develop** y **Main**.
 
 Además, utilizamos la rama **Hotfix** para solucionar problemas y errores que surgen en la rama main.
 ### Resumen de commits y evolución del proyecto
+Durante la evolución de este proyecto, se realizaron los commits a medida que se realizaba un nuevo cambio o una nueva feature. De esta forma, se logró organizar cada commit como un cambio particular e independiente, pudiendo ver claramente la evolución del proyecto commit a commit. 
+
+Como evidencia de esto, se adjuntan algunos commits realizados. 
+
+![Evidencia Commits 1](https://i.imgur.com/8zbpF5k.jpg)
+
+![Evidencia Commits 2](https://i.imgur.com/DldYZWt.jpg)
+
+![Evidencia Commits 3](https://i.imgur.com/PMs389q.png)
+
+La evolución del proyecto se puede consultar en el [Repositorio](https://github.com/ORT-FIS-202108/bessonart-pineyro-varela "repositorio").
 
 ---
 ## Elicitación
