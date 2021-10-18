@@ -561,8 +561,14 @@ La validación con Andrés también fue positiva. Le entusiasmó la idea y comen
 ---
 ## Reflexión
 ### Detalle del trabajo individual
-
 #### Luca:
+Este proyecto fue una experiencia diferente a entregas anteriores, al tratarse de una consigna abierta en la que el estudiante podía encaminar su idea dentro de un marco. Esto permitió desarrollar y evaluar la creatividad además de promover un diálogo interesante y enriquecedor dentro de los grupos, es por esto que considero altamente positivo esta estructura de propuesta. Valoro especialmente que se tratase de una propuesta que escapa al paradigma, innova y permite trabajar de manera holística diversas áreas.
+
+En el polo opuesto, fue realmente desafiante que la propuesta limitase la actividad a git hub, si bien comprendo y valoro que detrás de esto se encuentre el objetivo de familiarizarnos con la herramienta, para este trabajo particular me resultó dificultosa a nivel trabajo grupal y el uso por ejemplo de una rama develop me resulto incesario. Siento que otras herramientas hubiesen sido más prácticas como por ejemplo el caso de Google docs.
+
+En lo que respecta el trabajo colaborativo, lo considero exitoso. Todos los integrantes cumplieron con sus partes en tiempo y forma. Evalúo como altamente positiva la dinámica de juntarnos una vez por semana. Al perderse esta, nos descoordinamos un poco pero no significó mayor dificultad.  Descato especialmente que, con escasas excepciones, todos los integrantes participamos en todas los fragmentos del trabajo.  Además, en esta excepción previamente mencionada, los estudiantes que no realizaron esa parte, aportaron comentarios, recomendaciones y demás devoluciones.
+
+En lo que a mí respecta, considero que mi trabajo fue bueno pero también reconozco que debo mejorar mis habilidades comunicativas y a nivel de organización. Muchas veces me es dificultoso transmitir mis ideas lo que generó algún malentendido pero tampoco fue una complicación mayor.
 
 #### Sofía:
 En general, el proyecto me pareció desafiante. Nos permitió aprender a utilizar nuevas tecnologías, como Git, GitHub y Markdown, que son utilizadas en el mercado laboral actualmente, pero requirió de nuestra parte un tiempo extra en lograr comprender como funcionaban dichas tecnologías. Esto generó que se cometieran algunos errores al principio, especialmente con los commits y el uso de las distintas ramas. 
