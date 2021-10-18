@@ -494,10 +494,15 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 **Cursos alternativos:**
 
 **2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
+
 **3.1** Si no se selecciona ninguna deuda: se muestra un mensaje "Debes seleccionar una deuda".
+
 **5.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
+
 **5.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto total. Por favor, reingrese".
+
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
+
 **8.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
 ![Caso de Uso 3 UI](img/Boceto_CU_3.png)
