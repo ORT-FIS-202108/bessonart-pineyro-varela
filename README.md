@@ -445,7 +445,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 1 UI](img/Boceto_CU_1.jpeg)
+![Caso de Uso 1 UI](img/Boceto_CU_1.png)
 
 #### Caso de uso 2.
 **Título:** Crear un grupo de amigos
@@ -474,7 +474,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 2 UI](img/Boceto_CU_2.jpeg)
+![Caso de Uso 2 UI](img/Boceto_CU_2.png)
 
 #### Caso de uso 3.
 **Título:** Pagar deuda
@@ -499,14 +499,14 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 **8.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
-![Caso de Uso 3 UI](img/Boceto_CU_3.jpeg)
+![Caso de Uso 3 UI](img/Boceto_CU_3.png)
 
 ### Bocetos de IU
 Prototipo: [Link al prototipo](https://www.figma.com/proto/lgVU9pjV62HU5Ybg9OlCT4/FIS?page-id=0%3A1&node-id=17%3A880&viewport=241%2C48%2C0.35&scaling=scale-down)
 
 Menú:
 
-![Menú](img/Boceto_Menu.jpeg)
+![Menú](img/Boceto_Menu.png)
 
 ---
 ## Validación y verificación
@@ -530,6 +530,10 @@ La validación con Isabella fue positiva, quedó conforme en términos generales
 #### Florencia:
 
 ### Técnicas aplicadas y aprendizajes
+En general para el proyecto nos desempeñamos como un buen equipo. Nos dividimos las tareas y pudimos avanzar de forma constante y en conjunto. Ya avanzado el proyecto, surgieron algunos inconvenientes que nos llevaron a no cumplir con los tiempos que nos habíamos establecido en un comienzo. 
+El mayor inconveniente que tuvimos fue una falta de comunicación sobre la idea general del proyecto. Ya avanzado en este, nos percatamos que los conceptos que teníamos de la función balancear eran completamente distintos. Eso generó que se cambiaran completamente partes importantes del proyecto, como algunos requerimientos funcionales y un caso de uso.
+Otro obstáculo que se nos presentó, en este caso de forma constante durante todo el proyecto, fue la adaptación a los formatos de commit. Éstos los establecimos con la idea de simplificar la lectura de los commits y poder ver claramente el avance, pero a la hora de poner en práctica estos formatos, nos surgieron problemas. Al comienzo nos olvidábamos de hacerlos en el formato correcto y luego si uno de nosotros hacia muchos cambios debía poner una descripción muy extensa al commit y se desviaba de la forma planteada originalmente.
+Al iniciar el proyecto, habíamos divido las tareas de forma que cada uno hiciera una y luego se iba a revisar en conjunto y se aprobaban y se hacía el merge con la rama main. Eso en la práctica no nos resultó tan cómodo, por lo que, al final, terminamos todos participando de todas las partes y haciendo cambios en las mismas secciones en simultáneo, lo que trajo algunos choques entre versiones.
 
 ---
 ## Bibliografía
