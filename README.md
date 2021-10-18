@@ -530,9 +530,12 @@ La validación con Isabella fue positiva, quedó conforme en términos generales
 #### Florencia:
 
 ### Técnicas aplicadas y aprendizajes
-En general para el proyecto nos desempeñamos como un buen equipo. Nos dividimos las tareas y pudimos avanzar de forma constante y en conjunto. Ya avanzado el proyecto, surgieron algunos inconvenientes que nos llevaron a no cumplir con los tiempos que nos habíamos establecido en un comienzo. 
+En general para el proyecto nos desempeñamos como un buen equipo. Nos dividimos las tareas y pudimos avanzar de forma constante y en conjunto. Ya avanzado el proyecto, surgieron algunos inconvenientes que nos llevaron a no cumplir con los tiempos que nos habíamos establecido en un comienzo.
+
 El mayor inconveniente que tuvimos fue una falta de comunicación sobre la idea general del proyecto. Ya avanzado en este, nos percatamos que los conceptos que teníamos de la función balancear eran completamente distintos. Eso generó que se cambiaran completamente partes importantes del proyecto, como algunos requerimientos funcionales y un caso de uso.
+
 Otro obstáculo que se nos presentó, en este caso de forma constante durante todo el proyecto, fue la adaptación a los formatos de commit. Éstos los establecimos con la idea de simplificar la lectura de los commits y poder ver claramente el avance, pero a la hora de poner en práctica estos formatos, nos surgieron problemas. Al comienzo nos olvidábamos de hacerlos en el formato correcto y luego si uno de nosotros hacia muchos cambios debía poner una descripción muy extensa al commit y se desviaba de la forma planteada originalmente.
+
 Al iniciar el proyecto, habíamos divido las tareas de forma que cada uno hiciera una y luego se iba a revisar en conjunto y se aprobaban y se hacía el merge con la rama main. Eso en la práctica no nos resultó tan cómodo, por lo que, al final, terminamos todos participando de todas las partes y haciendo cambios en las mismas secciones en simultáneo, lo que trajo algunos choques entre versiones.
 
 ---
