@@ -4,9 +4,7 @@
 - Sofía Piñeyro - 243498
 - Florencia Varela - 254005
 ---
-###Link al repositorio:
-
-[bessonart-pineyro-varela](https://github.com/ORT-FIS-202108/bessonart-pineyro-varela.git)
+#### Link al repositorio: [bessonart-pineyro-varela](https://github.com/ORT-FIS-202108/bessonart-pineyro-varela.git)
 
 ---
 ## Glosario
