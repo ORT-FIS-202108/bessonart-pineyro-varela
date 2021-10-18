@@ -123,6 +123,9 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar deudas en grupos.
 - Consultar historial de gastos personales.
 - Consultar historial de gastos grupales.
+### Entrevista a Profesional
+Se entervisto a Paola Biatturi, por su experencia en desarollo de front end para 2 aplicaciones. Una aplicacion fue para la empresa "flightcenter" esta fue la aplicacion mas grande de las 2 y su propocito es para uso interno de la empresa; tomo un total de un mes y una semana para completar el desarollo. Para esta app utilizo el metodo de la encuesta de la cual participaron los disversos empleados que luego iban a usar el app. Luego realizo multiples entrevistas a empleados de distintas areas para escuchar propuestas y por ultimo focus groups para testear los distintos prototipos y resivir feed back sobre el UI. 
+La segunda app fue diseniada para venta a clientes de sabre. En este caso utlizo el metodo de las entrevistas para conocer si los clientes desaban alguna funcionalidad especifica y luego desarllo el app basandonse en sus experenica con clientes a lo largo de su carrera. El UI no fue testado con los clientes solo de manera interna durante el desarollo  
 
 ### Entrevistas
 Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, 20, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de esta. 
