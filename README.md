@@ -7,9 +7,9 @@
 ## Glosario
 - Usuario: dentro de este proyecto se considera usario al público que usará la aplicación, no como un usuario que requiere un login.
 - Merge: fusionar dos ramas.
-- Balancear: eliminar todas las deudas
-- Acreedor: persona a la que le deben dinero
-- Deudor: persona que debe dinero
+- Balancear: eliminar todas las deudas.
+- Acreedor: persona a la que le deben dinero.
+- Deudor: persona que debe dinero.
 
 ## Repositorio Git
 
@@ -107,7 +107,7 @@ Además, utilizamos la rama **Hotfix** para solucionar problemas y errores que s
 
 ---
 ## Elicitación
-Como forma de investigar lo que usuario busca en una aplicación de gastos grupales, utilizamos las siguientes técnicas de elicitación:
+Como forma de investigar lo que un posible usuario busca en una aplicación de gastos grupales, se utilizaron las siguientes técnicas de elicitación:
 ### Tormenta de Ideas
 Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas. Esta técnica permite liberar la creatividad de los equipos, generando un número extenso de ideas. Se obtuvo la siguiente lista de posibles funciones.
 - Ingresar nombre de usuario, para personalizar los mensajes a mostrar.
@@ -118,7 +118,11 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Registrar un nuevo amigo.
 - Crear grupos entre distintos usuarios.
 - Registrar gastos grupales.
-- Editar gasto grupal
+- Editar gasto grupal.
+- Borrar gasto personal.
+- Borrar gasto grupal.
+- Balancear.
+- Pagar deuda.
 - Consultar preferencias de un amigo.
 - Consultar deudas en grupos.
 - Consultar historial de gastos personales.
@@ -128,23 +132,18 @@ Se entervisto a Paola Biatturi, por su experencia en desarollo de front end para
 La segunda app fue diseniada para venta a clientes de sabre. En este caso utlizo el metodo de las entrevistas para conocer si los clientes desaban alguna funcionalidad especifica y luego desarllo el app basandonse en sus experenica con clientes a lo largo de su carrera. El UI no fue testado con los clientes solo de manera interna durante el desarollo  
 
 ### Entrevistas
-Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos tres jóvenes de 19, 20, y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de esta. 
-Se utilizaron en todas las entrevistas las siguientes preguntas:
-1) ¿Qué gastos crees que son más importantes registrar?
-2) ¿Te interesa usar una app con tus amigos que mantenga un registro de deudas? ¿La usarías?
-3) ¿Te gustaría que tuviera alguna función en particular?
-4) ¿Crees que sería interesante tener una función dentro de la app que ayude al ahorro, personal o grupal?
-5) ¿Preferís que los grupos sean generales o tengan objetivos? Por ejemplo, que un grupo de viaje tenga distintas features que un grupo de amigos de facultad, etc.
-6) ¿Crees que es mejor(o cuál usas más) "uno paga y se divide" o "cada uno paga una cosa distinta"?
+Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos cuatro jóvenes de 19, 20 y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de ésta. 
 
-Una de las entrevistadas fue Isabella, estudiante de Medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Una siendo la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas. Otra funcionalidad que nos comentó fue el poder fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un grupo hay subdivisiones de comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifique al usuario. 
+Durante las entrevistas realizadas, se buscó obtener respuestas principalmente sobre qué tan útil creían que es la aplicación, qué funcionalidades en particular les gustaría que tuviese, qué opinaban sobre una función que ayude al ahorro, y si creían que los grupos deberían ser con objetivos o generales. Desde luego, cada entrevista fue personal y única, y siguió su propio hilo, por lo que se logró obtener respuestas exclusivas y distintas en cada caso.
+
+Una de las entrevistadas fue Isabella, estudiante de Medicina de 20 años. Tiene varios grupos de amigos y realiza todos los veranos un viaje con sus dos amigas más cercanas. Ella se mostró interesada en la idea, comentando que no conocía ninguna aplicación que gestionara los gastos de un grupo. Le pareció ideal para grupos de viajes o para personas que alquilan un apartamento juntas. Nos comentó algunas funcionalidades que le gustaría que tuviera la aplicación. Primero, la posibilidad de acceder al historial de compras del grupo, pudiendo filtrar por personas, y segundo, fijar un monto de gasto para un equipo bajo un concepto. Por ejemplo, dentro de un grupo hay subdivisiones de comida y se fija un límite para esos gastos de comida en conjunto y cuando se está por superar ese límite se le notifica al usuario. 
 
 La segunda entrevista realizada fue a Lucía, una estudiante avanzada de Licenciatura en Comunicación de 23 años. La mayoría de sus gastos son personales, sin embargo, suele juntarse con sus grupos de amigos todas las semanas. Se mostró entusiasmada con la idea porque con sus amigas, con quienes comparte gastos usualmente, tenían la necesidad de una aplicación que volviera la tarea más fácil. Comentó que sus gastos suelen pertenecer a las categorías de entretenimiento, salud y bienestar, comida, transporte e indumentaria. Sugirió que se agregué una funcionalidad dentro de los grupos donde se pueda especificar si un gasto corresponde a una parte del grupo solamente. Por ejemplo, Lucía comentaba que cuando se junta con sus amigas a merendar, suelen comprar la merienda todas juntas pero paga una sola persona. Si cada una compra algo para tomar distinto, si bien la comida se divide entre todas, las deudas serán distintas, dependiendo del gasto de la bebida de cada una.
 
-La tercer entrevista realizada fue a Mauro, un estudiante de utu de informatica con 19 años. La mayoría de sus gastos salidas con amigos, comida y gasoil para el auto
-Se mostro intersado en la app ya que realiza muchos gastos en conjunto con amigos y comento que le gustaria poder especificar el metodo de pago que utilizo cada persona. Contestando la pregunta 5) comento que el utilizaria grupos pequeños para juntadas privadas dentro del grupo mas grande. Por ultimo dijo que encunetra mejor que cada uno pague algo al sistema de que todo lo pague uno ya que esa persona se ve obligada a recolectar todas las deudas despues. Planteo que le parece preferible juntar el dinero al principio y luego pagar para evitar deudas y problemas.
+La tercera entrevista realizada fue a Mauro, un estudiante de UTU de informática, de 19 años. La mayoría de sus gastos corresponden a salidas con amigos, comida y transporte.
+Se mostró interesado en la idea, ya que realiza muchos gastos en conjunto con amigos. Comentó que le gustaría poder especificar el método de pago que utilizó cada persona, y sugirió agregar una funcionalidad que permita, dentro de un grupo, crear subgrupos más pequeños, para aquellas veces en que se juntan menos personas. Por último, planteó que cuando se junta con amigos, prefiere recolectar el dinero al principio (tener un fondo común), y luego pagar para evitar las deudas.
 
-La cuarta entrevista fue a Santiago; el esta realisando un curso de comercio exterior. Dividio sus gastos en mensuales como el gymnasio y en salidas con amigos donde gasta en entretenimiento y comida. Santiago no encontro gran utilidad en el app apesar de sus gastos compartidos pero al mencionar que ademas le permite gestionar sus propios gastos dijo que si utilizaria el app considerando los gastos compartidos como un bonus. Mostro interes en una funcion que permita distribuir distintos gastos de un evento reduciendo las deudas; por ejemplo en un asado se registran todas las compras (bebida, picada, carne, etc) y luego el app asigna quien compra cada cosa (esto sigue generando deudas para que todos paguen lo mismo). Mostro interes en crear grupos grandes de gastos ya que esos son los mas dificiles de gestionar.
+La última entrevista realizada fue a Santiago, también de 19 años, que actualmente está realizando un curso de Comercio Exterior. Sus gastos principales los divide en dos categorías: mensuales (e.g. gimnasio) y salidas con amigos (e.g. entretenimiento y comida). A pesar de tener gastos grupales frecuentemente, Santiago no encontró gran utilidad en la aplicación, pero sí para gestionar sus gastos personales. De esta forma, utilizaría la app mayoritariamente en su funcionalidad personal, dejando la gestión de gastos grupales como una funcionalidad extra. Además, sugirió una funcionalidad que permita distribuir distintos gastos de un evento, reduciendo las deudas. Por ejemplo, en un asado, se registran todas las compras necesarias (bebida, picada, carne, etc.), y luego la app asigna quién compra cada cosa, y luego genera las deudas correspondientes para que todos paguen lo mismo.
 
 ### Encuestas
 Las encuestas son una forma de "entrevistar" a grandes grupos para comprender sus necesidades. No tiene tanto alcance como las entrevistas a la hora de obtener opiniones bien fundamentadas, pero da una perspectiva de que buscaría un gran grupo de posibles usuarios en una aplicación de gestión de gastos grupales.
@@ -175,6 +174,7 @@ Investigamos varias apps que se enfocan en la gestión de gastos personales. En 
 - Al ingresar una deuda dentro de un grupo se puede seleccionar los participante, por lo tanto no todos los integrantes de un grupo deben obligatoriamente participar de todas las compras.
 - Al ingresar una compra, se le pide al usuario el encargado de la compra, el monto, la fecha de la compra, una descripción, quienes participaron de la compra y en que proporción.
 - Permite enviarle un mail a los miembros del grupo con las deudas pendiente del grupo.
+- Eliminar amigo de un grupo.
 #### Conclusiones de ingeniería inversa de Splitwise
 - Los grupos pueden tener conceptos predeterminados, por ejemplo: viaje, pareja, roomates, etc..
 - Se permite poner una foto de perfil al grupo.
@@ -222,7 +222,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas - Ingeniería Inversa
 
-**Descripción:**  El sistema debe contar con una funcionalidad que permita al usuario registrar un gasto grupal. El usuario debe de poder elegir, dentro del grupo, quiénes pagaron y para quiénes se realizó el gasto. Se le debe pedir al usuario el monto, la moneda y una descripción; se le debe dar la opción al usuario de cambiar la proporción de distribuición de la compra (predeterminadamente equitativa). Se le debe dar al usuario la opción de cancelar en cualquier instancia del registro.
+**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario registrar un gasto grupal. El usuario debe poder elegir, dentro del grupo, quiénes pagaron y para quiénes se realizó el gasto. Se le debe pedir al usuario el monto, la moneda y una descripción; se le debe dar la opción al usuario de cambiar la proporción de distribuición de la compra (predeterminadamente equitativa). Se le debe dar al usuario la opción de cancelar en cualquier instancia del registro.
 
 **Prioridad:** Alta
 
@@ -246,7 +246,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas - Ingeniería Inversa
 
-**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario crear un grupo. El usuario deberá seleccionar los amigos (deben ser previamente registrados) de una lista y asignarle un nombre al grupo.
+**Descripción:** El sistema debe contar con una funcionalidad que permita al usuario crear un grupo. El usuario deberá seleccionar los amigos (previamente registrados) de una lista y asignarle un nombre al grupo.
 
 **Prioridad:** Alta
 
@@ -265,7 +265,6 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 **Descripción:** El sistema debe contar con la funcionalidad de agregar un amigo. Se le debe pedir al usuario el nombre y la preferencia de pago.
 
 **Prioridad:** Alta
-
 
 #### RF9: Eliminar amigo de un grupo
 
@@ -336,7 +335,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
     
 **Quiero poder** registrar un nuevo gasto personal
    
-**Para** guardarlo en el sistema
+**Para** guardarlo en el sistema.
 
 **Criterios de aceptación:** 
  * se registra en el sistema un nuevo gasto con su monto, moneda y descripción.
@@ -383,8 +382,6 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 **Criterios de aceptación:** 
  * el amigo eliminado ya no pertenece a mis amigos, y toda referencia a él es eliminada, (excepto de los historiales).
 
-
-
 ### Use Cases
 #### Caso de uso 1.
 
@@ -392,12 +389,12 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **Actor:** Usuario
 
-**Referencia:** Requerimiento Funcional RF1
+**Referencia:** RF1
 
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
-| **1.** Selecciona "Nuevo gasto personal" | **2.** Muestra un input type number y una lista de tipos de moneda (pesos, dólares, reales, euros, otro). |
+| **1.** Selecciona "Nuevo gasto personal" | **2.** Muestra una caja de texto para ingresar números y una lista de tipos de moneda (pesos, dólares, reales, euros, otro). |
 | **3.** Ingresa el monto (número mayor a 0) y selecciona el tipo de moneda | **4.** Muestra una caja de texto y sugerencias |
 | **5.** Ingresa la descripción, que debe ser menor a 40 caracteres | **6.** Muestra todos los datos ingresados en pantalla y pide una confirmación|
 | **7.** Confirma los datos | **8.** Se registra el nuevo gasto|
@@ -423,7 +420,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **Actor:** Usuario
 
-**Referencia:** Requerimiento Funcional: RF6
+**Referencia:** RF6
 
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
@@ -452,7 +449,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **Actor:** Usuario
 
-**Referencia:** Requerimiento Funcional: RF11
+**Referencia:** RF11
 
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
@@ -477,13 +474,16 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 ### Bocetos de IU
 Prototipo: [Link al prototipo](https://www.figma.com/proto/lgVU9pjV62HU5Ybg9OlCT4/FIS?page-id=0%3A1&node-id=17%3A880&viewport=241%2C48%2C0.35&scaling=scale-down)
+
 Menú:
+
 ![Menú](https://i.imgur.com/UZaGLWI.png)
 
 ---
 ## Validación y verificación
 ### Verificar la especificación
 Como forma de verificar internamente que vamos por el camino correcto para construir el producto adecuado, realizamos una evaluación de los requisitos funcionales mediante una checklist. Nos preguntamos si cada requisito era viable (factible de ser hecho), consistente (no se contradice con otro), preciso y no ambiguo, verificable, si estaba priorizado correctamente y si se identificaba claramente su origen.
+
 ![Tabla de verificación de los requerimientos](https://i.imgur.com/6e8BA0q.png)
 
 ### Validar la solución con personas no involucradas en el proyecto
