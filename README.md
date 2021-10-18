@@ -138,6 +138,9 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar deudas en grupos.
 - Consultar historial de gastos personales.
 - Consultar historial de gastos grupales.
+### Entrevista a Profesional
+Se entervisto a Paola Biatturi, por su experencia en desarollo de front end para 2 aplicaciones. Una aplicacion fue para la empresa "flightcenter" esta fue la aplicacion mas grande de las 2 y su propocito es para uso interno de la empresa; tomo un total de un mes y una semana para completar el desarollo. Para esta app utilizo el metodo de la encuesta de la cual participaron los disversos empleados que luego iban a usar el app. Luego realizo multiples entrevistas a empleados de distintas areas para escuchar propuestas y por ultimo focus groups para testear los distintos prototipos y resivir feed back sobre el UI. 
+La segunda app fue diseniada para venta a clientes de sabre. En este caso utlizo el metodo de las entrevistas para conocer si los clientes desaban alguna funcionalidad especifica y luego desarllo el app basandonse en sus experenica con clientes a lo largo de su carrera. El UI no fue testado con los clientes solo de manera interna durante el desarollo  
 
 ### Entrevistas
 Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos cuatro jóvenes de 19, 20 y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de ésta. 
@@ -290,13 +293,13 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Prioridad:** Alta 
 
-#### RF11: Balancear
+#### RF11 Pagar deuda
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema debe contar con la funcionalidad de balancear las deudas de un grupo. Para esto, el sistema indica cuanto debe pagar cada uno y a quién para eliminar todas las deudas con el menor número de pagos posibles. 
+**Descripción:** El sistema debe contar con la funcionalidad de pagar las deudas de un grupo. El usuario debe especificar el monto a pagar y se debe chequear que este no sea mayor a la deuda.
 
-**Prioridad:** Alta 
+**Prioridad:** Alta
 
 #### RF12: Consultar historial de gastos personales
 
@@ -314,22 +317,21 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Prioridad:** Baja
 
-#### RF14: Pagar deuda
+#### RF14 Consultar Deudas
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema debe contar con la funcionalidad de pagar las deudas de un grupo. Para esto, se debe desplegar una lista de los deudores del grupo junto con sus deudas, y permitir al usuario seleccionar un deudor. Una vez seleccionado, se le debe mostrar al usuario los acreedores junto con sus deudas. Se le debe pedir al usuario confirmar la acción e ingresar el monto a pagar (menor o igual a la deuda del deudor o del acreedor). Luego de realizado el balanceo el sistema debe mostrar la información actualizada.
+**Descripción:** El sistema debe contar con la funcionalidad de visualizar las deudas dentro un grupo
 
 **Prioridad:** Alta
 
-#### RF15: Consultar Deudas
+#### RF15 Balancear
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema debe contar con la funcionalidad de visualizar las deudas dentro un grupo.
+**Descripción:** El sistema debe gestionar quién le debe pagar cuánto a quién, de tal forma que se realicen la menor cantidad de pagos posibles. 
 
 **Prioridad:** Alta
-
 ---
 
 ### User Stories
@@ -454,7 +456,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 ![Caso de Uso 2](https://i.imgur.com/Jb6Xam6.png)
 
 #### Caso de uso 3.
-**Título:** Balancear
+**Título:** Pagar deuda
 
 **Actor:** Usuario
 
@@ -463,48 +465,21 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
-| **1.** Dentro de un grupo, selecciona la opción "Deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
-| **3.** Selecciona opción "Balancear" | **4.** Muestra las cantidades que debe pagar cada persona y a quién. Permite confirmar o cancelar el balance|
-| **5.** Confirma los datos | **6.** Elimina todas las deudas|
-
-**Cursos alternativos:**
-
-**2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
-
-**5.1** Si el usario presiona cancelar no se efectúan cambios
-
-![Caso de Uso 3](https://i.imgur.com/rrlRvgL.png)
-
-#### Caso de uso 4
-**Título:** Pagar deuda
-
-**Actor:** Usuario 
-
-**Referencia:** RF14
-
-**Curso normal:**
-| Acción de los actores | Respuesta del sistema |
-| --------------------- | --------------------- |
 | **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
-| **3.** Selecciona opción "Pagar" | **4.** Muestra una lista de los deudores con el monto asociado|
-| **5.** Selecciona uno de los deudores de la lista |**6.** Ofrece lista acreedores dentro del grupo con el monto asociado |
-| **7.** Seleciona un acreedor |**8.** Muestra el monto máximo, (el menor entre los montos del deudor y acreedor) y pide que se ingrese el monto a pagar|
-| **9.** Ingresa monto a pagar (número entre 1 y el monto máximo)|  **10.** Muestra todos los datos del pago y solicita confirmación |
-| **11.** Confirma los datos | **12.** Se actualizan las deudas del deudor y el acreedor|
-
+| **3.** Selecciona opción "Pagar" | **4.** Muestra un modal con una lista con las deudas |
+| **5.** Selecciona una de las deudas de la lista | **6.** Muestra el monto total y pide que se ingrese el monto a pagar |
+| **7.** Ingresa monto a pagar (número entre 1 y el monto total)| **8.** Muestra los datos de la deuda a cancelar (monto ingresado, monto restante, personas involucradas) y pide confirmación |
+| **9.** Confirma los datos | **10.** Actualiza la deuda con el monto restante |
 **Cursos alternativos:**
 
 **2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
+**5.1** Si no se selecciona ninguna deuda: se muestra un mensaje "Debes seleccionar una deuda".
+**7.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
+**7.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto total. Por favor, reingrese".
+**9.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
+**10.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
-**5.1** Si no se selecciona ningún deudor: se muestra un mensaje "Debes seleccionar una persona".
 
-**7.1** Si no se selecciona ningún acreedor: se muestra un mensaje "Debes seleccionar una persona".
-
-**9.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
-
-**9.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto máximo. Por favor, reingrese".
-
-**11.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
 
 
