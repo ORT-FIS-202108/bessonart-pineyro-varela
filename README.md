@@ -1,5 +1,12 @@
 # Mis Gastos - Grupo 7
 
+**Materia:** Fundamentos de Ingeniería de Software
+
+**Profesor:** Alejandro Adorjan
+
+**Grupo:** M4B
+
+**Integrantes:**
 - Luca Bessonart - 231764
 - Sofía Piñeyro - 243498
 - Florencia Varela - 254005
@@ -108,11 +115,11 @@ Durante la evolución de este proyecto, se realizaron los commits a medida que s
 
 Como evidencia de esto, se adjuntan algunos commits realizados. 
 
-![Evidencia Commits 1](https://i.imgur.com/8zbpF5k.jpg)
+![Evidencia Commits 1](img\Commits_1.jpg)
 
-![Evidencia Commits 2](https://i.imgur.com/DldYZWt.jpg)
+![Evidencia Commits 2](img\Commits_2.jpg)
 
-![Evidencia Commits 3](https://i.imgur.com/PMs389q.png)
+![Evidencia Commits 3](img\Commits_3.jpg)
 
 La evolución del proyecto se puede consultar en el [Repositorio](https://github.com/ORT-FIS-202108/bessonart-pineyro-varela "repositorio").
 
@@ -200,11 +207,11 @@ Investigamos varias apps que se enfocan en la gestión de gastos personales. En 
 ---
 ### Caracterización de usuarios: User Personas
 #### User Persona 1.
-![User Persona 1](https://i.imgur.com/d6lXpHr.jpg)
+![User Persona 1](img\User_Persona_1.jpeg)
 #### User Persona 2.
-![User Persona 2](https://i.imgur.com/AFIuS4w.jpg)
+![User Persona 2](img\User_Persona_2.png)
 ### Modelo conceptual del problema
-![Modelo Conceptual](https://i.imgur.com/GwETzdP.png)
+![Modelo Conceptual](img\Modelo_Conceptual.jpeg)
 ---
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
@@ -424,7 +431,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 1](https://i.imgur.com/Ir1iiQ6.png)
+![Caso de Uso 1](img\Boceto_CU_1.jpeg)
 
 #### Caso de uso 2.
 **Título:** Crear un grupo de amigos
@@ -453,7 +460,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 2](https://i.imgur.com/Jb6Xam6.png)
+![Caso de Uso 2](img\Boceto_CU_2.jpeg)
 
 #### Caso de uso 3.
 **Título:** Pagar deuda
@@ -479,16 +486,12 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 **9.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 **10.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
-
-
-
-
 ### Bocetos de IU
 Prototipo: [Link al prototipo](https://www.figma.com/proto/lgVU9pjV62HU5Ybg9OlCT4/FIS?page-id=0%3A1&node-id=17%3A880&viewport=241%2C48%2C0.35&scaling=scale-down)
 
 Menú:
 
-![Menú](https://i.imgur.com/UZaGLWI.png)
+![Menú](img\Boceto_Menu.jpeg)
 
 ---
 ## Validación y verificación
