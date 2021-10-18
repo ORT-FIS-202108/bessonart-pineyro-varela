@@ -139,8 +139,9 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos personales.
 - Consultar historial de gastos grupales.
 ### Entrevista a Profesional
-Se entervisto a Paola Biatturi, por su experencia en desarollo de front end para 2 aplicaciones. Una aplicacion fue para la empresa "flightcenter" esta fue la aplicacion mas grande de las 2 y su propocito es para uso interno de la empresa; tomo un total de un mes y una semana para completar el desarollo. Para esta app utilizo el metodo de la encuesta de la cual participaron los disversos empleados que luego iban a usar el app. Luego realizo multiples entrevistas a empleados de distintas areas para escuchar propuestas y por ultimo focus groups para testear los distintos prototipos y resivir feed back sobre el UI. 
-La segunda app fue diseniada para venta a clientes de sabre. En este caso utlizo el metodo de las entrevistas para conocer si los clientes desaban alguna funcionalidad especifica y luego desarllo el app basandonse en sus experenica con clientes a lo largo de su carrera. El UI no fue testado con los clientes solo de manera interna durante el desarollo  
+El fin de realizar una entrevista profesional fue obtener cuales técnicas de elicitación son las más usadas actualmente en el área de desarollo de aplicaciones. Para así poder definir cuales técnicas utlizar en nuestro proyecto.
+Se entervistó a Paola Biatturi, por su experencia en desarollo de frontend para 2 aplicaciones. Una aplicación fue para la empresa "flightcenter" esta fue la aplicación más grande de las 2 y su propocito era para uso interno de la empresa; tomó un total de un mes y una semana para completar el desarollo. Para esta app se utilizó el método de encuesta, de la cual participaron los disversos empleados que luego iban a usar la app. Luego se realizaron múltiples entrevistas a empleados de distintas áreas para escuchar propuestas y por último focus groups para testear los distintos prototipos y recibir feedback sobre el UI. 
+La segunda app fue diseñada para venta a clientes de sabre. En este caso utlizó el método de las entrevistas para conocer si los clientes deseaban alguna funcionalidad específica y luego desarlló la app basandonse en sus experenica con clientes a lo largo de su carrera. El UI no fue testado con los clientes, solo de manera interna durante el desarollo.  
 
 ### Entrevistas
 Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos cuatro jóvenes de 19, 20 y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de ésta. 
@@ -151,8 +152,7 @@ Una de las entrevistadas fue Isabella, estudiante de Medicina de 20 años. Tiene
 
 La segunda entrevista realizada fue a Lucía, una estudiante avanzada de Licenciatura en Comunicación de 23 años. La mayoría de sus gastos son personales, sin embargo, suele juntarse con sus grupos de amigos todas las semanas. Se mostró entusiasmada con la idea porque con sus amigas, con quienes comparte gastos usualmente, tenían la necesidad de una aplicación que volviera la tarea más fácil. Comentó que sus gastos suelen pertenecer a las categorías de entretenimiento, salud y bienestar, comida, transporte e indumentaria. Sugirió que se agregué una funcionalidad dentro de los grupos donde se pueda especificar si un gasto corresponde a una parte del grupo solamente. Por ejemplo, Lucía comentaba que cuando se junta con sus amigas a merendar, suelen comprar la merienda todas juntas pero paga una sola persona. Si cada una compra algo para tomar distinto, si bien la comida se divide entre todas, las deudas serán distintas, dependiendo del gasto de la bebida de cada una.
 
-La tercera entrevista realizada fue a Mauro, un estudiante de UTU de informática, de 19 años. La mayoría de sus gastos corresponden a salidas con amigos, comida y transporte.
-Se mostró interesado en la idea, ya que realiza muchos gastos en conjunto con amigos. Comentó que le gustaría poder especificar el método de pago que utilizó cada persona, y sugirió agregar una funcionalidad que permita, dentro de un grupo, crear subgrupos más pequeños, para aquellas veces en que se juntan menos personas. Por último, planteó que cuando se junta con amigos, prefiere recolectar el dinero al principio (tener un fondo común), y luego pagar para evitar las deudas.
+La tercera entrevista realizada fue a Mauro, un estudiante de UTU de informática, de 19 años. La mayoría de sus gastos corresponden a salidas con amigos, comida y transporte. Se mostró interesado en la idea, ya que realiza muchos gastos en conjunto con amigos. Comentó que le gustaría poder especificar el método de pago que utilizó cada persona, y sugirió agregar una funcionalidad que permita, dentro de un grupo, crear subgrupos más pequeños, para aquellas veces en que se juntan menos personas. Por último, planteó que cuando se junta con amigos, prefiere recolectar el dinero al principio (tener un fondo común), y luego pagar para evitar las deudas.
 
 La última entrevista realizada fue a Santiago, también de 19 años, que actualmente está realizando un curso de Comercio Exterior. Sus gastos principales los divide en dos categorías: mensuales (e.g. gimnasio) y salidas con amigos (e.g. entretenimiento y comida). A pesar de tener gastos grupales frecuentemente, Santiago no encontró gran utilidad en la aplicación, pero sí para gestionar sus gastos personales. De esta forma, utilizaría la app mayoritariamente en su funcionalidad personal, dejando la gestión de gastos grupales como una funcionalidad extra. Además, sugirió una funcionalidad que permita distribuir distintos gastos de un evento, reduciendo las deudas. Por ejemplo, en un asado, se registran todas las compras necesarias (bebida, picada, carne, etc.), y luego la app asigna quién compra cada cosa, y luego genera las deudas correspondientes para que todos paguen lo mismo.
 
@@ -251,7 +251,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Descripción:** El sistema debe contar con una funcionalidad que permita al usuario editar un gasto grupal. El usuario debe elegir el gasto a editar. Se le debe permitir al usuario modificar el monto y la descripción. No se le debe permitir al usuario modificar la moneda.
 
-**Prioridad:** Media
+**Prioridad:** Baja
 
 #### RF6: Crear grupo
 
@@ -265,7 +265,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas - Letra
 
-**Descripción:** El sistema no debe pedirle al usuario ningún tipo de login. No se le debe solicitar ningún dato personal y se lo debe agregar como un amigo si se lo desea agregar a un grupo.
+**Descripción:** El sistema no debe pedirle al usuario ningún tipo de login. No se le debe solicitar ningún dato personal.
 
 **Prioridad:** Alta
 
@@ -297,7 +297,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema debe contar con la funcionalidad de pagar las deudas de un grupo. El usuario debe especificar el monto a pagar y se debe chequear que este no sea mayor a la deuda.
+**Descripción:** El sistema debe contar con la funcionalidad de pagar las deudas de un grupo. El usuario debe especificar el monto a pagar y se debe verificar que este no sea mayor a la deuda.
 
 **Prioridad:** Alta
 
@@ -315,7 +315,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Descripción:** El sistema debe contar con la funcionalidad de consultar el historial de gastos grupales. El usuario debe poder filtrar por antigüedad, amigo a cargo del gasto, o por monto.
 
-**Prioridad:** Baja
+**Prioridad:** Media
 
 #### RF14 Consultar Deudas
 
@@ -424,7 +424,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 1](https://i.imgur.com/Ir1iiQ6.png)
+![Caso de Uso 1 UI](https://i.imgur.com/Ir1iiQ6.png)
 
 #### Caso de uso 2.
 **Título:** Crear un grupo de amigos
@@ -453,20 +453,20 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 2](https://i.imgur.com/Jb6Xam6.png)
+![Caso de Uso 2 UI](https://i.imgur.com/Lb9avgB.png)
 
 #### Caso de uso 3.
 **Título:** Pagar deuda
 
 **Actor:** Usuario
 
-**Referencia:** RF11
+**Referencia:** RF14 y RF11
 
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
 | **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
-| **3.** Selecciona una de las deudas de la lista | **4.** Muestra el monto total y pide que se ingrese el monto a pagar |
+| **3.** Selecciona una de las deudas de la lista | **4.** Muestra el monto total y solicita que se ingrese el monto a pagar |
 | **5.** Ingresa monto a pagar (número entre 1 y el monto total)| **6.** Muestra los datos de la deuda a cancelar (monto ingresado, monto restante, personas involucradas) y pide confirmación |
 | **7.** Confirma los datos | **8.** Actualiza la deuda con el monto restante |
 **Cursos alternativos:**
@@ -479,7 +479,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 **8.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
 
-
+![Caso de Uso 3 UI](https://i.imgur.com/l3Jk3bE.png)
 
 
 ### Bocetos de IU
@@ -494,7 +494,8 @@ Menú:
 ### Verificar la especificación
 Como forma de verificar internamente que vamos por el camino correcto para construir el producto adecuado, realizamos una evaluación de los requisitos funcionales mediante una checklist. Nos preguntamos si cada requisito era viable (factible de ser hecho), consistente (no se contradice con otro), preciso y no ambiguo, verificable, si estaba priorizado correctamente y si se identificaba claramente su origen.
 
-![Tabla de verificación de los requerimientos](https://i.imgur.com/6e8BA0q.png)
+
+![Tabla de verificación de los requerimientos](https://i.imgur.com/sgHeDQz.png)
 
 ### Validar la solución con personas no involucradas en el proyecto
 La validación se realizó con dos posibles usuarios. En primer lugar, Isabella (misma persona con la que realizamos una de las entrevistas iniciales), de 20 años, estudiante de medicina con varios grupos de amigos distintos y un grupo con el cual viaja todos los veranos. Y ...
@@ -504,6 +505,11 @@ La validación con Isabella fue positiva, quedó conforme en términos generales
 ---
 ## Reflexión
 ### Detalle del trabajo individual
+
+#### Luca:
+#### Sofía:
+#### Florencia:
+
 ### Técnicas aplicadas y aprendizajes
 
 ---
