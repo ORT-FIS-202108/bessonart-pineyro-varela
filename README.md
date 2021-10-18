@@ -514,12 +514,13 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 **Referencia:** RF14 y RF11
 
 **Curso normal:**
-| Acción de los actores | Respuesta del sistema |
-| --------------------- | --------------------- |
-| **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
-| **3.** Selecciona una de las deudas de la lista | **4.** Muestra el monto total y solicita que se ingrese el monto a pagar |
+| Acción de los actores                                         | Respuesta del sistema                                                    |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo                      |
+| **3.** Selecciona una de las deudas de la lista               | **4.** Muestra el monto total y solicita que se ingrese el monto a pagar |
 | **5.** Ingresa monto a pagar (número entre 1 y el monto total)| **6.** Muestra los datos de la deuda a cancelar (monto ingresado, monto restante, personas involucradas) y pide confirmación |
-| **7.** Confirma los datos | **8.** Actualiza la deuda con el monto restante |
+| **7.** Confirma los datos                                     | **8.** Actualiza la deuda con el monto restante                          |
+
 **Cursos alternativos:**
 
 **2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
@@ -588,3 +589,5 @@ El mayor inconveniente que tuvimos fue una falta de comunicación sobre la idea 
 Otro obstáculo que se nos presentó, en este caso de forma constante durante todo el proyecto, fue la adaptación a los formatos de commit. Éstos los establecimos con la idea de simplificar la lectura de los commits y poder ver claramente el avance, pero a la hora de poner en práctica estos formatos, nos surgieron problemas. Al comienzo nos olvidábamos de hacerlos en el formato correcto y luego si uno de nosotros hacia muchos cambios debía poner una descripción muy extensa al commit y se desviaba de la forma planteada originalmente.
 
 Al iniciar el proyecto, habíamos divido las tareas de forma que cada uno hiciera una y luego se iba a revisar en conjunto y se aprobaban y se hacía el merge con la rama main. Eso en la práctica no nos resultó tan cómodo, por lo que, al final, terminamos todos participando de todas las partes y haciendo cambios en las mismas secciones en simultáneo, lo que trajo algunos choques entre versiones.
+
+Por último, notamos que al no grabar las entrevistas, se pierde parte de la evidencia de investigación, por lo que aprendimos que, siempre que sea con consentimiento, es mejor grabar una entrevista a solo tener las notas.
