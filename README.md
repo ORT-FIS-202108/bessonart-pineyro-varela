@@ -283,12 +283,13 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Prioridad:** Alta 
 
-#### RF11: Balancear
+#### RF11 Pagar deuda
 
 **Origen:** Tormenta de ideas
 
-**Descripción:** El sistema debe contar con la funcionalidad de balancear las deudas de un grupo. Para esto, el sistema indica cuanto debe pagar cada uno y a quien para elminar todas las deudas con el menor numero de pagos posibles 
-**Prioridad:** Alta 
+**Descripción:** El sistema debe contar con la funcionalidad de pagar las deudas de un grupo. El usuario debe especificar el monto a pagar y se debe chequear que este no sea mayor a la deuda.
+
+**Prioridad:** Alta
 
 #### RF12: Consultar historial de gastos personales
 
@@ -306,15 +307,7 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Prioridad:** Baja
 
-#### RF14 Pagar deuda
-
-**Origen:** Tormenta de ideas
-
-**Descripción:** El sistema debe contar con la funcionalidad de pagar las deudas de un grupo. Para esto, se debe desplegar una lista de los deudores del grupo junto con sus deudas, y permitir al usuario seleccionar un deudor. Una vez seleccionado, se le debe mostrar al usuario los acreedores junto con sus deudas. Se le debe pedir al usuario confirmar la acción e ingeresar el monto a pagar. Ese monto no puede ser mayor que la deuda del deudor o del acreedor. Luego de realizado el balanceo el sistema debe mostrar la información actualizada.
-
-**Prioridad:** Alta
-
-#### RF15 Consultar Deudas
+#### RF14 Consultar Deudas
 
 **Origen:** Tormenta de ideas
 
@@ -322,6 +315,13 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Prioridad:** Alta
 
+#### RF15 Balancear
+
+**Origen:** Tormenta de ideas
+
+**Descripción:** El sistema debe gestionar quién le debe pagar cuánto a quién, de tal forma que se realicen la menor cantidad de pagos posibles. 
+
+**Prioridad:** Alta
 ---
 
 ### User Stories
@@ -448,7 +448,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 ![Caso de Uso 2](https://i.imgur.com/Jb6Xam6.png)
 
 #### Caso de uso 3.
-**Título:** Balancear
+**Título:** Pagar deuda
 
 **Actor:** Usuario
 
@@ -458,47 +458,20 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
 | **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
-| **3.** Selecciona opción "Balancear" | **4.** Muestra la cantidades que debe pagar cada persona y a quien. Permite confirmar o cancelar el balance|
-| **5.** Confirma los datos | **6.** Elimina todas las deudas|
-
+| **3.** Selecciona opción "Pagar" | **4.** Muestra un modal con una lista con las deudas |
+| **5.** Selecciona una de las deudas de la lista | **6.** Muestra el monto total y pide que se ingrese el monto a pagar |
+| **7.** Ingresa monto a pagar (número entre 1 y el monto total)| **8.** Muestra los datos de la deuda a cancelar (monto ingresado, monto restante, personas involucradas) y pide confirmación |
+| **9.** Confirma los datos | **10.** Actualiza la deuda con el monto restante |
 **Cursos alternativos:**
 
 **2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
+**5.1** Si no se selecciona ninguna deuda: se muestra un mensaje "Debes seleccionar una deuda".
+**7.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
+**7.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto total. Por favor, reingrese".
+**9.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
+**10.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
-**5.1** Si el usario presiona cancelar no se efectuan cambios
 
-
-
-![Caso de Uso 3](https://i.imgur.com/rrlRvgL.png)
-
-#### Caso de uso 4
-**Título:** Pagar deuda
-
-**Actor**Usario 
-
-**Referencia:**
-
-**Curso normal:**
-| Acción de los actores | Respuesta del sistema |
-| --------------------- | --------------------- |
-| **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
-| **3.** Selecciona opción "Pagar" | **4.** Muestra una lista de los deudores con el monto asociado|
-| **5.** Selecciona uno de los deudores de la lista |**6.** Ofrece lista acreedores dentro del grupo con el monto asociado |
-| **7.** Seleciona un acreedor |**8.** Muestra el monto maximo(el menor entre los montos del deudor y acreedor) y pide que se ingrese el monto a pagar|
-| **9.** Ingresa monto a pagar (número entre 1 y el monto maximo)|  **10.** Muestra todos los datos del pago y solicita confirmacion|
-| **11.** Confirma los datos | **12.** Se actualizan el deudor y el acreedor|
-
-**Cursos alternativos:**
-
-**2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
-
-**5.1** Si no se selecciona ninguna persona: se muestra un mensaje "Debes seleccionar una persona".
-
-**9.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
-
-**9.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto maximo. Por favor, reingrese".
-
-**11.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
 
 
