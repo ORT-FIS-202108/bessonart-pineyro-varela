@@ -205,6 +205,7 @@ Investigamos varias apps que se enfocan en la gestión de gastos personales. En 
 - Permite escanear recibos.
 
 ### Evidencia de actividades de investigación
+No se grabaron las entrevistas por inconvenientes con programas de grabacion y porque algunos de los entrevistados solicitaron no ser grabados. Solo quedaron registrados los apuntes presentes en la seccion de entrevistas.
 ### Referencias a fuentes de información
 - [Link a Splitwise](https://https://play.google.com/store/apps/details?id=com.Splitwise.SplitwiseMobile&hl=en&gl=US)
 - [Link a Settle Up](https://play.google.com/store/apps/details?id=cz.destil.settleup&hl=en&gl=US)
