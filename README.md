@@ -455,18 +455,17 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
 | **1.** Dentro de un grupo, selecciona la opción "Ver deudas"  | **2.** Muestra todas las deudas que hay en el grupo |
-| **3.** Selecciona opción "Pagar" | **4.** Muestra un modal con una lista con las deudas |
-| **5.** Selecciona una de las deudas de la lista | **6.** Muestra el monto total y pide que se ingrese el monto a pagar |
-| **7.** Ingresa monto a pagar (número entre 1 y el monto total)| **8.** Muestra los datos de la deuda a cancelar (monto ingresado, monto restante, personas involucradas) y pide confirmación |
-| **9.** Confirma los datos | **10.** Actualiza la deuda con el monto restante |
+| **3.** Selecciona una de las deudas de la lista | **4.** Muestra el monto total y pide que se ingrese el monto a pagar |
+| **5.** Ingresa monto a pagar (número entre 1 y el monto total)| **6.** Muestra los datos de la deuda a cancelar (monto ingresado, monto restante, personas involucradas) y pide confirmación |
+| **7.** Confirma los datos | **8.** Actualiza la deuda con el monto restante |
 **Cursos alternativos:**
 
 **2.1** Si no hay deudas: Muestra un mensaje "No hay deudas pendientes".
-**5.1** Si no se selecciona ninguna deuda: se muestra un mensaje "Debes seleccionar una deuda".
-**7.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
-**7.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto total. Por favor, reingrese".
-**9.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
-**10.1** Si el monto restante es igual a 0: la deuda es eliminada.
+**3.1** Si no se selecciona ninguna deuda: se muestra un mensaje "Debes seleccionar una deuda".
+**5.1** Si no se ingresa un monto: se muestra un mensaje "Por favor, ingrese un monto".
+**5.2** Si el monto ingresado es incorrecto: se muestra un mensaje "El monto debe ser mayor a 0 y menor al monto total. Por favor, reingrese".
+**7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
+**8.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
 
 
