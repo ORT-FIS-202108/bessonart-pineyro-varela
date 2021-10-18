@@ -119,11 +119,11 @@ Durante la evolución de este proyecto, se realizaron los commits a medida que s
 
 Como evidencia de esto, se adjuntan algunos commits realizados. 
 
-![Evidencia Commits 1](img\Commits_1.jpg)
+![Evidencia Commits 1](img/Commits_1.jpg)
 
-![Evidencia Commits 2](img\Commits_2.jpg)
+![Evidencia Commits 2](img/Commits_2.jpg)
 
-![Evidencia Commits 3](img\Commits_3.jpg)
+![Evidencia Commits 3](img/Commits_3.jpg)
 
 La evolución del proyecto se puede consultar en el [Repositorio](https://github.com/ORT-FIS-202108/bessonart-pineyro-varela "repositorio").
 
@@ -211,11 +211,11 @@ Investigamos varias apps que se enfocan en la gestión de gastos personales. En 
 ---
 ### Caracterización de usuarios: User Personas
 #### User Persona 1.
-![User Persona 1](img\User_Persona_1.jpeg)
+![User Persona 1](img/User_Persona_1.jpeg)
 #### User Persona 2.
-![User Persona 2](img\User_Persona_2.png)
+![User Persona 2](img/User_Persona_2.png)
 ### Modelo conceptual del problema
-![Modelo Conceptual](img\Modelo_Conceptual.jpeg)
+![Modelo Conceptual](img/Modelo_Conceptual.jpeg)
 ---
 ## Especificación
 ### Definición de requerimientos funcionales y no funcionales
@@ -445,7 +445,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 1 UI](img\Boceto_CU_1.jpeg)
+![Caso de Uso 1 UI](img/Boceto_CU_1.jpeg)
 
 #### Caso de uso 2.
 **Título:** Crear un grupo de amigos
@@ -474,7 +474,7 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 
-![Caso de Uso 2 UI](img\Boceto_CU_2.jpeg)
+![Caso de Uso 2 UI](img/Boceto_CU_2.jpeg)
 
 #### Caso de uso 3.
 **Título:** Pagar deuda
@@ -499,14 +499,14 @@ Las user stories describen una funcionalidad simple del sistema. Se trata de una
 **7.1** Si no confirma los datos (selecciona cancelar o cerrar): fin caso de uso.
 **8.1** Si el monto restante es igual a 0: la deuda es eliminada.
 
-![Caso de Uso 3 UI](img\Boceto_CU_3.jpeg)
+![Caso de Uso 3 UI](img/Boceto_CU_3.jpeg)
 
 ### Bocetos de IU
 Prototipo: [Link al prototipo](https://www.figma.com/proto/lgVU9pjV62HU5Ybg9OlCT4/FIS?page-id=0%3A1&node-id=17%3A880&viewport=241%2C48%2C0.35&scaling=scale-down)
 
 Menú:
 
-![Menú](img\Boceto_Menu.jpeg)
+![Menú](img/Boceto_Menu.jpeg)
 
 ---
 ## Validación y verificación
