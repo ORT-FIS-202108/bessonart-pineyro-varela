@@ -4,6 +4,11 @@
 - Sofía Piñeyro - 243498
 - Florencia Varela - 254005
 ---
+###Link al repositorio:
+
+[bessonart-pineyro-varela](https://github.com/ORT-FIS-202108/bessonart-pineyro-varela.git)
+
+---
 ## Glosario
 - Usuario: dentro de este proyecto se considera usario al público que usará la aplicación, no como un usuario que requiere un login.
 - Merge: fusionar dos ramas.
@@ -11,6 +16,7 @@
 - Acreedor: persona a la que le deben dinero.
 - Deudor: persona que debe dinero.
 
+---
 ## Repositorio Git
 
 ### Creación y uso de repositorios locales y remotos
