@@ -150,9 +150,11 @@ Una de las técnicas de elicitación utilizada fue la lluvia o tormenta de ideas
 - Consultar historial de gastos personales.
 - Consultar historial de gastos grupales.
 ### Entrevista a Profesional
-El fin de realizar una entrevista profesional fue obtener cuales técnicas de elicitación son las más usadas actualmente en el área de desarollo de aplicaciones. Para así poder definir cuales técnicas utlizar en nuestro proyecto.
-Se entervistó a Paola Biatturi, por su experencia en desarollo de frontend para 2 aplicaciones. Una aplicación fue para la empresa "flightcenter" esta fue la aplicación más grande de las 2 y su propocito era para uso interno de la empresa; tomó un total de un mes y una semana para completar el desarollo. Para esta app se utilizó el método de encuesta, de la cual participaron los disversos empleados que luego iban a usar la app. Luego se realizaron múltiples entrevistas a empleados de distintas áreas para escuchar propuestas y por último focus groups para testear los distintos prototipos y recibir feedback sobre el UI. 
-La segunda app fue diseñada para venta a clientes de sabre. En este caso utlizó el método de las entrevistas para conocer si los clientes deseaban alguna funcionalidad específica y luego desarlló la app basandonse en sus experenica con clientes a lo largo de su carrera. El UI no fue testado con los clientes, solo de manera interna durante el desarollo.  
+Con el fin de obtener cuáles técnicas de elicitación son más utilizadas en el área de desarrollo de aplicaciones, realizamos una entrevista a una profesional del área. Esto nos ayuda a definir cuáles técnicas se pueden utilizar en nuestro proyecto. 
+
+Se entervistó a Paola Biatturi, por su experencia en el desarrollo de Front-End para 2 aplicaciones. Una de ellas fue una aplicación para la empresa Flight Center, cuyo propósito es de uso interno de la empresa, y su desarrollo tomó en total un mes y una semana. Para esta aplicación, se utilizó la técnica de encuesta, donde participaron aquellos empleados que serían los usuarios finales. Además, se realizaron múltiples entrevistas a empleados de distintas áreas, para escuchar propuestas, y, por último, se realizó un focus group para testear los distintos prototipos y recibir feedback sobre el UI. 
+
+La segunda aplicación fue diseñada para venta a clientes de Sabre. En este caso, se utlizó la técnica de entrevistas para investigar si los clientes deseaban alguna funcionalidad específica. Luego, se desarrolló la aplicación basándonse en sus experiencias con clientes a lo largo de su carrera. El UI no fue testado con los clientes, solo de manera interna durante el desarollo.  
 
 ### Entrevistas
 Esta técnica consiste en realizar entrevistas a distintos tipos de usuarios. En este caso, seleccionamos cuatro jóvenes de 19, 20 y 23 años. Con las entrevistas buscamos recolectar información sobre los requisitos de la aplicación, y si los entrevistados se ven interesados en el concepto de ésta. 
@@ -205,13 +207,23 @@ Investigamos varias apps que se enfocan en la gestión de gastos personales. En 
 - Permite escanear recibos.
 
 ### Evidencia de actividades de investigación
+Como evidencia de las actividades de investigación, adjuntamos algunos gráficos de las respuestas de la encuesta.
+
+![Gráfico Encuesta 1](img/Encuesta_1.jpg)
+
+![Gráfico Encuesta 2](img/Encuesta_2.jpg)
+
+![Gráfico Encuesta 3](img/Encuesta_3.jpg)
+
+![Gráfico Encuesta 4](img/Encuesta_4.jpg)
+
 ### Referencias a fuentes de información
 - [Link a Splitwise](https://https://play.google.com/store/apps/details?id=com.Splitwise.SplitwiseMobile&hl=en&gl=US)
 - [Link a Settle Up](https://play.google.com/store/apps/details?id=cz.destil.settleup&hl=en&gl=US)
 ---
 ### Caracterización de usuarios: User Personas
 #### User Persona 1.
-![User Persona 1](img/User_Persona_1.jpeg)
+![User Persona 1](img/User_Persona_1.png)
 #### User Persona 2.
 ![User Persona 2](img/User_Persona_2.png)
 ### Modelo conceptual del problema
@@ -336,13 +348,14 @@ Dentro de los requerimientos funcionales el actor siempre será el usuario (ver 
 
 **Prioridad:** Alta
 
-#### RF15 Balancear
+#### RF15: Balancear
 
 **Origen:** Tormenta de ideas
 
 **Descripción:** El sistema debe gestionar quién le debe pagar cuánto a quién, de tal forma que se realicen la menor cantidad de pagos posibles. 
 
 **Prioridad:** Alta
+
 ---
 ### Requerimientos Funcionales
 | Identificación | Descripción                                                      | Prioridad |
