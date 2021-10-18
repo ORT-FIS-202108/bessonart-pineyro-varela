@@ -369,7 +369,7 @@ Los requerimientos no funcionales refieren a restricciones a los servicios provi
 | RNF5           | El sistema deberá funcionar en Android 12.                       | Alta      |
 | RNF6           | Implementar el uso de "Chips" para la descripción de los gastos. | Baja      |
 | RNF7			 | La aplicación debe de llevar el nombre de MisGastos.				| Alta		|
-|RNF8            | Los lenguajes a utilizar son HTML, JavaScript y CSS.             | Alta      |
+| RNF8           | Los lenguajes a utilizar son HTML, JavaScript y CSS.             | Alta      |
 ---
 ### User Stories
 Las user stories describen una funcionalidad simple del sistema. Se trata de una explicación general para discutir el valor que provee el sistema a distintos interesados.
@@ -533,7 +533,7 @@ Como forma de verificar internamente que vamos por el camino correcto para const
 ![Tabla de verificación de los requerimientos](https://i.imgur.com/sgHeDQz.png)
 
 ### Validar la solución con personas no involucradas en el proyecto
-La validación se realizó con dos posibles usuarios. En primer lugar, Isabella (misma persona con la que realizamos una de las entrevistas iniciales), de 20 años, estudiante de medicina con varios grupos de amigos distintos y un grupo con el cual viaja todos los veranos. Y ...
+La validación se realizó con dos posibles usuarios, Isabella, de 20 años, (misma persona con la que realizamos una de las entrevistas iniciales), y Andrés, también de 20 años, estudiante de Psicología y emprendedor.
 
 La validación con Isabella fue positiva, quedó conforme en términos generales, pero hizo alguna recomendaciones a tener en cuenta. Opinó que si el objetivo es gestionar gastos dentro de grupos de amigos, la parte de gastos personales, si bien es útil, no corresponde. También comentó la posibilidad de agregar dos funcionalidades. La primera es asignarle a cada amigo un número de teléfono o mail, con el fin de poder recordarles sus deudas. La segunda es definir gastos constantes (mensuales, semanales), para que no sea necesario ingresarlo todos los meses o semanas.
 
@@ -542,7 +542,15 @@ La validación con Isabella fue positiva, quedó conforme en términos generales
 ### Detalle del trabajo individual
 
 #### Luca:
+
 #### Sofía:
+En general, el proyecto me pareció desafiante. Nos permitió aprender a utilizar nuevas tecnologías, como Git, GitHub y Markdown, que son utilizadas en el mercado laboral actualmente, pero requirió de nuestra parte un tiempo extra en lograr comprender como funcionaban dichas tecnologías. Esto generó que se cometieran algunos errores al principio, especialmente con los commits y el uso de las distintas ramas. 
+
+A mi parecer, la gestión de tiempos para realizar el proyecto fue buena. Nos organizamos en un principio para reunirnos una vez a la semana para ir avanzando en las distintas tareas, y comunicarnos las nuevas ideas que teníamos, lo que permitió un avance constante. Sin embargo, en algún punto del proyecto, esta comunicación y organización comenzó a tener sus fallas, debido a que comenzamos a avanzar en distintos tiempos, lo que generó discusiones constructivas sobre los objetivos específicos de nuestro proyecto.
+
+Por otro parte, la división de las tareas fue bastante equitativa. Si bien todos contribuimos con todas las partes, nos dimos cuenta que algunas tareas, especialmente aquellas que requerían diseños, era mejor que fueran planeadas por todos, pero concretadas por una persona en particular. Por ejemplo, para hacer los User Personas, si bien todos ideamos cómo debían ser dichos usuarios, yo formalicé los diseños, características y metas de cada uno. Luego de concretar estas tareas individualmente, se evaluaban grupalmente para así poder encontrar posibles mejoras. El resto de las tareas se fueron concretando por todos los integrantes por igual.
+
+
 #### Florencia:
 
 ### Técnicas aplicadas y aprendizajes
