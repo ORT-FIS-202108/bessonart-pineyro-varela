@@ -1,6 +1,6 @@
 @use "@material/theme" with (
-  $primary: #00bcd4,
-  $secondary: #f44336,
+  $primary: #512da8,
+  $secondary: #00796b,
   $background: #c7c7c7,
 );
 @use '@material/button/mdc-button';
@@ -18,6 +18,7 @@
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield";
 @use "@material/card";
+@use "@material/fab";
 @use "@material/list/mdc-list";
 @use "@material/menu-surface/mdc-menu-surface";
 @use "@material/menu/mdc-menu";
@@ -26,6 +27,7 @@
 
 @include card.core-styles;
 @include textfield.core-styles;
+@include fab.core-styles;
 
 html {
   scroll-behavior: smooth;
@@ -60,11 +62,11 @@ section {
 }
 
 .mdc-tab {
-    background-color: #67daff;
+    background-color: #00796b;
 }
 
 .mdc-tab__content .mdc-tab__text-label {
-    color: black;
+    color: #c7c7c7;
 }
 
 .mdc-text-field {
@@ -76,5 +78,16 @@ section {
 }
 
 .mdc-snackbar__actions .mdc-button__label {
-  color: #67daff;
+  color: #00796b;
 }
+
+.my-card {
+  height: 90px;
+  width: 90px;
+  background-color: #512da8;
+}
+
+.my-card-content {
+  padding: 16px;
+}
+
