@@ -4,10 +4,8 @@ import { MDCSnackbar } from '@material/snackbar';
 import {MDCSelect} from '@material/select';
 
 import Amigo from '../../dominio/amigo.js';
+import Grupo from '../../dominio/grupo.js';
 import { cleanNode, createData, getImagenProd } from './utils';
-
-// Creacion de usuario inicial.
-const usuario = new Usuario('Usuario Prueba', 'usuarioprueba@gmail.com');
 
 // Creacion de datos.
 const data = createData(usuario);
@@ -15,7 +13,7 @@ const productos = data.productos;
 const proveedores = data.proveedores;
 
 // Setea valores iniciales para mostrar.
-let listaPrincipal = usuario.getListaPrincipal();
+let listaAmigo = usuario.getListaPrincipal();
 let listaActual = usuario.listaPrincipal[0];
 
 // Dialog
@@ -136,7 +134,7 @@ const setListaActual = (lista) => {
 		createRow(prod);
 	});
 };
-
+/*
 const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
 tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
 	document.querySelectorAll('.content').forEach((element, index) => {
@@ -150,7 +148,7 @@ tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
 		}
 	});
 });
-
+*/
 const dibujarListaProductosTotales = (prods) => {
 	const tablaProductos = document.querySelector('#listaProductos');
 	cleanNode(tablaProductos);

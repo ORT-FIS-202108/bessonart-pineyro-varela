@@ -1,7 +1,7 @@
 class Grupo {
-	constructor(nombre) {
+	constructor(nombre,listaIntegrantes) {
 		this.nombre = nombre;
-		this.listaIntegrantes = [];
+		this.listaIntegrantes = listaIntegrantes;
 		this.listaDeudas = [];
 	}
 
