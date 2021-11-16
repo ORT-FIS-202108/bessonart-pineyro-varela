@@ -3,7 +3,7 @@ import { MDCDialog } from '@material/dialog';
 import { MDCSnackbar } from '@material/snackbar';
 import {MDCSelect} from '@material/select';
 
-import Usuario from '../../dominio/usuario.js';
+import Amigo from '../../dominio/amigo.js';
 import { cleanNode, createData, getImagenProd } from './utils';
 
 // Creacion de usuario inicial.
