@@ -16,13 +16,43 @@ class Sistema {
 	}
 
 	agregarGrupo(nombre,listaIntegrantes){
-		const g = new Grupo(nombre,listaIntegrantes);
-		this.listaGrupos.push(g);
+		const encontroGrupo = this.listaGrupo.find(l => l.nombre === nombre);
+		if(encontroGrupo){
+			throw Error(`Ya existe un grupo con nombre ${nombre}.`);
+		} else {
+			let nuevoGrupo= new Grupo(nombre,listaIntegrantes);
+			this.listaPrincipal.push(nuevoGrupo);
+		}
+	}
+
+	eliminarGrupo(nombre){
+		const encontroGrupo = this.listaGrupos.find(l => l.nombre === nombre);
+		if(encontroGrupo){
+			const indexGrupo = this.listaGrupos.findIndex(l => l.nombre === nombre);
+			this.listaGrupos.splice(indexGrupo, 1);
+		} else {
+			throw new Error(`No existe un grupo con el nombre ${nombre}`);
+		}
 	}
 
 	agregarAmigo(nombre, favorito){
-		const a = new Amigo(nombre,favorito);
-		this.listaAmigos.push(a);
+		const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
+		if(encontroAmigo){
+			throw Error(`Ya existe un amigo con nombre ${nombre}.`);
+		} else {
+			let nuevoAmigo= new Amigo(nombre,favorito);
+			this.listaPrincipal.push(nuevoAmigo);
+		}
+	}
+
+	eliminarAmigo(nombre){
+		const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
+		if(encontroAmigo){
+			const indexAmigo = this.listaAmigos.findIndex(l => l.nombre === nombre);
+			this.listaAmigo.splice(indexAmigo, 1);
+		} else {
+			throw new Error(`No existe un amigo con el nombre ${nombre}`);
+		}
 	}
 
 	getListaAmigos(){

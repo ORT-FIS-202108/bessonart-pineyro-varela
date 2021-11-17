@@ -24,6 +24,7 @@
 @use "@material/select/styles";
 @use "@material/dialog";
 @use "@material/snackbar/mdc-snackbar";
+@use "@material/select/mdc-select";
 
 @include card.core-styles;
 @include textfield.core-styles;
