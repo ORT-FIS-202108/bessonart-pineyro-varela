@@ -3,6 +3,7 @@ import { MDCDialog } from '@material/dialog';
 import { MDCSnackbar } from '@material/snackbar';
 import { MDCSelect } from '@material/select';
 import { MDCRipple } from '@material/ripple';
+import {MDCTopAppBar} from '@material/top-app-bar';
 
 import Amigo from '../../dominio/amigo.js';
 import Grupo from '../../dominio/grupo.js';
@@ -13,6 +14,23 @@ import { cleanNode, createData, getImagenProd } from './utils';
 // Creacion de datos.
 
 // Setea valores iniciales para mostrar
+
+//Top Bar
+const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+const topAppBar = new MDCTopAppBar(topAppBarElement);
+
+//Tab Bar
+const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
+tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
+	document.querySelectorAll('.content').forEach((element, index) => {
+		if (index === activatedEvent.detail.index) {
+			element.classList.remove('sample-content--hidden');
+		} else {
+			element.classList.add('sample-content--hidden');
+		}
+	});
+});
+
 
 // Dialog
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
@@ -47,7 +65,17 @@ fabAmigo.listen('click', () => { showDialogAmigo(); });
 const dialogAmigo = new MDCDialog(document.getElementById('amigoDialog'));
 function showDialogAmigo() {
 	dialogAmigo.open();
+
+	//Implementacion select dialogo amigos
+	const select = new MDCSelect(document.getElementById('selectFavorito'));
+
+	select.listen('MDCSelect:change', () => {
+		alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
+	});
 }
+
+
+
 //-------------------------------------------------------------------------------------------------------------------------
 
 // Editar nombre de lista en Lista principal
@@ -278,17 +306,4 @@ setListaActual(listaActual);
 dibujarListaPrincipal();
 dibujarListaProductosTotales(productos);
 
-// Codigo para el filtrado de la lista de productos.
-const select = new MDCSelect(document.querySelector('.mdc-select'));
 
-select.listen('MDCSelect:change', () => {
-	dibujarListaProductosTotales(productos.filter(p => {
-		if (select.value === 'verduras') {
-			return p.isVerdura;
-		}
-		if (select.value === 'frutas') {
-			return !p.isVerdura;
-		}
-		return p;
-	}));
-});
