@@ -125,6 +125,8 @@ function agregarAmigo(nombre) {
 const textNombreAmigo = new MDCTextField(document.getElementById('textNombreAmigo'));
 const textFavoritoAmigo = new MDCTextField(document.getElementById('textFavoritoAmigo'));
 const amigoAgregarButton = new MDCRipple(document.getElementById('amigoAgregarButton'));
+
+
 amigoAgregarButton.listen('click', () => {
 	let nombre = textNombreAmigo.value;
 	let favorito = textFavoritoAmigo.value;
@@ -144,7 +146,30 @@ amigoAgregarButton.listen('click', () => {
 		mostrarAmigos();
 	}
 });
+//Grupos
+const nuevoGrupo = new MDCRipple(document.getElementById('botonGrupoDialago'));
+const dialogoGrupo = new MDCDialog(document.getElementById('grupoDialog'));
+nuevoGrupo.listen('click', () => { dialogoGrupo.open(); });
 
+
+const botonAgregarGrupo = new MDCRipple(document.getElementById('botonAgregarGrupo'));
+const textNombreGrupo = new MDCTextField(document.getElementById('textNombreGrupo'));
+
+botonAgregarGrupo.listen('click', () => {
+	let nombre = textNombreGrupo.value;
+	try {
+		if (nombre.trim() === '') {
+			showSnackbar('Nombre es un campo requerido.');
+		} else {	
+
+			showSnackbar('Se ingreso un Nombre');
+		}
+	} catch (error) {
+		showSnackbar(error.message);
+	} finally {
+		showSnackbar('termino')
+	}
+});
 
 
 
