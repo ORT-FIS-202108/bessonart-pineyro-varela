@@ -55,7 +55,7 @@
         <section style="margin-top: 65px;" class="content">
             <h1>Amigos</h1>
             <ul class="mdc-list" id="lista-amigos">
-
+                <h4>No tienes ningún amigo</h4>
             </ul>
             <button id="botonAgregarAmigo" class="mdc-fab mdc-fab--mini" aria-label="Agregar"
                 style="position: fixed; bottom: 20px; right: 25px; height: 65px; width: 65px; border-radius: 50px; border: none;">
@@ -239,65 +239,22 @@
                             <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
                             <span class="mdc-line-ripple"></span>
                         </label>
-                        <div class="mdc-select mdc-select--filled demo-width-class">
-                            <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-expanded="false"
-                                aria-labelledby="demo-label demo-selected-text">
-                                <span class="mdc-select__ripple"></span>
-                                <span id="demo-label" class="mdc-floating-label">Método de pago favorito</span>
-                                <span class="mdc-select__selected-text-container">
-                                    <span id="demo-selected-text" class="mdc-select__selected-text"></span>
-                                </span>
-                                <span class="mdc-select__dropdown-icon">
-                                    <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5"
-                                        focusable="false">
-                                        <polygon class="mdc-select__dropdown-icon-inactive" stroke="none"
-                                            fill-rule="evenodd" points="7 10 12 15 17 10">
-                                        </polygon>
-                                        <polygon class="mdc-select__dropdown-icon-active" stroke="none"
-                                            fill-rule="evenodd" points="7 15 12 10 17 15">
-                                        </polygon>
-                                    </svg>
-                                </span>
-                                <span class="mdc-line-ripple"></span>
-                            </div>
-                            <div id='selectFavorito' class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
-                                <ul class="mdc-list" role="listbox" aria-label="Método de pago favorito">
-                                    <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value=""
-                                        role="option">
-                                        <span class="mdc-list-item__ripple"></span>
-                                    </li>
-                                    <li class="mdc-list-item" aria-selected="false" data-value="Ninguno" role="option">
-                                        <span class="mdc-list-item__ripple"></span>
-                                        <span class="mdc-list-item__text">
-                                            Ninguno
-                                        </span>
-                                    </li>
-                                    <li class="mdc-list-item mdc-list-item--disabled" aria-selected="false"
-                                        data-value="Transferencia" aria-disabled="true" role="option">
-                                        <span class="mdc-list-item__ripple"></span>
-                                        <span class="mdc-list-item__text">
-                                            Transferencia
-                                        </span>
-                                    </li>
-                                    <li class="mdc-list-item" aria-selected="false" data-value="Efectivo" role="option">
-                                        <span class="mdc-list-item__ripple"></span>
-                                        <span class="mdc-list-item__text">
-                                            Efectivo
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <label id='textFavoritoAmigo' class="mdc-text-field mdc-text-field--filled">
+                            <span class="mdc-text-field__ripple"></span>
+                            <span class="mdc-floating-label" id="my-label-id">Método de pago favorito</span>
+                            <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+                            <span class="mdc-line-ripple"></span>
+                        </label>
                     </div>
                     <footer class="mdc-dialog__actions">
                         <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
                             style="background-color: #c7c7c7; color: white; ">
                             <span class="mdc-button__label">Cancelar</span>
                         </button>
-                        <button id="alertDialogButton" type="button"
+                        <button id="amigoAgregarButton" type="button"
                             class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
                             data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
-                            <span class="mdc-button__label">Aceptar</span>
+                            <span class="mdc-button__label">Agregar</span>
                         </button>
                     </footer>
                 </div>

@@ -21,7 +21,7 @@ class Sistema {
 			throw Error(`Ya existe un grupo con nombre ${nombre}.`);
 		} else {
 			let nuevoGrupo= new Grupo(nombre,listaIntegrantes);
-			this.listaPrincipal.push(nuevoGrupo);
+			this.listaGrupo.push(nuevoGrupo);
 		}
 	}
 
@@ -41,7 +41,7 @@ class Sistema {
 			throw Error(`Ya existe un amigo con nombre ${nombre}.`);
 		} else {
 			let nuevoAmigo= new Amigo(nombre,favorito);
-			this.listaPrincipal.push(nuevoAmigo);
+			this.listaAmigos.unshift(nuevoAmigo);
 		}
 	}
 
@@ -49,7 +49,7 @@ class Sistema {
 		const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
 		if(encontroAmigo){
 			const indexAmigo = this.listaAmigos.findIndex(l => l.nombre === nombre);
-			this.listaAmigo.splice(indexAmigo, 1);
+			this.listaAmigos.splice(indexAmigo,1);
 		} else {
 			throw new Error(`No existe un amigo con el nombre ${nombre}`);
 		}
