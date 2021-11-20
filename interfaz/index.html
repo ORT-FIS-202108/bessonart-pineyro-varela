@@ -63,46 +63,27 @@
                 <span class="mdc-fab__icon material-icons">add</span>
             </button>
         </section>
+        
         <section style="margin-top: 70px; margin-bottom: 0px; padding: 0px;" class="content sample-content--hidden">
-            <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
-                    <h1 style="padding-left: 20px; font: Roboto; font-weight: 600;" id="nombreListaActual">
-
-                    </h1>
-
-                    <p style="font-weight: bold; padding-right: 80px;" id="totalLista"></p>
-                </div>
-                <table style="width: 100%;" id="listaActuales">
-                </table>
-
-            </div>
+            <h1>Grupos</h1>
+            <ul class="mdc-list" id="lista-amigos">
+                <h4>No tienes ningún Grupo</h4>
+            </ul>
+            <button id="botonAgregarGrupo" class="mdc-fab mdc-fab--mini" aria-label="Agregar"
+                style="position: fixed; bottom: 20px; right: 25px; height: 65px; width: 65px; border-radius: 50px; border: none;">
+                <div class="mdc-fab__ripple"></div>
+                <span class="mdc-fab__icon material-icons">add</span>
+            </button>
 
             <hr />
             <div
                 style="display: flex; align-items: center; justify-content: space-between; flex-direction: column; margin: 20px;">
                 <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
-                    <h2 style="align-self:flex-start; display: flex; font: Roboto; font-weight: 300;">Otros Productos
-                    </h2>
-                    <div class="mdc-select mdc-select--filled demo-width-class">
-                        <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-expanded="false"
-                            aria-labelledby="demo-label demo-selected-text">
-                            <span class="mdc-select__ripple"></span>
-                            <span class="mdc-select__selected-text-container">
-                                <span id="demo-selected-text" class="mdc-select__selected-text"></span>
-                            </span>
-                            <span class="mdc-select__dropdown-icon">
-                                <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false">
-                                    <polygon class="mdc-select__dropdown-icon-inactive" stroke="none"
-                                        fill-rule="evenodd" points="7 10 12 15 17 10">
-                                    </polygon>
-                                    <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd"
-                                        points="7 15 12 10 17 15">
-                                    </polygon>
-                                </svg>
-                            </span>
-                            <span class="mdc-line-ripple"></span>
-                        </div>
 
+                    <label for="nombre">Deudas de:</label>
+                    <input type="text" id="nombre">
+                    <br>
+                    <br>
                         <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
                             <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
                                 <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value=""
