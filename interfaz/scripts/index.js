@@ -74,7 +74,7 @@ function mostrarAmigos() {
 		h4.innerText = 'No tienes ningún amigo';
 		document.getElementById('lista-amigos').appendChild(h4);
 	} else {
-		sistema.listaAmigos.forEach(item => { agregarAmigo(item.nombre); console.log(item.nombre); });
+		sistema.listaAmigos.forEach(item => { agregarAmigo(item.nombre); });
 	}
 }
 
@@ -83,18 +83,18 @@ function borrarAmigo(nombre) {
 		showSnackbar('Error: Debe tener al menos un amigo');
 	} else {
 		sistema.eliminarAmigo(nombre);
+		cleanNode(document.getElementById('lista-amigos'));
 		mostrarAmigos();
 	}
 }
 
 function agregarAmigo(nombre) {
-	cleanNode(document.getElementById('lista-amigos'));
 	let li = document.createElement('li');
 	li.setAttribute('class', 'mdc-list-item');
 	let card = document.createElement('div');
 	card.setAttribute('class', 'mdc-card');
 	card.innerHTML = nombre;
-
+	console.log(nombre);
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
 
@@ -136,7 +136,7 @@ amigoAgregarButton.listen('click', () => {
 				favorito = 'Ninguno';
 			}
 			sistema.agregarAmigo(nombre, favorito);
-			showSnackbar('Se edito correctamente la lista');
+			showSnackbar('Se edito correctamente la lista de amigos');
 		}
 	} catch (error) {
 		showSnackbar(error.message);
