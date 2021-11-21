@@ -12,6 +12,7 @@ class Grupo {
 			listaDeudas: this.listaDeudas,
 		};
 	}
+
 	agregarAmigo(amigo){
 		this.listaIntegrantes.push(amigo);
 	}
@@ -69,6 +70,7 @@ class Grupo {
 		}
 		return false;
 	}
+	
 	eliminarAmigo(nombre){
 		if(this.listaIntegrantes.length !== 0) {
 			const encontroAmigo = this.listaIntegrante.find(l => l.nombre === nombre);

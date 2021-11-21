@@ -4,10 +4,9 @@ import { MDCSnackbar } from '@material/snackbar';
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCTextField } from '@material/textfield';
-import {MDCMenu} from '@material/menu';
-//import {MDCChipSet} from '@material/chips';
-import {MDCFormField} from '@material/form-field';
-import {MDCCheckbox} from '@material/checkbox';
+import { MDCMenu } from '@material/menu';
+import { MDCFormField } from '@material/form-field';
+import { MDCCheckbox } from '@material/checkbox';
 
 //const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
 const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
@@ -76,7 +75,7 @@ function showDialogAmigo() {
 
 function mostrarAmigos() {
 	cleanNode(document.getElementById('lista-amigos'));
-	if (sistema.listaAmigos.length < 1 ) {
+	if (sistema.listaAmigos.length < 1) {
 		cleanNode(document.getElementById('lista-amigos'));
 		let h4 = document.createElement('h4');
 		h4.innerText = 'No tienes ningún amigo';
@@ -154,11 +153,12 @@ amigoAgregarButton.listen('click', () => {
 	} catch (error) {
 		showSnackbar(error.message);
 	} finally {
-		textNombreAmigo.value='';
-		textFavoritoAmigo.value='';
+		textNombreAmigo.value = '';
+		textFavoritoAmigo.value = '';
 		mostrarAmigos();
 	}
 });
+
 //Grupos
 const nuevoGrupo = new MDCRipple(document.getElementById('botonGrupoDialago'));
 const dialogoGrupo = new MDCDialog(document.getElementById('grupoDialog'));
@@ -174,8 +174,8 @@ botonAgregarGrupo.listen('click', () => {
 	try {
 		if (nombre.trim() === '') {
 			showSnackbar('Nombre es un campo requerido.');
-		} else {	
-			sistema.agregarGrupo(nombre,['hola']);
+		} else {
+			sistema.agregarGrupo(nombre, ['hola']);
 		}
 	} catch (error) {
 		showSnackbar(error.message);
@@ -219,9 +219,9 @@ const grupoSeleccionado =((grupo) => {
 			let monto = deuda.getMontos()[i];
 			listaDeudas.insertAdjacentHtml('beforeend', 
 			`<li class="mdc-list-item" aria-selected="false" data-value="deudas" role="option" onclick=mostrarDeuda(grupo, nombre, i)>
-		    	<span class="mdc-list-item__ripple"></span>
-            	<span class="mdc-list-item__text">${nombre} -> ${amigo}: $${monto}</span>
-            </li>`);
+				<span class="mdc-list-item__ripple"></span>
+				<span class="mdc-list-item__text">${nombre} -> ${amigo}: $${monto}</span>
+			</li>`);
 		}
 	}
 });
@@ -246,7 +246,7 @@ const textDescripcionGasto = new MDCTextField(document.getElementById('descripci
 const textMontoGasto = new MDCTextField(document.getElementById('montoGasto'));
 const dueño = document.querySelector('.mdc-menu-item--selected').value;
 const participantes = [];
-$('input:checkbox:checked').each(function() {
+$('input:checkbox:checked').each(function () {
 	participantes.push($(this).value);
 });
 /*for(let persona in participantes) {
@@ -263,7 +263,7 @@ const cargarListaIntegrantes = (() => {
 	let lista = document.querySelector('#menuIntegrantes');
 	for (let persona in grupoActivo.getListaIntegrantes()) {
 		lista.insertAdjacentHtml('beforeend',
-		`<li class="mdc-list-item" role="menuitem">
+			`<li class="mdc-list-item" role="menuitem">
             <span class="mdc-list-item__ripple"></span>
             <span class="mdc-list-item__text">${persona.getNombre()}</span>
         </li>`);
@@ -275,8 +275,8 @@ const cargarCheckBox = (() => {
 	let lista = document.querySelector('#listaIntegrantes');
 	let i = 0;
 	for (let persona in grupoActivo.getListaIntegrantes()) {
-		lista.insertAdjacentHtml('beforeend', 
-		`<div class="mdc-checkbox">
+		lista.insertAdjacentHtml('beforeend',
+			`<div class="mdc-checkbox">
 			<input type="checkbox" class="mdc-checkbox__native-control" id="cb-${i}"/>
 			<div class="mdc-checkbox__background">
 				<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"> <path class="mdc-checkbox__checkmark-path"
@@ -337,26 +337,28 @@ function agregarGrupo(nombre) {
 		content.innerHTML = `¿Está seguro que desea eliminar  ${nombre}?`;
 		showDialog('Eliminar Grupo', content, callback);
 	});
+
+	//Edit integrantes icon
 	let icon2 = document.createElement('i');
 	icon2.setAttribute('class', 'material-icons mdc-button__icon');
-	icon2.innerHTML = 'delete_outline';
+	icon2.innerHTML = 'edit';
 	icon2.classList.add('hoverIcon');
 	icon2.style.setProperty('position', 'absolute');
 	icon2.style.setProperty('top', '5px');
-	icon2.style.setProperty('right', '5px');
+	icon2.style.setProperty('right', '29px');
 	icon2.addEventListener('click', function (event) {
 		event.stopPropagation();
-		dialogoGrupo2.open();
-		mostrarAmigos2();
+		editarIntegrantes(nombre);
 	});
 
 	card.appendChild(icon);
+	card.appendChild(icon2);
 	li.appendChild(card);
 	document.getElementById('lista-grupos').appendChild(li);
 }
 function mostrarGrupos() {
 	cleanNode(document.getElementById('lista-grupos'));
-	if (sistema.listaGrupos.length < 1 ) {
+	if (sistema.listaGrupos.length < 1) {
 		cleanNode(document.getElementById('lista-grupos'));
 		let h4 = document.createElement('h4');
 		h4.innerText = 'No tienes ningún grupo';
@@ -366,46 +368,76 @@ function mostrarGrupos() {
 	}
 }
 
-function agregarAmigo2(nombre) {
+function showDialogIntegrantes() {
+	dialogoGrupo2.open();
+}
+
+
+function agregarIntegrantes(nAmigo, nGrupo) {
 	let li = document.createElement('li');
 	li.setAttribute('class', 'mdc-list-item');
 	let card = document.createElement('div');
 	card.setAttribute('class', 'mdc-card');
-	card.innerHTML = nombre;
-	console.log(nombre);
+	card.innerHTML = nAmigo;
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
 
-	// Delete icon
-	let icon = document.createElement('i');
-	icon.setAttribute('class', 'material-icons mdc-button__icon');
-	icon.innerHTML = 'delete_outline';
-	icon.classList.add('hoverIcon');
-	icon.style.setProperty('position', 'absolute');
-	icon.style.setProperty('top', '5px');
-	icon.style.setProperty('right', '5px');
-	icon.addEventListener('click', function (event) {
-		event.stopPropagation();
-		if(sistema.grupoActual.AmigoPertenece(nombre)){
-			sistema.grupoActual.eliminarAmigo(nombre);
-		}
-		else{
-			sistema.grupoActual.eliminarAmigo(nombre);
-		}
-	});
-	card.appendChild(icon);
+	if (sistema.estaAmigoEnGrupo(nAmigo, nGrupo)) {
+		//cambiar color de fondo de la card
+
+		// Delete icon
+		let icon = document.createElement('i');
+		icon.setAttribute('class', 'material-icons mdc-button__icon');
+		icon.innerHTML = 'delete_outline';
+		icon.classList.add('hoverIcon');
+		icon.style.setProperty('position', 'absolute');
+		icon.style.setProperty('top', '5px');
+		icon.style.setProperty('right', '5px');
+		const callback = () => {
+			sistema.eliminarAmigoDelGrupo(nAmigo, nGrupo);
+			showSnackbar(`Se elimino a ${nAmigo} del grupo ${nGrupo}`);
+		};
+		icon.addEventListener('click', function (event) {
+			event.stopPropagation();
+			let content = document.createElement('p');
+			content.innerHTML = `¿Está seguro que desea eliminar a ${nAmigo} del grupo ${nGrupo}?`;
+			showDialog('Eliminar Amigo', content, callback);
+		});
+		card.appendChild(icon);
+	} else {
+		// Plus icon
+		let icon = document.createElement('i');
+		icon.setAttribute('class', 'material-icons mdc-button__icon');
+		icon.innerHTML = 'add';
+		icon.classList.add('hoverIcon');
+		icon.style.setProperty('position', 'absolute');
+		icon.style.setProperty('top', '5px');
+		icon.style.setProperty('right', '5px');
+		const callback = () => {
+			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
+			showSnackbar(`Se agrego a ${nAmigo} al grupo ${nGrupo}`);
+		};
+		icon.addEventListener('click', function (event) {
+			event.stopPropagation();
+			let content = document.createElement('p');
+			content.innerHTML = `¿Está seguro que desea agregar a ${nAmigo} al grupo ${nGrupo}?`;
+			showDialog('Agregar Integrante', content, callback);
+		});
+		card.appendChild(icon);
+	}
+
 	li.appendChild(card);
-	document.getElementById('lista-amigos-select').appendChild(li);
+	document.getElementById('lista-amigos-checkbox').appendChild(li);
 }
 
-function mostrarAmigos2() {
-	cleanNode(document.getElementById('lista-amigos-select'));
-	if (sistema.listaAmigos.length < 1 ) {
-		cleanNode(document.getElementById('lista-amigos'));
+function editarIntegrantes(nombre) {
+	cleanNode(document.getElementById('lista-amigos-checkbox'));
+	if (sistema.listaAmigos.length < 1) {
 		let h4 = document.createElement('h4');
 		h4.innerText = 'No tienes ningún amigo';
-		document.getElementById('lista-amigos').appendChild(h4);
+		document.getElementById('lista-amigos-checkbox').appendChild(h4);
 	} else {
-		sistema.listaAmigos.forEach(item => { agregarAmigo2(item.nombre); });
+		sistema.listaAmigos.forEach(item => { agregarIntegrantes(item.nombre, nombre); });
 	}
+	showDialogIntegrantes();
 }

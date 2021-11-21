@@ -5,86 +5,102 @@ class Sistema {
 	constructor() {
 		this.listaAmigos = [];
 		this.listaGrupos = [];
-		this.grupoActual=null;
+		this.grupoActual = null;
 	}
 
-	getListaGrupos(){
+	getListaGrupos() {
 		return this.listaGrupos;
 	}
 
-	setListaGrupos(lista){
+	setListaGrupos(lista) {
 		this.listaGrupos = lista;
 	}
 
-	agregarGrupo(nombre,listaIntegrantes){
+	agregarGrupo(nombre, listaIntegrantes) {
 		const encontroGrupo = this.listaGrupos.find(l => l.nombre === nombre);
-		if(encontroGrupo){
+		if (encontroGrupo) {
 			throw Error(`Ya existe un grupo con nombre ${nombre}.`);
 		} else {
-			let nuevoGrupo= new Grupo(nombre,listaIntegrantes);
+			let nuevoGrupo = new Grupo(nombre, listaIntegrantes);
 			this.listaGrupos.push(nuevoGrupo);
 		}
 	}
 
-	eliminarGrupo(nombre){
-		if(this.listaGrupo.length !== 0) {
+	eliminarGrupo(nombre) {
+		if (this.listaGrupos.length !== 0) {
 			const encontroGrupo = this.listaGrupos.find(l => l.nombre === nombre);
-			if(encontroGrupo){
+			if (encontroGrupo) {
 				const indexGrupo = this.listaGrupos.findIndex(l => l.nombre === nombre);
 				this.listaGrupos.splice(indexGrupo, 1);
-				return;
-			}
-		}
-		throw new Error(`No existe un grupo con el nombre ${nombre}`);
-	}
-
-	agregarAmigo(nombre, favorito){
-		if(this.listaAmigos.length !== 0) {
-			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
-			if(encontroAmigo){
-				throw Error(`Ya existe un amigo con nombre ${nombre}.`);
-			}
-		}
-		let nuevoAmigo= new Amigo(nombre,favorito);
-		this.listaAmigos.unshift(nuevoAmigo);
-	}
-
-	agregarAmigoGrupo(nombre){
-		this.grupoActual.agregarAmigo(this.getAmigoByName(nombre));
-	}
-	eliminarAmigoGrupo(nombre){
-		this.grupoActual.eliminarAmigo(this.getAmigoByName(nombre));
-	}
-
-
-	eliminarAmigo(nombre){
-		if(this.listaAmigos.length !== 0) {
-			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
-			if(encontroAmigo){
-				const indexAmigo = this.listaAmigos.findIndex(l => l.nombre === nombre);
-				this.listaAmigos.splice(indexAmigo,1);
 				return;
 			}
 		}
 		throw new Error(`No existe un amigo con el nombre ${nombre}`);
 	}
 
-	getListaAmigos(){
+	agregarAmigo(nombre, favorito) {
+		if (this.listaAmigos.length !== 0) {
+			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
+			if (encontroAmigo) {
+				throw Error(`Ya existe un amigo con nombre ${nombre}.`);
+			}
+		}
+		let nuevoAmigo = new Amigo(nombre, favorito);
+		this.listaAmigos.unshift(nuevoAmigo);
+	}
+
+	agregarAmigoGrupo(nombre) {
+		this.grupoActual.agregarAmigo(this.getAmigoByName(nombre));
+	}
+	eliminarAmigoGrupo(nombre) {
+		this.grupoActual.eliminarAmigo(this.getAmigoByName(nombre));
+	}
+
+	eliminarAmigoDelGrupo(nombre, nG) {
+		for (const grupo in this.listaGrupos) {
+			if (grupo.getNombre() === nG) {
+				grupo.eliminarAmigo(nombre);
+			}
+		}
+	}
+
+	agregarAmigoAlGrupo(nombre, nG){
+		for (const grupo in this.listaGrupos) {
+			if (grupo.getNombre() === nG) {
+				grupo.agregarAmigo(nombre);
+			}
+		}
+	}
+
+	eliminarAmigo(nombre) {
+		if (this.listaAmigos.length !== 0) {
+			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
+			if (encontroAmigo) {
+				const indexAmigo = this.listaAmigos.findIndex(l => l.nombre === nombre);
+				this.listaAmigos.splice(indexAmigo, 1);
+				return;
+			}
+		}
+		throw new Error(`No existe un amigo con el nombre ${nombre}`);
+	}
+
+	getListaAmigos() {
 		return this.listaAmigos;
 	}
 
-	setListaAmigos(lista){
+	setListaAmigos(lista) {
 		this.listaAmigos = lista;
 	}
 
 	getGrupoByName(nombre) {
 		for (const grupo in this.listaGrupos) {
-			if (grupo.getNombre() === nombre) {
+			if (grupo === nombre) {
 				return grupo;
 			}
 		}
 		return null;
 	}
+
 	getAmigoByName(nombre) {
 		for (const amigo in this.listaAmigos) {
 			if (amigo.getNombre() === nombre) {
@@ -92,6 +108,24 @@ class Sistema {
 			}
 		}
 		return null;
+	}
+
+	getIntegrantesDelGrupo(nombre) {
+		for (const grupo in this.listaGrupos) {
+			if (grupo.getNombre() === nombre) {
+				return grupo.listaIntegrantes;
+			}
+		}
+		return null;
+	}
+
+	estaAmigoEnGrupo(nAmigo, nGrupo) {
+		for (const grupo in this.listaGrupos) {
+			if (grupo === nGrupo) {
+				return grupo.AmigoPertenece(nAmigo);
+			}
+		}
+		return false;
 	}
 
 }
