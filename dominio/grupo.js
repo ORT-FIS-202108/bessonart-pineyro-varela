@@ -37,5 +37,47 @@ class Grupo {
 		this.listaIntegrantes = lista;
 	}
 
+	cantidadIntegrantes(){
+		return this.listaIntegrantes.length;
+	}
+
+	getCantidadDeudas() {
+		return this.listaDeudas.length;
+	}
+
+	getDeudaDe(nombre){
+		for (const deuda in this.listaDeudas) {
+			if (deuda.getNombre()===(nombre)) {
+				return this.listaDeudas.indexOf(deuda);
+			}
+		}
+		return -1;
+	}
+
+	agregarDeuda(deuda) {
+		this.listaDeudas.push(deuda);
+		this.balancear();
+	}
+
+	balancear() {
+		// for (let deuda in this.lista) {
+		// 	var monto = gasto.getMonto() / gasto.getCantidadParticipantes();
+		// 	var dueño = gasto.getDueño();
+		// 	for (let p in gasto.getParticipantes() {
+		// 		let nombre = p.getNombre();
+		// 		if(!nombre === (dueño.getNombre())){
+		// 			let indexDeuda = this.getDeudaDe(nombre);
+		// 			if(indexDeuda =! -1) {
+		// 				this.listaDeudas.get(indexDeuda).agregarDeuda(dueño, monto);
+		// 			} else {
+		// 				var nuevaDeuda = Deuda(nombre);
+		// 				nuevaDeuda.agregarDeuda(dueño, monto);
+		// 				this.listaDeudas.push(nuevaDeuda);
+		// 			}
+		// 		}
+		// 	}
+		// }
+	}
+
 }
 export default Grupo;
