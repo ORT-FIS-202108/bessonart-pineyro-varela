@@ -145,6 +145,8 @@ amigoAgregarButton.listen('click', () => {
 	} catch (error) {
 		showSnackbar(error.message);
 	} finally {
+		textNombreAmigo.value='';
+		textFavoritoAmigo.value='';
 		mostrarAmigos();
 	}
 });
@@ -173,7 +175,7 @@ botonAgregarGrupo.listen('click', () => {
 });
 
 function borrarGrupo(nombre) {
-	if (sistema.listaAmigos.length < 1) {
+	if (sistema.listaGrupos.length < 1) {
 		showSnackbar('Error: Debe tener al menos un Grupo');
 	} else {
 		sistema.eliminarGrupo(nombre);
