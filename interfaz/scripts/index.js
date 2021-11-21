@@ -322,7 +322,6 @@ function agregarGrupo(nombre) {
 	icon.setAttribute('class', 'material-icons mdc-button__icon');
 	icon.innerHTML = 'delete_outline';
 	icon.classList.add('hoverIcon');
-	icon.style.setProperty('position', 'absolute');
 	icon.style.setProperty('top', '5px');
 	icon.style.setProperty('right', '5px');
 	const callback = () => {
