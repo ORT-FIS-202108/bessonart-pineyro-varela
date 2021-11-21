@@ -64,12 +64,12 @@
             </button>
         </section>
         
-        <section style="margin-top: 70px; margin-bottom: 0px; padding: 0px;" class="content sample-content--hidden">
+        <section style="margin-top: 65px;  " class="content sample-content--hidden">
             <h1>Grupos</h1>
-            <ul class="mdc-list" id="lista-amigos">
+            <ul class="mdc-list" id="lista-grupos">
                 <h4>No tienes ningún Grupo</h4>
             </ul>
-            <button id="botonAgregarGrupo" class="mdc-fab mdc-fab--mini" aria-label="Agregar"
+            <button id="botonGrupoDialago" class="mdc-fab mdc-fab--mini" aria-label="Agregar"
                 style="position: fixed; bottom: 20px; right: 25px; height: 65px; width: 65px; border-radius: 50px; border: none;">
                 <div class="mdc-fab__ripple"></div>
                 <span class="mdc-fab__icon material-icons">add</span>
@@ -215,6 +215,35 @@
                             <span class="mdc-button__label">Cancelar</span>
                         </button>
                         <button id="amigoAgregarButton" type="button"
+                            class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
+                            data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
+                            <span class="mdc-button__label">Agregar</span>
+                        </button>
+                    </footer>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+           <!-- Agregar Grupo Dialog -->
+           <div id="grupoDialog" class="mdc-dialog" aria-modal="true" aria-labelledby="Agregar Grupo">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <h2 class="mdc-dialog__title">
+                        Agregar Grupo
+                    </h2>
+                        <label id='textNombreGrupo' class="mdc-text-field mdc-text-field--filled">
+                            <span class="mdc-text-field__ripple"></span>
+                            <span class="mdc-floating-label" id="my-label-id">Nombre</span>
+                            <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+                            <span class="mdc-line-ripple"></span>
+                        </label>
+
+                    <footer class="mdc-dialog__actions">
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
+                            style="background-color: #c7c7c7; color: white; ">
+                            <span class="mdc-button__label">Cancelar</span>
+                        </button>
+                        <button id="botonAgregarGrupo" type="button"
                             class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
                             data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
                             <span class="mdc-button__label">Agregar</span>

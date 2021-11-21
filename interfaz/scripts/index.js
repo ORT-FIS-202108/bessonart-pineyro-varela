@@ -88,6 +88,8 @@ function mostrarAmigos() {
 	}
 }
 
+
+
 function borrarAmigo(nombre) {
 	if (sistema.listaAmigos.length < 1) {
 		showSnackbar('Error: Debe tener al menos un amigo');
@@ -135,6 +137,8 @@ function agregarAmigo(nombre) {
 const textNombreAmigo = new MDCTextField(document.getElementById('textNombreAmigo'));
 const textFavoritoAmigo = new MDCTextField(document.getElementById('textFavoritoAmigo'));
 const amigoAgregarButton = new MDCRipple(document.getElementById('amigoAgregarButton'));
+
+
 amigoAgregarButton.listen('click', () => {
 	let nombre = textNombreAmigo.value;
 	let favorito = textFavoritoAmigo.value;
@@ -151,7 +155,32 @@ amigoAgregarButton.listen('click', () => {
 	} catch (error) {
 		showSnackbar(error.message);
 	} finally {
+		textNombreAmigo.value='';
+		textFavoritoAmigo.value='';
 		mostrarAmigos();
+	}
+});
+//Grupos
+const nuevoGrupo = new MDCRipple(document.getElementById('botonGrupoDialago'));
+const dialogoGrupo = new MDCDialog(document.getElementById('grupoDialog'));
+nuevoGrupo.listen('click', () => { dialogoGrupo.open(); });
+
+
+const botonAgregarGrupo = new MDCRipple(document.getElementById('botonAgregarGrupo'));
+const textNombreGrupo = new MDCTextField(document.getElementById('textNombreGrupo'));
+
+botonAgregarGrupo.listen('click', () => {
+	let nombre = textNombreGrupo.value;
+	try {
+		if (nombre.trim() === '') {
+			showSnackbar('Nombre es un campo requerido.');
+		} else {	
+			sistema.agregarGrupo(nombre,['hola']);
+		}
+	} catch (error) {
+		showSnackbar(error.message);
+	} finally {
+		mostrarGrupos();
 	}
 });
 
@@ -167,6 +196,17 @@ amigoAgregarButton.listen('click', () => {
 // 	grupoSeleccionado(grupo);
 // });
 let grupoActivo;
+
+function borrarGrupo(nombre) {
+	if (sistema.listaGrupos.length < 1) {
+		showSnackbar('Error: Debe tener al menos un Grupo');
+	} else {
+		sistema.eliminarGrupo(nombre);
+		cleanNode(document.getElementById('lista-amigos'));
+		mostrarGrupos();
+	}
+}
+>>>>>>> 0671cecd4eb018cd8ef6d10fe53ee5d3709a7ac7
 
 const grupoSeleccionado =((grupo) => {
 	grupoActivo = grupo;
@@ -268,3 +308,48 @@ const cargarCheckBox = (() => {
 // 		i++;
 // 	}
 // });
+
+function agregarGrupo(nombre) {
+	let li = document.createElement('li');
+	li.setAttribute('class', 'mdc-list-item');
+	let card = document.createElement('div');
+	card.setAttribute('class', 'mdc-card');
+	card.innerHTML = nombre;
+	console.log(nombre);
+	let actions = document.createElement('div');
+	actions.setAttribute('class', 'mdc-card__actions');
+
+	// Delete icon
+	let icon = document.createElement('i');
+	icon.setAttribute('class', 'material-icons mdc-button__icon');
+	icon.innerHTML = 'delete_outline';
+	icon.classList.add('hoverIcon');
+	icon.style.setProperty('position', 'absolute');
+	icon.style.setProperty('top', '5px');
+	icon.style.setProperty('right', '5px');
+	const callback = () => {
+		borrarGrupo(nombre);
+		showSnackbar(`Se elimino a ${nombre} de tus grupos`);
+	};
+	icon.addEventListener('click', function (event) {
+		event.stopPropagation();
+		let content = document.createElement('p');
+		content.innerHTML = `¿Está seguro que desea eliminar  ${nombre}?`;
+		showDialog('Eliminar Grupo', content, callback);
+	});
+
+	card.appendChild(icon);
+	li.appendChild(card);
+	document.getElementById('lista-grupos').appendChild(li);
+}
+function mostrarGrupos() {
+	cleanNode(document.getElementById('lista-grupos'));
+	if (sistema.listaGrupos.length < 1 ) {
+		cleanNode(document.getElementById('lista-grupos'));
+		let h4 = document.createElement('h4');
+		h4.innerText = 'No tienes ningún grupo';
+		document.getElementById('lista-grupos').appendChild(h4);
+	} else {
+		sistema.listaGrupos.forEach(item => { agregarGrupo(item.nombre); });
+	}
+}
