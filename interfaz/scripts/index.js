@@ -5,16 +5,14 @@ import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCTextField } from '@material/textfield';
 import {MDCMenu} from '@material/menu';
-//import {MDCChipSet} from '@material/chips';
 import {MDCFormField} from '@material/form-field';
 import {MDCCheckbox} from '@material/checkbox';
 
-//const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
+const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
 const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
-//formField.input = checkbox;
+formField.input = checkbox;
 
 import Sistema from '../../dominio/sistema.js';
-import Deuda from '../../dominio/deuda.js';
 
 import { cleanNode } from './utils';
 
@@ -204,8 +202,7 @@ function borrarGrupo(nombre) {
 		mostrarGrupos();
 	}
 }
-//>>>>>>> 0671cecd4eb018cd8ef6d10fe53ee5d3709a7ac7
-/*
+
 const grupoSeleccionado =((grupo) => {
 	grupoActivo = grupo;
 	document.querySelector('#nombreGrupo').innerHTML = '${grupo.getNombre()}: Deudas';
@@ -236,25 +233,18 @@ const mostrarDeuda = ((grupo, nombre, pos) => {
 	document.querySelector('#deudaDialogContent').innerHTML = '${nombre} -> ${amigo}: $${monto}';
 	showDialogDeuda();
 });
-*/
+
 //Menu Deudas
 const menu = new MDCMenu(document.querySelector('.mdc-menu'));
 
-const textDescripcionGasto = new MDCTextField(document.getElementById('descripcionGasto'));
-const textMontoGasto = new MDCTextField(document.getElementById('montoGasto'));
+const gasto = new MDCTextField(document.getElementById('montoGasto'));
 const dueño = document.querySelector('.mdc-menu-item--selected').value;
-const participantes = [];
-$('input:checkbox:checked').each(function() {
-	participantes.push($(this).value);
-});
-/*for(let persona in participantes) {
-	
-}*/
+
 const agregarGastoButton = new MDCRipple(document.getElementById('botonAgregarGasto'));
 agregarGastoButton.listen('click', () => {
 	cargarListaIntegrantes;
 	cargarCheckBox;
-	//cargarChips;
+	grupoActivo.agregarDeuda(dueño, gasto);
 });
 
 const cargarListaIntegrantes = (() => {
