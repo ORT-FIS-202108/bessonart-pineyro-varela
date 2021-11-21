@@ -212,7 +212,7 @@ function agregarGrupo(nombre) {
 		event.stopPropagation();
 		let content = document.createElement('p');
 		content.innerHTML = `¿Está seguro que desea eliminar  ${nombre}?`;
-		showDialog('Eliminar Amigo', content, callback);
+		showDialog('Eliminar Grupo', content, callback);
 	});
 
 	card.appendChild(icon);
