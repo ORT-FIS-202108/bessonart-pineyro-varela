@@ -127,6 +127,7 @@ function agregarAmigo(nombre) {
 		showDialog('Eliminar Amigo', content, callback);
 	});
 
+
 	card.appendChild(icon);
 	li.appendChild(card);
 	document.getElementById('lista-amigos').appendChild(li);
@@ -161,6 +162,7 @@ amigoAgregarButton.listen('click', () => {
 //Grupos
 const nuevoGrupo = new MDCRipple(document.getElementById('botonGrupoDialago'));
 const dialogoGrupo = new MDCDialog(document.getElementById('grupoDialog'));
+const dialogoGrupo2 = new MDCDialog(document.getElementById('grupoDialog2'));
 nuevoGrupo.listen('click', () => { dialogoGrupo.open(); });
 
 
@@ -335,6 +337,18 @@ function agregarGrupo(nombre) {
 		content.innerHTML = `¿Está seguro que desea eliminar  ${nombre}?`;
 		showDialog('Eliminar Grupo', content, callback);
 	});
+	let icon2 = document.createElement('i');
+	icon2.setAttribute('class', 'material-icons mdc-button__icon');
+	icon2.innerHTML = 'delete_outline';
+	icon2.classList.add('hoverIcon');
+	icon2.style.setProperty('position', 'absolute');
+	icon2.style.setProperty('top', '5px');
+	icon2.style.setProperty('right', '5px');
+	icon2.addEventListener('click', function (event) {
+		event.stopPropagation();
+		dialogoGrupo2.open();
+		mostrarAmigos2();
+	});
 
 	card.appendChild(icon);
 	li.appendChild(card);
@@ -349,5 +363,49 @@ function mostrarGrupos() {
 		document.getElementById('lista-grupos').appendChild(h4);
 	} else {
 		sistema.listaGrupos.forEach(item => { agregarGrupo(item.nombre); });
+	}
+}
+
+function agregarAmigo2(nombre) {
+	let li = document.createElement('li');
+	li.setAttribute('class', 'mdc-list-item');
+	let card = document.createElement('div');
+	card.setAttribute('class', 'mdc-card');
+	card.innerHTML = nombre;
+	console.log(nombre);
+	let actions = document.createElement('div');
+	actions.setAttribute('class', 'mdc-card__actions');
+
+	// Delete icon
+	let icon = document.createElement('i');
+	icon.setAttribute('class', 'material-icons mdc-button__icon');
+	icon.innerHTML = 'delete_outline';
+	icon.classList.add('hoverIcon');
+	icon.style.setProperty('position', 'absolute');
+	icon.style.setProperty('top', '5px');
+	icon.style.setProperty('right', '5px');
+	icon.addEventListener('click', function (event) {
+		event.stopPropagation();
+		if(sistema.grupoActual.AmigoPertenece(nombre)){
+			sistema.grupoActual.eliminarAmigo(nombre);
+		}
+		else{
+			sistema.grupoActual.eliminarAmigo(nombre);
+		}
+	});
+	card.appendChild(icon);
+	li.appendChild(card);
+	document.getElementById('lista-amigos-select').appendChild(li);
+}
+
+function mostrarAmigos2() {
+	cleanNode(document.getElementById('lista-amigos-select'));
+	if (sistema.listaAmigos.length < 1 ) {
+		cleanNode(document.getElementById('lista-amigos'));
+		let h4 = document.createElement('h4');
+		h4.innerText = 'No tienes ningún amigo';
+		document.getElementById('lista-amigos').appendChild(h4);
+	} else {
+		sistema.listaAmigos.forEach(item => { agregarAmigo2(item.nombre); });
 	}
 }

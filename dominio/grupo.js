@@ -61,6 +61,25 @@ class Grupo {
 		this.balancear();
 	}
 
+	AmigoPertenece(nombre) {
+		for (const amigo in this.listaIntegrantes) {
+			if (amigo.getNombre() === nombre) {
+				return true;
+			}
+		}
+		return false;
+	}
+	eliminarAmigo(nombre){
+		if(this.listaIntegrantes.length !== 0) {
+			const encontroAmigo = this.listaIntegrante.find(l => l.nombre === nombre);
+			if(encontroAmigo){
+				const indexAmigo = this.listaIntegrante.findIndex(l => l.nombre === nombre);
+				this.listaIntegrante.splice(indexAmigo,1);
+				return;
+			}
+		}
+		throw new Error(`No existe un amigo con el nombre ${nombre}`);
+	}
 	balancear() {
 		// for (let deuda in this.lista) {
 		// 	var monto = gasto.getMonto() / gasto.getCantidadParticipantes();

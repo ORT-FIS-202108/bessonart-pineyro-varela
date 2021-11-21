@@ -5,6 +5,7 @@ class Sistema {
 	constructor() {
 		this.listaAmigos = [];
 		this.listaGrupos = [];
+		this.grupoActual=null;
 	}
 
 	getListaGrupos(){
@@ -48,6 +49,14 @@ class Sistema {
 		this.listaAmigos.unshift(nuevoAmigo);
 	}
 
+	agregarAmigoGrupo(nombre){
+		this.grupoActual.agregarAmigo(this.getAmigoByName(nombre));
+	}
+	eliminarAmigoGrupo(nombre){
+		this.grupoActual.eliminarAmigo(this.getAmigoByName(nombre));
+	}
+
+
 	eliminarAmigo(nombre){
 		if(this.listaAmigos.length !== 0) {
 			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
@@ -72,6 +81,14 @@ class Sistema {
 		for (const grupo in this.listaGrupos) {
 			if (grupo.getNombre() === nombre) {
 				return grupo;
+			}
+		}
+		return null;
+	}
+	getAmigoByName(nombre) {
+		for (const amigo in this.listaAmigos) {
+			if (amigo.getNombre() === nombre) {
+				return amigo;
 			}
 		}
 		return null;
