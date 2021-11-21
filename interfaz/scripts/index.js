@@ -78,6 +78,8 @@ function mostrarAmigos() {
 	}
 }
 
+
+
 function borrarAmigo(nombre) {
 	if (sistema.listaAmigos.length < 1) {
 		showSnackbar('Error: Debe tener al menos un amigo');
@@ -161,17 +163,68 @@ botonAgregarGrupo.listen('click', () => {
 		if (nombre.trim() === '') {
 			showSnackbar('Nombre es un campo requerido.');
 		} else {	
-
-			showSnackbar('Se ingreso un Nombre');
+			sistema.agregarGrupo(nombre,['hola']);
 		}
 	} catch (error) {
 		showSnackbar(error.message);
 	} finally {
-		showSnackbar('termino')
+		mostrarGrupos();
 	}
 });
 
+function borrarGrupo(nombre) {
+	if (sistema.listaAmigos.length < 1) {
+		showSnackbar('Error: Debe tener al menos un Grupo');
+	} else {
+		sistema.eliminarGrupo(nombre);
+		cleanNode(document.getElementById('lista-amigos'));
+		mostrarGrupos();
+	}
+}
 
 
 
+function agregarGrupo(nombre) {
+	let li = document.createElement('li');
+	li.setAttribute('class', 'mdc-list-item');
+	let card = document.createElement('div');
+	card.setAttribute('class', 'mdc-card');
+	card.innerHTML = nombre;
+	console.log(nombre);
+	let actions = document.createElement('div');
+	actions.setAttribute('class', 'mdc-card__actions');
 
+	// Delete icon
+	let icon = document.createElement('i');
+	icon.setAttribute('class', 'material-icons mdc-button__icon');
+	icon.innerHTML = 'delete_outline';
+	icon.classList.add('hoverIcon');
+	icon.style.setProperty('position', 'absolute');
+	icon.style.setProperty('top', '5px');
+	icon.style.setProperty('right', '5px');
+	const callback = () => {
+		borrarGrupo(nombre);
+		showSnackbar(`Se elimino a ${nombre} de tus grupos`);
+	};
+	icon.addEventListener('click', function (event) {
+		event.stopPropagation();
+		let content = document.createElement('p');
+		content.innerHTML = `¿Está seguro que desea eliminar  ${nombre}?`;
+		showDialog('Eliminar Amigo', content, callback);
+	});
+
+	card.appendChild(icon);
+	li.appendChild(card);
+	document.getElementById('lista-grupos').appendChild(li);
+}
+function mostrarGrupos() {
+	cleanNode(document.getElementById('lista-grupos'));
+	if (sistema.listaGrupos.length < 1 ) {
+		cleanNode(document.getElementById('lista-grupos'));
+		let h4 = document.createElement('h4');
+		h4.innerText = 'No tienes ningún grupo';
+		document.getElementById('lista-grupos').appendChild(h4);
+	} else {
+		sistema.listaGrupos.forEach(item => { agregarGrupo(item.nombre); });
+	}
+}

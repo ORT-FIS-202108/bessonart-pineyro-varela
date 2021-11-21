@@ -16,12 +16,12 @@ class Sistema {
 	}
 
 	agregarGrupo(nombre,listaIntegrantes){
-		const encontroGrupo = this.listaGrupo.find(l => l.nombre === nombre);
+		const encontroGrupo = this.listaGrupos.find(l => l.nombre === nombre);
 		if(encontroGrupo){
 			throw Error(`Ya existe un grupo con nombre ${nombre}.`);
 		} else {
 			let nuevoGrupo= new Grupo(nombre,listaIntegrantes);
-			this.listaGrupo.push(nuevoGrupo);
+			this.listaGrupos.push(nuevoGrupo);
 		}
 	}
 
