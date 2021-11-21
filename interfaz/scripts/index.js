@@ -4,8 +4,17 @@ import { MDCSnackbar } from '@material/snackbar';
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCTextField } from '@material/textfield';
+import {MDCMenu} from '@material/menu';
+//import {MDCChipSet} from '@material/chips';
+import {MDCFormField} from '@material/form-field';
+import {MDCCheckbox} from '@material/checkbox';
+
+const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
+const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
+formField.input = checkbox;
 
 import Sistema from '../../dominio/sistema.js';
+import Deuda from '../../dominio/deuda.js';
 
 import { cleanNode } from './utils';
 
@@ -30,6 +39,8 @@ tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
 	});
 });
 
+//Chips
+const chipset = new MDCChipSet(document.querySelector('.mdc-evolution-chip-set'));
 
 // Dialog
 const alertDialog = new MDCDialog(document.getElementById('alertDialog'));
@@ -55,7 +66,6 @@ function showSnackbar(texto) {
 	snackbar.open();
 	setTimeout(() => { snackbar.close(); }, 3000);
 }
-
 
 //Amigo
 const fabAmigo = new MDCRipple(document.getElementById('botonAgregarAmigo'));
@@ -136,7 +146,7 @@ amigoAgregarButton.listen('click', () => {
 				favorito = 'Ninguno';
 			}
 			sistema.agregarAmigo(nombre, favorito);
-			showSnackbar('Se edito correctamente la lista de amigos');
+			showSnackbar('Se editó correctamente la lista de amigos');
 		}
 	} catch (error) {
 		showSnackbar(error.message);
@@ -145,8 +155,116 @@ amigoAgregarButton.listen('click', () => {
 	}
 });
 
+// const grupoAgregarButton = new MDCRipple(document.getElementById('botonAgregarGrupo'));
+// grupoAgregarButton.listen('click', () => {
+// 	let integrantes = ["Sofi", "Luca", "Flor"];
+// 	let amigos = ["Luca", "Flor"];
+// 	let montos = [350,500];
+// 	sistema.agregarGrupo("Amigos", integrantes);
+// 	let deuda = new Deuda("Sofi", amigos, montos );
+// 	let grupo = sistema.getListaGrupos()[sistema.getListaGrupos().length - 1];
+// 	grupo.agregarDeuda(deuda);
+// 	grupoSeleccionado(grupo);
+// });
+let grupoActivo;
 
+const grupoSeleccionado =((grupo) => {
+	grupoActivo = grupo;
+	document.querySelector('#nombreGrupo').innerHTML = '${grupo.getNombre()}: Deudas';
+	const listaDeudas = document.querySelector('#lista-deudas');
+	for (const deuda in grupo.getDeudas()) {
+		let nombre = deuda.getNombre();
+		for (let i = 0; i < deuda.getAmigos().length; i++) {
+			let amigo = deuda.getAmigos()[i];
+			let monto = deuda.getMontos()[i];
+			listaDeudas.insertAdjacentHtml('beforeend', 
+			`<li class="mdc-list-item" aria-selected="false" data-value="deudas" role="option" onclick=mostrarDeuda(grupo, nombre, i)>
+		    	<span class="mdc-list-item__ripple"></span>
+            	<span class="mdc-list-item__text">${nombre} -> ${amigo}: $${monto}</span>
+            </li>`);
+		}
+	}
+});
 
+const dialogDeuda = new MDCDialog(document.getElementById('deudaDialog'));
+function showDialogDeuda() {
+	dialogDeuda.open();
+	document.querySelector('#botonAgregarGasto').classList.remove("sample-content--hidden");
+}
 
+const mostrarDeuda = ((grupo, nombre, pos) => {
+	let amigo = deuda.getAmigos()[i];
+	let monto = deuda.getMontos()[i];
+	document.querySelector('#deudaDialogContent').innerHTML = '${nombre} -> ${amigo}: $${monto}';
+	showDialogDeuda();
+});
 
+//Menu Deudas
+const menu = new MDCMenu(document.querySelector('.mdc-menu'));
 
+const textDescripcionGasto = new MDCTextField(document.getElementById('descripcionGasto'));
+const textMontoGasto = new MDCTextField(document.getElementById('montoGasto'));
+const dueño = document.querySelector('.mdc-menu-item--selected').value;
+const participantes = [];
+$("input:checkbox:checked").each(function() {
+    participantes.push($(this).value);
+});
+for(let persona in participantes) {
+	
+}
+const agregarGastoButton = new MDCRipple(document.getElementById('botonAgregarGasto'));
+agregarGastoButton.listen('click', () => {
+	cargarListaIntegrantes;
+	cargarCheckBox;
+	//cargarChips;
+});
+
+const cargarListaIntegrantes = (() => {
+	let lista = document.querySelector('#menuIntegrantes');
+	for (let persona in grupoActivo.getListaIntegrantes()) {
+		lista.insertAdjacentHtml('beforeend',
+		`<li class="mdc-list-item" role="menuitem">
+            <span class="mdc-list-item__ripple"></span>
+            <span class="mdc-list-item__text">${persona.getNombre()}</span>
+        </li>`);
+	}
+	menu.open = true;
+});
+
+const cargarCheckBox = (() => {
+	let lista = document.querySelector('#listaIntegrantes');
+	let i = 0;
+	for (let persona in grupoActivo.getListaIntegrantes()) {
+		lista.insertAdjacentHtml('beforeend', 
+		`<div class="mdc-checkbox">
+			<input type="checkbox" class="mdc-checkbox__native-control" id="cb-${i}"/>
+			<div class="mdc-checkbox__background">
+				<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"> <path class="mdc-checkbox__checkmark-path"
+					fill="none"
+					d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+				</svg>
+				<div class="mdc-checkbox__mixedmark"></div>
+			</div>
+			<div class="mdc-checkbox__ripple"></div>
+		</div>
+		<label for="checkbox-1">persona.getNombre()</label>`);
+		i++;
+	}
+});
+
+// const cargarChips = (() => {
+// 	let lista = document.querySelector('#menuIntegrantes');
+// 	let i = 0;
+// 	for (let persona in grupoActivo.getListaIntegrantes()) {
+// 		lista.insertAdjacentHtml('beforeend', 
+// 		`<span class="mdc-evolution-chip" role="row" id="c${i}}">
+//             <span class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary" role="gridcell">
+// 			    <button class="mdc-evolution-chip__action mdc-evolution-chip__action--primary" type="button" tabindex="0">
+//                     <span class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"></span>
+//                     <span class="mdc-evolution-chip__text-label">persona.getNombre()</span>
+//                 </button>
+//             </span>
+//         </span>`);
+// 		i++;
+// 	}
+// });

@@ -11,7 +11,7 @@
     <header class="mdc-top-app-bar">
         <div class="mdc-top-app-bar__row">
 
-            <section style="align-items: center; justify-content: center;"
+            <section style="align-items: center; justify-content: space-evenly;"
                 class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                 <span style="font-weight: bold;" class="mdc-top-app-bar__title">MisGastos</span>
                 <img style="width: 100px; height: 50px;" src="resources/images/logo2.png">
@@ -74,39 +74,21 @@
                 <div class="mdc-fab__ripple"></div>
                 <span class="mdc-fab__icon material-icons">add</span>
             </button>
-
             <hr />
-            <div
-                style="display: flex; align-items: center; justify-content: space-between; flex-direction: column; margin: 20px;">
-                <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
-
-                    <label for="nombre">Deudas de:</label>
-                    <input type="text" id="nombre">
-                    <br>
-                    <br>
-                        <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
-                            <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
-                                <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value=""
-                                    role="option">
-                                    <span class="mdc-list-item__ripple"></span>
-                                    <span class="mdc-list-item__text">
-                                        Todas
-                                    </span>
-                                </li>
-                                <li class="mdc-list-item" aria-selected="false" data-value="frutas" role="option">
-                                    <span class="mdc-list-item__ripple"></span>
-                                    <span class="mdc-list-item__text">
-                                        Frutas
-                                    </span>
-                                </li>
-                                <li class="mdc-list-item" aria-selected="false" data-value="verduras" role="option">
-                                    <span class="mdc-list-item__ripple"></span>
-                                    <span class="mdc-list-item__text">
-                                        Verduras
-                                    </span>
-                                </li>
-                            </ul>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-direction: column; margin: 20px;">
+                <div style="display: flex; width: 100%; justify-content: space-around; align-items: center; flex-direction:column;">
+                    <div style="display:flex; width:100%; justify-content:space-evenly;">
+                        <h2 id="nombreGrupo"></h2>
+                        <div  id="botonAgregarGasto" class="mdc-touch-target-wrapper sample-content--hidden">
+                            <button class="mdc-button mdc-button--raised mdc-button--touch">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__touch"></span>
+                                <span class="mdc-button__label">Agregar gasto</span>
+                            </button>
                         </div>
+                    </div>
+                    <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+                            <ul id="lista-deudas" class="mdc-list" role="listbox" aria-label="Deudas a pagar"></ul>
                     </div>
                 </div>
                 <section id="tablaProductos"
@@ -236,6 +218,80 @@
                             class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
                             data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
                             <span class="mdc-button__label">Agregar</span>
+                        </button>
+                    </footer>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+        <!-- Agregar Gasto Dialog -->
+        <div id="gastoDialog" class="mdc-dialog" aria-modal="true" aria-labelledby="Agregar Gasto">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <h2 class="mdc-dialog__title">
+                        Agregar Gasto
+                    </h2>
+                    <div id="gastoDialogContent" class="mdc-dialog__content data-mdc-dialog-initial-focus">
+                        <label id='descripcionGasto' class="mdc-text-field mdc-text-field--filled">
+                            <span class="mdc-text-field__ripple"></span>
+                            <span class="mdc-floating-label" id="descripcionDelGasto">Descripción</span>
+                            <input class="mdc-text-field__input" type="text" aria-labelledby="descripcionDelGasto" maxlength="40">
+                            <span class="mdc-line-ripple"></span>
+                        </label>
+                        <label id='montoGasto' class="mdc-text-field mdc-text-field--filled">
+                            <span class="mdc-text-field__ripple"></span>
+                            <span class="mdc-floating-label" id="MontoDelGasto">Monto ($)</span>
+                            <input class="mdc-text-field__input" type="text" aria-labelledby="MontoDelGasto">
+                            <span class="mdc-line-ripple"></span>
+                        </label>
+                        <div class="mdc-menu mdc-menu-surface">
+                            <ul id="menuIntegrantes" class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1"></ul>
+                        </div>
+                        <div>
+                            <h3>Participantes:</h3>
+                            <!-- <span class="mdc-evolution-chip-set" role="grid">
+                                <span id="chips" class="mdc-evolution-chip-set__chips" role="presentation"></span>
+                            </span>   -->
+                            <div id="listaIntegrantes" class="mdc-form-field">
+                                
+                            </div>
+                        </div>
+                                              
+                    </div>
+                    <footer class="mdc-dialog__actions">
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
+                            style="background-color: #c7c7c7; color: white; ">
+                            <span class="mdc-button__label">Cancelar</span>
+                        </button>
+                        <button id="amigoAgregarButton" type="button"
+                            class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
+                            data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
+                            <span class="mdc-button__label">Agregar</span>
+                        </button>
+                    </footer>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+        
+        <!-- Saldar Deuda Dialog -->
+        <div id="deudaDialog" class="mdc-dialog" aria-modal="true" aria-labelledby="Saldar Deuda">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <h2 class="mdc-dialog__title">
+                        Saldar Deuda
+                    </h2>
+                    <div id="deudaDialogContent" class="mdc-dialog__content data-mdc-dialog-initial-focus"></div>
+                    <footer class="mdc-dialog__actions">
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
+                            style="background-color: #c7c7c7; color: white; ">
+                            <span class="mdc-button__label">Cancelar</span>
+                        </button>
+                        <button id="saldarDeuda" type="button"
+                            class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
+                            data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
+                            <span class="mdc-button__label">Pagar</span>
                         </button>
                     </footer>
                 </div>
