@@ -337,9 +337,36 @@
             </div>
         </div>
 
-    </main>
-
+               <!-- Agregar Grupo Dialog -->
+               <div id="grupoDialog2" class="mdc-dialog" aria-modal="true" aria-labelledby="Agregar Integrante">
+                <div class="mdc-dialog__container">
+                    <div class="mdc-dialog__surface">
+                        <h2 class="mdc-dialog__title">
+                            Agregar Integrante
+                        </h2>
+                        <ul class="mdc-list" id="lista-amigos-select">
+                            <h4>No tienes ningún amigo</h4>
+                        </ul>
+    
+                        <footer class="mdc-dialog__actions">
+                            <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
+                                style="background-color: #c7c7c7; color: white; ">
+                                <span class="mdc-button__label">Cancelar</span>
+                            </button>
+                            <button id="botonAgregarIntegrante" type="button"
+                                class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
+                                data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
+                                <span class="mdc-button__label">Agregar</span>
+                            </button>
+                        </footer>
+                    </div>
+                </div>
+                <div class="mdc-dialog__scrim"></div>
+            </div>
+    </main>   
 </body>
 <script src="bundle.js" async></script>
 
 </html>
+
+

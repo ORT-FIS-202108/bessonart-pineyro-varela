@@ -1,7 +1,7 @@
 class Grupo {
-	constructor(nombre,listaIntegrantes) {
+	constructor(nombre) {
 		this.nombre = nombre;
-		this.listaIntegrantes = listaIntegrantes;
+		this.listaIntegrantes = [];
 		this.listaDeudas = [];
 	}
 
@@ -12,7 +12,9 @@ class Grupo {
 			listaDeudas: this.listaDeudas,
 		};
 	}
-
+	agregarAmigo(amigo){
+		this.listaIntegrantes.push(amigo);
+	}
 	getNombre(){
 		return this.nombre;
 	}
