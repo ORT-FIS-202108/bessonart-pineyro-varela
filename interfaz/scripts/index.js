@@ -268,7 +268,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 	let li = document.createElement('li');
 	li.setAttribute('class', 'mdc-list-item');
 	let card = document.createElement('div');
-	card.setAttribute('class', 'mdc-card');
+	card.setAttribute('class', 'mdc-card lista-agregar-amigos');
 	card.innerHTML = nAmigo;
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
@@ -280,7 +280,6 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 		icon.setAttribute('class', 'material-icons mdc-button__icon');
 		icon.innerHTML = 'delete_outline';
 		icon.classList.add('hoverIcon');
-		icon.style.setProperty('position', 'absolute');
 		icon.style.setProperty('top', '5px');
 		icon.style.setProperty('right', '5px');
 		icon.addEventListener('click', function (event) {
@@ -298,7 +297,6 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 		icon.setAttribute('class', 'material-icons mdc-button__icon');
 		icon.innerHTML = 'add';
 		icon.classList.add('hoverIcon');
-		icon.style.setProperty('position', 'absolute');
 		icon.style.setProperty('top', '5px');
 		icon.style.setProperty('right', '5px');
 	
