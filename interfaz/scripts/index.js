@@ -175,7 +175,7 @@ botonAgregarGrupo.listen('click', () => {
 		if (nombre.trim() === '') {
 			showSnackbar('Nombre es un campo requerido.');
 		} else {
-			sistema.agregarGrupo(nombre, ['hola']);
+			sistema.agregarGrupo(nombre);
 		}
 	} catch (error) {
 		showSnackbar(error.message);
@@ -341,7 +341,7 @@ function mostrarDeudas() {
 
 function agregarDeuda(deudas) {
 	let nombre = deudas.getNombre();
-		console.log(deudas);
+	console.log(deudas);
 	for(let i = 0; i < deudas.getAmigos().length; i++) {
 		let amigo = deudas.getAmigos()[i];
 		let monto = deudas.getMontos()[i];
