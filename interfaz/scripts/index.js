@@ -11,12 +11,12 @@ import { cleanNode } from './utils';
 
 // Creacion de datos.
 const sistema = new Sistema();
-//let grupoActivo;
+let grupoActivo;
 
 //PRUEBA
-sistema.agregarGrupo("Friends");
-let grupoActivo = sistema.getListaGrupos()[0];
-grupoActivo.setListaIntegrantes(["Sofi", "Andi", "Luca", "Flor"]);
+// sistema.agregarGrupo("Friends");
+// let grupoActivo = sistema.getListaGrupos()[0];
+// grupoActivo.setListaIntegrantes(["Sofi", "Andi", "Luca", "Flor"]);
 //grupoActivo.agregarDeuda("sofi", 2000);
 //grupoActivo.agregarDeuda("andi", 1000);
 
@@ -442,17 +442,17 @@ function cargarListaIntegrantes() {
 		lista.insertAdjacentHTML('beforeend', `
 		<div style="display: flex;">
 			<div class="mdc-radio">
-				<input class="mdc-radio__native-control" type="radio" id="${listaPersonas[i]}" name="integrantes">
+				<input class="mdc-radio__native-control" type="radio" id="${listaPersonas[i].getNombre()}" name="integrantes">
 				<div class="mdc-radio__background">
 					<div class="mdc-radio__outer-circle"></div>
 					<div class="mdc-radio__inner-circle"></div>
 				</div>
 				<div class="mdc-radio__ripple"></div>
 			</div>
-			<label for="${listaPersonas[i]}" style="margin-left: 10px;">${listaPersonas[i]}</label>
+			<label for="${listaPersonas[i]}" style="margin-left: 10px;">${listaPersonas[i].getNombre()}</label>
 		</div>`);	
 		if(i === 0) {
-			document.getElementById(listaPersonas[i]).checked = true;
+			document.getElementById(listaPersonas[i].getNombre()).checked = true;
 		}
 	}
 }
