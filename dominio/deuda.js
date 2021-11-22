@@ -1,5 +1,9 @@
 class Deuda {
+<<<<<<< HEAD
 	constructor(nombre, id) {
+=======
+	constructor(nombre) {
+>>>>>>> e1773823617e2b0aeb799eef96fb53c6876184cf
 		this.nombre = nombre;
 		this.amigos = [];
 		this.montos = [];
