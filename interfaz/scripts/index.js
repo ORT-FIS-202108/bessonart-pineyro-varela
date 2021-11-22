@@ -269,7 +269,6 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 
 	if (sistema.estaAmigoEnGrupo(nAmigo, nGrupo)) {
 		//cambiar color de fondo de la card
-
 		// Delete icon
 		let icon = document.createElement('i');
 		icon.setAttribute('class', 'material-icons mdc-button__icon');
