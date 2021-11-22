@@ -99,6 +99,12 @@ class Grupo {
 		this.balancear();
 	}
 
+	eliminarDeuda(nombre, pos) {
+		let deuda = this.listaDeudas[this.getDeudaDe(nombre)];
+		deuda.eliminarDeuda(pos);
+		this.balancear()
+	}
+
 	balancear() {
 		for(let k = 0; k < this.listaDeudas.length; k++){
 			let deuda1 = this.listaDeudas[k];
@@ -144,6 +150,5 @@ class Grupo {
 			}
 		}
 	}
-
 }
 export default Grupo;

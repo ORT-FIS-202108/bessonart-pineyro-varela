@@ -81,7 +81,10 @@
                     style="display: flex; width: 100%; justify-content: space-around; align-items: center; flex-direction:column;">
                     <div style="display:flex; width:100%; justify-content:space-evenly;">
                         <h2 id="nombreGrupo"></h2>
-                        <div class="mdc-touch-target-wrapper sample-content--hidden"> 
+                        <div class="mdc-touch-target-wrapper 
+                        
+                        "> 
+                        <!--  en el div de arriba :sample-content--hidden -->
                             <button id="botonAgregarGasto" class="mdc-button mdc-button--raised mdc-button--touch">
                                 <span class="mdc-button__ripple"></span>
                                 <span class="mdc-button__touch"></span>
@@ -89,9 +92,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="lista-container" style="flex">
-                            <ul id="lista-deudas" class="mdc-list" role="listbox" aria-label="Deudas a pagar" style="display: flex;"></ul>
-                    </div>
+                    <ul class="mdc-list" id="lista-deudas"></ul>
                 </div>
             </div>
         </section>
@@ -224,30 +225,6 @@
                             class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
                             data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
                             <span class="mdc-button__label">Agregar</span>
-                        </button>
-                    </footer>
-                </div>
-            </div>
-            <div class="mdc-dialog__scrim"></div>
-        </div>
-
-        <!-- Saldar Deuda Dialog -->
-        <div id="deudaDialog" class="mdc-dialog" aria-modal="true" aria-labelledby="Saldar Deuda">
-            <div class="mdc-dialog__container">
-                <div class="mdc-dialog__surface">
-                    <h2 class="mdc-dialog__title">
-                        Saldar Deuda
-                    </h2>
-                    <div id="deudaDialogContent" class="mdc-dialog__content data-mdc-dialog-initial-focus"></div>
-                    <footer class="mdc-dialog__actions">
-                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
-                            style="background-color: #c7c7c7; color: white; ">
-                            <span class="mdc-button__label">Cancelar</span>
-                        </button>
-                        <button id="saldarDeuda" type="button"
-                            class="mdc-button mdc-dialog__button data-mdc-dialog-button-default"
-                            data-mdc-dialog-action="accept" style="background-color: #00796b; color: white;">
-                            <span class="mdc-button__label">Pagar</span>
                         </button>
                     </footer>
                 </div>

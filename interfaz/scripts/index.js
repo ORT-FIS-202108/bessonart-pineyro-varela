@@ -11,6 +11,9 @@ import { cleanNode } from './utils';
 
 // Creacion de datos.
 const sistema = new Sistema();
+//let grupoActivo;
+
+//PRUEBA
 sistema.agregarGrupo("Friends");
 let grupoActivo = sistema.getListaGrupos()[0];
 grupoActivo.setListaIntegrantes(["Sofi", "Andi", "Luca", "Flor"]);
@@ -181,101 +184,6 @@ botonAgregarGrupo.listen('click', () => {
 	}
 });
 
-// function borrarGrupo(nombre) {
-// 	if (sistema.listaGrupos.length < 1) {
-// 		showSnackbar('Error: Debe tener al menos un Grupo');
-// 	} else {
-// 		sistema.eliminarGrupo(nombre);
-// 		cleanNode(document.getElementById('lista-amigos'));
-// 		mostrarGrupos();
-// 	}
-// }
-// //>>>>>>> 0671cecd4eb018cd8ef6d10fe53ee5d3709a7ac7
-// /*
-// const grupoSeleccionado =((grupo) => {
-// 	grupoActivo = grupo;
-// 	document.querySelector('#nombreGrupo').innerHTML = '${grupo.getNombre()}: Deudas';
-// 	const listaDeudas = document.querySelector('#lista-deudas');
-// 	for (const deuda in grupo.getDeudas()) {
-// 		let nombre = deuda.getNombre();
-// 		for (let i = 0; i < deuda.getAmigos().length; i++) {
-// 			let amigo = deuda.getAmigos()[i];
-// 			let monto = deuda.getMontos()[i];
-// 			listaDeudas.insertAdjacentHtml('beforeend', 
-// 			`<li class="mdc-list-item" aria-selected="false" data-value="deudas" role="option" onclick=mostrarDeuda(grupo, nombre, i)>
-// 				<span class="mdc-list-item__ripple"></span>
-// 				<span class="mdc-list-item__text">${nombre} -> ${amigo}: $${monto}</span>
-// 			</li>`);
-// 		}
-// 	}
-// });
-
-// const dialogDeuda = new MDCDialog(document.getElementById('deudaDialog'));
-// function showDialogDeuda() {
-// 	dialogDeuda.open();
-// 	document.querySelector('#botonAgregarGasto').classList.remove("sample-content--hidden");
-// }
-
-// const mostrarDeuda = ((grupo, nombre, pos) => {
-// 	let amigo = deuda.getAmigos()[i];
-// 	let monto = deuda.getMontos()[i];
-// 	document.querySelector('#deudaDialogContent').innerHTML = '${nombre} -> ${amigo}: $${monto}';
-// 	showDialogDeuda();
-// });
-// */
-// //Menu Deudas
-// const menu = new MDCMenu(document.querySelector('.mdc-menu'));
-
-// const textDescripcionGasto = new MDCTextField(document.getElementById('descripcionGasto'));
-// const textMontoGasto = new MDCTextField(document.getElementById('montoGasto'));
-// const dueño = document.querySelector('.mdc-menu-item--selected').value;
-// const participantes = [];
-// $('input:checkbox:checked').each(function () {
-// 	participantes.push($(this).value);
-// });
-// /*for(let persona in participantes) {
-	
-// }*/
-// const agregarGastoButton = new MDCRipple(document.getElementById('botonAgregarGasto'));
-// agregarGastoButton.listen('click', () => {
-// 	cargarListaIntegrantes;
-// 	cargarCheckBox;
-// 	//cargarChips;
-// });
-
-// const cargarListaIntegrantes = (() => {
-// 	let lista = document.querySelector('#menuIntegrantes');
-// 	for (let persona in grupoActivo.getListaIntegrantes()) {
-// 		lista.insertAdjacentHtml('beforeend',
-// 			`<li class="mdc-list-item" role="menuitem">
-//             <span class="mdc-list-item__ripple"></span>
-//             <span class="mdc-list-item__text">${persona.getNombre()}</span>
-//         </li>`);
-// 	}
-// 	menu.open = true;
-// });
-
-// const cargarCheckBox = (() => {
-// 	let lista = document.querySelector('#listaIntegrantes');
-// 	let i = 0;
-// 	for (let persona in grupoActivo.getListaIntegrantes()) {
-// 		lista.insertAdjacentHtml('beforeend',
-// 			`<div class="mdc-checkbox">
-// 			<input type="checkbox" class="mdc-checkbox__native-control" id="cb-${i}"/>
-// 			<div class="mdc-checkbox__background">
-// 				<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"> <path class="mdc-checkbox__checkmark-path"
-// 					fill="none"
-// 					d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-// 				</svg>
-// 				<div class="mdc-checkbox__mixedmark"></div>
-// 			</div>
-// 			<div class="mdc-checkbox__ripple"></div>
-// 		</div>
-// 		<label for="checkbox-1">persona.getNombre()</label>`);
-// 		i++;
-// 	}
-// });
-
 function agregarGrupo(nombre) {
 	let li = document.createElement('li');
 	li.setAttribute('class', 'mdc-list-item');
@@ -419,45 +327,74 @@ function editarIntegrantes(nombre) {
 	showDialogIntegrantes();
 }
 
-function cargarCardsDeudas() {
-	const listaDeudas = document.querySelector('#lista-deudas');	
-	listaDeudas.innerHTML='';
-	for (let i = 0; i < grupoActivo.getListaDeudas().length; i++) {
-		let deuda = grupoActivo.getListaDeudas()[i];
-		let nombre = deuda.getNombre();
-		for (let i = 0; i < deuda.getAmigos().length; i++) {
-			let amigo = deuda.getAmigos()[i];
-			let monto = deuda.getMontos()[i];
-			listaDeudas.insertAdjacentHTML('beforeend', 
-			`<div class="mdc-card" style="margin: 10px;height: 5em;display: flex;justify-content: space-evenly;">
-				<li class="mdc-list-item" aria-selected="false" data-value="deudas" role="option" onclick=mostrarDeuda(grupo, nombre, i)>
-					<span class="mdc-list-item__ripple"></span>
-					<span class="mdc-list-item__text">${nombre.toUpperCase()} a ${amigo.toUpperCase()}: $${monto}</span>
-				</li>
-			</div>`);
-		}
-	}	
-};
+function mostrarDeudas() {
+	cleanNode(document.getElementById('lista-deudas'));
+	if (grupoActivo.listaDeudas.length < 1) {
+		cleanNode(document.getElementById('lista-deudas'));
+		let h4 = document.createElement('h4');
+		h4.innerText = 'No tienes ninguna deuda';
+		document.getElementById('lista-deudas').appendChild(h4);
+	} else {
+		grupoActivo.listaDeudas.forEach(item => { agregarDeuda(item); });
+	}
+}
+
+function agregarDeuda(deudas) {
+	let nombre = deudas.getNombre();
+		console.log(deudas);
+	for(let i = 0; i < deudas.getAmigos().length; i++) {
+		let amigo = deudas.getAmigos()[i];
+		let monto = deudas.getMontos()[i];
+		let texto = nombre + ' a ' + amigo + ': $' + monto;
+		let li = document.createElement('li');
+		li.setAttribute('class', 'mdc-list-item');
+		let card = document.createElement('div');
+		card.setAttribute('class', 'mdc-card');
+		card.innerHTML = texto;
+		let actions = document.createElement('div');
+		actions.setAttribute('class', 'mdc-card__actions');
+
+		// Delete icon
+		let icon = document.createElement('i');
+		icon.setAttribute('class', 'material-icons mdc-button__icon');
+		icon.innerHTML = 'delete_outline';
+		icon.classList.add('hoverIcon');
+		icon.style.setProperty('position', 'absolute');
+		icon.style.setProperty('top', '5px');
+		icon.style.setProperty('right', '5px');
+		const callback = () => {
+			saldarDeuda(nombre, amigo);
+			showSnackbar(`Se saldó la deuda de ${nombre} con ${amigo}`);
+		};
+		icon.addEventListener('click', function (event) {
+			event.stopPropagation();
+			let content = document.createElement('p');
+			content.innerHTML = `${nombre} pagó $${monto} a ${amigo}`;
+			showDialog('Saldar Deuda', content, callback);
+		});
+		card.appendChild(icon);
+		li.appendChild(card);
+		document.getElementById('lista-deudas').appendChild(li);
+	}
+	
+}
+
+function saldarDeuda(nombre, amigo) {
+	if (grupoActivo.listaDeudas.length < 1) {
+		showSnackbar('Error: Debe tener al menos una deuda');
+	} else {
+		let pos = grupoActivo.listaDeudas[grupoActivo.getDeudaDe(nombre)].getAmigos().indexOf(amigo);
+		grupoActivo.eliminarDeuda(nombre, pos);
+		cleanNode(document.getElementById('lista-deudas'));
+		mostrarDeudas();
+	}
+}
 
 const grupoSeleccionado =((grupo) => {
 	grupoActivo = grupo;
 	document.querySelector('#nombreGrupo').innerHTML = grupo.getNombre();
 	document.querySelector('#botonAgregarGasto').classList.remove("sample-content--hidden");
-	cargarCardsDeudas();
-});
-
-//Deudas
-const dialogDeuda = new MDCDialog(document.getElementById('deudaDialog'));
-function showDialogDeuda() {
-	dialogDeuda.open();
-}
-
-const mostrarDeuda = ((grupo, nombre, pos) => {
-	let deuda = grupo.getListaDeudas()[grupo.getDeudaDe(nombre)];
-	let amigo = deuda.getAmigos()[pos];
-	let monto = deuda.getMontos()[pos];
-	document.querySelector('#deudaDialogContent').innerHTML = '${nombre} -> ${amigo}: $${monto}';
-	showDialogDeuda();
+	mostrarDeudas();
 });
 
 const dialogGasto = new MDCDialog(document.getElementById('gastoDialog'));
@@ -465,14 +402,14 @@ function showDialogGasto() {
 	dialogGasto.open();
 }
 
-const descripcion = new MDCTextField(document.getElementById('descripcionGasto'));
-const gasto = new MDCTextField(document.getElementById('montoGasto'));
-
 const agregarGastoButton = new MDCRipple(document.getElementById('botonAgregarGasto'));
 agregarGastoButton.listen('click', () => {
 	showDialogGasto();
 	cargarListaIntegrantes();
 });
+
+const descripcion = new MDCTextField(document.getElementById('descripcionGasto'));
+const gasto = new MDCTextField(document.getElementById('montoGasto'));
 
 const gastoAgregarButton = new MDCRipple(document.getElementById('gastoAgregarButton'));
 gastoAgregarButton.listen('click', () => {
@@ -492,7 +429,7 @@ gastoAgregarButton.listen('click', () => {
 	} finally {
 		descripcion.value='';
 		gasto.value='';
-		cargarCardsDeudas();
+		mostrarDeudas();
 	}
 });
 
@@ -519,3 +456,4 @@ function cargarListaIntegrantes() {
 		}
 	}
 };
+
