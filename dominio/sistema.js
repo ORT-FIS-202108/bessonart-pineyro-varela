@@ -57,7 +57,7 @@ class Sistema {
 
 	eliminarAmigoDelGrupo(namigo, ngrupo) {
 		let grupo = this.getGrupoByName(ngrupo);
-		let amigo = this.getAmigoByName(namigo)
+		let amigo = this.getAmigoByName(namigo);
 		grupo.eliminarAmigo(amigo);
 	}
 
