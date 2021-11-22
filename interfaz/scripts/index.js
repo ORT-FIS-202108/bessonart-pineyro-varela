@@ -285,7 +285,9 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 			event.stopPropagation();
 			let content = document.createElement('p');
 			content.innerHTML = `¿Está seguro que desea eliminar a ${nAmigo} del grupo ${nGrupo}?`;
-			showDialog('Eliminar Amigo', content, callback);
+			//showDialog('Eliminar Amigo', content, callback);
+			sistema.eliminarAmigoDelGrupo(nAmigo, nGrupo);
+			showSnackbar(`Se elimino a ${nAmigo} del grupo ${nGrupo}`);
 		});
 		card.appendChild(icon);
 	} else {
@@ -299,14 +301,15 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 		icon.style.setProperty('right', '5px');
 		const callback = () => {
 			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
-			//showSnackbar(`Se agrego a ${nAmigo} al grupo ${nGrupo}`);
-			showSnackbar(sistema.listaGrupos[1].amigoPertenece(nAmigo));
+			showSnackbar(`Se agrego a ${nAmigo} al grupo ${nGrupo}`);
 		};
 		icon.addEventListener('click', function (event) {
 			event.stopPropagation();
 			let content = document.createElement('p');
 			content.innerHTML = `¿Está seguro que desea agregar a ${nAmigo} al grupo ${nGrupo}?`;
-			showDialog('Agregar Integrante', content, callback);
+			//showDialog('Agregar Integrante', content, callback);
+			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
+			showSnackbar(`Se agrego a ${nAmigo} al grupo ${nGrupo}`);
 		});
 		card.appendChild(icon);
 	}
