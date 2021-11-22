@@ -3,7 +3,7 @@ import Grupo from './grupo.js';
 
 class Sistema {
 	constructor() {
-		this.listaAmigos = [];
+		this.listaAmigos = [new Amigo('YO', '')];
 		this.listaGrupos = [];
 	}
 
@@ -46,13 +46,6 @@ class Sistema {
 		}
 		let nuevoAmigo = new Amigo(nombre, favorito);
 		this.listaAmigos.unshift(nuevoAmigo);
-	}
-
-	agregarAmigoGrupo(nombre) {
-		this.grupoActual.agregarAmigo(this.getAmigoByName(nombre));
-	}
-	eliminarAmigoGrupo(nombre) {
-		this.grupoActual.eliminarAmigo(this.getAmigoByName(nombre));
 	}
 
 	eliminarAmigoDelGrupo(namigo, ngrupo) {
@@ -110,14 +103,6 @@ class Sistema {
 		return null;
 	}
 
-	getIntegrantesDelGrupo(nombre) {
-		for (const grupo in this.listaGrupos) {
-			if (grupo.getNombre() === nombre) {
-				return grupo.listaIntegrantes;
-			}
-		}
-		return null;
-	}
 
 	estaAmigoEnGrupo(nAmigo, nGrupo) {
 		let grupo = this.getGrupoByName(nGrupo);
