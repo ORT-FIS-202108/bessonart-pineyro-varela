@@ -1,4 +1,4 @@
-import Deuda from '../../dominio/deuda.js';
+import Deuda from './deuda.js';
 
 class Grupo {
 	constructor(nombre,listaIntegrantes) {
@@ -48,7 +48,8 @@ class Grupo {
 	}
 
 	getDeudaDe(nombre){
-		for (const deuda in this.listaDeudas) {
+		for (let i = 0; i < this.listaDeudas.length; i++) {
+			let deuda = this.listaDeudas[i];
 			if (deuda.getNombre()===(nombre)) {
 				return this.listaDeudas.indexOf(deuda);
 			}
@@ -58,79 +59,61 @@ class Grupo {
 
 	agregarDeuda(nombre, monto) {
 		monto /= this.cantidadIntegrantes();
-		let tieneDeudas = this.getDeudaDe(nombre);
-		if(tieneDeudas !== -1) {
-			let deudaNombre = this.listaDeudas[getDeudaDe(nombre)];
-			let amigos = deudaNombre.getAmigos();
-			let montos = deudaNombre.getMontos();
-			for(let i = 0; i < amigos.length; i++) {
-				if(montos[i] > monto) {
-					montos[i] -= monto;
-				} else if(montos[i] < monto) {
-					deudaNombre.eliminarDeuda(i);
-					let pos = this.getDeudaDe(amigos[i]);
-					if(pos !== -1) {
-						this.listaDeudas[pos].agregarDeuda(nombre, monto);
-					} else {
-						let nuevaDeuda = new Deuda(amigos[i], [nombre], [monto]);
-						this.listaDeudas.push(nuevaDeuda);
-					}
+		for(let i = 0; i < this.listaIntegrantes.length; i++) {
+			let amigo = this.listaIntegrantes[i];
+			if(amigo != nombre) {
+				let pos = this.getDeudaDe(amigo);
+				if(pos !== -1) {
+					this.listaDeudas[pos].agregarDeuda(nombre, monto);
 				} else {
-					deudaNombre.eliminarDeuda(i);
-				} 
-			}
-			for(let amigo in this.getListaIntegrantes()) {
-				if(!(amigos.include(amigo))){
-					let pos = this.getDeudaDe(amigo);
-					if(pos !== -1) {
-						this.listaDeudas[pos].agregarDeuda(nombre, monto);
-					} else {
-						let nuevaDeuda = new Deuda(amigo, [nombre], [monto]);
-						this.listaDeudas.push(nuevaDeuda);
-					}
-				}
-			}
-		} else {
-			for (let amigo in this.getListaIntegrantes()) {
-				let nombreAmigo = amigo.getNombre();
-				if(nombreAmigo !== nombre) {
-					let pos = this.getDeudaDe(nombreAmigo);
-					if(pos !== -1) {
-						this.listaDeudas[pos].agregarDeuda(nombre, monto);
-					} else {
-						let nuevaDeuda = new Deuda(nombreAmigo, [nombre], [monto]);
-						this.listaDeudas.push(nuevaDeuda);
-					}
+					let nuevaDeuda = new Deuda(amigo);
+					nuevaDeuda.agregarDeuda(nombre, monto);
+					this.listaDeudas.push(nuevaDeuda);
 				}
 			}
 		}
+		this.balancear();
 	}
 
 	balancear() {
-		for(let deuda1 in this.listaDeudas){
+		for(let k = 0; k < this.listaDeudas.length; k++){
+			let deuda1 = this.listaDeudas[k];
 			let amigos = deuda1.getAmigos();
 			let montos = deuda1.getMontos();
 			for(let i = 0; i < amigos.length; i++) {
 				let amigo = amigos[i];
-				let monto = monto[i];
+				let monto = montos[i];
 				let pos = this.getDeudaDe(amigo);
 				if(pos !== -1) {
 					let deuda2 = this.listaDeudas[pos];
 					let amigos2 = deuda2.getAmigos();
 					let montos2 = deuda2.getMontos();
 					for(let j = 0; j < amigos2.length; j++) {
-						if(monto > montos2[j]) {
-							monto[i] -= montos2[j];
-							deuda1.agregarDeuda(amigos2[j], montos2[j]);
-							deuda2.eliminarDeuda(j);
-						} else if(monto < montos2[j]){
-							deuda1.agregarDeuda(amigos2[j], monto);
-							deuda1.eliminarDeuda(i);
-							deuda2.modificarDeuda(j, montos2[j] - monto);
-						}
-						else {
-							deuda1.agregarDeuda(amigos2[j], montos2[j]);
-							deuda2.eliminarDeuda(j);
+						if(amigos2[j] == deuda1.getNombre()){
+							if(monto == montos2[j]) {
+								deuda1.eliminarDeuda(i);
+								deuda2.eliminarDeuda(j);
+							} else if (monto > montos2[j]) {
+								deuda1.modificarDeuda(i, monto - montos2[j]);
+								deuda2.eliminarDeuda(j);
+							} else {
+								deuda2.modificarDeuda(j, montos2[j] - monto);
+								deuda1.eliminarDeuda(i);
+							}
+						} else {
+							if(monto > montos2[j]) {
+								monto[i] -= montos2[j];
+								deuda1.agregarDeuda(amigos2[j], montos2[j]);
+								deuda2.eliminarDeuda(j);
+							} else if(monto < montos2[j]){
+								deuda1.agregarDeuda(amigos2[j], monto);
+								deuda1.eliminarDeuda(i);
+								deuda2.modificarDeuda(j, montos2[j] - monto);
+							}
+							else {
+								deuda1.agregarDeuda(amigos2[j], montos2[j]);
+								deuda2.eliminarDeuda(j);
+							}	
 						}
 					}
 				} 

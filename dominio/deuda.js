@@ -18,7 +18,7 @@ class Deuda {
 	}
 
 	agregarDeuda(amigo, monto) {
-        if(this.amigos.contains(amigo)) {
+        if(this.amigos.includes(amigo)) {
             this.montos[this.amigos.indexOf(amigo)] += monto;
         } else {
             this.amigos.push(amigo);
