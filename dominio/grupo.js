@@ -102,7 +102,7 @@ class Grupo {
 	eliminarDeuda(nombre, pos) {
 		let deuda = this.listaDeudas[this.getDeudaDe(nombre)];
 		deuda.eliminarDeuda(pos);
-		this.balancear()
+		this.balancear();
 	}
 
 	balancear() {
