@@ -193,7 +193,10 @@ function agregarGrupo(nombre) {
 	console.log(nombre);
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
-
+	li.addEventListener('click',function (event) {
+		event.stopPropagation();
+		grupoSeleccionado(sistema.getGrupoByName(nombre));
+	});
 	// Delete icon
 	let icon = document.createElement('i');
 	icon.setAttribute('class', 'material-icons mdc-button__icon');
