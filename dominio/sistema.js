@@ -26,7 +26,7 @@ class Sistema {
 	}
 
 	eliminarGrupo(nombre){
-		if(this.listaGrupo.length !== 0) {
+		if(this.listaGrupos.length !== 0) {
 			const encontroGrupo = this.listaGrupos.find(l => l.nombre === nombre);
 			if(encontroGrupo){
 				const indexGrupo = this.listaGrupos.findIndex(l => l.nombre === nombre);
