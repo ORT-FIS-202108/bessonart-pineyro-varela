@@ -60,9 +60,9 @@ class Grupo {
 		return -1;
 	}
 
-	AmigoPertenece(nombre) {
-		for (const amigo in this.listaIntegrantes) {
-			if (amigo.getNombre() === nombre) {
+	amigoPertenece(nAmigo) {
+		for (let i = 0;i<this.listaIntegrantes.length;i++) {
+			if (this.listaIntegrantes[i].nombre === nAmigo) {
 				return true;
 			}
 		}

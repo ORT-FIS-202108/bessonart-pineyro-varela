@@ -56,20 +56,15 @@ class Sistema {
 		this.grupoActual.eliminarAmigo(this.getAmigoByName(nombre));
 	}
 
-	eliminarAmigoDelGrupo(nombre, nG) {
-		for (const grupo in this.listaGrupos) {
-			if (grupo.getNombre() === nG) {
-				grupo.eliminarAmigo(nombre);
-			}
-		}
+	eliminarAmigoDelGrupo(namigo, ngrupo) {
+		let grupo = this.getGrupoByName(ngrupo);
+		grupo.eliminarAmigo(namigo);
 	}
 
-	agregarAmigoAlGrupo(nombre, nG){
-		for (const grupo in this.listaGrupos) {
-			if (grupo.getNombre() === nG) {
-				grupo.agregarAmigo(nombre);
-			}
-		}
+	agregarAmigoAlGrupo(namigo, ngrupo){
+		let grupo = this.getGrupoByName(ngrupo);
+		let amigo = this.getAmigoByName(namigo);
+		grupo.agregarAmigo(amigo);
 	}
 
 	eliminarAmigo(nombre) {
@@ -120,12 +115,8 @@ class Sistema {
 	}
 
 	estaAmigoEnGrupo(nAmigo, nGrupo) {
-		for (const grupo in this.listaGrupos) {
-			if (grupo === nGrupo) {
-				return grupo.AmigoPertenece(nAmigo);
-			}
-		}
-		return false;
+		let grupo = this.getGrupoByName(nGrupo);
+		grupo.amigoPertenece(nAmigo);
 	}
 
 }
