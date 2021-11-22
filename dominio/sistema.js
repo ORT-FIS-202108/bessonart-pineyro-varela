@@ -3,7 +3,7 @@ import Grupo from './grupo.js';
 
 class Sistema {
 	constructor() {
-		this.listaAmigos = [];
+		this.listaAmigos = [new Amigo('YO', '')];
 		this.listaGrupos = [];
 	}
 

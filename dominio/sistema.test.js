@@ -72,8 +72,6 @@ test('eliminarAmigo', () =>{
 });
 
 test('agregarAmigoAlGrupo', () =>{
-    //const amigo2 = new Amigo('amigo2','MetodoDePagoFavorito');
-    //const grupo1 = new Grupo('grupo1');
     const sistema = new Sistema();
     sistema.agregarAmigo('amigo2','MetodoDePagoFavorito');
     sistema.agregarGrupo('grupo1');
@@ -82,8 +80,6 @@ test('agregarAmigoAlGrupo', () =>{
 });
 
 test('estaAmigoEnGrupo', () =>{
-    const amigo2 = new Amigo('amigo2','MetodoDePagoFavorito');
-    const grupo1 = new Grupo('grupo1');
     const sistema = new Sistema();
     sistema.agregarAmigo('amigo2','MetodoDePagoFavorito');
     sistema.agregarGrupo('grupo1');
@@ -93,8 +89,6 @@ test('estaAmigoEnGrupo', () =>{
 
 
 test('eliminarAmigoDelGrupo', () =>{
-    const amigo2 = new Amigo('amigo2','MetodoDePagoFavorito');
-    const grupo1 = new Grupo('grupo1');
     const sistema = new Sistema();
     sistema.agregarAmigo('amigo2','MetodoDePagoFavorito');
     sistema.agregarGrupo('grupo1');

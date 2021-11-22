@@ -175,7 +175,7 @@ botonAgregarGrupo.listen('click', () => {
 			showSnackbar('Nombre es un campo requerido.');
 		} else {
 			sistema.agregarGrupo(nombre);
-			agregarIntegrantes("YO", nombre);
+			sistema.agregarAmigoAlGrupo("YO", nombre);
 		}
 	} catch (error) {
 		showSnackbar(error.message);
