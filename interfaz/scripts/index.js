@@ -280,10 +280,6 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 		icon.style.setProperty('position', 'absolute');
 		icon.style.setProperty('top', '5px');
 		icon.style.setProperty('right', '5px');
-		const callback = () => {
-			sistema.eliminarAmigoDelGrupo(nAmigo, nGrupo);
-			showSnackbar(`Se elimino a ${nAmigo} del grupo ${nGrupo}`);
-		};
 		icon.addEventListener('click', function (event) {
 			event.stopPropagation();
 			let content = document.createElement('p');
@@ -302,10 +298,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 		icon.style.setProperty('position', 'absolute');
 		icon.style.setProperty('top', '5px');
 		icon.style.setProperty('right', '5px');
-		const callback = () => {
-			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
-			showSnackbar(`Se agrego a ${nAmigo} al grupo ${nGrupo}`);
-		};
+	
 		icon.addEventListener('click', function (event) {
 			event.stopPropagation();
 			let content = document.createElement('p');
@@ -336,7 +329,6 @@ function editarIntegrantes(nombre) {
 function mostrarDeudas() {
 	cleanNode(document.getElementById('lista-deudas'));
 	if (grupoActivo.listaDeudas.length < 1) {
-		cleanNode(document.getElementById('lista-deudas'));
 		let h4 = document.createElement('h4');
 		h4.innerText = 'No tienes ninguna deuda';
 		document.getElementById('lista-deudas').appendChild(h4);
@@ -399,7 +391,7 @@ function saldarDeuda(nombre, amigo) {
 const grupoSeleccionado =((grupo) => {
 	grupoActivo = grupo;
 	document.querySelector('#nombreGrupo').innerHTML = grupo.getNombre();
-	document.querySelector('#botonAgregarGasto').classList.remove("sample-content--hidden");
+	document.querySelector('#botonAgregarGasto').classList.remove('sample-content--hidden');
 	mostrarDeudas();
 });
 

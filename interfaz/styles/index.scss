@@ -200,14 +200,14 @@ section {
 }
 
 #lista-amigos-checkbox {
-    padding: 25px;
+    padding: 10px;
     margin: auto;
     li {
         padding: 5px;
         margin: auto;
         .mdc-card {
             margin: auto;
-            width: 100% !important;
+            width: 10% !important;
             padding: 5px;
             height: 50px;
             justify-content: center;
@@ -290,12 +290,6 @@ section {
     color: black !important;
 }
 
-#descripcion-producto #precio-producto {
-    color: #000;
-    font-size: 17px;
-    margin: 0px;
-    margin-right: 5%;
-}
 
 #btn-descartar-modal {
     float: right;

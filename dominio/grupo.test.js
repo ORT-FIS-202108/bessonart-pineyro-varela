@@ -1,9 +1,10 @@
 import Amigo from './amigo.js';
 
-test('creación de amigo', () => {
-	const nuevoAmigo = new Amigo('NombreAmigo','MetodoDePagoFavorito');
-	expect(nuevoAmigo.nombre).toBe('NombreAmigo');
-	expect(nuevoAmigo.favorito).toBe('MetodoDePagoFavorito');
+test('creación de grupo', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	expect(nuevoGrupo.nombre).toBe('NombreGrupo');
+	expect(nuevoGrupo.listaIntegrantes.length).toBe(0);
+	expect(nuevoGrupo.listaDeudas.length).toBe(0);
 });
 
 test('obtener amigo', () => {
@@ -29,4 +30,3 @@ test('obtener metodo de pago favorito del amigo', () => {
 	const nuevoAmigo = new Amigo('NombreAmigo','MetodoDePagoFavorito');
 	expect(nuevoAmigo.getFavorito()).toBe('MetodoDePagoFavorito');
 });
-
