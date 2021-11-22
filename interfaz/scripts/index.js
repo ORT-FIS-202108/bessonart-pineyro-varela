@@ -176,6 +176,7 @@ botonAgregarGrupo.listen('click', () => {
 			showSnackbar('Nombre es un campo requerido.');
 		} else {
 			sistema.agregarGrupo(nombre);
+			agregarIntegrantes("YO", nombre);
 		}
 	} catch (error) {
 		showSnackbar(error.message);
@@ -391,7 +392,7 @@ function saldarDeuda(nombre, amigo) {
 const grupoSeleccionado =((grupo) => {
 	grupoActivo = grupo;
 	document.querySelector('#nombreGrupo').innerHTML = grupo.getNombre();
-	document.querySelector('#botonAgregarGasto').classList.remove('sample-content--hidden');
+	document.querySelector('.mdc-touch-target-wrapper').classList.remove('sample-content--hidden');
 	mostrarDeudas();
 });
 
