@@ -88,12 +88,17 @@ function mostrarAmigos() {
 
 
 function borrarAmigo(nombre) {
-	if (sistema.listaAmigos.length < 1) {
-		showSnackbar('Error: Debe tener al menos un amigo');
-	} else {
-		sistema.eliminarAmigo(nombre);
-		cleanNode(document.getElementById('lista-amigos'));
-		mostrarAmigos();
+	if(nombre==='Yo'){
+		showSnackbar('No puedes eliminarte a ti mismo');
+	}
+	else{
+		if (sistema.listaAmigos.length < 1) {
+			showSnackbar('Error: Debe tener al menos un amigo');
+		} else {
+			sistema.eliminarAmigo(nombre);
+			cleanNode(document.getElementById('lista-amigos'));
+			mostrarAmigos();
+		}
 	}
 }
 
@@ -251,7 +256,6 @@ function borrarGrupo(nombre) {
 		showSnackbar('Error: Debe tener al menos un Grupo');
 	} else {
 		sistema.eliminarGrupo(nombre);
-		cleanNode(document.getElementById('lista-amigos'));
 		mostrarGrupos();
 	}
 }
@@ -315,12 +319,14 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 
 function editarIntegrantes(nombre) {
 	cleanNode(document.getElementById('lista-amigos-checkbox'));
-	if (sistema.listaAmigos.length < 1) {
+	if (sistema.listaAmigos.length < 2) {
 		let h4 = document.createElement('h4');
 		h4.innerText = 'No tienes ningún amigo';
 		document.getElementById('lista-amigos-checkbox').appendChild(h4);
 	} else {
-		sistema.listaAmigos.forEach(item => { agregarIntegrantes(item.nombre, nombre); });
+		for (let i = 1;i<sistema.listaAmigos.length;i++) {	
+			agregarIntegrantes(sistema.listaAmigos[i].nombre, nombre);
+		}
 	}
 	showDialogIntegrantes();
 }

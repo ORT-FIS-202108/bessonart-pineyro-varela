@@ -45,7 +45,7 @@ class Sistema {
 			}
 		}
 		let nuevoAmigo = new Amigo(nombre, favorito);
-		this.listaAmigos.unshift(nuevoAmigo);
+		this.listaAmigos.push(nuevoAmigo);
 	}
 
 	eliminarAmigoDelGrupo(namigo, ngrupo) {
