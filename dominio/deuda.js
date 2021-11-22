@@ -1,5 +1,5 @@
 class Deuda {
-	constructor(nombre,id) {
+	constructor(nombre) {
 		this.nombre = nombre;
 		this.amigos = [];
 		this.montos = [];
