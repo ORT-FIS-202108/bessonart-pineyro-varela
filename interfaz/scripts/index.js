@@ -267,7 +267,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
 
-	if (sistema.estaAmigoEnGrupo(nAmigo, nGrupo)) {
+	if (sistema.listaGrupos[1].amigoPertenece(nAmigo)) {
 		//cambiar color de fondo de la card
 		// Delete icon
 		let icon = document.createElement('i');
@@ -299,7 +299,8 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 		icon.style.setProperty('right', '5px');
 		const callback = () => {
 			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
-			showSnackbar(`Se agrego a ${nAmigo} al grupo ${nGrupo}`);
+			//showSnackbar(`Se agrego a ${nAmigo} al grupo ${nGrupo}`);
+			showSnackbar(sistema.listaGrupos[1].amigoPertenece(nAmigo));
 		};
 		icon.addEventListener('click', function (event) {
 			event.stopPropagation();

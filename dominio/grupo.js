@@ -69,16 +69,9 @@ class Grupo {
 		return false;
 	}
 	
-	eliminarAmigo(nombre){
-		if(this.listaIntegrantes.length !== 0) {
-			const encontroAmigo = this.listaIntegrante.find(l => l.nombre === nombre);
-			if(encontroAmigo){
-				const indexAmigo = this.listaIntegrante.findIndex(l => l.nombre === nombre);
-				this.listaIntegrante.splice(indexAmigo,1);
-				return;
-			}
-		}
-		throw new Error(`No existe un amigo con el nombre ${nombre}`);
+	eliminarAmigo(amigo){
+		let index = this.listaIntegrantes.indexOf(amigo);
+		this.listaIntegrantes.splice(index,1);
 	}
 	
 	agregarDeuda(nombre, monto) {
