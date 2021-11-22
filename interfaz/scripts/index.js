@@ -399,7 +399,7 @@ function saldarDeuda(nombre, amigo) {
 const grupoSeleccionado =((grupo) => {
 	grupoActivo = grupo;
 	document.querySelector('#nombreGrupo').innerHTML = grupo.getNombre();
-	document.querySelector('#botonAgregarGasto').classList.remove("sample-content--hidden");
+	document.querySelector('#botonAgregarGasto').classList.remove('sample-content--hidden');
 	mostrarDeudas();
 });
 
