@@ -455,5 +455,5 @@ function cargarListaIntegrantes() {
 			document.getElementById(listaPersonas[i]).checked = true;
 		}
 	}
-};
+}
 
