@@ -48,13 +48,6 @@ class Sistema {
 		this.listaAmigos.unshift(nuevoAmigo);
 	}
 
-	agregarAmigoGrupo(nombre) {
-		this.grupoActual.agregarAmigo(this.getAmigoByName(nombre));
-	}
-	eliminarAmigoGrupo(nombre) {
-		this.grupoActual.eliminarAmigo(this.getAmigoByName(nombre));
-	}
-
 	eliminarAmigoDelGrupo(namigo, ngrupo) {
 		let grupo = this.getGrupoByName(ngrupo);
 		let amigo = this.getAmigoByName(namigo);
@@ -110,14 +103,6 @@ class Sistema {
 		return null;
 	}
 
-	getIntegrantesDelGrupo(nombre) {
-		for (const grupo in this.listaGrupos) {
-			if (grupo.getNombre() === nombre) {
-				return grupo.listaIntegrantes;
-			}
-		}
-		return null;
-	}
 
 	estaAmigoEnGrupo(nAmigo, nGrupo) {
 		let grupo = this.getGrupoByName(nGrupo);
