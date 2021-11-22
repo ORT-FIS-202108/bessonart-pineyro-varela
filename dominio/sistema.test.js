@@ -9,7 +9,12 @@ beforeAll(() => {
     grupo1.agregarAmigo(amigo1);
   });
 
-
+  test('constructor', () => {
+	const sistema = new Sistema();
+    const yo = new Amigo('YO','');
+	expect(sistema.listaAmigos).toStrictEqual([yo]);
+	expect(sistema.listaGrupos).toStrictEqual([]);
+});
 
 test('setListaGrupos', () =>{
     const grupo1 = new Grupo('grupo1');
@@ -50,7 +55,7 @@ test('agregarAmigo', () =>{
     const amigo1 = new Amigo('amigo1','MetodoDePagoFavorito');
     const sistema = new Sistema();
     sistema.agregarAmigo('amigo1','MetodoDePagoFavorito');
-    expect(sistema.listaAmigos[0]).toStrictEqual(amigo1);
+    expect(sistema.listaAmigos[1]).toStrictEqual(amigo1);
 });
 
 test('getAmigoByName', () =>{
