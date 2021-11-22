@@ -337,11 +337,11 @@ function mostrarDeudas() {
 }
 
 function agregarDeuda(deudas) {
-	let nombre = deudas.getNombre().getNombre();
+	let nombre = deudas.getNombre();
 	for(let i = 0; i < deudas.getAmigos().length; i++) {
 		let amigo = deudas.getAmigos()[i];
 		let monto = deudas.getMontos()[i];
-		let texto = nombre + ' a ' + amigo + ': $' + monto;
+		let texto = nombre.getNombre() + ' a ' + amigo + ': $' + monto;
 		let li = document.createElement('li');
 		li.setAttribute('class', 'mdc-list-item');
 		let card = document.createElement('div');
@@ -360,12 +360,12 @@ function agregarDeuda(deudas) {
 		icon.style.setProperty('right', '5px');
 		const callback = () => {
 			saldarDeuda(nombre, amigo);
-			showSnackbar(`Se saldó la deuda de ${nombre} con ${amigo}`);
+			showSnackbar(`Se saldó la deuda de ${nombre.getNombre()} con ${amigo}`);
 		};
 		icon.addEventListener('click', function (event) {
 			event.stopPropagation();
 			let content = document.createElement('p');
-			content.innerHTML = `${nombre} pagó $${monto} a ${amigo}`;
+			content.innerHTML = `${nombre.getNombre()} pagó $${monto} a ${amigo}`;
 			showDialog('Saldar Deuda', content, callback);
 		});
 		card.appendChild(icon);
