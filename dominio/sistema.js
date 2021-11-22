@@ -116,7 +116,7 @@ class Sistema {
 
 	estaAmigoEnGrupo(nAmigo, nGrupo) {
 		let grupo = this.getGrupoByName(nGrupo);
-		grupo.amigoPertenece(nAmigo);
+		return (grupo.amigoPertenece(nAmigo));
 	}
 
 }

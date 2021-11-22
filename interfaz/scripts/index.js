@@ -267,7 +267,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
 
-	if (sistema.listaGrupos[1].amigoPertenece(nAmigo)) {
+	if (sistema.estaAmigoEnGrupo(nAmigo, nGrupo)) {
 		//cambiar color de fondo de la card
 		// Delete icon
 		let icon = document.createElement('i');
