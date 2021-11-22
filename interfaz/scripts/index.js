@@ -103,7 +103,6 @@ function agregarAmigo(nombre) {
 	let card = document.createElement('div');
 	card.setAttribute('class', 'mdc-card');
 	card.innerHTML = nombre;
-	console.log(nombre);
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
 
@@ -191,7 +190,6 @@ function agregarGrupo(nombre) {
 	let card = document.createElement('div');
 	card.setAttribute('class', 'mdc-card');
 	card.innerHTML = nombre;
-	console.log(nombre);
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
 	li.addEventListener('click',function (event) {
@@ -339,8 +337,7 @@ function mostrarDeudas() {
 }
 
 function agregarDeuda(deudas) {
-	let nombre = deudas.getNombre();
-	console.log(deudas);
+	let nombre = deudas.getNombre().getNombre();
 	for(let i = 0; i < deudas.getAmigos().length; i++) {
 		let amigo = deudas.getAmigos()[i];
 		let monto = deudas.getMontos()[i];
@@ -382,7 +379,8 @@ function saldarDeuda(nombre, amigo) {
 	if (grupoActivo.listaDeudas.length < 1) {
 		showSnackbar('Error: Debe tener al menos una deuda');
 	} else {
-		let pos = grupoActivo.listaDeudas[grupoActivo.getDeudaDe(nombre)].getAmigos().indexOf(amigo);
+		let deuda = grupoActivo.listaDeudas[grupoActivo.getDeudaDe(nombre)];
+		let pos = deuda.getAmigos().indexOf(amigo);
 		grupoActivo.eliminarDeuda(nombre, pos);
 		cleanNode(document.getElementById('lista-deudas'));
 		mostrarDeudas();

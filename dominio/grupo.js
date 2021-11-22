@@ -42,7 +42,7 @@ class Grupo {
 	getDeudaDe(nombre){
 		for (let i = 0; i < this.listaDeudas.length; i++) {
 			let deuda = this.listaDeudas[i];
-			if (deuda.getNombre()===(nombre)) {
+			if (deuda.getNombre().getNombre() === nombre) {
 				return this.listaDeudas.indexOf(deuda);
 			}
 		}
@@ -67,7 +67,7 @@ class Grupo {
 		monto /= this.cantidadIntegrantes();
 		for(let i = 0; i < this.listaIntegrantes.length; i++) {
 			let amigo = this.listaIntegrantes[i];
-			if(amigo != nombre) {
+			if(amigo.getNombre() != nombre) {
 				let pos = this.getDeudaDe(amigo);
 				if(pos !== -1) {
 					this.listaDeudas[pos].agregarDeuda(nombre, monto);
