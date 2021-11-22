@@ -16,12 +16,12 @@ class Sistema {
 		this.listaGrupos = lista;
 	}
 
-	agregarGrupo(nombre, listaIntegrantes) {
+	agregarGrupo(nombre) {
 		const encontroGrupo = this.listaGrupos.find(l => l.nombre === nombre);
 		if (encontroGrupo) {
 			throw Error(`Ya existe un grupo con nombre ${nombre}.`);
 		} else {
-			let nuevoGrupo = new Grupo(nombre, listaIntegrantes);
+			let nuevoGrupo = new Grupo(nombre);
 			this.listaGrupos.push(nuevoGrupo);
 		}
 	}
@@ -93,18 +93,18 @@ class Sistema {
 	}
 
 	getGrupoByName(nombre) {
-		for (const grupo in this.listaGrupos) {
-			if (grupo === nombre) {
-				return grupo;
+		for (let i = 0;i<this.listaGrupos.length;i++) {
+			if (this.listaGrupos[i].nombre === nombre) {
+				return this.listaGrupos[i];
 			}
 		}
 		return null;
 	}
 
 	getAmigoByName(nombre) {
-		for (const amigo in this.listaAmigos) {
-			if (amigo.getNombre() === nombre) {
-				return amigo;
+		for (let i = 0;i<this.listaAmigos.length;i++) {
+			if (this.listaAmigos[i].nombre === nombre) {
+				return this.listaAmigos[i];
 			}
 		}
 		return null;
