@@ -63,7 +63,7 @@
                 <span class="mdc-fab__icon material-icons">add</span>
             </button>
         </section>
-        
+
         <section style="margin-top: 65px;  " class="content sample-content--hidden">
             <h1>Grupos</h1>
             <ul class="mdc-list" id="lista-grupos">
@@ -75,12 +75,13 @@
                 <span class="mdc-fab__icon material-icons">add</span>
             </button>
             <hr />
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-direction: column; margin: 20px;">
-                <div style="display: flex; width: 100%; justify-content: space-around; align-items: center; flex-direction:column;">
+            <div
+                style="display: flex; align-items: center; justify-content: space-between; flex-direction: column; margin: 20px;">
+                <div
+                    style="display: flex; width: 100%; justify-content: space-around; align-items: center; flex-direction:column;">
                     <div style="display:flex; width:100%; justify-content:space-evenly;">
-                        <h2 id="nombreGrupo">Friends</h2>
-                        <div class="mdc-touch-target-wrapper "> 
-                            <!-- en el div va  sample-content--hidden-->
+                        <h2 id="nombreGrupo"></h2>
+                        <div class="mdc-touch-target-wrapper sample-content--hidden"> 
                             <button id="botonAgregarGasto" class="mdc-button mdc-button--raised mdc-button--touch">
                                 <span class="mdc-button__ripple"></span>
                                 <span class="mdc-button__touch"></span>
@@ -93,7 +94,6 @@
                     </div>
                 </div>
             </div>
-            
         </section>
 
         <!-- Alert Dialog -->
@@ -161,19 +161,19 @@
             </div>
             <div class="mdc-dialog__scrim"></div>
         </div>
-           <!-- Agregar Grupo Dialog -->
-           <div id="grupoDialog" class="mdc-dialog" aria-modal="true" aria-labelledby="Agregar Grupo">
+        <!-- Agregar Grupo Dialog -->
+        <div id="grupoDialog" class="mdc-dialog" aria-modal="true" aria-labelledby="Agregar Grupo">
             <div class="mdc-dialog__container">
                 <div class="mdc-dialog__surface">
                     <h2 class="mdc-dialog__title">
                         Agregar Grupo
                     </h2>
-                        <label id='textNombreGrupo' class="mdc-text-field mdc-text-field--filled">
-                            <span class="mdc-text-field__ripple"></span>
-                            <span class="mdc-floating-label" id="my-label-id">Nombre</span>
-                            <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
-                            <span class="mdc-line-ripple"></span>
-                        </label>
+                    <label id='textNombreGrupo' class="mdc-text-field mdc-text-field--filled">
+                        <span class="mdc-text-field__ripple"></span>
+                        <span class="mdc-floating-label" id="my-label-id">Nombre</span>
+                        <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+                        <span class="mdc-line-ripple"></span>
+                    </label>
 
                     <footer class="mdc-dialog__actions">
                         <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
@@ -202,7 +202,8 @@
                         <label id='descripcionGasto' class="mdc-text-field mdc-text-field--filled">
                             <span class="mdc-text-field__ripple"></span>
                             <span class="mdc-floating-label" id="descripcionDelGasto">Descripción</span>
-                            <input class="mdc-text-field__input" type="text" aria-labelledby="descripcionDelGasto" maxlength="40">
+                            <input class="mdc-text-field__input" type="text" aria-labelledby="descripcionDelGasto"
+                                maxlength="40">
                             <span class="mdc-line-ripple"></span>
                         </label>
                         <label id='montoGasto' class="mdc-text-field mdc-text-field--filled">
@@ -212,8 +213,7 @@
                             <span class="mdc-line-ripple"></span>
                         </label>
                         <p>Pagó: </p>
-                        <div id="lista-pago" class="mdc-form-field"></div>
-
+                        <div id="lista-pago" class="mdc-form-field" style="display: flex; flex-direction: column; align-items: flex-start;"></div>
                     </div>
                     <footer class="mdc-dialog__actions">
                         <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
@@ -230,7 +230,7 @@
             </div>
             <div class="mdc-dialog__scrim"></div>
         </div>
-        
+
         <!-- Saldar Deuda Dialog -->
         <div id="deudaDialog" class="mdc-dialog" aria-modal="true" aria-labelledby="Saldar Deuda">
             <div class="mdc-dialog__container">
@@ -264,8 +264,25 @@
             </div>
         </div>
 
-    </main>
+        <!-- Agregar Integrante al Grupo Dialog -->
+        <div id="grupoDialog2" class="mdc-dialog" aria-modal="true" aria-labelledby="Agregar Integrante">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <ul class="mdc-list" id="lista-amigos-checkbox">
+                        <h4>No tienes ningún amigo</h4>
+                    </ul>
 
+                    <footer class="mdc-dialog__actions">
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"
+                            style="background-color: #c7c7c7; color: white; ">
+                            <span class="mdc-button__label">Cerrar</span>
+                        </button>
+                    </footer>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+    </main>
 </body>
 <script src="bundle.js" async></script>
 

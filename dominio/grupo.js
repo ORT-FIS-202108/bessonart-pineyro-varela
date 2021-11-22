@@ -1,9 +1,9 @@
 import Deuda from './deuda.js';
 
 class Grupo {
-	constructor(nombre,listaIntegrantes) {
+	constructor(nombre) {
 		this.nombre = nombre;
-		this.listaIntegrantes = listaIntegrantes;
+		this.listaIntegrantes = [];
 		this.listaDeudas = [];
 	}
 
@@ -15,6 +15,9 @@ class Grupo {
 		};
 	}
 
+	agregarAmigo(amigo){
+		this.listaIntegrantes.push(amigo);
+	}
 	getNombre(){
 		return this.nombre;
 	}
@@ -57,6 +60,27 @@ class Grupo {
 		return -1;
 	}
 
+	AmigoPertenece(nombre) {
+		for (const amigo in this.listaIntegrantes) {
+			if (amigo.getNombre() === nombre) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	eliminarAmigo(nombre){
+		if(this.listaIntegrantes.length !== 0) {
+			const encontroAmigo = this.listaIntegrante.find(l => l.nombre === nombre);
+			if(encontroAmigo){
+				const indexAmigo = this.listaIntegrante.findIndex(l => l.nombre === nombre);
+				this.listaIntegrante.splice(indexAmigo,1);
+				return;
+			}
+		}
+		throw new Error(`No existe un amigo con el nombre ${nombre}`);
+	}
+	
 	agregarDeuda(nombre, monto) {
 		monto /= this.cantidadIntegrantes();
 		for(let i = 0; i < this.listaIntegrantes.length; i++) {

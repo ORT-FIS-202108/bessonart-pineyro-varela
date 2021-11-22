@@ -21,10 +21,14 @@
 @use "@material/list/mdc-list";
 @use "@material/menu-surface/mdc-menu-surface";
 @use "@material/menu/mdc-menu";
-@use "@material/select/styles";
 @use "@material/dialog";
 @use "@material/snackbar/mdc-snackbar";
 @use "@material/select/mdc-select";
+@use "@material/checkbox";
+@use "@material/form-field";
+
+@include checkbox.core-styles;
+@include form-field.core-styles;
 
 @include card.core-styles;
 @include textfield.core-styles;
@@ -108,6 +112,69 @@ section {
 }
 
 #lista-amigos {
+    padding: 25px;
+    margin: auto;
+    li {
+        padding: 5px;
+        margin: auto;
+        .mdc-card {
+            margin: auto;
+            width: 100% !important;
+            padding: 5px;
+            height: 50px;
+            justify-content: center;
+            .mdc-card__actions {
+                .mdc-button {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+#lista-amigos-select {
+    padding: 25px;
+    margin: auto;
+    li {
+        padding: 5px;
+        margin: auto;
+        .mdc-card {
+            margin: auto;
+            width: 100% !important;
+            padding: 5px;
+            height: 50px;
+            justify-content: center;
+            .mdc-card__actions {
+                .mdc-button {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+#lista-grupos {
+    padding: 25px;
+    margin: auto;
+    li {
+        padding: 5px;
+        margin: auto;
+        .mdc-card {
+            margin: auto;
+            width: 100% !important;
+            padding: 5px;
+            height: 50px;
+            justify-content: center;
+            .mdc-card__actions {
+                .mdc-button {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+#lista-amigos-checkbox {
     padding: 25px;
     margin: auto;
     li {
