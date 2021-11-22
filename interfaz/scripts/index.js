@@ -75,13 +75,15 @@ function showDialogAmigo() {
 
 function mostrarAmigos() {
 	cleanNode(document.getElementById('lista-amigos'));
-	if (sistema.listaAmigos.length < 1) {
+	if (sistema.listaAmigos.length < 2) {
 		cleanNode(document.getElementById('lista-amigos'));
 		let h4 = document.createElement('h4');
 		h4.innerText = 'No tienes ningún amigo';
 		document.getElementById('lista-amigos').appendChild(h4);
 	} else {
-		sistema.listaAmigos.forEach(item => { agregarAmigo(item.nombre); });
+		for (let i = 1;i<sistema.listaAmigos.length;i++) {	
+			agregarAmigo(sistema.listaAmigos[i].nombre);
+		}
 	}
 }
 
@@ -180,7 +182,7 @@ botonAgregarGrupo.listen('click', () => {
 			showSnackbar('Nombre es un campo requerido.');
 		} else {
 			sistema.agregarGrupo(nombre);
-			sistema.agregarAmigoAlGrupo("YO", nombre);
+			sistema.agregarAmigoAlGrupo('YO', nombre);
 		}
 	} catch (error) {
 		showSnackbar(error.message);
