@@ -42,7 +42,7 @@ class Grupo {
 	getDeudaDe(nombre){
 		for (let i = 0; i < this.listaDeudas.length; i++) {
 			let deuda = this.listaDeudas[i];
-			if (deuda.getNombre().getNombre() === nombre) {
+			if (deuda.getNombre()=== nombre) {
 				return this.listaDeudas.indexOf(deuda);
 			}
 		}

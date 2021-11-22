@@ -53,7 +53,9 @@ test('obtener cantidad de integrantes del grupo', () => {
 test('obtener la cantidad deudas del grupo', () => {
 	const nuevoGrupo = new Grupo('NombreGrupo');
 	const amigo1 = new Amigo('Raul','Efectivo');
+	const amigo2 = new Amigo('Luis','Efectivo');
 	nuevoGrupo.agregarAmigo(amigo1);
+	nuevoGrupo.agregarAmigo(amigo2);
 	nuevoGrupo.agregarDeuda(amigo1.getNombre(),1200);
 	expect(nuevoGrupo.getCantidadDeudas()).toBe(1);
 });
@@ -65,7 +67,7 @@ test('obtener las deudas de un amigo en el grupo', () => {
 	nuevoGrupo.agregarAmigo(amigo1);
 	nuevoGrupo.agregarAmigo(amigo2);
 	nuevoGrupo.agregarDeuda(amigo1.getNombre(),1200);
-	expect(nuevoGrupo.getDeudaDe(amigo2)).toBe(1);
+	expect(nuevoGrupo.getDeudaDe(amigo2)).toBe(0);
 });
 
 test('verificar si un amigo pertenece al grupo: FALSE', () => {
@@ -109,7 +111,9 @@ test('eliminar deuda del grupo', () => {
 	nuevoGrupo.agregarAmigo(amigo2);
 	nuevoGrupo.agregarDeuda(amigo1.getNombre(),1200);
 	nuevoGrupo.eliminarDeuda(amigo2, 0);
-	expect(nuevoGrupo.listaDeudas.length).toBe(0);
+	const deuda = nuevoGrupo.listaDeudas[nuevoGrupo.getDeudaDe(amigo2)];
+	expect(nuevoGrupo.listaDeudas.length).toBe(1);
+	expect(deuda.getAmigos().length).toBe(0);
 });
 
 test('balancear', () => {
