@@ -72,7 +72,12 @@ class Sistema {
 			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
 			if (encontroAmigo) {
 				const indexAmigo = this.listaAmigos.findIndex(l => l.nombre === nombre);
-				this.listaAmigos.splice(indexAmigo, 1);
+				for (let i = 0;i<this.listaGrupos.length;i++) {
+					if (this.listaGrupos[i].amigoPertenece(nombre)) {
+						this.listaGrupos[i].eliminarAmigo(this.listaAmigos[indexAmigo]);
+					}
+				}
+				this.listaAmigos.splice(indexAmigo, 1);				
 				return;
 			}
 		}
