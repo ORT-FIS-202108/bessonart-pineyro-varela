@@ -5,7 +5,6 @@ class Sistema {
 	constructor() {
 		this.listaAmigos = [];
 		this.listaGrupos = [];
-		this.grupoActual = null;
 	}
 
 	getListaGrupos() {
