@@ -18,6 +18,7 @@ class Grupo {
 	agregarAmigo(amigo){
 		this.listaIntegrantes.push(amigo);
 	}
+
 	getNombre(){
 		return this.nombre;
 	}
@@ -26,20 +27,8 @@ class Grupo {
 		this.nombre = nombre;
 	}
 
-	getListaDeudas(){
-		return this.listaDeudas;
-	}
-
-	setListaDeudas(lista){
-		this.listaDeudas = lista;
-	}
-
 	getListaIntegrantes(){
 		return this.listaIntegrantes;
-	}
-
-	setListaIntegrantes(lista){
-		this.listaIntegrantes = lista;
 	}
 
 	cantidadIntegrantes(){

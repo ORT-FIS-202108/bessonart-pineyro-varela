@@ -29,26 +29,92 @@ test('cambiar nombre de grupo', () => {
 
 test('obtener lista integrantes del grupo', () => {
 	const nuevoGrupo = new Grupo('NombreGrupo');
-	const amigo1 = Amigo('Raul','Efectivo');
-	const amigo2 = Amigo('Pedro','Efectivo');
-	const listaIntegrantes = [];
-	listaIntegrantes.push(amigo1);
-	listaIntegrantes.push(amigo2);
-	nuevoGrupo.setListaIntegrantes(listaIntegrantes);
+	const amigo1 = new Amigo('Raul','Efectivo');
+	const amigo2 = new Amigo('Pedro','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	nuevoGrupo.agregarAmigo(amigo2);
 	expect(nuevoGrupo.getListaIntegrantes().length).toBe(2);
 });
 
-test('cambiar lista integrantes del grupo', () => {
+test('obtener lista integrantes del grupo', () => {
 	const nuevoGrupo = new Grupo('NombreGrupo');
-	const amigo1 = new  Amigo('Raul','Efectivo');
+	const amigo1 = new Amigo('Raul','Efectivo');
 	const amigo2 = new Amigo('Pedro','Efectivo');
-	const listaIntegrantes = [];
-	listaIntegrantes.push(amigo1);
-	listaIntegrantes.push(amigo2);
-	nuevoGrupo.setListaIntegrantes(listaIntegrantes);
-	const amigo3 = Amigo ('George','Efectivo');
-	listaIntegrantes.push(amigo3);
-	nuevoGrupo.setListaIntegrantes(listaIntegrantes);
-	expect(nuevoGrupo.getListaIntegrantes().length).toBe(3);
+	nuevoGrupo.agregarAmigo(amigo1);
+	nuevoGrupo.agregarAmigo(amigo2);
+	expect(nuevoGrupo.getListaIntegrantes().length).toBe(2);
 });
+
+test('agregar amigo al grupo', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	expect(nuevoGrupo.getListaIntegrantes().length).toBe(1);
+});
+
+test('obtener cantidad de integrantes del grupo', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	expect(nuevoGrupo.cantidadIntegrantes()).toBe(1);
+});
+
+test('obtener la cantidad de integrantes del grupo', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	expect(nuevoGrupo.cantidadIntegrantes()).toBe(1);
+});
+
+test('obtener la cantidad deudas del grupo', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	nuevoGrupo.agregarDeuda(amigo1.getNombre(),1200);
+	expect(nuevoGrupo.getCantidadDeudas()).toBe(1);
+});
+
+test('obtener las deudas de un amigo en el grupo', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	const amigo2 = new Amigo('Luis','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	nuevoGrupo.agregarAmigo(amigo2);
+	nuevoGrupo.agregarDeuda(amigo1.getNombre(),1200);
+	expect(nuevoGrupo.getDeudaDe(amigo2)).toBe(1);
+});
+
+test('verificar si un amigo pertenece al grupo: FALSE', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	expect(nuevoGrupo.amigoPertenece('Juan')).toBeFalsy();
+});
+
+test('verificar si un amigo pertenece al grupo: TRUE', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	expect(nuevoGrupo.amigoPertenece('Raul')).toBeTruthy();
+});
+
+test('eliminar amigo del grupo', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	nuevoGrupo.eliminarAmigo(amigo1);
+	expect(nuevoGrupo.amigoPertenece('Raul')).toBeFalsy();
+});
+
+test('agregar deuda al grupo', () => {
+	const nuevoGrupo = new Grupo('NombreGrupo');
+	const amigo1 = new Amigo('Raul','Efectivo');
+	const amigo2 = new Amigo('Luis','Efectivo');
+	nuevoGrupo.agregarAmigo(amigo1);
+	nuevoGrupo.agregarAmigo(amigo2);
+	nuevoGrupo.agregarDeuda(amigo1.getNombre(),1200);
+});
+
+
+
 
