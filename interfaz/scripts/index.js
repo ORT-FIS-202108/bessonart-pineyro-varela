@@ -383,7 +383,7 @@ function saldarDeuda(nombre, amigo) {
 	if (grupoActivo.listaDeudas.length < 1) {
 		showSnackbar('Error: Debe tener al menos una deuda');
 	} else {
-		let deuda = grupoActivo.listaDeudas[grupoActivo.getDeudaDe(nombre)];
+		let deuda = grupoActivo.listaDeudas[grupoActivo.getDeudaDe(nombre.nombre)];
 		let pos = deuda.getAmigos().indexOf(amigo);
 		grupoActivo.eliminarDeuda(nombre, pos);
 		cleanNode(document.getElementById('lista-deudas'));
