@@ -40,13 +40,14 @@ class Grupo {
 	}
 
 	getDeudaDe(nombre){
+		let pos = -1;
 		for (let i = 0; i < this.listaDeudas.length; i++) {
 			let deuda = this.listaDeudas[i];
-			if (deuda.getNombre()=== nombre) {
-				return this.listaDeudas.indexOf(deuda);
+			if (deuda.getNombre().getNombre()=== nombre) {
+				pos = this.listaDeudas.indexOf(deuda);
 			}
 		}
-		return -1;
+		return pos;
 	}
 
 	amigoPertenece(nAmigo) {
@@ -68,7 +69,7 @@ class Grupo {
 		for(let i = 0; i < this.listaIntegrantes.length; i++) {
 			let amigo = this.listaIntegrantes[i];
 			if(amigo.getNombre() != nombre) {
-				let pos = this.getDeudaDe(amigo);
+				let pos = this.getDeudaDe(amigo.nombre);
 				if(pos !== -1) {
 					this.listaDeudas[pos].agregarDeuda(nombre, monto);
 				} else {
@@ -82,7 +83,7 @@ class Grupo {
 	}
 
 	eliminarDeuda(nombre, pos) {
-		let deuda = this.listaDeudas[this.getDeudaDe(nombre)];
+		let deuda = this.listaDeudas[this.getDeudaDe(nombre.nombre)];
 		deuda.eliminarDeuda(pos);
 		this.balancear();
 	}
@@ -101,7 +102,7 @@ class Grupo {
 					let amigos2 = deuda2.getAmigos();
 					let montos2 = deuda2.getMontos();
 					for(let j = 0; j < amigos2.length; j++) {
-						if(amigos2[j] == deuda1.getNombre()){
+						if(amigos2[j] == deuda1.getNombre().getNombre()){
 							if(monto == montos2[j]) {
 								deuda1.eliminarDeuda(i);
 								deuda2.eliminarDeuda(j);
@@ -112,21 +113,7 @@ class Grupo {
 								deuda2.modificarDeuda(j, montos2[j] - monto);
 								deuda1.eliminarDeuda(i);
 							}
-						} else {
-							if(monto > montos2[j]) {
-								monto[i] -= montos2[j];
-								deuda1.agregarDeuda(amigos2[j], montos2[j]);
-								deuda2.eliminarDeuda(j);
-							} else if(monto < montos2[j]){
-								deuda1.agregarDeuda(amigos2[j], monto);
-								deuda1.eliminarDeuda(i);
-								deuda2.modificarDeuda(j, montos2[j] - monto);
-							}
-							else {
-								deuda1.agregarDeuda(amigos2[j], montos2[j]);
-								deuda2.eliminarDeuda(j);
-							}	
-						}
+						} 
 					}
 				} 
 			}

@@ -43,6 +43,7 @@ test('agregar deuda', () => {
 	const monto2 = 100;
     nuevaDeuda.agregarDeuda(amigo1, monto1);
     nuevaDeuda.agregarDeuda(amigo2, monto2);
+	nuevaDeuda.agregarDeuda(amigo2, monto2 + monto1);
 	expect(nuevaDeuda.getAmigos().length).toBe(2);
 	expect(nuevaDeuda.getMontos().length).toBe(2);
 });
