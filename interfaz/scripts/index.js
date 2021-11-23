@@ -187,6 +187,7 @@ botonAgregarGrupo.listen('click', () => {
 	} catch (error) {
 		showSnackbar(error.message);
 	} finally {
+		textNombreGrupo.value='';
 		mostrarGrupos();
 	}
 });
