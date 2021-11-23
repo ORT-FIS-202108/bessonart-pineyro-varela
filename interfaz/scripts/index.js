@@ -187,6 +187,7 @@ botonAgregarGrupo.listen('click', () => {
 	} catch (error) {
 		showSnackbar(error.message);
 	} finally {
+		textNombreGrupo.value='';
 		mostrarGrupos();
 	}
 });
@@ -309,7 +310,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 			//showDialog('Agregar Integrante', content, callback);
 			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
 			showSnackbar(`Se agregó a ${nAmigo} al grupo ${nGrupo}`);
-		});s
+		});
 		card.appendChild(icon);
 	}
 
