@@ -34,7 +34,7 @@ class Sistema {
 				return;
 			}
 		}
-		throw new Error(`No existe un amigo con el nombre ${nombre}`);
+		throw new Error(`No existe un amigo con el nombre ${nombre}.`);
 	}
 
 	agregarAmigo(nombre, favorito) {
@@ -54,10 +54,16 @@ class Sistema {
 		grupo.eliminarAmigo(amigo);
 	}
 
-	agregarAmigoAlGrupo(namigo, ngrupo){
+	agregarAmigoAlGrupo(namigo, ngrupo) {
 		let grupo = this.getGrupoByName(ngrupo);
 		let amigo = this.getAmigoByName(namigo);
-		grupo.agregarAmigo(amigo);
+		if (amigo == null) {
+			throw new Error(`No existe un amigo con el nombre ${namigo}.`);
+		} else if (grupo == null) {
+			throw new Error(`No existe un grupo con el nombre ${ngrupo}.`);
+		} else {
+			grupo.agregarAmigo(amigo);
+		}
 	}
 
 	eliminarAmigo(nombre) {
@@ -65,28 +71,20 @@ class Sistema {
 			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
 			if (encontroAmigo) {
 				const indexAmigo = this.listaAmigos.findIndex(l => l.nombre === nombre);
-				for (let i = 0;i<this.listaGrupos.length;i++) {
+				for (let i = 0; i < this.listaGrupos.length; i++) {
 					if (this.listaGrupos[i].amigoPertenece(nombre)) {
-						this.listaGrupos[i].eliminarAmigo(this.listaAmigos[indexAmigo]);
+						this.listaGrupos[i].eliminarAmigo(nombre);
 					}
 				}
-				this.listaAmigos.splice(indexAmigo, 1);				
+				this.listaAmigos.splice(indexAmigo, 1);
 				return;
 			}
 		}
-		throw new Error(`No existe un amigo con el nombre ${nombre}`);
-	}
-
-	getListaAmigos() {
-		return this.listaAmigos;
-	}
-
-	setListaAmigos(lista) {
-		this.listaAmigos = lista;
+		throw new Error(`No existe un amigo con el nombre ${nombre}.`);
 	}
 
 	getGrupoByName(nombre) {
-		for (let i = 0;i<this.listaGrupos.length;i++) {
+		for (let i = 0; i < this.listaGrupos.length; i++) {
 			if (this.listaGrupos[i].nombre === nombre) {
 				return this.listaGrupos[i];
 			}
@@ -95,7 +93,7 @@ class Sistema {
 	}
 
 	getAmigoByName(nombre) {
-		for (let i = 0;i<this.listaAmigos.length;i++) {
+		for (let i = 0; i < this.listaAmigos.length; i++) {
 			if (this.listaAmigos[i].nombre === nombre) {
 				return this.listaAmigos[i];
 			}
