@@ -38,7 +38,7 @@ class Sistema {
 	}
 
 	agregarAmigo(nombre, favorito) {
-		if (this.listaAmigos.length !== 0) {
+		if (this.listaAmigos.length > 1) {
 			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
 			if (encontroAmigo) {
 				throw Error(`Ya existe un amigo con nombre ${nombre}.`);
@@ -67,7 +67,7 @@ class Sistema {
 	}
 
 	eliminarAmigo(nombre) {
-		if (this.listaAmigos.length !== 0) {
+		if (this.listaAmigos.length > 1) {
 			const encontroAmigo = this.listaAmigos.find(l => l.nombre === nombre);
 			if (encontroAmigo) {
 				const indexAmigo = this.listaAmigos.findIndex(l => l.nombre === nombre);

@@ -91,6 +91,15 @@ test('agregarAmigo sin nombre ya ingresado', () => {
 	expect(sistema.listaAmigos[1]).toStrictEqual(amigo1);
 });
 
+test('agregarAmigo sin nombre ya ingresado, existiendo amigos con otros nombres', () => {
+	const amigo1 = new Amigo('amigo1', 'MetodoDePagoFavorito');
+	const amigo2 = new Amigo('amigo2', 'MetodoDePagoFavorito2');
+	const sistema = new Sistema();
+	sistema.agregarAmigo('amigo1', 'MetodoDePagoFavorito');
+	sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito2');
+	expect(() => { sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito2');}).toThrow('Ya existe un amigo con nombre amigo2.');
+});
+
 test('agregarAmigo con nombre ya ingresado', () => {
 	const amigo1 = new Amigo('amigo1', 'MetodoDePagoFavorito');
 	const sistema = new Sistema();
@@ -126,11 +135,30 @@ test('eliminarAmigo que esta en el sistema y en un grupo', () => {
 	expect(grupo1.amigoPertenece('amigo1')).toBeFalsy();
 });
 
-test('eliminarAmigo que NO esta en el sistema', () => {
+test('eliminarAmigo que NO esta en el sistema y esta solo "Yo" en la lista', () => {
 	const grupo1 = new Grupo('grupo1');
 	const sistema = new Sistema();
 	sistema.agregarGrupo('grupo1');
 	expect(() => { sistema.eliminarAmigo('amigo1');}).toThrow('No existe un amigo con el nombre amigo1.');
+});
+
+test('eliminarAmigo que NO esta en el sistema y el largo de la lista de amigos es mayor a 1', () => {
+	const grupo1 = new Grupo('grupo1');
+	const sistema = new Sistema();
+	sistema.agregarGrupo('grupo1');
+	sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito');
+	expect(() => { sistema.eliminarAmigo('amigo1');}).toThrow('No existe un amigo con el nombre amigo1.');
+});
+
+test('eliminarAmigo que esta en el sistema y no en un grupo', () => {
+	const grupo1 = new Grupo('grupo1');
+	const sistema = new Sistema();
+	sistema.agregarAmigo('amigo1', 'MetodoDePagoFavorito');
+	sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito');
+	sistema.agregarGrupo('grupo1');
+	sistema.eliminarAmigo('amigo2');
+	expect(sistema.getAmigoByName('amigo2')).toBeNull();
+	expect(grupo1.amigoPertenece('amigo2')).toBeFalsy();
 });
 
 test('agregarAmigoAlGrupo cuando existe amigo y grupo', () => {

@@ -123,7 +123,7 @@ function agregarAmigo(nombre) {
 	icon.style.setProperty('right', '5px');
 	const callback = () => {
 		borrarAmigo(nombre);
-		showSnackbar(`Se elimino a ${nombre} de tus amigos`);
+		showSnackbar(`Se eliminó a ${nombre} de tus amigos`);
 	};
 	icon.addEventListener('click', function (event) {
 		event.stopPropagation();
@@ -213,7 +213,7 @@ function agregarGrupo(nombre) {
 	icon.style.setProperty('right', '5px');
 	const callback = () => {
 		borrarGrupo(nombre);
-		showSnackbar(`Se elimino a ${nombre} de tus grupos`);
+		showSnackbar(`Se eliminó a ${nombre} de tus grupos`);
 	};
 	icon.addEventListener('click', function (event) {
 		event.stopPropagation();
@@ -290,7 +290,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 			content.innerHTML = `¿Está seguro que desea eliminar a ${nAmigo} del grupo ${nGrupo}?`;
 			//showDialog('Eliminar Amigo', content, callback);
 			sistema.eliminarAmigoDelGrupo(nAmigo, nGrupo);
-			showSnackbar(`Se elimino a ${nAmigo} del grupo ${nGrupo}`);
+			showSnackbar(`Se eliminó a ${nAmigo} del grupo ${nGrupo}`);
 		});
 		card.appendChild(icon);
 	} else {
@@ -308,7 +308,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 			content.innerHTML = `¿Está seguro que desea agregar a ${nAmigo} al grupo ${nGrupo}?`;
 			//showDialog('Agregar Integrante', content, callback);
 			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
-			showSnackbar(`Se agrego a ${nAmigo} al grupo ${nGrupo}`);
+			showSnackbar(`Se agregó a ${nAmigo} al grupo ${nGrupo}`);
 		});
 		card.appendChild(icon);
 	}
