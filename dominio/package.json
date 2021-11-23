@@ -4,13 +4,13 @@
     "verbose": true
   },
   "version": "1.0.0",
-  "description": "Domino de la web app Verdulista",
+  "description": "Domino de la web app MisGastos",
   "main": "index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "test": "jest",
     "testWindows": "node --experimental-vm-modules node_modules/jest/bin/jest --coverage"
   },
-  "author": "Tomas Amado, Romina Giaccio, Rodrigo Gonzalez",
+  "author": "Luca Bessonart, Sofia Pineyro, Florencia Varela",
   "license": "",
   "devDependencies": {
     "@babel/preset-env": "^7.14.5",

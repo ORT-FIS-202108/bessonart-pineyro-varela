@@ -1,25 +1,46 @@
 import { MDCTabBar } from '@material/tab-bar';
 import { MDCDialog } from '@material/dialog';
 import { MDCSnackbar } from '@material/snackbar';
-import {MDCSelect} from '@material/select';
+import { MDCRipple } from '@material/ripple';
+import { MDCTopAppBar } from '@material/top-app-bar';
+import { MDCTextField } from '@material/textfield';
 
-import Amigo from '../../dominio/amigo.js';
-import { cleanNode, createData, getImagenProd } from './utils';
+import Sistema from '../../dominio/sistema.js';
 
-// Creacion de usuario inicial.
-const usuario = new Usuario('Usuario Prueba', 'usuarioprueba@gmail.com');
+import { cleanNode } from './utils';
 
 // Creacion de datos.
-const data = createData(usuario);
-const productos = data.productos;
-const proveedores = data.proveedores;
+const sistema = new Sistema();
+let grupoActivo;
 
-// Setea valores iniciales para mostrar.
-let listaPrincipal = usuario.getListaPrincipal();
-let listaActual = usuario.listaPrincipal[0];
+//PRUEBA
+// sistema.agregarGrupo("Friends");
+// let grupoActivo = sistema.getListaGrupos()[0];
+// grupoActivo.setListaIntegrantes(["Sofi", "Andi", "Luca", "Flor"]);
+//grupoActivo.agregarDeuda("sofi", 2000);
+//grupoActivo.agregarDeuda("andi", 1000);
+
+// Setea valores iniciales para mostrar
+
+//Top Bar
+const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+const topAppBar = new MDCTopAppBar(topAppBarElement);
+
+//Tab Bar
+const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
+tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
+	document.querySelectorAll('.content').forEach((element, index) => {
+		if (index === activatedEvent.detail.index) {
+			element.classList.remove('sample-content--hidden');
+		} else {
+			element.classList.add('sample-content--hidden');
+		}
+	});
+});
+
 
 // Dialog
-const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
+const alertDialog = new MDCDialog(document.getElementById('alertDialog'));
 function showDialog(title, content, callback) {
 	const dialogTitle = document.querySelector('#alertDialogTitle');
 	const dialogContent = document.querySelector('#alertDialogContent');
@@ -31,8 +52,9 @@ function showDialog(title, content, callback) {
 	content.style = 'margin-top: 20px;';
 	dialogContent.appendChild(content);
 	dialogCallback.onclick = callback;
-	dialog.open();
+	alertDialog.open();
 }
+
 
 // Snackbar
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
@@ -42,164 +64,52 @@ function showSnackbar(texto) {
 	setTimeout(() => { snackbar.close(); }, 3000);
 }
 
-const setListaActual = (lista) => {
+//Amigo
+const fabAmigo = new MDCRipple(document.getElementById('botonAgregarAmigo'));
+fabAmigo.listen('click', () => { showDialogAmigo(); });
 
-	const tituloListaValue = document.createTextNode(lista.nombre);
-	document.querySelector('#listaActualHeader .mdc-tab__text-label').innerHTML = null;
-	document.querySelector('#listaActualHeader .mdc-tab__text-label').appendChild(tituloListaValue);
+const dialogAmigo = new MDCDialog(document.getElementById('amigoDialog'));
+function showDialogAmigo() {
+	dialogAmigo.open();
+}
 
-	const nombreListaActual = document.createTextNode(lista.nombre);
-	document.querySelector('#nombreListaActual').innerHTML = null;
-	document.querySelector('#nombreListaActual').appendChild(nombreListaActual);
-
-	// Calcula el total de la lista
-	const totalListaActual = document.createTextNode(`Total: ${lista.total}`);
-	document.querySelector('#totalLista').innerHTML = null;
-	document.querySelector('#totalLista').appendChild(totalListaActual);
-
-	const tablaProductosActuales = document.querySelector('#listaActuales');
-	const bodyTableActual = document.createElement('tbody');
-	const trOneActual = document.createElement('tr');
-	trOneActual.id = 'trOneActual';
-	cleanNode(tablaProductosActuales);
-	tablaProductosActuales.appendChild(bodyTableActual);
-	bodyTableActual.appendChild(trOneActual);
-
-	const createRow = (prod) => {
-		const td = document.createElement('td');
-		td.style = 'display:inline-block; height: 250px; min-width: 250px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;';
-		const div = document.createElement('div');
-		div.classList.add('mdc-card', 'hoverCard');
-		div.style = 'height: 100%; display: flex; justify-content: center;';
-		const img = document.createElement('img');
-		img.src = getImagenProd(prod.producto.nombre);
-		img.alt = prod.producto.nombre;
-		img.style = 'height: 40px; width: 40px; align-self: center; display: flex;';
-		const h1 = document.createElement('h1');
-		h1.style = 'margin-bottom: 0px;';
-		const nombreProd = document.createTextNode(prod.producto.nombre);
-		const p = document.createElement('p');
-		p.style = 'position: absolute; top: 10px; right: 10px; margin: 0px; font-weight: bold;';
-		const cantidadProd = document.createTextNode(`x${prod.cantidad}`);
-		const proveedorP = document.createElement('p');
-		proveedorP.style = 'margin-top: 5px; margin-bottom: 5px';
-		const nombreProveedor = document.createTextNode(prod.proveedor.nombre);
-		proveedorP.appendChild(nombreProveedor);
-		trOneActual.appendChild(td);
-		td.appendChild(div);
-		div.appendChild(img);
-		div.appendChild(h1);
-		div.appendChild(p);
-		div.appendChild(proveedorP);
-		h1.appendChild(nombreProd);
-		cleanNode(p);
-		p.appendChild(cantidadProd);
-
-		const icon = document.createElement('i');
-		icon.setAttribute('class', 'material-icons mdc-button__icon');
-		icon.innerHTML = 'delete_outline';
-		icon.classList.add('hoverIcon');
-		icon.style.setProperty('position', 'absolute');
-		icon.style.setProperty('bottom', '5px');
-		icon.style.setProperty('right', '5px');
-		icon.onclick = (event) => {
-			event.stopPropagation();
-			const contenidoEliminar = document.createElement('div');
-			const cantidadABorrar = document.createElement('input');
-			cantidadABorrar.type = 'number';
-			cantidadABorrar.placeholder = 0;
-			const labelEliminar = document.createElement('label');
-			labelEliminar.innerHTML = 'Seleccione la cantidad a borrar:';
-			labelEliminar.style = 'margin-right: 10px;';
-			contenidoEliminar.appendChild(labelEliminar);
-			contenidoEliminar.appendChild(cantidadABorrar);
-
-			const callback = () => {
-				try {
-					if (parseInt(cantidadABorrar.value) <= 0 || cantidadABorrar.value === ''){
-						showSnackbar('La cantidad a eliminar debe ser mayor a 0.');
-					}else{
-						listaActual.removeProduct(prod.producto.nombre, cantidadABorrar.value, prod.proveedor.nombre);
-						setListaActual(listaActual);
-					}
-				}catch(error){
-					showSnackbar(error.message);
-				}
-			};
-
-			showDialog('Eliminar Producto', contenidoEliminar, callback);
-		};
-		div.appendChild(icon);
-	};
-
-	lista.productos.map(prod => {
-		createRow(prod);
-	});
-};
-
-const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
-tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
-	document.querySelectorAll('.content').forEach((element, index) => {
-		if (element.id === 'listaProductos' || element.id === 'tablaProductos'){
-			return;
+function mostrarAmigos() {
+	cleanNode(document.getElementById('lista-amigos'));
+	if (sistema.listaAmigos.length < 2) {
+		cleanNode(document.getElementById('lista-amigos'));
+		let h4 = document.createElement('h4');
+		h4.innerText = 'No tienes ningún amigo';
+		document.getElementById('lista-amigos').appendChild(h4);
+	} else {
+		for (let i = 1; i < sistema.listaAmigos.length; i++) {
+			agregarAmigo(sistema.listaAmigos[i].nombre);
 		}
-		if (index === activatedEvent.detail.index) {
-			element.classList.remove('sample-content--hidden');
+	}
+}
+
+
+
+function borrarAmigo(nombre) {
+	if (nombre === 'Yo') {
+		showSnackbar('No puedes eliminarte a ti mismo');
+	}
+	else {
+		if (sistema.listaAmigos.length < 1) {
+			showSnackbar('Error: Debe tener al menos un amigo');
 		} else {
-			element.classList.add('sample-content--hidden');
+			sistema.eliminarAmigo(nombre);
+			cleanNode(document.getElementById('lista-amigos'));
+			mostrarAmigos();
 		}
-	});
-});
+	}
+}
 
-const dibujarListaProductosTotales = (prods) => {
-	const tablaProductos = document.querySelector('#listaProductos');
-	cleanNode(tablaProductos);
-	const bodyTable = document.createElement('tbody');
-	const trOne = document.createElement('tr');
-	trOne.id = 'trOne';
-	tablaProductos.appendChild(bodyTable);
-	bodyTable.appendChild(trOne);
-
-	prods.map(prod => {
-		const td = document.createElement('td');
-		td.style = 'display:inline-block; height: 250px; min-width: 250px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;';
-		const div = document.createElement('div');
-		div.classList.add('mdc-card', 'hoverCard');
-		div.style = 'height: 100%; display: flex; justify-content: center;';
-		const img = document.createElement('img');
-		img.src = getImagenProd(prod.nombre);
-		img.alt = prod.nombre;
-		img.style = 'height: 40px; width: 40px; align-self: center; display: flex;';
-		const h1 = document.createElement('h1');
-		h1.style = 'margin-bottom: 0px;';
-		const nombreProd = document.createTextNode(prod.nombre);
-		td.onclick = () => ventanaModal(prod,getImagenProd(prod.nombre));
-		trOne.appendChild(td);
-		td.appendChild(div);
-		div.appendChild(img);
-		div.appendChild(h1);
-		h1.appendChild(nombreProd);
-	});
-
-};
-
-// Lista Principal
-function agregarListaAListaPrincipal(nombreLista) {
+function agregarAmigo(nombre) {
 	let li = document.createElement('li');
 	li.setAttribute('class', 'mdc-list-item');
-	li.onclick = () => {
-		listaActual = usuario.getListaEnListaPrincipal(nombreLista);
-		setListaActual(listaActual);
-		dibujarListaPrincipal();
-	};
-
 	let card = document.createElement('div');
 	card.setAttribute('class', 'mdc-card');
-	if (listaActual.nombre === nombreLista){
-		card.style = 'background-color: #558B2F; color: white;';
-	}
-	card.innerHTML = nombreLista;
-
+	card.innerHTML = nombre;
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
 
@@ -212,17 +122,108 @@ function agregarListaAListaPrincipal(nombreLista) {
 	icon.style.setProperty('top', '5px');
 	icon.style.setProperty('right', '5px');
 	const callback = () => {
-		eliminarListaDeListaPrincipal(nombreLista);
-		showSnackbar(`Se elimino ${nombreLista} de las listas`);
+		borrarAmigo(nombre);
+		showSnackbar(`Se eliminó a ${nombre} de tus amigos`);
 	};
-	icon.addEventListener('click', function(event) {
+	icon.addEventListener('click', function (event) {
 		event.stopPropagation();
 		let content = document.createElement('p');
-		content.innerHTML = `¿Está seguro que desea eliminar la lista ${nombreLista}?` ;
-		showDialog('Eliminar Lista', content, callback);
+		content.innerHTML = `¿Está seguro que desea eliminar a ${nombre}?`;
+		showDialog('Eliminar Amigo', content, callback);
 	});
 
-	// Edit icon
+
+	card.appendChild(icon);
+	li.appendChild(card);
+	document.getElementById('lista-amigos').appendChild(li);
+}
+
+const textNombreAmigo = new MDCTextField(document.getElementById('textNombreAmigo'));
+const textFavoritoAmigo = new MDCTextField(document.getElementById('textFavoritoAmigo'));
+const amigoAgregarButton = new MDCRipple(document.getElementById('amigoAgregarButton'));
+
+
+amigoAgregarButton.listen('click', () => {
+	let nombre = textNombreAmigo.value;
+	let favorito = textFavoritoAmigo.value;
+	try {
+		if (nombre.trim() === '') {
+			showSnackbar('Nombre es un campo requerido.');
+		} else {
+			if (favorito.trim() === '') {
+				favorito = 'Ninguno';
+			}
+			sistema.agregarAmigo(nombre, favorito);
+			showSnackbar('Se editó correctamente la lista de amigos');
+		}
+	} catch (error) {
+		showSnackbar(error.message);
+	} finally {
+		textNombreAmigo.value = '';
+		textFavoritoAmigo.value = '';
+		mostrarAmigos();
+	}
+});
+
+//Grupos
+const nuevoGrupo = new MDCRipple(document.getElementById('botonGrupoDialago'));
+const dialogoGrupo = new MDCDialog(document.getElementById('grupoDialog'));
+const dialogoGrupo2 = new MDCDialog(document.getElementById('grupoDialog2'));
+nuevoGrupo.listen('click', () => { dialogoGrupo.open(); });
+
+
+const botonAgregarGrupo = new MDCRipple(document.getElementById('botonAgregarGrupo'));
+const textNombreGrupo = new MDCTextField(document.getElementById('textNombreGrupo'));
+
+botonAgregarGrupo.listen('click', () => {
+	let nombre = textNombreGrupo.value;
+	try {
+		if (nombre.trim() === '') {
+			showSnackbar('Nombre es un campo requerido.');
+		} else {
+			sistema.agregarGrupo(nombre);
+			sistema.agregarAmigoAlGrupo('YO', nombre);
+		}
+	} catch (error) {
+		showSnackbar(error.message);
+	} finally {
+		textNombreGrupo.value='';
+		mostrarGrupos();
+	}
+});
+
+function agregarGrupo(nombre) {
+	let li = document.createElement('li');
+	li.setAttribute('class', 'mdc-list-item');
+	let card = document.createElement('div');
+	card.setAttribute('class', 'mdc-card');
+	card.innerHTML = nombre;
+	let actions = document.createElement('div');
+	actions.setAttribute('class', 'mdc-card__actions');
+	li.addEventListener('click', function (event) {
+		event.stopPropagation();
+		grupoSeleccionado(sistema.getGrupoByName(nombre));
+	});
+	// Delete icon
+	let icon = document.createElement('i');
+	icon.setAttribute('class', 'material-icons mdc-button__icon');
+	icon.innerHTML = 'delete_outline';
+	icon.classList.add('hoverIcon');
+	icon.style.setProperty('position', 'absolute');
+	icon.style.setProperty('top', '5px');
+	icon.style.setProperty('right', '5px');
+	const callback = () => {
+		borrarGrupo(nombre);
+		showSnackbar(`Se eliminó a ${nombre} de tus grupos`);
+	};
+	icon.addEventListener('click', function (event) {
+		event.stopPropagation();
+		let content = document.createElement('p');
+		content.innerHTML = `¿Está seguro que desea eliminar  ${nombre}?`;
+		showDialog('Eliminar Grupo', content, callback);
+	});
+
+	//Edit integrantes icon
 	let icon2 = document.createElement('i');
 	icon2.setAttribute('class', 'material-icons mdc-button__icon');
 	icon2.innerHTML = 'edit';
@@ -230,256 +231,233 @@ function agregarListaAListaPrincipal(nombreLista) {
 	icon2.style.setProperty('position', 'absolute');
 	icon2.style.setProperty('top', '5px');
 	icon2.style.setProperty('right', '29px');
-	icon2.addEventListener('click', function(event) {
+	icon2.addEventListener('click', function (event) {
 		event.stopPropagation();
-		editarLista(nombreLista);
+		editarIntegrantes(nombre);
 	});
 
-	card.appendChild(icon2);
 	card.appendChild(icon);
+	card.appendChild(icon2);
 	li.appendChild(card);
-	document.getElementById('lista-listas').appendChild(li);
+	document.getElementById('lista-grupos').appendChild(li);
 }
 
-// Editar nombre de lista en Lista principal
-function editarLista(nombreLista) {
-	const input = document.createElement('input');
-	input.id = 'inputDialogNombreLista';
-	input.type = 'text';
-	input.style = 'width: 200px; height: 25px;';
-	input.value = nombreLista;
-
-	const label = document.createElement('label');
-	label.innerHTML = 'Nombre:';
-	label.style = 'padding-right: 15px;';
-
-	const dialogContent = document.createElement('div');
-	dialogContent.appendChild(label);
-	dialogContent.appendChild(input);
-	document.querySelector('.mdc-snackbar').style = 'z-index: 1000;';
-
-	const callback = () => {
-		try {
-			let nuevoNombre = input.value;
-			if (nuevoNombre.trim() === ''){
-				showSnackbar('Nombre es un campo requerido.');
-			}else{
-				usuario.cambiarNombreLista(nombreLista, nuevoNombre);
-				listaActual = usuario.getListaPrincipal()[0];
-				setListaActual(listaActual);
-				dibujarListaPrincipal();
-				showSnackbar(`Se edito correctamente la lista`);
-			}
-		}catch(error){
-			showSnackbar(error.message);
-		}
-	};
-	showDialog('Editar Lista', dialogContent, callback);
-}
-
-// Agregar lista nueva a lista principal
-function crearLista() {
-	const input = document.createElement('input');
-	input.id = 'inputDialogNombreLista';
-	input.type = 'text';
-	input.style = 'width: 200px; height: 25px;';
-
-	const label = document.createElement('label');
-	label.innerHTML = 'Nombre:';
-	label.style = 'padding-right: 15px;';
-
-	const dialogContent = document.createElement('div');
-	dialogContent.appendChild(label);
-	dialogContent.appendChild(input);
-	document.querySelector('.mdc-snackbar').style = 'z-index: 1000;';
-
-	const callback = () => {
-		try {
-			let nuevoNombre = input.value;
-			if (nuevoNombre.trim() === ''){
-				showSnackbar('No se puede crear una lista sin nombre.');
-			}else{
-				try {
-					usuario.añadirListaAListaPrincipal(input.value);
-					dibujarListaPrincipal();
-					showSnackbar(`Se creo ${input.value} correctamente`);
-				}catch(error){
-					showSnackbar(error.message);
-				}
-			}
-		}catch(error){
-			showSnackbar(error.message);
-		}
-	};
-	showDialog('Crear Lista', dialogContent, callback);
-}
-
-
-function eliminarListaDeListaPrincipal(nombreLista) {
-	if (usuario.listaPrincipal.length <= 1) {
-		showSnackbar('Error: Debe tener al menos una lista');
+function mostrarGrupos() {
+	cleanNode(document.getElementById('lista-grupos'));
+	if (sistema.listaGrupos.length < 1) {
+		cleanNode(document.getElementById('lista-grupos'));
+		let h4 = document.createElement('h4');
+		h4.innerText = 'No tienes ningún grupo';
+		document.getElementById('lista-grupos').appendChild(h4);
 	} else {
-		usuario.eliminarListaDeListaPrincipal(nombreLista);
-		listaActual = usuario.getListaPrincipal()[0];
-		setListaActual(listaActual);
-		dibujarListaPrincipal();
+		sistema.listaGrupos.forEach(item => { agregarGrupo(item.nombre); });
 	}
 }
 
-function dibujarListaPrincipal() {
-	cleanNode(document.querySelector('#lista-listas'));
-	listaPrincipal = usuario.getListaPrincipal();
-	listaPrincipal.forEach(item => { agregarListaAListaPrincipal(item.nombre); });
+function borrarGrupo(nombre) {
+	if (sistema.listaGrupos.length < 1) {
+		showSnackbar('Error: Debe tener al menos un Grupo');
+	} else {
+		sistema.eliminarGrupo(nombre);
+		mostrarGrupos();
+	}
 }
 
-const botonAgregarLista = document.querySelector('#botonAgregarLista');
-botonAgregarLista.addEventListener('click', crearLista);
+function showDialogIntegrantes() {
+	dialogoGrupo2.open();
+}
 
+function agregarIntegrantes(nAmigo, nGrupo) {
+	let li = document.createElement('li');
+	li.setAttribute('class', 'mdc-list-item');
+	let card = document.createElement('div');
+	card.setAttribute('class', 'mdc-card lista-agregar-amigos');
+	card.innerHTML = nAmigo;
+	let actions = document.createElement('div');
+	actions.setAttribute('class', 'mdc-card__actions');
 
-//Ventana modal
-const ventanaModal= (producto, imagen) => {
-	const modal = document.getElementById('tvesModal');
-	const span = document.getElementsByClassName('close')[0];
-	const body = document.getElementsByTagName('body')[0];
-	const btnAniadir = document.getElementById('btn-aniadir-modal');
-	const btnDescartar = document.getElementById('btn-descartar-modal');
-
-	modal.style.display = 'block';
-	body.style.position = 'static';
-	body.style.height = '100%';
-	body.style.overflow = 'hidden';
-
-	//Mostrar nombre del producto seleccionado.
-	const nombreProducto = document.getElementById('nombreProducto');
-	cleanNode(nombreProducto);
-	const nombreProd = document.createTextNode(producto.nombre);
-	nombreProducto.appendChild(nombreProd);
-
-	//Mostrar imagen del producto seleccionado.
-	const imgProducto = document.getElementById('imagenProducto');
-	imgProducto.src = imagen;
-	imgProducto.style = 'height: 80px; width: 80px;';
-
-	//Mostrar descripcion del producto seleccionado.
-	const descProducto = document.getElementById('descripcion-producto');
-	cleanNode(descProducto);
-	const descProd = document.createTextNode(producto.descripcion);
-	descProducto.appendChild(descProd);
-
-	//Obtener cantidad del producto
-	const cantidad = document.getElementById('cantidadProducto');
-	cantidad.value = 0;
-	let cantidadActual = 0;
-	cantidad.addEventListener('input',(e) => {
-		cantidadActual = parseInt(e.currentTarget.value);
-		document.querySelector('#cantidadProducto').style = 'border: 1px solid grey;';
-	});
-	const selectProv = document.getElementById('selectProveedores');
-	cleanNode(selectProv);
-	const optionDefault = document.createElement('option');
-	const optionTextDefault = document.createTextNode('Seleccionar proveedor');
-	optionDefault.appendChild(optionTextDefault);
-	optionDefault.value = '';
-	selectProv.appendChild(optionDefault);
-	producto.proveedores.map(pr => {
-		const option = document.createElement('option');
-		const optionText = document.createTextNode(pr.nombre);
-		option.appendChild(optionText);
-		option.value = pr.nombre;
-		selectProv.appendChild(option);
-	});
-
-	//Obtener precio del producto segun proveedor seleccionado
-	const precio = document.querySelector('#precio-producto');
-	precio.textContent = '$0';
-	const selectElementCant = document.querySelector('#cantidadProducto');
-	selectElementCant.addEventListener('change', (event) => {
-		const cantidadProd =  `${event.target.value}`;
-		const selectElementProv = document.querySelector('#selectProveedores');
-		selectElementProv.addEventListener('change', (event) => {
-			document.querySelector('#selectProveedores').style = 'border: 1px solid grey;';
-			const proveedorS = proveedores.find(pr => pr.nombre === `${event.target.value}`);
-			const productoEnProv = proveedorS.productos.find(p => p.producto.nombre === producto.nombre);
-			const precioProdProv = parseInt(productoEnProv.precio);
-			const pNuevo= document.querySelector('#precio-producto');
-			pNuevo.textContent =  '$' + cantidadProd*precioProdProv;
+	if (sistema.estaAmigoEnGrupo(nAmigo, nGrupo)) {
+		//cambiar color de fondo de la card
+		// Delete icon
+		let icon = document.createElement('i');
+		icon.setAttribute('class', 'material-icons mdc-button__icon');
+		icon.innerHTML = 'delete_outline';
+		icon.classList.add('hoverIcon');
+		icon.style.setProperty('top', '5px');
+		icon.style.setProperty('right', '5px');
+		icon.addEventListener('click', function (event) {
+			event.stopPropagation();
+			let content = document.createElement('p');
+			content.innerHTML = `¿Está seguro que desea eliminar a ${nAmigo} del grupo ${nGrupo}?`;
+			//showDialog('Eliminar Amigo', content, callback);
+			sistema.eliminarAmigoDelGrupo(nAmigo, nGrupo);
+			showSnackbar(`Se eliminó a ${nAmigo} del grupo ${nGrupo}`);
 		});
-	});
+		card.appendChild(icon);
+	} else {
+		// Plus icon
+		let icon = document.createElement('i');
+		icon.setAttribute('class', 'material-icons mdc-button__icon');
+		icon.innerHTML = 'add';
+		icon.classList.add('hoverIcon');
+		icon.style.setProperty('top', '5px');
+		icon.style.setProperty('right', '5px');
 
-	const selectElementProv = document.querySelector('#selectProveedores');
-	selectElementProv.addEventListener('change', (event) => {
-		const proveedorS = proveedores.find(pr => pr.nombre === `${event.target.value}`);
-		const productoEnProv = proveedorS.productos.find(p => p.producto.nombre === producto.nombre);
-		const precioProdProv = parseInt(productoEnProv.precio);
-		const selectElementCant = document.querySelector('#cantidadProducto');
-		selectElementCant.addEventListener('change', (event) => {
-			const cantidadProd =  `${event.target.value}`;
-			const pNuevo= document.querySelector('#precio-producto');
-			pNuevo.textContent = '$' + cantidadProd*precioProdProv;
+		icon.addEventListener('click', function (event) {
+			event.stopPropagation();
+			let content = document.createElement('p');
+			content.innerHTML = `¿Está seguro que desea agregar a ${nAmigo} al grupo ${nGrupo}?`;
+			//showDialog('Agregar Integrante', content, callback);
+			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
+			showSnackbar(`Se agregó a ${nAmigo} al grupo ${nGrupo}`);
 		});
-	});
+		card.appendChild(icon);
+	}
 
-	btnAniadir.onclick = function() {
-		const proveedor = proveedores.find(pr => pr.nombre === selectProv.value);
-		try {
-			if (cantidadActual <= 0){
-				showSnackbar('La cantidad a agregar debe ser mayor a 0.');
-				document.querySelector('#cantidadProducto').style = 'border: 2px solid red;';
-			}else{
-				if (!proveedor){
-					showSnackbar('Debes elegir un proveedor para poder agregar el producto.');
-					document.querySelector('#selectProveedores').style = 'border: 2px solid red;';
-				}else{
-					listaActual.setProducto(producto, cantidadActual, proveedor);
-					setListaActual(listaActual);
-					showSnackbar(`Se agrego el producto ${producto.nombre} a la lista ${listaActual.nombre}`);
-					btnDescartar.click();
-				}
-			}
-		}catch(error){
-			showSnackbar(error.message);
+	li.appendChild(card);
+	document.getElementById('lista-amigos-checkbox').appendChild(li);
+}
+
+function editarIntegrantes(nombre) {
+	cleanNode(document.getElementById('lista-amigos-checkbox'));
+	if (sistema.listaAmigos.length < 2) {
+		let h4 = document.createElement('h4');
+		h4.innerText = 'No tienes ningún amigo';
+		document.getElementById('lista-amigos-checkbox').appendChild(h4);
+	} else {
+		for (let i = 1; i < sistema.listaAmigos.length; i++) {
+			agregarIntegrantes(sistema.listaAmigos[i].nombre, nombre);
 		}
-	};
+	}
+	showDialogIntegrantes();
+}
 
-	btnDescartar.onclick = function() {
-		modal.style.display = 'none';
-		body.style.position = 'inherit';
-		body.style.height = 'auto';
-		body.style.overflow = 'visible';
-	};
+function mostrarDeudas() {
+	cleanNode(document.getElementById('lista-deudas'));
+	if (grupoActivo.listaDeudas.length < 1) {
+		let h4 = document.createElement('h4');
+		h4.innerText = 'No tienes ninguna deuda';
+		document.getElementById('lista-deudas').appendChild(h4);
+	} else {
+		grupoActivo.listaDeudas.forEach(item => { agregarDeuda(item); });
+	}
+}
 
-	span.onclick = function() {
-		modal.style.display = 'none';
-		body.style.position = 'inherit';
-		body.style.height = 'auto';
-		body.style.overflow = 'visible';
-	};
+function agregarDeuda(deudas) {
+	let nombre = deudas.getNombre();
+	for (let i = 0; i < deudas.getAmigos().length; i++) {
+		let amigo = deudas.getAmigos()[i];
+		let monto = deudas.getMontos()[i];
+		let texto = nombre.getNombre() + ' a ' + amigo + ': $' + monto;
+		let li = document.createElement('li');
+		li.setAttribute('class', 'mdc-list-item');
+		let card = document.createElement('div');
+		card.setAttribute('class', 'mdc-card');
+		card.innerHTML = texto;
+		let actions = document.createElement('div');
+		actions.setAttribute('class', 'mdc-card__actions');
 
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = 'none';
-			body.style.position = 'inherit';
-			body.style.height = 'auto';
-			body.style.overflow = 'visible';
-		}
-	};
-};
+		// Delete icon
+		let icon = document.createElement('i');
+		icon.setAttribute('class', 'material-icons mdc-button__icon');
+		icon.innerHTML = 'delete_outline';
+		icon.classList.add('hoverIcon');
+		icon.style.setProperty('position', 'absolute');
+		icon.style.setProperty('top', '5px');
+		icon.style.setProperty('right', '5px');
+		const callback = () => {
+			saldarDeuda(nombre, amigo);
+			showSnackbar(`Se saldó la deuda de ${nombre.getNombre()} con ${amigo}`);
+		};
+		icon.addEventListener('click', function (event) {
+			event.stopPropagation();
+			let content = document.createElement('p');
+			content.innerHTML = `${nombre.getNombre()} pagó $${monto} a ${amigo}`;
+			showDialog('Saldar Deuda', content, callback);
+		});
+		card.appendChild(icon);
+		li.appendChild(card);
+		document.getElementById('lista-deudas').appendChild(li);
+	}
 
-setListaActual(listaActual);
-dibujarListaPrincipal();
-dibujarListaProductosTotales(productos);
+}
 
-// Codigo para el filtrado de la lista de productos.
-const select = new MDCSelect(document.querySelector('.mdc-select'));
+function saldarDeuda(nombre, amigo) {
+	if (grupoActivo.listaDeudas.length < 1) {
+		showSnackbar('Error: Debe tener al menos una deuda');
+	} else {
+		let deuda = grupoActivo.listaDeudas[grupoActivo.getDeudaDe(nombre.nombre)];
+		let pos = deuda.getAmigos().indexOf(amigo);
+		grupoActivo.eliminarDeuda(nombre, pos);
+		cleanNode(document.getElementById('lista-deudas'));
+		mostrarDeudas();
+	}
+}
 
-select.listen('MDCSelect:change', () => {
-	dibujarListaProductosTotales(productos.filter(p => {
-		if (select.value === 'verduras'){
-			return p.isVerdura;
-		}
-		if (select.value === 'frutas'){
-			return !p.isVerdura;
-		}
-		return p;
-	}));
+const grupoSeleccionado = ((grupo) => {
+	grupoActivo = grupo;
+	document.querySelector('#nombreGrupo').innerHTML = grupo.getNombre();
+	document.querySelector('.mdc-touch-target-wrapper').classList.remove('sample-content--hidden');
+	mostrarDeudas();
 });
+
+const dialogGasto = new MDCDialog(document.getElementById('gastoDialog'));
+function showDialogGasto() {
+	dialogGasto.open();
+}
+
+const agregarGastoButton = new MDCRipple(document.getElementById('botonAgregarGasto'));
+agregarGastoButton.listen('click', () => {
+	showDialogGasto();
+	cargarListaIntegrantes();
+});
+
+const descripcion = new MDCTextField(document.getElementById('descripcionGasto'));
+const gasto = new MDCTextField(document.getElementById('montoGasto'));
+
+const gastoAgregarButton = new MDCRipple(document.getElementById('gastoAgregarButton'));
+gastoAgregarButton.listen('click', () => {
+	let nombre = document.querySelector('input[name="integrantes"]:checked').id;
+	let monto = gasto.value;
+	try {
+		if (monto.trim() === '') {
+			showSnackbar('Debe indicar el monto total');
+		} else if (descripcion.value.trim() === '') {
+			showSnackbar('Debe ingresar una descripción');
+		} else {
+			grupoActivo.agregarDeuda(nombre, monto);
+			showSnackbar('Se agregó correctamente el gasto');
+		}
+	} catch (error) {
+		showSnackbar(error.message);
+	} finally {
+		descripcion.value = '';
+		gasto.value = '';
+		mostrarDeudas();
+	}
+});
+
+
+function cargarListaIntegrantes() {
+	let lista = document.getElementById('lista-pago');
+	lista.innerHTML = '';
+	let listaPersonas = grupoActivo.getListaIntegrantes();
+	for (let i = 0; i < listaPersonas.length; i++) {
+		lista.insertAdjacentHTML('beforeend', `
+		<div style="display: flex;">
+			<div class="mdc-radio">
+				<input class="mdc-radio__native-control" type="radio" id="${listaPersonas[i].getNombre()}" name="integrantes">
+				<div class="mdc-radio__background">
+					<div class="mdc-radio__outer-circle"></div>
+					<div class="mdc-radio__inner-circle"></div>
+				</div>
+				<div class="mdc-radio__ripple"></div>
+			</div>
+			<label for="${listaPersonas[i]}" style="margin-left: 10px;">${listaPersonas[i].getNombre()}</label>
+		</div>`);
+		if (i === 0) {
+			document.getElementById(listaPersonas[i].getNombre()).checked = true;
+		}
+	}
+}
+

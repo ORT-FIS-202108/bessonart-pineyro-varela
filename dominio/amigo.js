@@ -4,26 +4,26 @@ class Amigo {
 		this.favorito = favorito;
 	}
 
-	getAmigo(){
+	getAmigo() {
 		return {
-			nombre : this.nombre,
-			favorito : this.favorito,
+			nombre: this.nombre,
+			favorito: this.favorito,
 		};
 	}
 
-	getNombre(){
+	getNombre() {
 		return this.nombre;
 	}
 
-	setNombre(nombre){
+	setNombre(nombre) {
 		this.nombre = nombre;
 	}
 
-	getFavorito(){
+	getFavorito() {
 		return this.favorito;
 	}
 
-	setFavorito(favorito){
+	setFavorito(favorito) {
 		this.favorito = favorito;
 	}
 
