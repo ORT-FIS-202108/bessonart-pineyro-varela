@@ -97,14 +97,14 @@ test('agregarAmigo sin nombre ya ingresado, existiendo amigos con otros nombres'
 	const sistema = new Sistema();
 	sistema.agregarAmigo('amigo1', 'MetodoDePagoFavorito');
 	sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito2');
-	expect(() => { sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito2');}).toThrow('Ya existe un amigo con nombre amigo2.');
+	expect(() => { sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito2'); }).toThrow('Ya existe un amigo con nombre amigo2.');
 });
 
 test('agregarAmigo con nombre ya ingresado', () => {
 	const amigo1 = new Amigo('amigo1', 'MetodoDePagoFavorito');
 	const sistema = new Sistema();
 	sistema.agregarAmigo('amigo1', 'MetodoDePagoFavorito');
-	expect(() => { sistema.agregarAmigo('amigo1', 'MetodoDePagoFavorito');}).toThrow('Ya existe un amigo con nombre amigo1.');
+	expect(() => { sistema.agregarAmigo('amigo1', 'MetodoDePagoFavorito'); }).toThrow('Ya existe un amigo con nombre amigo1.');
 });
 
 test('getAmigoByName', () => {
@@ -129,7 +129,7 @@ test('eliminarAmigo que esta en el sistema y en un grupo', () => {
 	const sistema = new Sistema();
 	sistema.agregarAmigo('amigo1', 'MetodoDePagoFavorito');
 	sistema.agregarGrupo('grupo1');
-	sistema.agregarAmigoAlGrupo('amigo1','grupo1');
+	sistema.agregarAmigoAlGrupo('amigo1', 'grupo1');
 	sistema.eliminarAmigo('amigo1');
 	expect(sistema.getAmigoByName('amigo1')).toBeNull();
 	expect(grupo1.amigoPertenece('amigo1')).toBeFalsy();
@@ -139,7 +139,7 @@ test('eliminarAmigo que NO esta en el sistema y esta solo "Yo" en la lista', () 
 	const grupo1 = new Grupo('grupo1');
 	const sistema = new Sistema();
 	sistema.agregarGrupo('grupo1');
-	expect(() => { sistema.eliminarAmigo('amigo1');}).toThrow('No existe un amigo con el nombre amigo1.');
+	expect(() => { sistema.eliminarAmigo('amigo1'); }).toThrow('No existe un amigo con el nombre amigo1.');
 });
 
 test('eliminarAmigo que NO esta en el sistema y el largo de la lista de amigos es mayor a 1', () => {
@@ -147,7 +147,7 @@ test('eliminarAmigo que NO esta en el sistema y el largo de la lista de amigos e
 	const sistema = new Sistema();
 	sistema.agregarGrupo('grupo1');
 	sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito');
-	expect(() => { sistema.eliminarAmigo('amigo1');}).toThrow('No existe un amigo con el nombre amigo1.');
+	expect(() => { sistema.eliminarAmigo('amigo1'); }).toThrow('No existe un amigo con el nombre amigo1.');
 });
 
 test('eliminarAmigo que esta en el sistema y no en un grupo', () => {
@@ -172,13 +172,13 @@ test('agregarAmigoAlGrupo cuando existe amigo y grupo', () => {
 test('agregarAmigoAlGrupo cuando no existe amigo y existe grupo', () => {
 	const sistema = new Sistema();
 	sistema.agregarGrupo('grupo1');
-	expect(() => { sistema.agregarAmigoAlGrupo('amigo2', 'grupo1');}).toThrow('No existe un amigo con el nombre amigo2.');
+	expect(() => { sistema.agregarAmigoAlGrupo('amigo2', 'grupo1'); }).toThrow('No existe un amigo con el nombre amigo2.');
 });
 
 test('agregarAmigoAlGrupo cuando existe amigo y no existe grupo', () => {
 	const sistema = new Sistema();
 	sistema.agregarAmigo('amigo2', 'MetodoDePagoFavorito');
-	expect(() => { sistema.agregarAmigoAlGrupo('amigo2', 'grupo1');}).toThrow('No existe un grupo con el nombre grupo1.');
+	expect(() => { sistema.agregarAmigoAlGrupo('amigo2', 'grupo1'); }).toThrow('No existe un grupo con el nombre grupo1.');
 });
 
 test('estaAmigoEnGrupo', () => {

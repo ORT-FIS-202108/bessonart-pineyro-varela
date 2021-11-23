@@ -81,7 +81,7 @@ function mostrarAmigos() {
 		h4.innerText = 'No tienes ningún amigo';
 		document.getElementById('lista-amigos').appendChild(h4);
 	} else {
-		for (let i = 1;i<sistema.listaAmigos.length;i++) {	
+		for (let i = 1; i < sistema.listaAmigos.length; i++) {
 			agregarAmigo(sistema.listaAmigos[i].nombre);
 		}
 	}
@@ -90,10 +90,10 @@ function mostrarAmigos() {
 
 
 function borrarAmigo(nombre) {
-	if(nombre==='Yo'){
+	if (nombre === 'Yo') {
 		showSnackbar('No puedes eliminarte a ti mismo');
 	}
-	else{
+	else {
 		if (sistema.listaAmigos.length < 1) {
 			showSnackbar('Error: Debe tener al menos un amigo');
 		} else {
@@ -199,7 +199,7 @@ function agregarGrupo(nombre) {
 	card.innerHTML = nombre;
 	let actions = document.createElement('div');
 	actions.setAttribute('class', 'mdc-card__actions');
-	li.addEventListener('click',function (event) {
+	li.addEventListener('click', function (event) {
 		event.stopPropagation();
 		grupoSeleccionado(sistema.getGrupoByName(nombre));
 	});
@@ -301,7 +301,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 		icon.classList.add('hoverIcon');
 		icon.style.setProperty('top', '5px');
 		icon.style.setProperty('right', '5px');
-	
+
 		icon.addEventListener('click', function (event) {
 			event.stopPropagation();
 			let content = document.createElement('p');
@@ -309,7 +309,7 @@ function agregarIntegrantes(nAmigo, nGrupo) {
 			//showDialog('Agregar Integrante', content, callback);
 			sistema.agregarAmigoAlGrupo(nAmigo, nGrupo);
 			showSnackbar(`Se agregó a ${nAmigo} al grupo ${nGrupo}`);
-		});
+		});s
 		card.appendChild(icon);
 	}
 
@@ -324,7 +324,7 @@ function editarIntegrantes(nombre) {
 		h4.innerText = 'No tienes ningún amigo';
 		document.getElementById('lista-amigos-checkbox').appendChild(h4);
 	} else {
-		for (let i = 1;i<sistema.listaAmigos.length;i++) {	
+		for (let i = 1; i < sistema.listaAmigos.length; i++) {
 			agregarIntegrantes(sistema.listaAmigos[i].nombre, nombre);
 		}
 	}
@@ -344,7 +344,7 @@ function mostrarDeudas() {
 
 function agregarDeuda(deudas) {
 	let nombre = deudas.getNombre();
-	for(let i = 0; i < deudas.getAmigos().length; i++) {
+	for (let i = 0; i < deudas.getAmigos().length; i++) {
 		let amigo = deudas.getAmigos()[i];
 		let monto = deudas.getMontos()[i];
 		let texto = nombre.getNombre() + ' a ' + amigo + ': $' + monto;
@@ -378,7 +378,7 @@ function agregarDeuda(deudas) {
 		li.appendChild(card);
 		document.getElementById('lista-deudas').appendChild(li);
 	}
-	
+
 }
 
 function saldarDeuda(nombre, amigo) {
@@ -393,7 +393,7 @@ function saldarDeuda(nombre, amigo) {
 	}
 }
 
-const grupoSeleccionado =((grupo) => {
+const grupoSeleccionado = ((grupo) => {
 	grupoActivo = grupo;
 	document.querySelector('#nombreGrupo').innerHTML = grupo.getNombre();
 	document.querySelector('.mdc-touch-target-wrapper').classList.remove('sample-content--hidden');
@@ -421,17 +421,17 @@ gastoAgregarButton.listen('click', () => {
 	try {
 		if (monto.trim() === '') {
 			showSnackbar('Debe indicar el monto total');
-		} else  if(descripcion.value.trim() === ''){
+		} else if (descripcion.value.trim() === '') {
 			showSnackbar('Debe ingresar una descripción');
-		} else{
+		} else {
 			grupoActivo.agregarDeuda(nombre, monto);
 			showSnackbar('Se agregó correctamente el gasto');
 		}
 	} catch (error) {
 		showSnackbar(error.message);
 	} finally {
-		descripcion.value='';
-		gasto.value='';
+		descripcion.value = '';
+		gasto.value = '';
 		mostrarDeudas();
 	}
 });
@@ -439,7 +439,7 @@ gastoAgregarButton.listen('click', () => {
 
 function cargarListaIntegrantes() {
 	let lista = document.getElementById('lista-pago');
-	lista.innerHTML='';
+	lista.innerHTML = '';
 	let listaPersonas = grupoActivo.getListaIntegrantes();
 	for (let i = 0; i < listaPersonas.length; i++) {
 		lista.insertAdjacentHTML('beforeend', `
@@ -453,8 +453,8 @@ function cargarListaIntegrantes() {
 				<div class="mdc-radio__ripple"></div>
 			</div>
 			<label for="${listaPersonas[i]}" style="margin-left: 10px;">${listaPersonas[i].getNombre()}</label>
-		</div>`);	
-		if(i === 0) {
+		</div>`);
+		if (i === 0) {
 			document.getElementById(listaPersonas[i].getNombre()).checked = true;
 		}
 	}
