@@ -21,13 +21,13 @@
 
 [Parrafo descriptivo del tema]
 
-Link al material: [Validación y Verificación de Requerimientos](https://fism4b-2021.slack.com/archives/C02B5GHHUMQ/p1633445778001000)
+Link al material: [Validación y Verificación de Requerimientos](https://fism4b-2021.slack.com/archives/C02N6D26B42/p1637581423008900)
 
 #### Florencia Varela - Material Design: Web Components
 
 Los Material Design - Web components son bloques de construcción interactivos para crear una interfaz de usuario. Estos son componentes web mantenidos por Google que implementan Material Design. Junto con una guía de implementación, en el sitio de Material Design hay una serie de consejos de como utilizar los componentes de forma que respeten las 'guidelines' de UI y UX de Google.
 
-Link al material: [Material Design - Web Components](https://docs.google.com/presentation/d/1J4Cu5cjFcG-Iv7WvsxVhQ21Ya5pqatbohTnw4pWvAM4/edit?usp=sharing)
+Link al material: [Material Design - Web Components](https://fism4b-2021.slack.com/archives/C02N6D26B42/p1637581182008100)
 
 #### Luca Bessonart -
 
@@ -39,16 +39,16 @@ Link al material: [Material Design - Web Components](https://docs.google.com/pre
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
-| **1.** Selecciona el "+". | **2.** Muestra una dialogo donde se le pide al usuario un nombre y un método de pago favorito. |
-| **3.** Ingresa un nombre y un método de pago favorito. Selecciona "Agregar". | **4.** Se actualiza la lista de amigos en pantalla, mostrando el nuevo agregado. |
+| **1.** Selecciona agregar amigo. | **2.** Le pide al usuario un nombre y un método de pago favorito. |
+| **3.** Ingresa un nombre y un método de pago favorito. Selecciona "Agregar". | **4.** Se actualiza la lista de amigos en pantalla, mostrando el nuevo amigo agregado. |
 
 **Cursos alternativos:**
 
 **3.1** Si no se ingresa un nombre: se muestra un mensaje "Por favor, ingrese un nombre".
 
-**3.2** Si ya existe un amigo con el nombre ingresado: se muestra un mensaje "".
+**3.2** Si ya existe un amigo con el nombre ingresado, se le indica al usuario que el amigo ya existe.
 
-**3.3** El ususario selecciona cancelar: fin del caso de uso.
+**3.3** El ususario selecciona cancelar. Fin del caso de uso.
 
 
 #### Caso de uso 2.
@@ -56,13 +56,13 @@ Link al material: [Material Design - Web Components](https://docs.google.com/pre
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
-| **1.** Selecciona "Eliminar". | **2.** Muestra una dialogo pidiendo confirmacion. |
-| **3.** Confirma la eliminacion del amigo | **4.** Se actualiza la lista de amigos en pantalla, sin el amigo eliminado. |
+| **1.** Selecciona eliminar amigo. | **2.** Le pide confirmacion al usuario. |
+| **3.** Confirma la eliminacion del amigo. | **4.** Se actualiza la lista de amigos en pantalla, sin el amigo eliminado. |
 
 **Cursos alternativos:**
-**2.1** No hay ningun amigo ingresado: se muestra el mensaje "": fin del caso de uso 
+**2.1** No hay ningun amigo ingresado: se le indica al usuario que no tiene ningún amigo. Fin del caso de uso 
 
-**3.1** El ususario selecciona cancelar: fin del caso de uso.
+**3.1** El ususario selecciona cancelar. Fin del caso de uso.
 
 #### Caso de uso 3.
 **Título:** Registrar Grupo
@@ -97,23 +97,31 @@ Seguir especificación de estilo
 
 ## Codificación
 
-IDE Visual Studio Code: configuración común del equipo
+Para el proyecto todos los integrantes del equipo usamos la IDE Visual Studio Code. A esta le agregamos la siguente extención para manejar el análisis estático del código :
 
-Estándares de codificación Google (HTML, CSS, JavaScript)
+Name: ESLint
+Id: dbaeumer.vscode-eslint
+Description: Integrates ESLint JavaScript into VS Code.
+Version: 2.2.2
+Publisher: Microsoft
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint 
 
-Buenas prácticas de OOP: separación de lógica e interfaz
 
-Análisis estático de código: mostrar reducción de problemas
+- Estándares de codificación Google (HTML, CSS, JavaS)
+
+Como buena práctica de OPP separamos la pare lógica de la interfaz. Se pueden ver dos carpetas: dominio donde se encuantra la lógica y los tests, y interfaz donde se entucentra el archivo html y dos sub-carpetas una con el css, y otra con la lógica del html.
+
 
 ## Test unitario
 
-Test unitarios en Jest
+Cada clase dentro de la carpeta dominio tiene un test con su mismo nombre que prueba todas las funciones de esta. 
+Buscamos con estos comprobar todos los metodos funcionen y detectar si hay código inaccesible, o si algún metodo no devuelve el valor esperado.
 
-100% cobertura en clases de dominio
+Como forma de comprobar lo anterior mencionado bucabamos un 100% de cobertura de las pruebas sobre el código.
+
+![Evidencia del 100% de cobertura](img/Pruebas100%.jpeg)
 
 
-| En la semana previa a la entrega se debe congelar el desarrollo (22-nov-2021).
-A partir de este punto solo se realizan actividades de test de sistema, reporte de issues y generación del informe académico.
 
 ## Test de sistema
 
@@ -125,17 +133,17 @@ Detallar sesiones de prueba exploratoria
 
 ## Reporte de issues
 
-Reportar issues (bugs, improvements, missing features) en GitHub 
+- Reportar issues (bugs, improvements, missing features) en GitHub 
 
-Aplicar buenas prácticas de reporte de issues
+- Aplicar buenas prácticas de reporte de issues
 
-Definir labels para tipos de issue y niveles de severidad
+- Definir labels para tipos de issue y niveles de severidad
 
-Dejar issues abiertos para correcciones o mejoras futuras
+- Dejar issues abiertos para correcciones o mejoras futuras
 
-Sumarizar número de issues reportados por tipo
+- Sumarizar número de issues reportados por tipo
 
-Realizar una evaluación global de la calidad
+- Realizar una evaluación global de la calidad
 
 ## Reflexión
 ### Detalle del trabajo individual
