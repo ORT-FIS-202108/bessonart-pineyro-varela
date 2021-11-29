@@ -33,6 +33,27 @@ Link al material: [Material Design - Web Components](https://fism4b-2021.slack.c
 
 ## Construcción
 
+### Requerimientos implementados
+#### Requerimientos Funcionales
+- RF3: Registro de gasto grupal
+- RF4: Borrar gasto grupal
+- RF6: Crear grupo
+- RF7: No deber haber login
+- RF8: Registrar amigo
+- RF9: Eliminar amigo de un grupo
+- RF10: Eliminar amigo
+- RF11: Pagar deuda
+- RF14: Consultar Deudas
+- RF15: Balancear (Parcialmente implementado)
+
+#### Requerimientos No Funcionales
+- RNF1: Primary Color: Deep Purple 700.
+- RNF2: Secondary Color: Teal 700. 
+- RNF3: Font: Roboto.
+- RNF4: Icons: filled.
+- RNF7: La aplicación debe de llevar el nombre de MisGastos.
+- RNF8: Los lenguajes a utilizar son HTML, JavaScript y CSS.
+
 ### Casos de Uso implementados
 #### Caso de uso 1.
 **Título:** Registrar Amigo
