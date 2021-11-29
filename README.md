@@ -420,7 +420,15 @@ Nota: Se utiliza grupoActual como nombre del grupo en que se esta agregando el a
 |--------------|-------|--------------------|---------------------------------|
 |CP1|Deuda entre A y B| Mensaje: Se saldo la deuda de A con B |1|
 
-Detallar sesiones de prueba exploratoria
+### Detallar sesiones de prueba exploratoria
+Se realizaron tres sesiones de pruebas exploratorias (una por integrante del equipo). Estas pruebas consisten en definir una misión y durante una sesión de prueba con tiempo acotado, realizar la exploración anotando eventos relevantes (defectos encontrados, inconvenientes, mejoras, riesgos).
+
+Debido a las dimensiones de nuestra aplicación, hicimos sesiones cortas, acotadas a una duración de 30 minutos.
+
+Se obtuvo los siguientes resultados:
+- [Prueba exploratoria #1](testing-exploratorio\testing-1.md)
+- [Prueba exploratoria #2](testing-exploratorio\testing-2.md)
+- [Prueba exploratoria #3](testing-exploratorio\testing-3.md)
 
 ## Reporte de issues
 
