@@ -488,6 +488,10 @@ Además, todas las pruebas ejecutadas de todas las clases devolvieron como resul
 
 Se realizaron pruebas de Partición de Equivalencias y Pruebas Exploratorias. 
 
+En las pruebas de Partición de Equivalencia se pudieron testear todos los casos de prueba definidos en esta nueva etapa.
+
+El resultado del Test de Sistema es bueno, ya que se logró descubrir varios issues de funcionamiento inesperado o incorrecto. Sin embargo, esto afecta la calidad global de la aplicación.
+
 **Issues sin resolver**
 
 En la mayoría de estas etapas se descubrieron issues, que fueron reportados pero claramente no fueron resueltos, debido al code freeze.
