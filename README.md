@@ -556,8 +556,7 @@ Debido a las dimensiones de nuestra aplicación, hicimos sesiones cortas, acotad
 
 Se obtuvo los siguientes resultados:
 - [Prueba exploratoria #1](testing-exploratorio/testing-1.md)
-- [Prueba exploratoria #2](testing-exploratorio/testing-2.md)
-- [Prueba exploratoria #3](testing-exploratorio/testing-3.md)
+- [Prueba exploratoria #2](testing-exploratorio/testing-3.md)
 
 ## Reporte de issues
 
