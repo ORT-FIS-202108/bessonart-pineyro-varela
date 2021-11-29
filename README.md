@@ -301,6 +301,30 @@ Notar que dentro de la clase Grupo no se incluyó el método balancear en las pr
 Realizar test de sistema en un entorno separado del desarrollo
 
 Generar casos de prueba aplicando técnica partición equivalente
+## Caso de uso 1
+### Variables de entrada:
+-Nombre Amigo
+-Metodo de pago favortio 
+-Nombre Grupo
+-Monto
+-Descripcion 
+### Clases de equivalencia
+|Entrada|Clases validas|Clases invalidas|
+|-------|--------------|----------------|
+|Nombre Amigo|-1)Nombre no registrado|-2)Nombre registrado -3)Input vacio
+|Metodo de pago favortio|-Todo input -Input vacio | | 
+|Nombre Grupo|-Nombre no registrado|-Nombre registrado
+|Monto|-Monto mayor a 0 | -Monto menor a 0 -Caracteres no numericos
+|Descripcion| -Todo input -Input vacio||
+### Casos de prueba
+|Caso de Prueba| Nombre |Metodo de pago favorito| Resultado esperado | Clases de equivalencia cubiertas|
+|--------------|--------|-----------------------|--------------------|---------------------------------|
+|CP1|Juan|Tarjeta|Mensaje:Se editó correctamente la lista de amigos| 1, 4|
+|CP2|Juan|""|Mensaje:Se editó correctamente la lista de amigos| 1, 5|
+|CP2|YO|Tarjeta|Mensaje:ya existe un amigo con nombre YO| 2, 4|
+|CP3|YO|""|Mensaje:ya existe un amigo con nombre YO| 2, 5|
+|CP4|""|Tarjeta|Mensaje:Nombre es un campo requerido.| 3, 4|
+
 
 Detallar sesiones de prueba exploratoria
 
