@@ -152,6 +152,6 @@ Detallar sesiones de prueba exploratoria
 
 #### Sofía:
 
-#### Florencia:
+#### Florencia:rnfof4kf
 
 ### Técnicas aplicadas y aprendizajes
