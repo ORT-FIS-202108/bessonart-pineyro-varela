@@ -458,7 +458,7 @@ Los siguientes issues quedaran abiertos para futuras correciones o mejoras:
 
 ### Sumarizar número de issues reportados por tipo
 Los issues reportados se dividen en los siguientes tipos:
-- **Bugs:** 5
+- **Bugs:** 7
 - **Enhancement:** 7
 - **Help wanted:** 1
 - **Wontfix:** 1
@@ -470,7 +470,7 @@ Los issues reportados se dividen en los siguientes tipos:
 Si bien trabajamos en conjunto en varias oportunidades por videollamada o verificamos el trabajo que realizaban los otros, a continuación se detalla la participación individual de cada uno.
 
 #### Luca:
-HTML, CSS y JS (funciónes de Grupos).
+HTML, CSS y JS (funciones y estructura de la parte de Grupos).
 Implementación del formulario de agregar grupo, eliminar grupo y editar integrantes.
 Solución de issues.
 Test Unitarios de la clase Sistema.
@@ -479,15 +479,15 @@ Reporte de issues.
 Documentación.
 
 #### Sofía:
-HTML, CSS y JS (funciónes de Deudas).
-Implementación del formulario de agregar deuda, saldar deuda y conección entre grupos y deudas.
-Test Unitarios de la clase Deuda.
+HTML, CSS y JS (funciones y estructura de la parte de Deudas).
+Implementación del formulario de agregar deuda, saldar deuda y conección entre grupos y deudas, y funcionalidad balancear.
+Test Unitarios de la clase Deuda, Grupo y Sistema.
 Test de W3C.
 Reporte de issues, sumarización de issues. 
 Documentación.
 
 #### Florencia:
-HTML, CSS y JS (funciónes de Amigos y estructura general de la página).
+HTML, CSS y JS (funciones y estructura de la parte de Amigos y estructura general de la página).
 Implementación del formulario de agregar amigo, eliminar amigo y editar integrantes de un grupo.
 Test Unitarios de la clase Amigo, Grupo y Sistema.
 Reporte de interfaz de usuario. 
