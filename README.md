@@ -464,7 +464,41 @@ Los issues reportados se dividen en los siguientes tipos:
 - **Wontfix:** 1
 
 ### Realizar una evaluación global de la calidad
-Luego de finalizo el proyecto, se realizó una evaluación global de la calidad del producto final. Durante esta evaluación, se consideraron aspectos de calidad de la interfaz de la aplicación, el cumplimento de los estándares y buenas prácticas, la cobertura de las prubeas unitarias, los resultados del test de sistema y los issues sin resolver.
+Luego de finalizado el proyecto, se realizó una evaluación global de la calidad del producto final. Durante esta evaluación, se consideraron aspectos de calidad de la interfaz de la aplicación, el cumplimento de los estándares y buenas prácticas, la cobertura de las pruebas unitarias, los resultados del test de sistema y los issues sin resolver.
+
+**Usabilidad**
+
+El Análisis Heurístico dio como resultado que 4 de las 10 heurísticas de Nielsen se cumplen totalmente. Con esto, podemos concluir que es necesario seguir trabajando en busca de que todas se cumplan totalmente.
+
+Para cada heurística con cumplimiento parcial o incumplimiento, se creó un respectivo issue en el proyecto. Luego de resueltos dichos issues, se deberá realizar nuevamente el análisis heurístico hasta lograr que las 10 heurísticas se cumplan totalmente.
+
+**Estándares de Codificación y Buenas Prácticas de OOP**
+
+Esta evaluación devolvió resultados positivos, debido a la utilización de ESLint. De todas formas, se obtuvo algunos errores al validar con W3C, por lo que también se deberá seguir trabajando hasta obtener una correcta validación.
+
+En cuanto a las buenas prácticas de OOP, desde el inicio se diseñó la aplicación de forma de tener una separación clara de Dominio e Interfaz, por lo que se logró de manera correcta.
+
+**Pruebas Unitarias**
+
+Se logró una cobertura del 100% de las clases de Dominio, lo que cumplió el objetivo propuesto. Esto se logró gracias al framework Jest.
+
+Además, todas las pruebas ejecutadas de todas las clases devolvieron como resultado PASSED, por lo que se puede afirmar que las funcionalidades del Dominio, (sin ser por Balancear, que no fue testeada, sino que reportada como issue) funcionan correctamente.
+
+**Test de Sistema**
+
+Se realizaron pruebas de Partición de Equivalencias y Pruebas Exploratorias. 
+
+**Issues sin resolver**
+
+En la mayoría de estas etapas se descubrieron issues, que fueron reportados pero claramente no fueron resueltos, debido al code freeze.
+
+Notamos que los issues abiertos no son bloqueantes, por lo que la aplicación puede tener un funcionamiento correcto.
+
+**Conclusión**
+
+En base a todos estos puntos mencionados, podemos concluír que hay varios puntos a mejorar en busca de una excelente calidad de código. 
+
+En general, la aplicación cumple las funcionalidades básicas y no tiene problemas que interrumpan su funcionamiento, pero hay varias mejoras para hacer, identificadas en los issues.
 
 ## Reflexión
 ### Detalle del trabajo individual
