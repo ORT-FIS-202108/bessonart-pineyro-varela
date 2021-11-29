@@ -250,6 +250,32 @@ Por otra parte, se realizó una validación del archivo HTML mediante el validad
 ### Buenas prácticas de OOP
 Como buena práctica de OOP, se separó la lógica de la interfaz. Notar que hay dos carpetas: Dominio, donde se encuentra la lógica, clases y tests, e Interfaz, donde se encuentra el código HTML y dos carpetas con los estilos (CSS) y los scripts (JavaScript).
 
+![Carpetas](.\img\estructura_carpetas.jpg)
+
+La lógica de la interfaz se encuentra en el archivo [index.js](interfaz\scripts\index.js), y gestiona todos los inputs y outputs ingresados y pedidos por el usuario en la interfaz.
+
+La interfaz se relaciona con el dominio a través de la clase Sistema, donde es posible gestionar los grupos y amigos, y la clase Grupo, que permite gestionar las deudas de dicho grupo.
+
+Las funciones de las clases Amigo y Deuda sirven para agregar, encontrar o eliminar datos de cada instancia de dichas clases.
+
+**Sistema** 
+
+![Clase Sistema](img\clase_sistema.jpg)
+
+**Grupo**
+
+![Clase Grupo](img\clase_grupo.jpg)
+
+
+**Amigo**
+
+![Clase Amigo](img\clase_amigo.jpg)
+
+**Deuda**
+
+![Clase Deuda](img\clase_deuda.jpg)
+
+
 ### Análisis estático de código
 
 
