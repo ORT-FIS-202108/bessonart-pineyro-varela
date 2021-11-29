@@ -250,9 +250,9 @@ Por otra parte, se realizó una validación del archivo HTML mediante el validad
 ### Buenas prácticas de OOP
 Como buena práctica de OOP, se separó la lógica de la interfaz. Notar que hay dos carpetas: Dominio, donde se encuentra la lógica, clases y tests, e Interfaz, donde se encuentra el código HTML y dos carpetas con los estilos (CSS) y los scripts (JavaScript).
 
-![Carpetas](.\img\estructura_carpetas.jpg)
+![Carpetas](./img/estructura_carpetas.jpg)
 
-La lógica de la interfaz se encuentra en el archivo [index.js](interfaz\scripts\index.js), y gestiona todos los inputs y outputs ingresados y pedidos por el usuario en la interfaz.
+La lógica de la interfaz se encuentra en el archivo [index.js](interfaz/scripts/index.js), y gestiona todos los inputs y outputs ingresados y pedidos por el usuario en la interfaz.
 
 La interfaz se relaciona con el dominio a través de la clase Sistema, donde es posible gestionar los grupos y amigos, y la clase Grupo, que permite gestionar las deudas de dicho grupo.
 
@@ -260,20 +260,20 @@ Las funciones de las clases Amigo y Deuda sirven para agregar, encontrar o elimi
 
 **Sistema** 
 
-![Clase Sistema](img\clase_sistema.jpg)
+![Clase Sistema](img/clase_sistema.jpg)
 
 **Grupo**
 
-![Clase Grupo](img\clase_grupo.jpg)
+![Clase Grupo](img/clase_grupo.jpg)
 
 
 **Amigo**
 
-![Clase Amigo](img\clase_amigo.jpg)
+![Clase Amigo](img/clase_amigo.jpg)
 
 **Deuda**
 
-![Clase Deuda](img\clase_deuda.jpg)
+![Clase Deuda](img/clase_deuda.jpg)
 
 
 ### Análisis estático de código
@@ -291,7 +291,7 @@ Cada clase de la carpeta [Dominio](./dominio) tiene un test, con el mismo nombre
 
 Con dichos tests se buscó comprobar el correcto funcionamiento de todos los métodos de cada clase y detectar la existencia de código inaccesible o valores inesperados. Para esto, se buscó un 100% de cobertura de las pruebas sobre el código.
 
-![Evidencia del 100% de cobertura](.\img\Pruebas.jpeg)
+![Evidencia del 100% de cobertura](./img/Pruebas.jpeg)
 
 Notar que dentro de la clase Grupo no se incluyó el método balancear en las pruebas. Esto se debe a que dicha función no funciona correctamente en todos los casos, por lo que se decidió reportarlo como issue y no incluirlo en los tests.
 
@@ -332,9 +332,9 @@ Se realizaron tres sesiones de pruebas exploratorias (una por integrante del equ
 Debido a las dimensiones de nuestra aplicación, hicimos sesiones cortas, acotadas a una duración de 30 minutos.
 
 Se obtuvo los siguientes resultados:
-- [Prueba exploratoria #1](testing-exploratorio\testing-1.md)
-- [Prueba exploratoria #2](testing-exploratorio\testing-2.md)
-- [Prueba exploratoria #3](testing-exploratorio\testing-3.md)
+- [Prueba exploratoria #1](testing-exploratorio/testing-1.md)
+- [Prueba exploratoria #2](testing-exploratorio/testing-2.md)
+- [Prueba exploratoria #3](testing-exploratorio/testing-3.md)
 
 ## Reporte de issues
 
