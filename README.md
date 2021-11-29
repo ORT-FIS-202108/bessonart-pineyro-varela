@@ -152,7 +152,13 @@ Link al material: [Material Design - Web Components](https://fism4b-2021.slack.c
 **5.1** El usuario selecciona 'Cancelar': fin del caso de uso.
 
 ### Configuración de plataforma tecnológica para desarrollo y producción
+Se creó la rama `develop` a partir de la rama `main`, donde se realizó todo el trabajo de desarrollo de las distintas funciones de la aplicación.
 
+Luego de finalizado el desarrollo de la aplicación, se realizaron los test unitarios correspondientes, también en la rama `develop`, y una vez obtenido el 100% de cobertura, se realizó un merge a la rama `main`.
+
+A partir de este punto, se trabajó únicamente en el test del sistema, la documentación de issues y generación del informe. Para realizar el test del sistema, se creó la rama `testing` a partir de la rama `main`, y para la generación del informe académico se trabajó en la rama `develop`.
+
+Luego de finalizadas estas etapas, se realizó un merge de las ramas `testing` y `develop` a la rama `main`.
 
 ### Documentación del uso de librerías externas (package.json)
 
