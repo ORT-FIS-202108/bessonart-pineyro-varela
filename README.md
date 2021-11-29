@@ -162,19 +162,109 @@ Luego de finalizadas estas etapas, se realizó un merge de las ramas `testing` y
 
 ### Documentación del uso de librerías externas (package.json)
 
+
+
 ## Interfaz de usuario
 
-Interfaz de usuario web / mobile (responsive)
+### Interfaz de usuario web / mobile (responsive)
+La aplicación cuenta con una interfaz responsive que se ajusta al tamaño del dispositivo y/o browser.
 
-Página única con navegación entre secciones
+Al momento de diseñar y agregar los componentes se tuvo en cuenta que estos se ajustaran de manera que no interfirieran entre ellos y mantuviesen el sistema de diseño.
 
-Implementación: Material Design Web Components
+A continuación se muestra un ejemplo de la pagina principal y su comportamiento responsive en diferentes dispositivos y tamaños.
 
-Aplicar un sistema de diseño y principios de usabilidad
+**Web:**
 
-Cumplimiento de estándar de accesibilidad WCAG
+**Mobile:**
 
-Seguir especificación de estilo
+### Página única con navegación entre secciones
+La aplicación se desarrollo en un único archivo HTML, con diferentes secciones que dependiendo de las acciones del usuario se muestran u ocultan las secciones necesarias.
+
+Un ejemplo es la sección de Amigos que se muestra al iniciar el sitio. La seccion de Grupos y la de manejo de deudas no son visibles al iniciar el sitio. La única manera para que el usuario pueda visualizarlas es seleccionando la tab de Grupos. De la misma manera, al seleccionar la tab de Amigos la de Grupos se oculta.
+
+Con el fin de implementar la navegacion se utilizó el componente tab-bar de Material Design para navegar entre las secciones. Esta logica de ocultar y mostrar secciones se encuentra en el archivo index.js, visto que es parte de la interfaz de usuario.
+
+### Implementación: Material Design Web Components
+
+A continuación se detallan los componentes de Material Design utilizados para construir el sitio.
+
+- material-theme con colores priario, secundario y de background.
+- mdc-icons - Íconos de material design que se muestran en diferentes secciones/componentes del sitio.
+- app-bar-top - Sección para ubicar nombre del sitio, botones para navegar entre las dos secciones principales: Amigos y Grupos.
+- tab-bar - Sección para tabs de navegación entre secciones del sitio.
+- tab-scroller - Hace posible hacer scroll en la tab bar, para mostrar tabs no visibles en caso de que el tamaño del browser/dispositivo no lo permita.
+- tab-indicator - Indicador de tab seleccionada.
+- mdc-buttons - Botones para el boton de agregar gasto.
+- icon-buttons - Botones para eliminar un Amigo o eliminar y editar los participantes de un Grupo.
+- mdc-list - Listado de gastos de un mes.
+- line-ripple - Efecto de click en los grupos.
+- text-fields - Campos de los forms de agregar amigo, grupo y gasto.
+- mdc-fab - Botones flotantes para el agregar Amigo y agregar Grupo.
+
+### Aplicar un sistema de diseño y principios de usabilidad
+
+**Sistema de Diseño**
+
+Se utilizó el sistema de diseño Material Design con sus respectivos componentes (tabs, botones, íconos, listas, etc.). Se siguieron los lineamientos y recomendaciones para la utilización de cada componente, que abarcan aspectos de diagramado, navegación, y usabilidad entre otros. Estas recomendaciones pueden ser encontradas en el sitio web de Material Design (mas informacion y el link al sitio se pueden encontrar en el archivo de Material Design: Web components al comienzo del documento)
+
+Análisis Heursístico
+
+Con el fin de identificar fallas de usabilidad en la interfaz del sistema, realizamos un Análisis Heursístico comparando la interfaz y su funcionamiento con las 10 heurísticas de usabilidad de Jakob Nielsen.
+
+Se evaluo el cumplimiento de cada una de las 10 heurísticas en todo el sitio, y en base al resultado del cumplimiento se asigna total, parcial o no cumplido y se crean issues en caso de ser necesario.
+
+A continuación se detalla el nivel cumplimiento para cada heurística:
+
+1. Visibilidad del estado del sistema: Total
+2. Adecuación entre el sistema y el mundo real: Total
+3. Libertad y control por parte del usuario: Total
+4. Consistencia y estándares: Parcial
+5. Prevención de errores: Parcial
+6. Reconocimiento antes que recuerdo: Parcial
+7. Flexibilidad y eficiencia en el uso: No cumplido
+8. Diseño estético y minimalista: Total
+9. Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de los errores: Parcial
+10. Ayuda y documentación: No cumplido
+
+El resultado final de la evaluación muestra que hay varias de las heurísticas que no se cumplen o se cumplen parcialmente. Por lo tanto se deberá trabajar en los issues generados durante esta evaluación y una ves cerrados se deberá volver a hacer la evaluación para validar de que se hayan resuelto las deficiencias de usabilidad.
+
+### Cumplimiento de estándar de accesibilidad WCAG
+
+Para la validación del cumplimiento del estándar de accessibilidad WCAG, se utilizó la herramienta AChecker.
+
+Esta herramienta permite subir un archivo (index.html en este caso), y validar el cumplimiento de estándares de usabilidad. Al momento de validar el archivo se seleccionó el estándar Web Content Accessibility Guidelines (WCAG), Version 2.0, Level AA que es el estándar seleccionado por defecto en el validador.
+
+![Achecker index.html](.\img\Achecker.png)
+
+**Resultados:**
+La validación arrojó 22 errores separados en siete categorías:
+
+1. Text Alternatives: Provide text alternatives for any non-text content.
+2. Adaptable: Create content that can be presented in different ways (for example simpler layout) without losing information or structure.
+3. Distinguishable: Make it easier for users to see and hear content including separating foreground from background.
+4. Navigable: Provide ways to help users navigate, find content, and determine where they are.
+5. Readable: Make text content readable and understandable.
+6. Input Assistance: Help users avoid and correct mistakes.
+7. Compatible: Maximize compatibility with current and future user agents, including assistive technologies.
+
+Para ver un listado detallando cada error, puede acceder al archivo: [Listado de Errores](./docs/listadoErrores.txt)
+
+En base a los resultados obtenidos, se crearon en GitHub los issues correspondientes:
+
+Elementos imagen sin texto alternativo: #15
+Al comienzo del html no se le indica cual es el idioma: #16
+Elementos input de tipo text field sin label o sin texto en el atributo label: #7
+
+### Seguir especificación de estilo
+Se construyó el sitio siguiendo las especificaciones definidas en la letra para la letra, colores y tipos de íconos:
+
+Colors primary: Deep Purple 700, secondary: Teal 700
+Font: Roboto
+Icons: filled
+
+Tanto los colores como la fuente, fueron definidas en el archivo index.scss.
+
+Para los íconos, al momento de seleccionarlos en la página de Google Fonts, se seleccionó el filtro 'filled'.
 
 ## Codificación
 
