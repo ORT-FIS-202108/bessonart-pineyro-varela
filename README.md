@@ -240,7 +240,12 @@ Para el proyecto todos los integrantes del equipo usamos la IDE Visual Studio Co
 - VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint 
 
 
-### Estándares de codificación Google (HTML, CSS, JavaS)
+### Estándares de codificación Google (HTML, CSS, JavaScript)
+Para cumplir con los estándares de codificación de Google se utilizó ESLint como herramienta de análisis estático de código de JavaScript. Además, se buscó seguir las guías de Google para la nomenclatura de los elementos, indentado, espaciado y uso de mayúsculas y minúsculas.
+
+Se utilizó como referencia y material de consulta las guías de estilo de Google para [JavaScript](https://google.github.io/styleguide/jsguide.html) y [HTML y CSS](https://google.github.io/styleguide/htmlcssguide.html).
+
+Por otra parte, se realizó una validación del archivo HTML mediante el validador online W3C, obteniendo varios errores y advertencias que no se pudieron solucionar debido a que dicha validación se realizó luego del code freeze.
 
 ### Buenas prácticas de OOP
 Como buena práctica de OOP, se separó la lógica de la interfaz. Notar que hay dos carpetas: Dominio, donde se encuentra la lógica, clases y tests, e Interfaz, donde se encuentra el código HTML y dos carpetas con los estilos (CSS) y los scripts (JavaScript).
