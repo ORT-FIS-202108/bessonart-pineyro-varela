@@ -153,6 +153,7 @@ Link al material: [Material Design - Web Components](https://fism4b-2021.slack.c
 
 ### Configuración de plataforma tecnológica para desarrollo y producción
 
+
 ### Documentación del uso de librerías externas (package.json)
 
 ## Interfaz de usuario
@@ -171,30 +172,34 @@ Seguir especificación de estilo
 
 ## Codificación
 
-Para el proyecto todos los integrantes del equipo usamos la IDE Visual Studio Code. A esta le agregamos la siguente extención para manejar el análisis estático del código :
+### IDE Visual Studio Code: configuración común del equipo
+Para el proyecto todos los integrantes del equipo usamos la IDE Visual Studio Code. A ésta le agregamos la siguente extensión para manejar el análisis estático del código :
 
-Name: ESLint
-Id: dbaeumer.vscode-eslint
-Description: Integrates ESLint JavaScript into VS Code.
-Version: 2.2.2
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint 
+- Name: ESLint
+- Id: dbaeumer.vscode-eslint
+- Description: Integrates ESLint JavaScript into VS Code.
+- Version: 2.2.2
+- Publisher: Microsoft
+- VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint 
 
 
-- Estándares de codificación Google (HTML, CSS, JavaS)
+### Estándares de codificación Google (HTML, CSS, JavaS)
 
-Como buena práctica de OPP separamos la pare lógica de la interfaz. Se pueden ver dos carpetas: dominio donde se encuantra la lógica y los tests, y interfaz donde se entucentra el archivo html y dos sub-carpetas una con el css, y otra con la lógica del html.
+### Buenas prácticas de OOP
+Como buena práctica de OOP, se separó la lógica de la interfaz. Notar que hay dos carpetas: Dominio, donde se encuentra la lógica, clases y tests, e Interfaz, donde se encuentra el código HTML y dos carpetas con los estilos (CSS) y los scripts (JavaScript).
+
+### Análisis estático de código
 
 
 ## Test unitario
 
-Cada clase dentro de la carpeta dominio tiene un test con su mismo nombre que prueba todas las funciones de esta. 
-Buscamos con estos comprobar todos los metodos funcionen y detectar si hay código inaccesible, o si algún metodo no devuelve el valor esperado.
+Cada clase de la carpeta [Dominio](./dominio) tiene un test, con el mismo nombre de la clase, que prueba todas las funciones de ésta. 
 
-Como forma de comprobar lo anterior mencionado bucabamos un 100% de cobertura de las pruebas sobre el código.
+Con dichos tests se buscó comprobar el correcto funcionamiento de todos los métodos de cada clase y detectar la existencia de código inaccesible o valores inesperados. Para esto, se buscó un 100% de cobertura de las pruebas sobre el código.
 
-![Evidencia del 100% de cobertura](img/Pruebas100%.jpeg)
+![Evidencia del 100% de cobertura](.\img\Pruebas.jpeg)
 
+Notar que dentro de la clase Grupo no se incluyó el método balancear en las pruebas. Esto se debe a que dicha función no funciona correctamente en todos los casos, por lo que se decidió reportarlo como issue y no incluirlo en los tests.
 
 
 ## Test de sistema
