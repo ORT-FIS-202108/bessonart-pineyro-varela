@@ -220,9 +220,9 @@ SASS es un pre-procesador CSS. Permite generar de manera automática hojas de es
 ### Interfaz de usuario web / mobile (responsive)
 La aplicación cuenta con una interfaz responsive que se ajusta al tamaño del dispositivo y/o browser.
 
-Al momento de diseñar y agregar los componentes se tuvo en cuenta que estos se ajustaran de manera que no interfirieran entre ellos y mantuviesen el sistema de diseño.
+Al momento de diseñar y agregar los componentes se tuvo en cuenta que éstos se ajustaran de manera que no interfirieran entre ellos y mantuviesen el sistema de diseño.
 
-A continuación se muestra un ejemplo de la pagina principal y su comportamiento responsive en diferentes dispositivos y tamaños.
+A continuación se muestra un ejemplo de la página principal y su comportamiento responsive en diferentes dispositivos y tamaños.
 
 **Web:**
 
