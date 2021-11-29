@@ -662,6 +662,7 @@ Si bien trabajamos en conjunto en varias oportunidades por videollamada o verifi
 - Solución de issues.
 - Test Unitarios de la clase Sistema.
 - Test de sistema.
+- Test Exploratorio. 
 - Reporte de issues.
 - Documentación.
 
@@ -671,6 +672,7 @@ Si bien trabajamos en conjunto en varias oportunidades por videollamada o verifi
 - Solución de issues.
 - Test Unitarios de la clase Deuda, Grupo y Sistema.
 - Test de W3C.
+- Test Exploratorio. 
 - Reporte de issues, sumarización de issues. 
 - Documentación.
 
@@ -680,6 +682,7 @@ Si bien trabajamos en conjunto en varias oportunidades por videollamada o verifi
 - Solución de issues.
 - Test Unitarios de la clase Amigo, Grupo y Sistema.
 - Test de WCAG. 
+- Test Exploratorio. 
 - Reporte de issues.
 - Documentación.
 
