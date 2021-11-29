@@ -322,7 +322,7 @@ En base a los resultados obtenidos, se crearon en GitHub los issues correspondie
 
 Elementos imagen sin texto alternativo: #15
 Al comienzo del html no se le indica cual es el idioma: #16
-Elementos input de tipo text field sin label o sin texto en el atributo label: #7
+Elementos input de tipo text field sin label o sin texto en el atributo label: #17
 
 ### Seguir especificación de estilo
 Se construyó el sitio siguiendo las especificaciones definidas en la letra para la letra, colores y tipos de íconos:
@@ -465,33 +465,37 @@ Los issues reportados se dividen en los siguientes tipos:
 
 ### Realizar una evaluación global de la calidad
 
+
 ## Reflexión
 ### Detalle del trabajo individual
 Si bien trabajamos en conjunto en varias oportunidades por videollamada o verificamos el trabajo que realizaban los otros, a continuación se detalla la participación individual de cada uno.
 
 #### Luca:
-HTML, CSS y JS (funciónes de Grupos).
-Implementación del formulario de agregar grupo, eliminar grupo y editar integrantes.
-Solución de issues.
-Test Unitarios de la clase Sistema.
-Test de sistema.
-Reporte de issues.
-Documentación.
+- HTML, CSS y JS (funciónes de Grupos).
+- Implementación del formulario de agregar grupo, eliminar grupo y editar integrantes.
+- Solución de issues.
+- Test Unitarios de la clase Sistema.
+- Test de sistema.
+- Reporte de issues.
+- Documentación.
 
 #### Sofía:
-HTML, CSS y JS (funciónes de Deudas).
-Implementación del formulario de agregar deuda, saldar deuda y conección entre grupos y deudas.
-Test Unitarios de la clase Deuda.
-Test de W3C.
-Reporte de issues, sumarización de issues. 
-Documentación.
+- HTML, CSS y JS (funciónes de Deudas).
+- Implementación del formulario de agregar deuda, saldar deuda y conección entre grupos y deudas.
+- Solución de issues.
+- Test Unitarios de la clase Deuda.
+- Test de W3C.
+- Reporte de issues, sumarización de issues. 
+- Documentación.
 
 #### Florencia:
-HTML, CSS y JS (funciónes de Amigos y estructura general de la página).
-Implementación del formulario de agregar amigo, eliminar amigo y editar integrantes de un grupo.
-Test Unitarios de la clase Amigo, Grupo y Sistema.
-Reporte de interfaz de usuario. 
-Documentación.
+- HTML, CSS y JS (funciónes de Amigos y estructura general de la página).
+- Implementación del formulario de agregar amigo, eliminar amigo y editar integrantes de un grupo.
+- Solución de issues.
+- Test Unitarios de la clase Amigo, Grupo y Sistema.
+- Reporte de interfaz de usuario. 
+- Reporte de issues.
+- Documentación.
 
 
 ### Técnicas aplicadas y aprendizajes
