@@ -247,17 +247,17 @@ A continuación se muestra un ejemplo de la página principal y su comportamient
 ![Mobile-Saldar-Deuda](img\mobile-saldar_deuda.jpg)
 
 ### Página única con navegación entre secciones
-La aplicación se desarrollo en un único archivo HTML, con diferentes secciones que dependiendo de las acciones del usuario se muestran u ocultan las secciones necesarias.
+La aplicación se desarrolló en un único archivo HTML con diferentes secciones, que dependiendo de las acciones del usuario se muestran u ocultan.
 
-Un ejemplo es la sección de Amigos que se muestra al iniciar el sitio. La seccion de Grupos y la de manejo de deudas no son visibles al iniciar el sitio. La única manera para que el usuario pueda visualizarlas es seleccionando la tab de Grupos. De la misma manera, al seleccionar la tab de Amigos la de Grupos se oculta.
+Por ejemplo, la sección de Amigos se muestra al iniciar el sitio, no así la sección de Grupos y de Deudas. Para visualizarlas, es necesario que el usuario seleccione la pestaña de Grupos y un grupo cualquiera, lo que oculta la sección de Amigos, y muestra Grupos y Deudas correspondientemente. Si el usuario vuelve a seleccionar la pestaña de Amigos, Grupos y Deudas se ocultan, y se muestra Amigos.
 
-Con el fin de implementar la navegacion se utilizó el componente tab-bar de Material Design para navegar entre las secciones. Esta logica de ocultar y mostrar secciones se encuentra en el archivo index.js, visto que es parte de la interfaz de usuario.
+Con el fin de implementar esta navegación, se utilizó el componente tab-bar de Material Design para navegar entre las secciones. Esta lógica de ocultar y mostrar secciones se encuentra en el archivo index.js, ya que es parte de la interfaz de usuario.
 
 ### Implementación: Material Design Web Components
 
 A continuación se detallan los componentes de Material Design utilizados para construir el sitio.
 
-- material-theme con colores priario, secundario y de background.
+- material-theme con colores primario, secundario y de background.
 - mdc-icons - Íconos de material design que se muestran en diferentes secciones/componentes del sitio.
 - app-bar-top - Sección para ubicar nombre del sitio, botones para navegar entre las dos secciones principales: Amigos y Grupos.
 - tab-bar - Sección para tabs de navegación entre secciones del sitio.
@@ -265,7 +265,7 @@ A continuación se detallan los componentes de Material Design utilizados para c
 - tab-indicator - Indicador de tab seleccionada.
 - mdc-buttons - Botones para el boton de agregar gasto.
 - icon-buttons - Botones para eliminar un Amigo o eliminar y editar los participantes de un Grupo.
-- mdc-list - Listado de gastos de un mes.
+- mdc-list - Listado de gastos.
 - line-ripple - Efecto de click en los grupos.
 - text-fields - Campos de los forms de agregar amigo, grupo y gasto.
 - mdc-fab - Botones flotantes para el agregar Amigo y agregar Grupo.
@@ -274,15 +274,15 @@ A continuación se detallan los componentes de Material Design utilizados para c
 
 **Sistema de Diseño**
 
-Se utilizó el sistema de diseño Material Design con sus respectivos componentes (tabs, botones, íconos, listas, etc.). Se siguieron los lineamientos y recomendaciones para la utilización de cada componente, que abarcan aspectos de diagramado, navegación, y usabilidad entre otros. Estas recomendaciones pueden ser encontradas en el sitio web de Material Design (mas informacion y el link al sitio se pueden encontrar en el archivo de Material Design: Web components al comienzo del documento)
+Se utilizó el sistema de diseño Material Design con sus respectivos componentes (tabs, botones, íconos, listas, etc.). Se siguieron los lineamientos y recomendaciones para la utilización de cada componente, que abarcan aspectos de diagramado, navegación, y usabilidad entre otros. Estas recomendaciones pueden ser encontradas en el sitio web de Material Design (mas información y el link al sitio se pueden encontrar en el archivo de Material Design: Web components al comienzo del documento)
 
-Análisis Heursístico
+**Análisis Heursístico**
 
 Con el fin de identificar fallas de usabilidad en la interfaz del sistema, realizamos un Análisis Heursístico comparando la interfaz y su funcionamiento con las 10 heurísticas de usabilidad de Jakob Nielsen.
 
-Se evaluo el cumplimiento de cada una de las 10 heurísticas en todo el sitio, y en base al resultado del cumplimiento se asigna total, parcial o no cumplido y se crean issues en caso de ser necesario.
+Se evaluó el cumplimiento de cada una de las 10 heurísticas en todo el sitio, y en base al resultado del cumplimiento se asigna total, parcial o no cumplido y se crean issues en caso de ser necesario.
 
-A continuación se detalla el nivel cumplimiento para cada heurística:
+A continuación se detalla el nivel de cumplimiento para cada heurística:
 
 1. Visibilidad del estado del sistema: Total
 2. Adecuación entre el sistema y el mundo real: Total
@@ -295,7 +295,7 @@ A continuación se detalla el nivel cumplimiento para cada heurística:
 9. Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de los errores: Parcial
 10. Ayuda y documentación: No cumplido
 
-El resultado final de la evaluación muestra que hay varias de las heurísticas que no se cumplen o se cumplen parcialmente. Por lo tanto se deberá trabajar en los issues generados durante esta evaluación y una ves cerrados se deberá volver a hacer la evaluación para validar de que se hayan resuelto las deficiencias de usabilidad.
+El resultado final de la evaluación muestra que hay varias de las heurísticas que no se cumplen o se cumplen parcialmente. Por lo tanto se deberá trabajar en los issues generados durante esta evaluación y una vez cerrados se deberá volver a hacer la evaluación para validar de que se hayan resuelto las deficiencias de usabilidad.
 
 ### Cumplimiento de estándar de accesibilidad WCAG
 
@@ -320,8 +320,8 @@ Para ver un listado detallando cada error, puede acceder al archivo: [Listado de
 
 En base a los resultados obtenidos, se crearon en GitHub los issues correspondientes:
 
-Elementos imagen sin texto alternativo: #15
-Al comienzo del html no se le indica cual es el idioma: #16
+Elementos de imagen sin texto alternativo: #15
+Al comienzo del HTML no se le indica cuál es el idioma: #16
 Elementos input de tipo text field sin label o sin texto en el atributo label: #7
 
 ### Seguir especificación de estilo
