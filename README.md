@@ -161,6 +161,57 @@ A partir de este punto, se trabajó únicamente en el test del sistema, la docum
 Luego de finalizadas estas etapas, se realizó un merge de las ramas `testing` y `develop` a la rama `main`.
 
 ### Documentación del uso de librerías externas (package.json)
+En el archivo package.json, bajo los valores `dependencies` y `devDependecies`, se encuentran las dependencias que refieren a las librerías externas utilizadas.
+
+```
+"dependencies": {
+    "@material/dialog": "^11.0.0",
+    "@material/snackbar": "^11.0.0",
+    "@material/textfield": "^11.0.0",
+    "material-components-web": "^11.0.0"
+},
+"devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
+    "eslint": "^7.28.0",
+    "extract-loader": "^5.1.0",
+    "file-loader": "^6.2.0",
+    "jest": "^27.3.1",
+    "postcss-loader": "^5.2.0",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.36.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^3.11.2"
+} 
+```
+
+#### Material Design
+Material es un sistema de diseño creado por Google que ayuda a crear experiencias digitales de alta calidad fácilmente. Los componentes de Material son bloques de construcción interactivos para crear una interfaz de usuario.
+
+#### Babel
+Babel es un compilador para JavaScript, que permite transformar código escrito con las últimas características de JavaScript y transformarlo en un código que sea entendido por navegadores más antiguos.
+
+#### Autoprefixer
+Es un plugin de PostCSS que permite analizar código CSS estándar y añadir los prefixes de CSS necesarios para garantizar que la funcionalidad se adapte lo mejor posible a navegadores antiguos. De esta forma, no hay que hacerlo manualmente y mantener dicho código, lo que habitualmente tiende a ser muy difícil.
+
+#### ESLint
+ESLint es un analizador estático de código para JavaScript cuya función es la de encontrar errores de calidad o que podrían provocar problemas de compilación. Esto permitió generar un código de alta calidad y fácil entendimiento. 
+
+#### Webpack
+Webpack es un empaquetador de módulos. Su objetivo principal es agrupar archivos JavaScript para su uso en un navegador, pero también es capaz de generar un archivo único con todos aquellos módulos que necesita la aplicación para funcionar.
+
+#### Loaders
+Un loader permite pre-procesar archivos. Esto indica cómo transformar el código de un módulo en concreto. Provee una forma de manejar los pasos de construcción al hacer varias fases de transformación. 
+
+#### Jest
+Jest es un framework para testing que permite escribir y ejecutar test, y fue utilizado para realizar las pruebas unitarias.
+
+#### SASS
+SASS es un pre-procesador CSS. Permite generar de manera automática hojas de estilo, más fáciles de mantener y más reutilizables.
 
 ## Interfaz de usuario
 
