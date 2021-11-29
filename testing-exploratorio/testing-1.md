@@ -9,11 +9,14 @@ Sofía Piñeyro
 ### ESTRUCTURA DE DIVISIÓN
 **DURACIÓN:** Corta (30 min) 
 
-**DISEÑO Y EJECUCIÓN DE PRUEBAS:** % 
+**CONFIGURACIÓN DE LA SESIÓN:** 10%
 
-**INVESTIGACIÓN Y REPORTE DE DEFECTOS:** % 
+**DISEÑO Y EJECUCIÓN DE PRUEBAS:** 57% 
 
-**ARMADO DE LA SESIÓN:** %
+**INVESTIGACIÓN Y REPORTE DE DEFECTOS:** 33% 
+
+**OPORTUNIDAD vs MISIÓN:** 10/90
+
 ### NOTAS DE PRUEBA 
 **Prueba 1 - Abrir la página de inicio**
 - Abrir localhost:8080 en Microsoft Edge y Google Chrome
