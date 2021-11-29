@@ -33,6 +33,27 @@ Link al material: [Material Design - Web Components](https://fism4b-2021.slack.c
 
 ## Construcción
 
+### Requerimientos implementados
+#### Requerimientos Funcionales
+- RF3: Registro de gasto grupal
+- RF4: Borrar gasto grupal
+- RF6: Crear grupo
+- RF7: No deber haber login
+- RF8: Registrar amigo
+- RF9: Eliminar amigo de un grupo
+- RF10: Eliminar amigo
+- RF11: Pagar deuda
+- RF14: Consultar Deudas
+- RF15: Balancear (Parcialmente implementado)
+
+#### Requerimientos No Funcionales
+- RNF1: Primary Color: Deep Purple 700.
+- RNF2: Secondary Color: Teal 700. 
+- RNF3: Font: Roboto.
+- RNF4: Icons: filled.
+- RNF7: La aplicación debe de llevar el nombre de MisGastos.
+- RNF8: Los lenguajes a utilizar son HTML, JavaScript y CSS.
+
 ### Casos de Uso implementados
 #### Caso de uso 1.
 **Título:** Registrar Amigo
@@ -322,7 +343,7 @@ En base a los resultados obtenidos, se crearon en GitHub los issues correspondie
 
 Elementos de imagen sin texto alternativo: #15
 Al comienzo del HTML no se le indica cuál es el idioma: #16
-Elementos input de tipo text field sin label o sin texto en el atributo label: #7
+Elementos input de tipo text field sin label o sin texto en el atributo label: #17
 
 ### Seguir especificación de estilo
 Se construyó el sitio siguiendo las especificaciones definidas en la letra para la letra, colores y tipos de íconos:
@@ -504,40 +525,47 @@ En base a todos estos puntos mencionados, podemos concluír que hay varios punto
 
 En general, la aplicación cumple las funcionalidades básicas y no tiene problemas que interrumpan su funcionamiento, pero hay varias mejoras para hacer, identificadas en los issues.
 
+
 ## Reflexión
 ### Detalle del trabajo individual
 Si bien trabajamos en conjunto en varias oportunidades por videollamada o verificamos el trabajo que realizaban los otros, a continuación se detalla la participación individual de cada uno.
 
 #### Luca:
-HTML, CSS y JS (funciones y estructura de la parte de Grupos).
-Implementación del formulario de agregar grupo, eliminar grupo y editar integrantes.
-Solución de issues.
-Test Unitarios de la clase Sistema.
-Test de sistema.
-Reporte de issues.
-Documentación.
+- HTML, CSS y JS (funciones y estructura de la parte de Grupos).
+- Implementación del formulario de agregar grupo, eliminar grupo y editar integrantes.
+- Solución de issues.
+- Test Unitarios de la clase Sistema.
+- Test de sistema.
+- Reporte de issues.
+- Documentación.
 
 #### Sofía:
-HTML, CSS y JS (funciones y estructura de la parte de Deudas).
-Implementación del formulario de agregar deuda, saldar deuda y conección entre grupos y deudas, y funcionalidad balancear.
-Test Unitarios de la clase Deuda, Grupo y Sistema.
-Test de W3C.
-Reporte de issues, sumarización de issues. 
-Documentación.
+- HTML, CSS y JS (funciones y estructura de la parte de Deudas).
+- Implementación del formulario de agregar deuda, saldar deuda y conección entre grupos y deudas, y funcionalidad balancear.
+- Solución de issues.
+- Test Unitarios de la clase Deuda, Grupo y Sistema.
+- Test de W3C.
+- Reporte de issues, sumarización de issues. 
+- Documentación.
 
 #### Florencia:
-HTML, CSS y JS (funciones y estructura de la parte de Amigos y estructura general de la página).
-Implementación del formulario de agregar amigo, eliminar amigo y editar integrantes de un grupo.
-Test Unitarios de la clase Amigo, Grupo y Sistema.
-Reporte de interfaz de usuario. 
-Documentación.
+- HTML, CSS y JS (funciones y estructura de la parte de Amigos y estructura general de la página).
+- Implementación del formulario de agregar amigo, eliminar amigo y editar integrantes de un grupo.
+- Solución de issues.
+- Test Unitarios de la clase Amigo, Grupo y Sistema.
+- Test de WCAG. 
+- Reporte de issues.
+- Documentación.
 
 
 ### Técnicas aplicadas y aprendizajes
-Detallamos las técnicas y aprendizajes obtenidas a lo largo del curso:
-- Correcta validación y verificación de requerimientos.
-- Uso de Git y GitHub, el manejo de ramas, versiones e issues. 
-- Desarrollo de una página web en HTML, CSS y JS, junto con NodeJS.
-- Importancia de la calidad del código, siguiendo los correspondientes estándares, lo que facilita el entendimiento, mantenimiento y reutilización del mismo.
-- Uso de Jest, lo que nos permite analizar que el código sea de calidad y sin errores.
-- Testing: 
+A lo largo del proyecto desarollamos las técnicas y aprendizajes dadas en el curso. La correcta validación y verificación de requerimientos, el uso de Git y GitHub, el manejo de ramas, versiones e issues, el desarrollo de una página web con HTML, CSS y JS, junto con NodeJS. También la importancia de la calidad del código, siguiendo los correspondientes estándares, lo que facilita el entendimiento, mantenimiento y reutilización del mismo, el uso de Jest y los distintos tipos de testing.
+
+Respecto a la primer entrega mejoramos grandemente como equipo, para esta entrega tuvimos mejor comunicación y mejor manejo del tiempo. Nos organizamos mejor, distribuyendo las tareas en cuanto decidimos las funciones a implementar. Tuvimos una demora a la hora de seleccionar las funciones principales para desarollar, que nos retraso una semana, por lo que al implementar la funcion balancear, decidimos no hacerlo completamente. Otro contra-tiempo que tuvimos fue un problema que surgió de unos cambios hechos a los archivos .json el viernes previo al code-freeze. El sábado en la mañana descubirmos que no funcionaba la aplicación, estuvimos todo el día viendo el problema y recién a la noche pudimos resolverlo (se puede ver en GitHub que revertimos los úlimos commits realizados hasta encontrar el commit donde se habian modificado los archivos).
+
+Respecto a el uso de Material Design nos parecio que se nos brindó poca información, nos resultó bastante complicado entender como se colocaban los elementos en el HTML y como manipularlos con JavaScript. Pensamos que de haber, por lo pronto, recibido alguna clase básica de como hacer un form con MD se nos hubiera facilitado enormemente la entrega y ayudado a enfocarnos en la secciones de testing y de usabilidad de la interfaz.
+
+NodeJS y Jest nos resultaron muy útile, se no dificultó obtener el 100% de cobertura con este último. Pero en base a esas dificultades aprendimos lo que son las 'branches' dentro de una funcion y como encontrarlas. 
+
+En general, encontramos el proyecto interesante, pero muy justo de tiempo en esta segunda entrega. Recolectamos conceptos y técnicas que consideramos que nos vana resultar útiles en el futuro, la parte de testing y UI. 
+
