@@ -36,46 +36,120 @@ Link al material: [Material Design - Web Components](https://docs.google.com/pre
 ### Casos de Uso implementados
 #### Caso de uso 1.
 **Título:** Registrar Amigo
+
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
-| **1.** Selecciona el "+". | **2.** Muestra una dialogo donde se le pide al usuario un nombre y un método de pago favorito. |
-| **3.** Ingresa un nombre y un método de pago favorito. Selecciona "Agregar". | **4.** Se actualiza la lista de amigos en pantalla, mostrando el nuevo agregado. |
+| **1.** Se selecciona el '+'. | **2.** Muestra un diálogo y pide el ingreso de un nombre y, opcionalmente, un método de pago favorito. |
+| **3.** Ingresa un nombre y un método de pago favorito. Selecciona 'Agregar'. | **4.** Se agrega el nuevo amigo y actualiza la lista de amigos en pantalla. |
 
 **Cursos alternativos:**
 
-**3.1** Si no se ingresa un nombre: se muestra un mensaje "Por favor, ingrese un nombre".
+**3.1** Si no se ingresa un nombre: se muestra un mensaje 'Nombre es un campo requerido.'.
 
-**3.2** Si ya existe un amigo con el nombre ingresado: se muestra un mensaje "".
+**3.2** Si ya existe un amigo con el nombre ingresado: se muestra un mensaje 'Ya existe un amigo con nombre ' y el nombre ingresado.
 
-**3.3** El ususario selecciona cancelar: fin del caso de uso.
+**3.3** El usuario selecciona 'Cancelar': fin del caso de uso.
 
 
 #### Caso de uso 2.
 **Título:** Eliminar Amigo
+
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
-| **1.** Selecciona "Eliminar". | **2.** Muestra una dialogo pidiendo confirmacion. |
-| **3.** Confirma la eliminacion del amigo | **4.** Se actualiza la lista de amigos en pantalla, sin el amigo eliminado. |
+| **1.** Selecciona 'Eliminar'. | **2.** Muestra un diálogo pidiendo confirmación. |
+| **3.** Confirma la eliminación del amigo | **4.** Se elimina el amigo seleccionado y actualiza la lista de amigos en pantalla. |
 
 **Cursos alternativos:**
-**2.1** No hay ningun amigo ingresado: se muestra el mensaje "": fin del caso de uso 
 
-**3.1** El ususario selecciona cancelar: fin del caso de uso.
+**3.1** El usuario selecciona 'Cancelar': fin del caso de uso.
 
 #### Caso de uso 3.
 **Título:** Registrar Grupo
 
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Se selecciona el '+'. | **2.** Muestra un diálogo y pide el ingreso de un nombre para el grupo. |
+| **3.** Ingresa un nombre y selecciona 'Agregar'. | **4.** Se agrega el nuevo grupo y actualiza la lista de grupos en pantalla. |
+
+**Cursos alternativos:**
+
+**3.1** Si no se ingresa un nombre: se muestra un mensaje 'Nombre es un campo requerido.'.
+
+**3.2** Si ya existe un grupo con el nombre ingresado: se muestra un mensaje 'Ya existe un grupo con nombre ' y el nombre ingresado.
+
+**3.3** El usuario selecciona 'Cancelar': fin del caso de uso.
 
 #### Caso de uso 4.
-**Título:** Eliminar Grupo
+**Título:** Agregar amigos a un grupo
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Se selecciona el lápiz. | **2.** Muestra un diálogo con una lista de los amigos ingresados. |
+| **3.** Selecciona el '+' de los amigos que se quiera agregar  | **4.** Se agrega cada amigo seleccionado y muestra un mensaje 'Se agregó (nombre amigo) al grupo (nombre grupo)'. |
+| **5.** Selecciona 'Cerrar' | **6.** Cierra el diálogo. |
 
 #### Caso de uso 5.
-**Título:** Registrar Deuda
+**Título:** Eliminar amigos de un grupo
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Se selecciona el lápiz. | **2.** Muestra un diálogo con una lista de los amigos ingresados. |
+| **3.** Selecciona 'eliminar' de los amigos que se quieran eliminar | **4.** Se elimina cada amigo seleccionado y muestra un mensaje 'Se eliminó a (nombre amigo) del grupo (nombre grupo)'. |
+| **5.** Selecciona 'Cerrar' | **6.** Cierra el diálogo. |
+
 
 #### Caso de uso 6.
+**Título:** Eliminar Grupo
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Selecciona 'Eliminar'. | **2.** Muestra un diálogo pidiendo confirmación. |
+| **3.** Confirma la eliminación del grupo | **4.** Se elimina el grupo seleccionado y actualiza la lista de grupos en pantalla. |
+
+**Cursos alternativos:**
+
+**3.1** El usuario selecciona 'Cancelar': fin del caso de uso.
+
+#### Caso de uso 7.
+**Título:** Agregar Gasto
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Selecciona un grupo. | **2.** Muestra en pantalla el nombre del grupo, un botón 'Agregar Gasto' y una lista con las deudas. |
+| **3.** Selecciona 'Agregar Gasto' | **4.** Muestra un diálogo y pide el ingreso de la descripción, monto y responsable del pago del gasto (por defecto, seleccionado 'YO'). |
+| **5.** Ingresa la descripción, monto y selecciona quién pagó. Selecciona 'Agregar'. | **6.** Cierra el diálogo, agrega el gasto, balancea las deudas y actualiza la lista de deudas. |
+
+**Cursos alternativos:**
+
+**2.1** Si no hay deudas, muestra 'No tienes ninguna deuda'.
+
+**5.1** No ingresa el monto, muestra un mensaje 'Debe indicar el monto total'.
+
+**5.2** No ingresa la descripción, muestra un mensaje 'Debe ingresar una descripción'.
+
+**5.3** El usuario selecciona 'Cancelar': fin del caso de uso.
+
+
+#### Caso de uso 8.
 **Título:** Saldar Deuda
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Selecciona un grupo. | **2.** Muestra en pantalla el nombre del grupo, un botón 'Agregar Gasto' y una lista con las deudas. |
+| **3.** Selecciona 'Eliminar' de una deuda | **4.** Muestra un diálogo pidiendo confirmación. |
+| **5.** Confirma la eliminación de la deuda | **4.** Se elimina la deuda seleccionada y actualiza la lista de deudas del grupo en pantalla. |
+
+**Cursos alternativos:**
+
+**5.1** El usuario selecciona 'Cancelar': fin del caso de uso.
 
 ### Configuración de plataforma tecnológica para desarrollo y producción
 
