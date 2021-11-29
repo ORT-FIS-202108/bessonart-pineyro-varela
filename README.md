@@ -220,13 +220,31 @@ SASS es un pre-procesador CSS. Permite generar de manera automática hojas de es
 ### Interfaz de usuario web / mobile (responsive)
 La aplicación cuenta con una interfaz responsive que se ajusta al tamaño del dispositivo y/o browser.
 
-Al momento de diseñar y agregar los componentes se tuvo en cuenta que estos se ajustaran de manera que no interfirieran entre ellos y mantuviesen el sistema de diseño.
+Al momento de diseñar y agregar los componentes se tuvo en cuenta que éstos se ajustaran de manera que no interfirieran entre ellos y mantuviesen el sistema de diseño.
 
-A continuación se muestra un ejemplo de la pagina principal y su comportamiento responsive en diferentes dispositivos y tamaños.
+A continuación se muestra un ejemplo de la página principal y su comportamiento responsive en diferentes dispositivos y tamaños.
 
 **Web:**
 
+![Web-Amigos](img\web-amigos.jpg)
+![Web-Agregar_Amigo](img\web-agregar_amigo.jpg)
+![Web-Eliminar_Amigo](img\web-eliminar_amigo.jpg)
+![Web-Grupo](img\web-grupos.jpg)
+![Web-Editar_Grupo](img\web-editar_grupo.jpg)
+![Web-Agregar-Gasto](img\web-agregar_gasto.jpg)
+![Web-Deudas](img\web-deudas.jpg)
+![Web-Saldar-Deuda](img\web-saldar_deuda.jpg)
+
 **Mobile:**
+
+![Mobile-Amigos](img\mobile-amigos.jpg)
+![Mobile-Agregar_Amigo](img\mobile-agregar_amigo.jpg)
+![Mobile-Eliminar_Amigo](img\mobile-eliminar_amigo.jpg)
+![Mobile-Agregar_Grupo](img\mobile-agregar_grupo.jpg)
+![Mobile-Editar_Grupo](img\mobile-editar_grupo.jpg)
+![Mobile-Agregar-Gasto](img\mobile-agregar_gasto.jpg)
+![Mobile-Deudas](img\mobile-deudas.jpg)
+![Mobile-Saldar-Deuda](img\mobile-saldar_deuda.jpg)
 
 ### Página única con navegación entre secciones
 La aplicación se desarrollo en un único archivo HTML, con diferentes secciones que dependiendo de las acciones del usuario se muestran u ocultan las secciones necesarias.
@@ -477,3 +495,10 @@ Documentación.
 
 
 ### Técnicas aplicadas y aprendizajes
+Detallamos las técnicas y aprendizajes obtenidas a lo largo del curso:
+- Correcta validación y verificación de requerimientos.
+- Uso de Git y GitHub, el manejo de ramas, versiones e issues. 
+- Desarrollo de una página web en HTML, CSS y JS, junto con NodeJS.
+- Importancia de la calidad del código, siguiendo los correspondientes estándares, lo que facilita el entendimiento, mantenimiento y reutilización del mismo.
+- Uso de Jest, lo que nos permite analizar que el código sea de calidad y sin errores.
+- Testing: 
