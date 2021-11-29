@@ -301,14 +301,14 @@ Notar que dentro de la clase Grupo no se incluyó el método balancear en las pr
 Realizar test de sistema en un entorno separado del desarrollo
 
 Generar casos de prueba aplicando técnica partición equivalente
-## Caso de uso 1
-### Variables de entrada:
+### Caso de uso 1
+#### Variables de entrada:
 -Nombre Amigo
 -Metodo de pago favortio 
 -Nombre Grupo
 -Monto
 -Descripcion 
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Nombre Amigo|-1)Nombre no registrado|-2)Nombre registrado -3)Input vacio
@@ -316,7 +316,7 @@ Generar casos de prueba aplicando técnica partición equivalente
 |Nombre Grupo|-Nombre no registrado|-Nombre registrado
 |Monto|-Monto mayor a 0 | -Monto menor a 0 -Caracteres no numericos
 |Descripcion| -Todo input -Input vacio||
-### Casos de prueba
+#### Casos de prueba
 |Caso de Prueba| Nombre |Metodo de pago favorito| Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|--------|-----------------------|--------------------|---------------------------------|
 |CP1|Juan|Tarjeta|Mensaje:Se editó correctamente la lista de amigos| 1, 4|
@@ -326,7 +326,15 @@ Generar casos de prueba aplicando técnica partición equivalente
 |CP4|""|Tarjeta|Mensaje:Nombre es un campo requerido.| 3, 4|
 
 
-Detallar sesiones de prueba exploratoria
+### Detallar sesiones de prueba exploratoria
+Se realizaron tres sesiones de pruebas exploratorias (una por integrante del equipo). Estas pruebas consisten en definir una misión y durante una sesión de prueba con tiempo acotado, realizar la exploración anotando eventos relevantes (defectos encontrados, inconvenientes, mejoras, riesgos).
+
+Debido a las dimensiones de nuestra aplicación, hicimos sesiones cortas, acotadas a una duración de 30 minutos.
+
+Se obtuvo los siguientes resultados:
+- [Prueba exploratoria #1](testing-exploratorio\testing-1.md)
+- [Prueba exploratoria #2](testing-exploratorio\testing-2.md)
+- [Prueba exploratoria #3](testing-exploratorio\testing-3.md)
 
 ## Reporte de issues
 
