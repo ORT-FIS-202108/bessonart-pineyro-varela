@@ -19,9 +19,9 @@
 
 #### Sofía Piñeyro - Validación y Verificación de Requerimientos
 
-[Parrafo descriptivo del tema]
+La validación de requerimientos es el proceso de revisión que verifica que el sistema de software producido cumple con las necesidades del cliente. La verificación de requerimientos es el proceso de revisión que verifica que el sistema producido cumple con las especificaciones en las que se basó. Además de las definiciones de cada proceso, la presentación lista los objetivos, las distintas técnicas de validación y las buenas prácticas a seguir.
 
-Link al material: [Validación y Verificación de Requerimientos](https://fism4b-2021.slack.com/archives/C02B5GHHUMQ/p1633445778001000)
+Link al material: [Validación y Verificación de Requerimientos](https://docs.google.com/presentation/d/1vqwaJeZCfScrBlU7bJB3fbL41PGVHdLA_z-i4iaZyn8/edit?usp=sharing)
 
 #### Florencia Varela - Material Design: Web Components
 
