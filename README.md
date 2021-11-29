@@ -19,9 +19,9 @@
 
 #### Sofía Piñeyro - Validación y Verificación de Requerimientos
 
-[Parrafo descriptivo del tema]
+La validación de requerimientos es el proceso de revisión que verifica que el sistema de software producido cumple con las necesidades del cliente. La verificación de requerimientos es el proceso de revisión que verifica que el sistema producido cumple con las especificaciones en las que se basó. Además de las definiciones de cada proceso, la presentación lista los objetivos, las distintas técnicas de validación y las buenas prácticas a seguir.
 
-Link al material: [Validación y Verificación de Requerimientos](https://fism4b-2021.slack.com/archives/C02N6D26B42/p1637581423008900)
+Link al material: [Validación y Verificación de Requerimientos](https://docs.google.com/presentation/d/1vqwaJeZCfScrBlU7bJB3fbL41PGVHdLA_z-i4iaZyn8/edit?usp=sharing)
 
 #### Florencia Varela - Material Design: Web Components
 
@@ -36,48 +36,129 @@ Link al material: [Material Design - Web Components](https://fism4b-2021.slack.c
 ### Casos de Uso implementados
 #### Caso de uso 1.
 **Título:** Registrar Amigo
+
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
-| **1.** Selecciona agregar amigo. | **2.** Le pide al usuario un nombre y un método de pago favorito. |
-| **3.** Ingresa un nombre y un método de pago favorito. Selecciona "Agregar". | **4.** Se actualiza la lista de amigos en pantalla, mostrando el nuevo amigo agregado. |
+| **1.** Se selecciona el '+'. | **2.** Muestra un diálogo y pide el ingreso de un nombre y, opcionalmente, un método de pago favorito. |
+| **3.** Ingresa un nombre y un método de pago favorito. Selecciona 'Agregar'. | **4.** Se agrega el nuevo amigo y actualiza la lista de amigos en pantalla. |
 
 **Cursos alternativos:**
 
-**3.1** Si no se ingresa un nombre: se muestra un mensaje "Por favor, ingrese un nombre".
+**3.1** Si no se ingresa un nombre: se muestra un mensaje 'Nombre es un campo requerido.'.
 
-**3.2** Si ya existe un amigo con el nombre ingresado, se le indica al usuario que el amigo ya existe.
+**3.2** Si ya existe un amigo con el nombre ingresado: se muestra un mensaje 'Ya existe un amigo con nombre ' y el nombre ingresado.
 
-**3.3** El ususario selecciona cancelar. Fin del caso de uso.
+**3.3** El usuario selecciona 'Cancelar': fin del caso de uso.
 
 
 #### Caso de uso 2.
 **Título:** Eliminar Amigo
+
 **Curso normal:**
 | Acción de los actores | Respuesta del sistema |
 | --------------------- | --------------------- |
-| **1.** Selecciona eliminar amigo. | **2.** Le pide confirmacion al usuario. |
-| **3.** Confirma la eliminacion del amigo. | **4.** Se actualiza la lista de amigos en pantalla, sin el amigo eliminado. |
+| **1.** Selecciona 'Eliminar'. | **2.** Muestra un diálogo pidiendo confirmación. |
+| **3.** Confirma la eliminación del amigo | **4.** Se elimina el amigo seleccionado y actualiza la lista de amigos en pantalla. |
 
 **Cursos alternativos:**
-**2.1** No hay ningun amigo ingresado: se le indica al usuario que no tiene ningún amigo. Fin del caso de uso 
 
-**3.1** El ususario selecciona cancelar. Fin del caso de uso.
+**3.1** El usuario selecciona 'Cancelar': fin del caso de uso.
 
 #### Caso de uso 3.
 **Título:** Registrar Grupo
 
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Se selecciona el '+'. | **2.** Muestra un diálogo y pide el ingreso de un nombre para el grupo. |
+| **3.** Ingresa un nombre y selecciona 'Agregar'. | **4.** Se agrega el nuevo grupo y actualiza la lista de grupos en pantalla. |
+
+**Cursos alternativos:**
+
+**3.1** Si no se ingresa un nombre: se muestra un mensaje 'Nombre es un campo requerido.'.
+
+**3.2** Si ya existe un grupo con el nombre ingresado: se muestra un mensaje 'Ya existe un grupo con nombre ' y el nombre ingresado.
+
+**3.3** El usuario selecciona 'Cancelar': fin del caso de uso.
 
 #### Caso de uso 4.
-**Título:** Eliminar Grupo
+**Título:** Agregar amigos a un grupo
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Se selecciona el lápiz. | **2.** Muestra un diálogo con una lista de los amigos ingresados. |
+| **3.** Selecciona el '+' de los amigos que se quiera agregar  | **4.** Se agrega cada amigo seleccionado y muestra un mensaje 'Se agregó (nombre amigo) al grupo (nombre grupo)'. |
+| **5.** Selecciona 'Cerrar' | **6.** Cierra el diálogo. |
 
 #### Caso de uso 5.
-**Título:** Registrar Deuda
+**Título:** Eliminar amigos de un grupo
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Se selecciona el lápiz. | **2.** Muestra un diálogo con una lista de los amigos ingresados. |
+| **3.** Selecciona 'eliminar' de los amigos que se quieran eliminar | **4.** Se elimina cada amigo seleccionado y muestra un mensaje 'Se eliminó a (nombre amigo) del grupo (nombre grupo)'. |
+| **5.** Selecciona 'Cerrar' | **6.** Cierra el diálogo. |
+
 
 #### Caso de uso 6.
+**Título:** Eliminar Grupo
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Selecciona 'Eliminar'. | **2.** Muestra un diálogo pidiendo confirmación. |
+| **3.** Confirma la eliminación del grupo | **4.** Se elimina el grupo seleccionado y actualiza la lista de grupos en pantalla. |
+
+**Cursos alternativos:**
+
+**3.1** El usuario selecciona 'Cancelar': fin del caso de uso.
+
+#### Caso de uso 7.
+**Título:** Agregar Gasto
+
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Selecciona un grupo. | **2.** Muestra en pantalla el nombre del grupo, un botón 'Agregar Gasto' y una lista con las deudas. |
+| **3.** Selecciona 'Agregar Gasto' | **4.** Muestra un diálogo y pide el ingreso de la descripción, monto y responsable del pago del gasto (por defecto, seleccionado 'YO'). |
+| **5.** Ingresa la descripción, monto y selecciona quién pagó. Selecciona 'Agregar'. | **6.** Cierra el diálogo, agrega el gasto, balancea las deudas y actualiza la lista de deudas. |
+
+**Cursos alternativos:**
+
+**2.1** Si no hay deudas, muestra 'No tienes ninguna deuda'.
+
+**5.1** No ingresa el monto, muestra un mensaje 'Debe indicar el monto total'.
+
+**5.2** No ingresa la descripción, muestra un mensaje 'Debe ingresar una descripción'.
+
+**5.3** El usuario selecciona 'Cancelar': fin del caso de uso.
+
+
+#### Caso de uso 8.
 **Título:** Saldar Deuda
 
+**Curso normal:**
+| Acción de los actores | Respuesta del sistema |
+| --------------------- | --------------------- |
+| **1.** Selecciona un grupo. | **2.** Muestra en pantalla el nombre del grupo, un botón 'Agregar Gasto' y una lista con las deudas. |
+| **3.** Selecciona 'Eliminar' de una deuda | **4.** Muestra un diálogo pidiendo confirmación. |
+| **5.** Confirma la eliminación de la deuda | **4.** Se elimina la deuda seleccionada y actualiza la lista de deudas del grupo en pantalla. |
+
+**Cursos alternativos:**
+
+**5.1** El usuario selecciona 'Cancelar': fin del caso de uso.
+
 ### Configuración de plataforma tecnológica para desarrollo y producción
+Se creó la rama `develop` a partir de la rama `main`, donde se realizó todo el trabajo de desarrollo de las distintas funciones de la aplicación.
+
+Luego de finalizado el desarrollo de la aplicación, se realizaron los test unitarios correspondientes, también en la rama `develop`, y una vez obtenido el 100% de cobertura, se realizó un merge a la rama `main`.
+
+A partir de este punto, se trabajó únicamente en el test del sistema, la documentación de issues y generación del informe. Para realizar el test del sistema, se creó la rama `testing` a partir de la rama `main`, y para la generación del informe académico se trabajó en la rama `develop`.
+
+Luego de finalizadas estas etapas, se realizó un merge de las ramas `testing` y `develop` a la rama `main`.
 
 ### Documentación del uso de librerías externas (package.json)
 
@@ -97,30 +178,34 @@ Seguir especificación de estilo
 
 ## Codificación
 
-Para el proyecto todos los integrantes del equipo usamos la IDE Visual Studio Code. A esta le agregamos la siguente extención para manejar el análisis estático del código :
+### IDE Visual Studio Code: configuración común del equipo
+Para el proyecto todos los integrantes del equipo usamos la IDE Visual Studio Code. A ésta le agregamos la siguente extensión para manejar el análisis estático del código :
 
-Name: ESLint
-Id: dbaeumer.vscode-eslint
-Description: Integrates ESLint JavaScript into VS Code.
-Version: 2.2.2
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint 
+- Name: ESLint
+- Id: dbaeumer.vscode-eslint
+- Description: Integrates ESLint JavaScript into VS Code.
+- Version: 2.2.2
+- Publisher: Microsoft
+- VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint 
 
 
-- Estándares de codificación Google (HTML, CSS, JavaS)
+### Estándares de codificación Google (HTML, CSS, JavaS)
 
-Como buena práctica de OPP separamos la pare lógica de la interfaz. Se pueden ver dos carpetas: dominio donde se encuantra la lógica y los tests, y interfaz donde se entucentra el archivo html y dos sub-carpetas una con el css, y otra con la lógica del html.
+### Buenas prácticas de OOP
+Como buena práctica de OOP, se separó la lógica de la interfaz. Notar que hay dos carpetas: Dominio, donde se encuentra la lógica, clases y tests, e Interfaz, donde se encuentra el código HTML y dos carpetas con los estilos (CSS) y los scripts (JavaScript).
+
+### Análisis estático de código
 
 
 ## Test unitario
 
-Cada clase dentro de la carpeta dominio tiene un test con su mismo nombre que prueba todas las funciones de esta. 
-Buscamos con estos comprobar todos los metodos funcionen y detectar si hay código inaccesible, o si algún metodo no devuelve el valor esperado.
+Cada clase de la carpeta [Dominio](./dominio) tiene un test, con el mismo nombre de la clase, que prueba todas las funciones de ésta. 
 
-Como forma de comprobar lo anterior mencionado bucabamos un 100% de cobertura de las pruebas sobre el código.
+Con dichos tests se buscó comprobar el correcto funcionamiento de todos los métodos de cada clase y detectar la existencia de código inaccesible o valores inesperados. Para esto, se buscó un 100% de cobertura de las pruebas sobre el código.
 
-![Evidencia del 100% de cobertura](img/Pruebas100%.jpeg)
+![Evidencia del 100% de cobertura](.\img\Pruebas.jpeg)
 
+Notar que dentro de la clase Grupo no se incluyó el método balancear en las pruebas. Esto se debe a que dicha función no funciona correctamente en todos los casos, por lo que se decidió reportarlo como issue y no incluirlo en los tests.
 
 
 ## Test de sistema
