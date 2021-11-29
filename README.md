@@ -452,11 +452,14 @@ Los siguientes issues quedaran abiertos para futuras correciones o mejoras:
 - **#12**: Se puede agregar muchas veces a la misma persona a un grupo.
 - **#13**: Falta de shortcuts para usuarios expertos.
 - **#14**: La función balancear no funciona correctamente en todos los casos.
+- **#15**: Imagen de logo de la app sin texto alternativo.
+- **#16**: Al html no se le indica el idioma de la app.
+- **#17**: Hay varios text-fields sin label.
 
 ### Sumarizar número de issues reportados por tipo
 Los issues reportados se dividen en los siguientes tipos:
-- **Bugs:** 7
-- **Enhancement:** 4
+- **Bugs:** 5
+- **Enhancement:** 7
 - **Help wanted:** 1
 - **Wontfix:** 1
 
@@ -464,12 +467,32 @@ Los issues reportados se dividen en los siguientes tipos:
 
 ## Reflexión
 ### Detalle del trabajo individual
+Si bien trabajamos en conjunto en varias oportunidades por videollamada o verificamos el trabajo que realizaban los otros, a continuación se detalla la participación individual de cada uno.
 
 #### Luca:
+HTML, CSS y JS (funciónes de Grupos).
+Implementación del formulario de agregar grupo, eliminar grupo y editar integrantes.
+Solución de issues.
+Test Unitarios de la clase Sistema.
+Test de sistema.
+Reporte de issues.
+Documentación.
 
 #### Sofía:
+HTML, CSS y JS (funciónes de Deudas).
+Implementación del formulario de agregar deuda, saldar deuda y conección entre grupos y deudas.
+Test Unitarios de la clase Deuda.
+Test de W3C.
+Reporte de issues, sumarización de issues. 
+Documentación.
 
-#### Florencia:rnfof4kf
+#### Florencia:
+HTML, CSS y JS (funciónes de Amigos y estructura general de la página).
+Implementación del formulario de agregar amigo, eliminar amigo y editar integrantes de un grupo.
+Test Unitarios de la clase Amigo, Grupo y Sistema.
+Reporte de interfaz de usuario. 
+Documentación.
+
 
 ### Técnicas aplicadas y aprendizajes
 Detallamos las técnicas y aprendizajes obtenidas a lo largo del curso:
