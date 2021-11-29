@@ -247,25 +247,25 @@ A continuación se muestra un ejemplo de la página principal y su comportamient
 
 **Web:**
 
-![Web-Amigos](img\web-amigos.jpg)
-![Web-Agregar_Amigo](img\web-agregar_amigo.jpg)
-![Web-Eliminar_Amigo](img\web-eliminar_amigo.jpg)
-![Web-Grupo](img\web-grupos.jpg)
-![Web-Editar_Grupo](img\web-editar_grupo.jpg)
-![Web-Agregar-Gasto](img\web-agregar_gasto.jpg)
-![Web-Deudas](img\web-deudas.jpg)
-![Web-Saldar-Deuda](img\web-saldar_deuda.jpg)
+![Web-Amigos](.\img\web-amigos.jpg)
+![Web-Agregar_Amigo](.\img\web-agregar_amigo.jpg)
+![Web-Eliminar_Amigo](.\img\web-eliminar_amigo.jpg)
+![Web-Grupo](.\img\web-grupos.jpg)
+![Web-Editar_Grupo](.\img\web-editar_grupo.jpg)
+![Web-Agregar-Gasto](.\img\web-agregar_gasto.jpg)
+![Web-Deudas](.\img\web-deudas.jpg)
+![Web-Saldar-Deuda](.\img\web-saldar_deuda.jpg)
 
 **Mobile:**
 
-![Mobile-Amigos](img\mobile-amigos.jpg)
-![Mobile-Agregar_Amigo](img\mobile-agregar_amigo.jpg)
-![Mobile-Eliminar_Amigo](img\mobile-eliminar_amigo.jpg)
-![Mobile-Agregar_Grupo](img\mobile-agregar_grupo.jpg)
-![Mobile-Editar_Grupo](img\mobile-editar_grupo.jpg)
-![Mobile-Agregar-Gasto](img\mobile-agregar_gasto.jpg)
-![Mobile-Deudas](img\mobile-deudas.jpg)
-![Mobile-Saldar-Deuda](img\mobile-saldar_deuda.jpg)
+![Mobile-Amigos](.\img\mobile-amigos.jpg)
+![Mobile-Agregar_Amigo](.\img\mobile-agregar_amigo.jpg)
+![Mobile-Eliminar_Amigo](.\img\mobile-eliminar_amigo.jpg)
+![Mobile-Agregar_Grupo](.\img\mobile-agregar_grupo.jpg)
+![Mobile-Editar_Grupo](.\img\mobile-editar_grupo.jpg)
+![Mobile-Agregar-Gasto](.\img\mobile-agregar_gasto.jpg)
+![Mobile-Deudas](.\img\mobile-deudas.jpg)
+![Mobile-Saldar-Deuda](.\img\mobile-saldar_deuda.jpg)
 
 ### Página única con navegación entre secciones
 La aplicación se desarrolló en un único archivo HTML con diferentes secciones, que dependiendo de las acciones del usuario se muestran u ocultan.
