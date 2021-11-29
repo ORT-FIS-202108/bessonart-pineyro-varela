@@ -277,7 +277,13 @@ Las funciones de las clases Amigo y Deuda sirven para agregar, encontrar o elimi
 
 
 ### Análisis estático de código
+Para el análisis estático de código se utilizó ESLint y la extensión para Visual Studio Code, que permitió detectar potenciales errores de calidad o que podrían provocar problemas de compilación. 
 
+Como resultado, se logró obtener un código fácilmente mantenible y de alta calidad. A continuación, se detallan algunos ejemplos de su uso.
+
+- **Espaciado:** ESLint ayuda a detectar indentaciones incorrectas y espacios innecesarios que no se ajustan al estándar o que dificultan la legibilidad.
+- **Variables e imports:** detecta variables e imports que son declarados pero nunca utilizados. También detecta variables declaradas como `let` que no cambian su valor y que deberían usar `const`.
+- **Comillas:** de acuerdo a los estilos de Google, se debe usar comillas simples (''), y no comillas dobles("").
 
 ## Test unitario
 
