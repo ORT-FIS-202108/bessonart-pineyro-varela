@@ -306,17 +306,53 @@ Detallar sesiones de prueba exploratoria
 
 ## Reporte de issues
 
-- Reportar issues (bugs, improvements, missing features) en GitHub 
+### Reportar issues (bugs, improvements, missing features) en GitHub 
+A partir de las actividades de testing, se identificaron varios issues, en su mayoría bugs o posibles mejoras, que se documentaron en la [sección de issues del proyecto](https://github.com/ORT-FIS-202108/bessonart-pineyro-varela/issues).
 
-- Aplicar buenas prácticas de reporte de issues
+Mientras continuaba el desarrollo del código, se buscó solucionar la mayor cantidad de issues etiquetados como `bugs`, cerrándolos cuando era posible. Los issues etiquetados como `enhancement` son posibles mejoras, que podrían ser implementados en una siguiente fase.
 
-- Definir labels para tipos de issue y niveles de severidad
+### Aplicar buenas prácticas de reporte de issues
+Para el reporte de issues, se siguieron las siguientes prácticas.
+- Título: debe ser claro y preciso.
+- Resumen: debe ser una descripción clara y detallada del problema.
+- Plataforma y ambiente donde se observa el problema.
+- Severidad: indica la gravedad con la que afecta la aplicación.
+- Prioridad: indica la urgencia con la que se debe resolver el problema.
+- Pasos a reproducir: detalla los pasos para reproducir el problema.
+- Labels: categorizan el tipo de issue.
 
-- Dejar issues abiertos para correcciones o mejoras futuras
+### Definir labels para tipos de issue y niveles de severidad
+#### Labels
+Para categorizar los issues se utilizaron las siguientes labels:
+- **Bug:** el problema describe comportamiento incorrecto o inesperado. 
+- **Enhancement:** el problema describe posibles mejoras.
+- **Help wanted:** indica que quien creó el issue necesita o quiere ayuda para resolver el problema.
+- **Wont fix:** indica que el problema no será resuelto.
+#### Severidad
+Se utilizó los siguientes niveles de severidad:
+- **Bloqueante:** impide el funcionamiento de las funcionalidades básicas del sistema.
+- **No bloqueante:** problemas en la usabilidad del sistema y la navegación de la interfaz, que no impiden realizar las funcionalidades básicas.
+- **Posible mejora:** mejoras en la usabilidad y accesibilidad del sistema.
 
-- Sumarizar número de issues reportados por tipo
+### Dejar issues abiertos para correcciones o mejoras futuras
+Los siguientes issues quedaran abiertos para futuras correciones o mejoras:
+- **#5**: División de deudas en un grupo.
+- **#7**: Al borrar un amigo que pertenece a un grupo, a ese grupo se le borran todos los integrantes.
+- **#8**: Luego de eliminado, se muestran las deudas del grupo seleccionado.
+- **#10**: Mejor distinción entre los botones de agregar Amigo y Grupo.
+- **#11**: Icono para agregar integrantes poco descriptivo.
+- **#12**: Se puede agregar muchas veces a la misma persona a un grupo.
+- **#13**: Falta de shortcuts para usuarios expertos.
+- **#14**: La función balancear no funciona correctamente en todos los casos.
 
-- Realizar una evaluación global de la calidad
+### Sumarizar número de issues reportados por tipo
+Los issues reportados se dividen en los siguientes tipos:
+- **Bugs:** 7
+- **Enhancement:** 4
+- **Help wanted:** 1
+- **Wontfix:** 1
+
+### Realizar una evaluación global de la calidad
 
 ## Reflexión
 ### Detalle del trabajo individual
