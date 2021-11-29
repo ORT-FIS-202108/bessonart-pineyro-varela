@@ -464,6 +464,7 @@ Los issues reportados se dividen en los siguientes tipos:
 - **Wontfix:** 1
 
 ### Realizar una evaluación global de la calidad
+Luego de finalizo el proyecto, se realizó una evaluación global de la calidad del producto final. Durante esta evaluación, se consideraron aspectos de calidad de la interfaz de la aplicación, el cumplimento de los estándares y buenas prácticas, la cobertura de las prubeas unitarias, los resultados del test de sistema y los issues sin resolver.
 
 
 ## Reflexión
