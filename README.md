@@ -364,3 +364,10 @@ Los issues reportados se dividen en los siguientes tipos:
 #### Florencia:
 
 ### Técnicas aplicadas y aprendizajes
+Detallamos las técnicas y aprendizajes obtenidas a lo largo del curso:
+- Correcta validación y verificación de requerimientos.
+- Uso de Git y GitHub, el manejo de ramas, versiones e issues. 
+- Desarrollo de una página web en HTML, CSS y JS, junto con NodeJS.
+- Importancia de la calidad del código, siguiendo los correspondientes estándares, lo que facilita el entendimiento, mantenimiento y reutilización del mismo.
+- Uso de Jest, lo que nos permite analizar que el código sea de calidad y sin errores.
+- Testing: 
