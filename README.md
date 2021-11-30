@@ -324,7 +324,7 @@ Para la validación del cumplimiento del estándar de accessibilidad WCAG, se ut
 
 Esta herramienta permite subir un archivo (index.html en este caso), y validar el cumplimiento de estándares de usabilidad. Al momento de validar el archivo se seleccionó el estándar Web Content Accessibility Guidelines (WCAG), Version 2.0, Level AA que es el estándar seleccionado por defecto en el validador.
 
-![Achecker index.html](./img/Achecker.png)
+![Achecker index.html](./img/Achecker.PNG)
 
 **Resultados:**
 La validación arrojó 22 errores separados en siete categorías:
@@ -431,16 +431,16 @@ Realizar test de sistema en un entorno separado del desarrollo
 
 Generar casos de prueba aplicando técnica partición equivalente
 Se utilizo el tipo de prueba Caja Negra - Partición de Equivalencia para cada caso de uso y luego se condujeron pruebas de los mismos 
-## Caso de uso 1
-### Variables de entrada:
+### Caso de uso 1
+#### Variables de entrada:
 -Nombre Amigo
 -Metodo de pago favortio 
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Nombre Amigo|-1)Nombre no registrado|-2)Nombre registrado -3)Input vacio
 |Metodo de pago favortio|-4)Todo input -5)Input vacio |  | 
-### Casos de prueba:
+#### Casos de prueba:
 |Caso de Prueba| Nombre |Metodo de pago favorito| Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|--------|-----------------------|--------------------|---------------------------------|
 |CP1|Juan|Tarjeta|Mensaje:Se editó correctamente la lista de amigos| 1, 4|
@@ -449,26 +449,26 @@ Se utilizo el tipo de prueba Caja Negra - Partición de Equivalencia para cada c
 |CP3|YO|""|Mensaje:ya existe un amigo con nombre YO| 2, 5|
 |CP4|""|Tarjeta|Mensaje:Nombre es un campo requerido.| 3, 4|
 
-## Caso de uso 2
-### Variables de entrada:
+### Caso de uso 2
+#### Variables de entrada:
 -Amigo
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Amigo|-1)Amigo seleccionado| |
-### Casos de prueba:
+#### Casos de prueba:
 |Caso de Prueba| Amigo | Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|-------|--------------------|---------------------------------|
 |CP1|Amigoexistente| Mensaje: Se elimino a Amigoexistente de tus amigos |1
 
-## Caso de uso 3
-### Variables de entrada:
+### Caso de uso 3
+#### Variables de entrada:
 -Nombre Grupo
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Nombre Grupo|-1)Nombre no registrado|-2)Nombre registrado -3)Input vacio|
-### Casos de prueba:
+#### Casos de prueba:
 |Caso de Prueba| Amigo | Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|-------|--------------------|---------------------------------|
 |CP1|Nombre| Se agrega el Grupo "Nombre" a la lista de grupos|1|
@@ -476,75 +476,75 @@ Se utilizo el tipo de prueba Caja Negra - Partición de Equivalencia para cada c
 |CP3|""|  Mensaje: Nombre es un campo requerido|1|
 
 
-## Caso de uso 4
+### Caso de uso 4
 Nota: Se utiliza grupoActual como nombre del grupo en que se esta agregando el amigo
-### Variables de entrada:
+#### Variables de entrada:
 -Amigo
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Amigo|-1)No pertenece al grupoActual|-2)Pertenece al grupoActual|
-### Casos de prueba:
+#### Casos de prueba:
 |Caso de Prueba| Amigo | Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|-------|--------------------|---------------------------------|
 |CP1|AmigoSeleccionado| Mensaje: Se agrega AmigoSeleccionado a grupoActual|1|
 |CP2|AmigoSeleccionado| No se agregar el AmigoSeleccionado a grupoActual|2|
 
 
-## Caso de uso 5
+### Caso de uso 5
 Nota: Se utiliza grupoActual como nombre del grupo en que se esta agregando el amigo
-### Variables de entrada:
+#### Variables de entrada:
 -Amigo
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Amigo|-1)No pertenece al grupoActual|-2)Pertenece al grupoActual|
-### Casos de prueba:
+#### Casos de prueba:
 |Caso de Prueba| Amigo | Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|-------|--------------------|---------------------------------|
 |CP1|AmigoSeleccionado| Mensaje: Se elimino AmigoSeleccionado de grupoActual|1|
 |CP2|AmigoSeleccionado| No se elimina el AmigoSeleccionado de grupoActual|2|
 
-## Caso de uso 6
-### Variables de entrada:
+### Caso de uso 6
+#### Variables de entrada:
 -Grupo
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Grupo|-1)Grupo seleccionado| |
-### Casos de prueba:
+#### Casos de prueba:
 |Caso de Prueba| Amigo | Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|-------|--------------------|---------------------------------|
 |CP1|Grupoexistente| Mensaje: Se elimino a Grupoexistente de tus grupos |1|
 
-## Caso de uso 7
-### Variables de entrada:
+### Caso de uso 7
+#### Variables de entrada:
 -Grupo
 -Monto
 -Descripción
 -Deudor (quien pago)
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Grupo | -1)Grupo seleccionado| |
 |Monto| -2)Monto mayor a cero|-3)Monto menor o igual cero|
 |Descripción| -4)Todo input  | -5)Input vacio |
 |Deudor| -6)Amigo Seleccionado| |
-### Casos de prueba:
+#### Casos de prueba:
 |Caso de Prueba| Grupo |Monto|Descripción|Deudor| Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|-------|-----|-----------|------|--------------------|---------------------------------|
 |CP1|Grupoexistente| 10 | Detalles |Amigoseleccionado|Mensaje: se agrego correctamente el gasto|1,2,4,6|
 |CP2|Grupoexistente| 10 | Detalles |Amigoseleccionado|Mensaje: se debe ingresar una descripción|1,2,5,6|
 |CP3|Grupoexistente| 0  | Detalles |Amigoseleccionado|No se debe agregar el gasto|1,3,5,6|
 
-## Caso de uso 8
-### Variables de entrada:
+### Caso de uso 8
+#### Variables de entrada:
 -Deuda
-### Clases de equivalencia
+#### Clases de equivalencia
 |Entrada|Clases validas|Clases invalidas|
 |-------|--------------|----------------|
 |Deuda|-1)Deuda seleccionada| |
-### Casos de prueba:
+#### Casos de prueba:
 |Caso de Prueba| Deuda | Resultado esperado | Clases de equivalencia cubiertas|
 |--------------|-------|--------------------|---------------------------------|
 |CP1|Deuda entre A y B| Mensaje: Se saldo la deuda de A con B |1|
@@ -662,7 +662,6 @@ Si bien trabajamos en conjunto en varias oportunidades por videollamada o verifi
 - Solución de issues.
 - Test Unitarios de la clase Sistema.
 - Test de sistema.
-- Test Exploratorio. 
 - Reporte de issues.
 - Documentación.
 
@@ -672,7 +671,6 @@ Si bien trabajamos en conjunto en varias oportunidades por videollamada o verifi
 - Solución de issues.
 - Test Unitarios de la clase Deuda, Grupo y Sistema.
 - Test de W3C.
-- Test Exploratorio. 
 - Reporte de issues, sumarización de issues. 
 - Documentación.
 
@@ -682,7 +680,6 @@ Si bien trabajamos en conjunto en varias oportunidades por videollamada o verifi
 - Solución de issues.
 - Test Unitarios de la clase Amigo, Grupo y Sistema.
 - Test de WCAG. 
-- Test Exploratorio. 
 - Reporte de issues.
 - Documentación.
 
